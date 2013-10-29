@@ -32,6 +32,7 @@ class actor : obj
 	//-----------------
 
 	actor(const string &in entityName, const vector2 pos){
+		obj::update();
 		AddEntity(entityName, vector3(pos, 0.0f), m_entity);
 		m_size = m_entity.GetSize();
 		m_pos=pos;

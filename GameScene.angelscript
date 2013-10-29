@@ -1,6 +1,7 @@
 ﻿#include "Button.angelscript"
 #include "Character.angelscript"
 #include "body.angelscript"
+#include "enemy.angelscript"
 
 class GameScene : Scene
 {
@@ -11,6 +12,8 @@ class GameScene : Scene
 	//private ETHEntityArray m_lights;
 	private body@[] m_lights;
 	private string[] m_names = { 'drb78','jrg711','ckg31','jqg525','x'};
+
+	private enemy@[] m_enemies;//array to hold all the enemies
 	
 	private string temp;
 
@@ -42,11 +45,26 @@ class GameScene : Scene
 			m_lights[t].set_label(m_names[t]);
 		}
 
+		m_enemies.insertLast( enemy("random.ent", vector2(200.0f,200.0f),m_character) );
+
 	}
 
 	void onUpdate()
 	{
 		
+		
+
+		//m_exitButton.putButton();
+		m_exitButton.update();
+		if (m_exitButton.is_pressed())
+		{
+			g_sceneManager.setCurrentScene(MainMenuScene());
+		}
+
+		for (uint t=0; t<m_enemies.length(); t++){
+			m_enemies[t].update();
+		}
+
 		for (uint t=0; t<m_lights.length(); t++){
    	 		m_lights[t].update();
    	 		//if we have been given an action based on button press, we need to pass it to the character
@@ -56,13 +74,6 @@ class GameScene : Scene
    	 			m_character.set_targetbody( m_lights[t] );
    	 			//m_character.set_atarget( m_lights[t] );
    	 		}
-		}
-
-		//m_exitButton.putButton();
-		m_exitButton.update();
-		if (m_exitButton.is_pressed())
-		{
-			g_sceneManager.setCurrentScene(MainMenuScene());
 		}
 
 		//now lets update the character

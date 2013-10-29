@@ -31,7 +31,6 @@ class body : pawn
 	void update(){
 
 		m_action = "none";
-
 		pawn::update();
 
 		vector2 pos = get_relative_position();
@@ -39,8 +38,13 @@ class body : pawn
 		
 		//string team = 'neutral';
 
+
 		if(m_mouseover){//if the mouse if over us
-			if(m_menu_bool == false){//and the menu has not been triggered
+			//if(m_menu_bool == false){//and the menu has not been triggered
+				//first clear out the button array
+				for(uint t = 0; t<m_buttons.length(); t++){
+					m_buttons.removeLast();
+				}
 				//here we trigger the utton menus, and set the button array to have them in it
 				vector2 stack_start = vector2(0.0f,14.0f);//here to start the menu relative to the body
 				if(m_allegiance!=0){
@@ -70,12 +74,15 @@ class body : pawn
 					}
 				}
 				m_menu_bool = true;
-			}else{
-				//meu has already been set, just keep drawing it, until timer runs out
 				for (uint t=0; t<m_buttons.length(); t++){
 		   	 		m_buttons[t].update();
 				}
-			}
+			//}else{
+				//meu has already been set, just keep drawing it, until timer runs out
+			//	for (uint t=0; t<m_buttons.length(); t++){
+		   	 //		m_buttons[t].update();
+				//}
+			//}
 		}
 		DrawText( pos , m_label, m_font, m_white);		
 		DrawText( pos2 , m_being_harvested+"" , m_font, m_white);
@@ -83,6 +90,7 @@ class body : pawn
 		m_rbar.set_value(m_rp);
 		m_rbar.update();
 
+		
 
 		//--------------
 

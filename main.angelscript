@@ -13,9 +13,8 @@ notes
 ------------
 -left off at
 ------------
-miner deposited
-i have almost got it to orbit the planet.
-after that I would like to start sucking resources
+give logic to collect miner
+starting on enemy pawn. basic ai
 
 give character a read out to show how many resources we have.
 as well as how many miners we have deployed (that can be a slider)
@@ -24,4 +23,7 @@ look into a smaller font potentially.
 then build base on planet
 
 then comes the attack part
+weapon type classes
+	missles that cost resources, and cause more damage
+	phasers that cost no resources, but cause little damage
 */
