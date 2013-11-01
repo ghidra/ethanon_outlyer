@@ -8,7 +8,7 @@ class obj
 	private vector2 m_pos;
 	private vector2 m_origin = vector2(0.5f,0.5f);
 
-	private FrameTimer m_frameTimer;
+	private uint m_uid;//this can be used as a unique id identifier
 
 	private string m_font = "Verdana14_shadow.fnt";
 
@@ -39,6 +39,7 @@ class obj
 		}else{
 			m_mouseover=false;
 		}
+
 	}
 
 	vector2 get_position(){
@@ -57,6 +58,9 @@ class obj
 
 	vector2 get_size(){
 		return m_size;
+	}
+	uint get_uid(){
+		return m_uid;
 	}
 
 	//------
@@ -77,4 +81,5 @@ class obj
 	bool is_mousedown(){
 		return m_mousedown;
 	}
+	//---------
 }

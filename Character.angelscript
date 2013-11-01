@@ -5,8 +5,13 @@ class Character : pawn
 {
 
 	private miner@[] m_miners;//my array of miners
-	private int m_maxminers = 3;//at first you can only have 3 miners, maybe later you can have some more
+	private uint m_minerscount=0;//this counte the miners, so that I can give them a unique id, so when i go to delete them, i delete the right one
+	private uint m_minersmax = 3;//at first you can only have 3 miners, maybe later you can have some more
 	body@ m_targetbody;//the body that we are targeting
+
+	private vector2 m_guipos;
+
+	private progressbar@ m_mbar;//miners bar
 
 	Character(const string &in entityName, const vector2 pos){
 		super(entityName,pos);
@@ -16,7 +21,10 @@ class Character : pawn
 		m_rp = 10.0f;
 		m_rpmax = 50.0f;
 
-		@m_rbar = progressbar("resources",m_rp,0.0f,m_rpmax,m_pos);
+		m_guipos = vector2(GetScreenSize() * vector2(0.0f,0.8f) );
+
+		@m_rbar = progressbar("resources",m_rp,0.0f,m_rpmax,m_guipos);
+		@m_mbar = progressbar("miners",m_minerscount,0.0f,m_minersmax,m_guipos+vector2(0.0f,26.0f));
 	}
 
 	void update(){
@@ -29,14 +37,23 @@ class Character : pawn
 		if(m_targetbody !is null){
 			if(m_action!="none"){
 				if(m_action=="harvest"){
-					m_destination = m_targetbody.get_position();
-					direction = m_targetbody.get_position()-get_position();
-					dist = length(direction);
-					if( dist > length(m_targetbody.get_size()) ){
-						move(direction);
+					set_destination(m_targetbody.get_position());
+
+					if( m_destination_distance > length(m_targetbody.get_size()) ){
+						move(m_destination_direction);
 					}else{
 						deposit_miner(m_targetbody);
 						//deposit_miner(m_atarget[0]);
+						m_action = "none";
+					}
+				}
+				if(m_action=="collect miner"){
+					set_destination(m_targetbody.get_position());
+
+					if( m_destination_distance > length(m_targetbody.get_size()) ){
+						move(m_destination_direction);
+					}else{
+						collect_miner(m_targetbody);
 						m_action = "none";
 					}
 				}
@@ -50,10 +67,13 @@ class Character : pawn
 		}
 
 		m_rbar.set_value(m_rp);
-		m_rbar.set_position(m_pos);
+		//m_rbar.set_position(m_pos);
 		m_rbar.update();
 
-		/*ETHInput@ input = GetInputHandle();
+		m_mbar.set_value(m_minerscount);
+		m_mbar.update();
+
+		/*ETHInput@ input = GetInputHandleuint t=0; t<m_miners.length(); t++();
 		vector2 direction(0, 0);
 		//float speed = UnitsPerSecond(m_spd);
 
@@ -94,12 +114,13 @@ class Character : pawn
 				vector2 target_size = target.get_size()*0.75f;
 				vector2 drop_dir = normalize(get_position()-target.get_position());
 				vector2 drop_zone = target_pos+(drop_dir*target_size);
-				int len = m_miners.length;
-				if(len<m_maxminers){
-					m_miners.insertLast( miner("random.ent", drop_zone, target) );
+				uint len = m_miners.length;
+				if(len<m_minersmax){
+					m_miners.insertLast( miner("random.ent", drop_zone, target, m_minerscount) );
 					m_miners[len].set_scale(0.25f);
 					set_rp(get_rp()-3.0f);
-					target.add_miner();
+					target.add_miner(m_minerscount);
+					m_minerscount+=1;
 				}
 
 			}else{
@@ -107,19 +128,22 @@ class Character : pawn
 			}
 		}
 	}
-	/*void deposit_miner(actor@ target){//put a minor on the target
+	void collect_miner(body@ target){
 		if(target !is null){
-			vector2 target_pos = target.get_position();
-			vector2 target_size = target.get_size()*0.75f;
-			vector2 drop_dir = normalize(get_position()-target.get_position());
-			vector2 drop_zone = target_pos+(drop_dir*target_size);
-			int len = m_miners.length;
-			if(len<m_maxminers){
-				m_miners.insertLast( miner("random.ent", drop_zone, target) );
-				m_miners[len].set_scale(0.25f);
+			uint remove_uid = target.subtract_miner();//m_miner+=1;
+			uint remove_id;
+			for(uint t=0; t<m_miners.length(); t++){
+				uint candidate = m_miners[t].get_uid();
+				if (candidate == remove_uid){
+					remove_id = t;
+				}
 			}
+			m_miners[remove_id].delete_entity();
+			m_miners.removeAt(remove_id);
+			set_rp(get_rp()+0.5f);//get a little resources back
+			m_minerscount-=1;
 		}
-	}*/
+	}
 	void set_targetbody(body@ target){
 		@m_targetbody = target;
 	}

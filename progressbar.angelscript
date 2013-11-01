@@ -33,7 +33,7 @@ class progressbar : obj
 	void update()
 	{
 		const float bar_width = m_size.x * ( rescale(m_value,0.0f,m_bounds.y,0.0f,1.0f));
-		//draw the bar bart
+		//draw the bar part
 		DrawShapedSprite("sprites/pixel_white.png", m_pos, vector2(bar_width, m_size.y), m_white);
 		//draw the ending marker
 		DrawShapedSprite("sprites/pixel_white.png", m_pos+vector2(m_size.x,0.0f), vector2(1.0f,m_size.y), m_red);

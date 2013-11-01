@@ -33,6 +33,9 @@ class pawn : actor{
 
 	private progressbar@ m_rbar;//progress bar to hold resource read out
 
+	//timers
+	
+
 	private int m_state = 0;//
 	//obj@ m_target;
 	actor@ m_target;

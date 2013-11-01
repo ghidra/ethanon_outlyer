@@ -13,10 +13,11 @@ notes
 ------------
 -left off at
 ------------
-give logic to collect miner
+x---give logic to collect miner
+x---die command/animation function. specifically for collecting miner, but also useful for removing any actors from the scene
 starting on enemy pawn. basic ai
 
-give character a read out to show how many resources we have.
+begun----give character a read out to show how many resources we have.
 as well as how many miners we have deployed (that can be a slider)
 look into a smaller font potentially.
 

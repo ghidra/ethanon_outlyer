@@ -11,13 +11,20 @@ class actor : obj
 	private float m_turnspd=1.5;
 	private float m_turnspd_ups; 
 
+	private float m_tspd;//var to use as a timer
+	private float m_tspd_ups;
+	private float m_timer;//this will be the actual timer
+
 	private vector2 m_destination;//where the player is going
-	//private vector2 m_destination_past;//where the player was
-	//private float m_destination_distance_init;//the distance it will take to get to current destination
-	//private float m_destination_distance;
-	//private float m_distance_travelled;//the distance covered so far
+	private vector2 m_destination_past;//where the player was
+	private float m_destination_distance_init;//the distance it will take to get to current destination
+	private float m_destination_distance;
+	private float m_distance_travelled;//the distance covered so far
 	private vector2 m_destination_direction;//the direction to get to the distance
-	private uint m_directionLine = 0;
+
+	private uint m_directionline = 0;
+	private FrameTimer m_frametimer;
+	private uint m_currentframe;
 
 	private int m_hp=3;//everything has hit points
 	private int m_hpmax=3;//everything has hit points
@@ -41,7 +48,18 @@ class actor : obj
 
 	void update(){
 		obj::update();
+
+		/*if (direction.length() != 0.0f){
+			m_frametimer.update(0, 3, 150);
+		}else{
+			m_frametimer.update(0, 0, 150);
+		}
+
+		const uint m_currentframe = m_frametimer.getCurrentFrame();
+		*/
+
 		m_spd_ups = UnitsPerSecond(m_spd);
+		m_tspd_ups = UnitsPerSecond(m_tspd);
 	}
 	///--------
 	vector2 get_position(){
@@ -68,24 +86,28 @@ class actor : obj
 		m_rpmax = value;
 	}
 	//-----------
-	//cant set the target at the obj level. i have to be on object up, not sure why, but now
-	//i know who i want to target.
-	//void set_target(obj target){
-	//	m_target = target;
-	//}
-	//
+
 	//----
+	void set_destination(const vector2 destination){
+		m_destination = destination;
+		m_destination_direction = destination-get_position();
+		m_destination_distance = length(m_destination_direction);
+	}
 	void move(const vector2 direction){
 		if (direction.length() != 0.0f)
-			m_frameTimer.update(0, 3, 150);
+			m_frametimer.update(0, 3, 150);
 		else
-			m_frameTimer.update(0, 0, 150);
+			m_frametimer.update(0, 0, 150);
 
 		// update entity
-		const uint currentFrame = m_frameTimer.getCurrentFrame();
+		const uint currentFrame = m_frametimer.getCurrentFrame();
 		m_entity.AddToPositionXY(normalize(direction) * m_spd);
-		m_entity.SetFrame(currentFrame, m_directionLine);
+		m_entity.SetFrame(currentFrame, m_directionline);
 
 		get_position();
+	}
+	//-------
+	void delete_entity(){//removes the entity
+		DeleteEntity(m_entity);
 	}
 }

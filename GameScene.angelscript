@@ -88,10 +88,10 @@ class GameScene : Scene
 
 		vector2 mp = input.GetCursorPos();
 		//float db = this.debug(mp);
-		DrawText(vector2(0,200), "x"+mp.x+" y:"+mp.y, "Verdana14_shadow.fnt", ARGB(250,255,255,255));
-		DrawText(vector2(0,212), "iter:"+temp, "Verdana14_shadow.fnt", ARGB(250,255,255,255));
-		DrawText(vector2(0,224), GetFPSRate()+"", "Verdana14_shadow.fnt", ARGB(250,255,255,255));
-		DrawText(vector2(0,234), m_character.m_action+"", "Verdana14_shadow.fnt", ARGB(250,255,255,255));
+		//DrawText(vector2(0,200), "x"+mp.x+" y:"+mp.y, "Verdana14_shadow.fnt", ARGB(250,255,255,255));
+		//DrawText(vector2(0,212), "iter:"+temp, "Verdana14_shadow.fnt", ARGB(250,255,255,255));
+		DrawText(vector2(0,224), "fps:"+GetFPSRate()+"", "Verdana14_shadow.fnt", ARGB(250,255,255,255));
+		//DrawText(vector2(0,234), m_character.m_action+"", "Verdana14_shadow.fnt", ARGB(250,255,255,255));
 		//DrawText(vector2(0,244), m_character.m_target.get_label()+"", "Verdana14_shadow.fnt", ARGB(250,255,255,255));
 		//DrawText(vector2(0,212), "over:"+m_character.isPointInBB(input.GetCursorPos()), "Verdana14_shadow.fnt", ARGB(250,255,255,255));
 		//DrawText(vector2(0,224), "debug:"+db, "Verdana14_shadow.fnt", ARGB(250,255,255,255));
@@ -115,11 +115,11 @@ class GameScene : Scene
 			}
 		}*/
 
-		if( m_character.is_point_in_bb(input.GetCursorPos()) ){
+		/*if( m_character.is_point_in_bb(input.GetCursorPos()) ){
 			DrawShapedSprite("sprites/pixel_white.png", vector2(100,200), vector2(20,20), RED);
 		}else{
 			DrawShapedSprite("sprites/pixel_white.png", vector2(100,200), vector2(20,20), WHITE);
-		}
+		}*/
 
 		//for (int t = 0; t < m_lights.length(); t++){
 		//	if()m_lights[t].m_mousedown

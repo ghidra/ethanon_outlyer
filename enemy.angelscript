@@ -3,8 +3,6 @@
 class enemy : pawn
 {
 	pawn@ m_targetpawn;//the body that we are targeting, the main character
-
-	private float m_timer;
 	//body@[]@ m_targetbodies;//bodies that are targetable
 
 	enemy(const string &in entityName, const vector2 pos, pawn @targetpawn){
@@ -19,11 +17,7 @@ class enemy : pawn
 		//@m_targetbodies = targetbodies;
 
 		//@m_rbar = progressbar("resources",m_rp,0.0f,m_rpmax,m_pos);
-		//states 
-		//0:none
-		//1:attacking phasers
-		//2:attacking missles
-		m_state = 1;
+		m_action="attack pawn";
 	}
 
 	void update(){
@@ -34,13 +28,12 @@ class enemy : pawn
 		float dist = 0.0f;
 
 		if(m_targetpawn !is null){
-			if(m_state!=0){
-				if(m_state==1){
-					m_destination = m_targetpawn.get_position();
-					direction = m_targetpawn.get_position()-get_position();
-					dist = length(direction);
-					if( dist > length(m_targetpawn.get_size()) ){
-						move(direction);
+			if(m_action!="none"){
+				if(m_action=="attack pawn"){
+					set_destination(m_targetpawn.get_position());
+					
+					if( m_destination_distance > length(m_targetpawn.get_size()) ){
+						move(m_destination_direction);
 					}else{
 						m_action = "none";
 					}
