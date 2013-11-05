@@ -13,17 +13,16 @@ notes
 ------------
 -left off at
 ------------
-x---give logic to collect miner
-x---die command/animation function. specifically for collecting miner, but also useful for removing any actors from the scene
 starting on enemy pawn. basic ai
 
-begun----give character a read out to show how many resources we have.
-as well as how many miners we have deployed (that can be a slider)
-look into a smaller font potentially.
+-i have weapons now, need to look at using different ones
+-weapon projectile need to explode on impact and remove hit pints
+-weapon projectile can help me debug my destination set function
+-weapon projectile needs to exlode after max range reached
 
+look into a smaller font potentially.
 then build base on planet
 
-then comes the attack part
 weapon type classes
 	missles that cost resources, and cause more damage
 	phasers that cost no resources, but cause little damage

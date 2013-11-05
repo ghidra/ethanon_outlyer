@@ -1,58 +1,43 @@
 ﻿#include "actor.angelscript"
+#include "projectile.angelscript"
+#include "progressbar.angelscript"
 
 class weapon : actor
 {
 
-	weapon(const vector2 pos, actor@ target){
-		//super(entityName,pos);
-		m_spd = 1.0f;
+	private projectile@[] m_projectiles;//the projectile that we will be using
+	private progressbar@ m_tbar;//time bar bar
+
+	weapon(const string &in entityName, const vector2 &in pos = vector2(0.0f,0.0f) ){
+		super(entityName,pos);
+
+		@m_tbar = progressbar("attack",m_timer,0.0f,1.0f,pos);
+
+		//@m_projectile = projectile("random.ent");
 	}
 
 	void update(){
-
-		pawn::update();
-
-		vector2 direction(0, 0);
-		float dist = 0.0f;
-
-		if(m_targetbody !is null){
-			if(m_action!="none"){
-				if(m_action=="harvest"){
-					set_destination(m_targetbody.get_position());
-
-					if( m_destination_distance > length(m_targetbody.get_size()) ){
-						move(m_destination_direction);
-					}else{
-						deposit_miner(m_targetbody);
-						//deposit_miner(m_atarget[0]);
-						m_action = "none";
-					}
-				}
-				if(m_action=="collect miner"){
-					set_destination(m_targetbody.get_position());
-
-					if( m_destination_distance > length(m_targetbody.get_size()) ){
-						move(m_destination_direction);
-					}else{
-						collect_miner(m_targetbody);
-						m_action = "none";
-					}
-				}
-			}
+		actor::update();
+		//update our attach bar so that we can see how soon it will attach
+		if(m_timer>=1){
+			set_timer(0.0f);
+			fire();
+		}else{
+			update_timer();
+			m_tbar.set_value(get_timer());
 		}
 
-		for (uint t=0; t<m_miners.length(); t++){
-			m_miners[t].update();
- 
-			this.set_rp( m_rp+m_miners[t].get_rp() );
+		for(uint t=0; t<m_projectiles.length(); t++){
+			m_projectiles[t].update();
 		}
+	}
 
-		m_rbar.set_value(m_rp);
-		//m_rbar.set_position(m_pos);
-		m_rbar.update();
+	void draw_tbar(){
+		//i need to have this thing placed specifically before drawing it anyway 
+		m_tbar.update();
+	}
 
-		m_mbar.set_value(m_minerscount);
-		m_mbar.update();
-
+	void fire(){//fire projectile
+		m_projectiles.insertLast( projectile("random.ent", vector2(100.0f,100.0f), m_destination) ) ;
 	}
 }

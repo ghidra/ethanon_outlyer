@@ -1,4 +1,5 @@
 ﻿#include "actor.angelscript"
+#include "inventory.angelscript"
 #include "progressbar.angelscript"
 
 class pawn : actor{
@@ -33,6 +34,7 @@ class pawn : actor{
 
 	private progressbar@ m_rbar;//progress bar to hold resource read out
 
+	private inventory@ m_inventory;
 	//timers
 	
 
@@ -52,16 +54,14 @@ class pawn : actor{
 		}
 		
 	}
-	//------
-	//resource points getter and setters
-	
-	//----
-	//void set_target(obj@ target){
-	//	@m_target = target;
-	//}
+
 	void set_target(actor@ target){
 		//m_atarget.removeAt(0);
 		//m_atarget.insertLast(target);
 		@m_target = target;
+	}
+
+	void init_inventory(){//call this to initialize the inventory
+		@m_inventory = inventory();
 	}
 }

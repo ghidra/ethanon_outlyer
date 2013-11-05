@@ -35,7 +35,7 @@ class GameScene : Scene
 
 		//temp = "";
 		//-----making random lights
-		for (uint t = 0; t < 5; t++)
+		for (uint t = 0; t < 3; t++)
     	{
 			const float rx=randF(1);
 			const float ry=randF(1);
