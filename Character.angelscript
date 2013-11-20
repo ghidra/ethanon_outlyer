@@ -1,5 +1,6 @@
 ﻿#include "pawn.angelscript"
 #include "miner.angelscript"
+#include "enemy.angelscript"
 
 class Character : pawn
 {
@@ -7,7 +8,9 @@ class Character : pawn
 	private miner@[] m_miners;//my array of miners
 	private uint m_minerscount=0;//this counte the miners, so that I can give them a unique id, so when i go to delete them, i delete the right one
 	private uint m_minersmax = 3;//at first you can only have 3 miners, maybe later you can have some more
+
 	body@ m_targetbody;//the body that we are targeting
+	enemy@ m_targetenemy;//the body that we are targeting
 
 	private vector2 m_guipos;
 
@@ -25,6 +28,11 @@ class Character : pawn
 
 		@m_rbar = progressbar("resources",m_rp,0.0f,m_rpmax,m_guipos);
 		@m_mbar = progressbar("miners",m_minerscount,0.0f,m_minersmax,m_guipos+vector2(0.0f,26.0f));
+
+		//weapons
+		init_inventory();
+		m_inventory.add_weapon( weapon("random.ent", get_position()) );//now we have a weapon in the inventory
+		@m_weapon = m_inventory.get_weapon(0);//go ahead and equip the weapon just created
 	}
 
 	void update(){
@@ -59,6 +67,30 @@ class Character : pawn
 				}
 			}
 		}
+		//we have an enemy to fire at
+		if(m_targetenemy !is null){
+			if(m_actionweapon!="none"){
+				if(m_actionweapon=="attack"){
+					if(m_attacktype!=0){//we are ready to attack something
+						//m_weapon.set_action_local( "attack" );
+						//DrawText(vector2(0,280), "weaponaction:"+m_weapon.get_action_local()+"", "Verdana14_shadow.fnt", ARGB(250,255,255,255));
+						//string weapon_action = m_weapon.get_action_local();//have to do this, because it isnt getting the value iside the if
+						if(m_weapon.get_action_local() != "none"){//if the weapon is trying to fire
+							m_weapon.set_destination(m_targetenemy.get_position());
+							m_weapon.update();
+							m_weapon.draw_tbar();
+						//}else{//after it has fired, reset our actinos so we can do something again
+							//m_action="none";
+						}
+						
+					}else{//we do now know how to attaack yet, decide how to attack
+						m_weapon.set_action_local( "attack" );//this aint working
+						m_attacktype = 1;//just make it try anything right now
+					}
+				}
+			}
+			check_weapon_projectiles();
+		}
 
 		for (uint t=0; t<m_miners.length(); t++){
 			m_miners[t].update();
@@ -72,6 +104,10 @@ class Character : pawn
 
 		m_mbar.set_value(m_minerscount);
 		m_mbar.update();
+
+		DrawText(vector2(0,300), "actions:"+m_controller.print_actions()+"", "Verdana14_shadow.fnt", ARGB(250,255,255,255));
+
+
 
 		/*ETHInput@ input = GetInputHandleuint t=0; t<m_miners.length(); t++();
 		vector2 direction(0, 0);
@@ -106,6 +142,10 @@ class Character : pawn
 		// if there's movement, update animation
 		move(direction);
 		*/
+	}
+	//this function overrides the default pawn one, cause I Need to specifically check enimy objects
+	void check_weapon_projectiles(){//loop through the projectiles and find out if they have hit our target
+		m_weapon.check_projectiles_hit_target(m_targetenemy);
 	}
 	void deposit_miner(body@ target){//put a minor on the target
 		if(target !is null){
@@ -146,5 +186,8 @@ class Character : pawn
 	}
 	void set_targetbody(body@ target){
 		@m_targetbody = target;
+	}
+	void set_targetenemy(enemy@ target){
+		@m_targetenemy = target;
 	}
 }

@@ -1,11 +1,8 @@
 ﻿#include "pawn.angelscript"
-#include "weapon.angelscript"
 
 class enemy : pawn
 {
-	pawn@ m_targetpawn;//the body that we are targeting, the main character
-	private weapon@ m_weapon;
-	private uint m_attacktype;//0 is do not attack, 1 basic 2 strong etc, potentially -1 is defend
+	
 	//body@[]@ m_targetbodies;//bodies that are targetable
 
 	//private progressbar@ m_mbar;//miners bar
@@ -27,11 +24,13 @@ class enemy : pawn
 		//@m_targetbodies = targetbodies;
 
 		//@m_rbar = progressbar("resources",m_rp,0.0f,m_rpmax,m_pos);
-		m_action="attack pawn";
+		m_actionlocal="attack pawn";
 		m_attacktype=0;
 	}
 
 	void update(){
+
+		m_action="none";
 
 		pawn::update();
 
@@ -42,14 +41,15 @@ class enemy : pawn
 		//DrawText(m_pos+vector2(20.0f,-20.0f),temp.x+":"+temp.y,m_font, m_red);
 
 		if(m_targetpawn !is null){
-			if(m_action!="none"){
-				if(m_action=="attack pawn"){
+			if(m_actionlocal!="none"){
+				if(m_actionlocal=="attack pawn"){
 					if(m_attacktype!=0){//we are ready to attack something
 						m_weapon.set_destination(m_targetpawn.get_position());
 						m_weapon.update();
 						m_weapon.draw_tbar();
 					}else{//we do now know how to attaack yet, decide how to attack
 						m_attacktype = 1;//just make it try anything right now
+						//m_weapon.m_action="attack";
 					}
 
 					/*set_destination(m_targetpawn.get_position());
@@ -62,7 +62,29 @@ class enemy : pawn
 					*/
 				}
 			}
+			check_weapon_projectiles();
 		}
+
+		//button drawing
+		if(m_mouseover){//if the mouse if over us
+			//first clear out the button array
+			for(uint t = 0; t<m_buttons.length(); t++){
+				m_buttons.removeLast();
+			}
+			//here we trigger the button menus, and set the button array to have them in it
+			vector2 stack_start = vector2(0.0f,14.0f);//here to start the menu relative to the body
+			
+			if(m_mouseover){
+   	 			m_buttons.insertLast( Button( 'attack', get_relative_position()+(stack_start)) );
+			}
+
+			m_menu_bool = true;
+			for (uint t=0; t<m_buttons.length(); t++){
+	   	 		m_buttons[t].update();
+			}
+		}
+
+		set_button_action();
 
 	}
 

@@ -9,8 +9,8 @@ class GameScene : Scene
 	private Character@ m_character;
 
 	//private actor@ m_light;
-	//private ETHEntityArray m_lights;
-	private body@[] m_lights;
+	//private ETHEntityArray m_bodies;
+	private body@[] m_bodies;
 	private string[] m_names = { 'drb78','jrg711','ckg31','jqg525','x'};
 
 	private enemy@[] m_enemies;//array to hold all the enemies
@@ -41,8 +41,8 @@ class GameScene : Scene
 			const float ry=randF(1);
 			const vector2 put(rx*(screenMiddle.x*2),ry*(screenMiddle.y*2));
 			
-			m_lights.insertLast( body("simple_light.ent",put) );//http://www.angelcode.com/angelscript/sdk/docs/manual/doc_datatypes_arrays.html
-			m_lights[t].set_label(m_names[t]);
+			m_bodies.insertLast( body("simple_light.ent",put) );//http://www.angelcode.com/angelscript/sdk/docs/manual/doc_datatypes_arrays.html
+			m_bodies[t].set_label(m_names[t]);
 		}
 
 		m_enemies.insertLast( enemy("random.ent", vector2(200.0f,200.0f),m_character) );
@@ -61,19 +61,26 @@ class GameScene : Scene
 			g_sceneManager.setCurrentScene(MainMenuScene());
 		}
 
-		for (uint t=0; t<m_enemies.length(); t++){
-			m_enemies[t].update();
+		for (uint t=0; t<m_bodies.length(); t++){
+   	 		m_bodies[t].update();
+   	 		//if we have been given an action based on button press, we need to pass it to the character
+   	 		if(m_bodies[t].get_action() != "none"){
+   	 			//m_character.set_action( m_bodies[t].m_action );
+   	 			m_character.set_action( m_bodies[t].m_action , m_bodies[t] );
+   	 			m_character.set_targetbody( m_bodies[t] );
+   	 		}
 		}
 
-		for (uint t=0; t<m_lights.length(); t++){
-   	 		m_lights[t].update();
+		for (uint t=0; t<m_enemies.length(); t++){
+   	 		m_enemies[t].update();
    	 		//if we have been given an action based on button press, we need to pass it to the character
-   	 		if(m_lights[t].m_action != "none"){
-   	 			m_character.m_action = m_lights[t].m_action;
-   	 			//m_character.set_target( m_lights[t] );
-   	 			m_character.set_targetbody( m_lights[t] );
-   	 			//m_character.set_atarget( m_lights[t] );
+   	 		if(m_enemies[t].get_action() != "none"){
+   	 			m_character.set_action( m_enemies[t].m_action , m_enemies[t] );
+   	 			//m_character.set_action_weapon( m_enemies[t].m_action );
+   	 			//m_character.set_targetenemy( m_enemies[t] );
    	 		}
+   	 		//the above breaks it because I am using m_action locally on the enemy to tell it what to do.
+   	 		//chances are that I need to rethink that logic, since bodies may also want a specific actino to do later
 		}
 
 		//now lets update the character
@@ -121,8 +128,8 @@ class GameScene : Scene
 			DrawShapedSprite("sprites/pixel_white.png", vector2(100,200), vector2(20,20), WHITE);
 		}*/
 
-		//for (int t = 0; t < m_lights.length(); t++){
-		//	if()m_lights[t].m_mousedown
+		//for (int t = 0; t < m_bodies.length(); t++){
+		//	if()m_bodies[t].m_mousedown
 		//}
 
 		/*const uint touchCount = input.GetMaxTouchCount();

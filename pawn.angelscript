@@ -1,6 +1,11 @@
 ﻿#include "actor.angelscript"
 #include "inventory.angelscript"
 #include "progressbar.angelscript"
+#include "weapon.angelscript"
+#include "Button.angelscript"
+#include "controller.angelscript"
+#include "enemy.angelscript"
+#include "body.angelscript"
 
 class pawn : actor{
 	//-----------------
@@ -35,23 +40,35 @@ class pawn : actor{
 	private progressbar@ m_rbar;//progress bar to hold resource read out
 
 	private inventory@ m_inventory;
-	//timers
-	
+
+	private Button@[] m_buttons;//hold buttons
+
+	private bool m_menu_bool = false;//if we have triggered the menu to display
+	private float m_menu_timer = 5;//how long we have with the mouse not over the menu
 
 	private int m_state = 0;//
 	//obj@ m_target;
 	actor@ m_target;
 
+	//----
+	pawn@ m_targetpawn;//the body that we are targeting, the main character
+	private weapon@ m_weapon;
+	private uint m_attacktype;//0 is do not attack, 1 basic 2 strong etc, potentially -1 is defend
+	private string m_actionweapon = "none";//this is a variable to manage weapon actions
+
+	private controller@ m_controller;//the controller of this thing
+
 	pawn(const string &in entityName, const vector2 pos){
 		super(entityName,pos);
+		@m_controller = controller();
 	}
 
 	void update(){
 		actor::update();
-		if(m_mouseover){
-			vector2 pos = get_relative_position();
-			DrawText( pos , m_label, m_font, m_white);
-		}
+		//if(m_mouseover){
+		//	vector2 pos = get_relative_position();
+		//	DrawText( pos , m_label, m_font, m_white);
+		//}
 		
 	}
 
@@ -63,5 +80,42 @@ class pawn : actor{
 
 	void init_inventory(){//call this to initialize the inventory
 		@m_inventory = inventory();
+	}
+
+	//------weapons functions
+	void check_weapon_projectiles(){//loop through the projectiles and find out if they have hit our target
+		m_weapon.check_projectiles_hit_target(m_targetpawn);
+	}
+	//------
+	void set_action_weapon(const string action){
+		m_actionweapon = action;//this sets the weapon specific action
+	}
+	string get_action_weapon(){
+		return m_actionweapon;
+	}
+	//-----
+	void set_button_action(){//this sets m_action based on button use
+		for (uint t=0; t<m_buttons.length(); t++){
+			if(m_buttons[t].is_pressed()){
+				m_action = m_buttons[t].get_label();
+			}
+		}
+	}
+	//setting the action with the target of the action
+	void set_action(const string action, actor@ target){
+		actor::set_action(action);
+		m_controller.set_action(action,target);
+	}
+	void set_action(const string action, pawn@ target){
+		actor::set_action(action);
+		m_controller.set_action(action,target);
+	}
+	void set_action(const string action, body@ target){
+		actor::set_action(action);
+		m_controller.set_action(action,target);
+	}
+	void set_action(const string action, enemy@ target){
+		actor::set_action(action);
+		m_controller.set_action(action,target);
 	}
 }

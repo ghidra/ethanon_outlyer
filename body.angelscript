@@ -1,5 +1,4 @@
 ﻿#include "pawn.angelscript"
-#include "Button.angelscript"
 
 class body : pawn
 {
@@ -7,13 +6,9 @@ class body : pawn
 
 	//private int base;
 
-	private bool m_menu_bool = false;//if we have triggered the menu to display
-	private float m_menu_timer = 5;//how long we have with the mouse not over the menu
-
 	private int m_being_harvested = 0;//if we are being harvested, value will be greater than 0
 	private int[] m_minerids;//array to hold the index of the miner from the character array
 
-	private Button@[] m_buttons;//hold buttons
 	private string[] m_buttons_neutral = {"harvest","build base"};
 	private string[] m_buttons_ally = {"defend","harvest"};
 	private string[] m_buttons_enemy = {"attack"};
@@ -96,13 +91,7 @@ class body : pawn
 		//--------------
 
 		//now check if any button has been pressed, and if so set our action
-		for (uint t=0; t<m_buttons.length(); t++){
-			if(m_buttons[t].is_pressed()){
-				m_action = m_buttons[t].get_label();
-			}
-		}
-		//------set the action
-
+		set_button_action();
 	}
 
 	void add_miner(const uint id){//we are adding a miner
