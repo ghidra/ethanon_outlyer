@@ -1,6 +1,7 @@
 ﻿#include "pawn.angelscript"
 #include "miner.angelscript"
 #include "enemy.angelscript"
+#include "body.angelscript"
 
 class Character : pawn
 {
@@ -9,7 +10,7 @@ class Character : pawn
 	private uint m_minerscount=0;//this counte the miners, so that I can give them a unique id, so when i go to delete them, i delete the right one
 	private uint m_minersmax = 3;//at first you can only have 3 miners, maybe later you can have some more
 
-	body@ m_targetbody;//the body that we are targeting
+	//body@ m_targetbody;//the body that we are targeting
 	enemy@ m_targetenemy;//the body that we are targeting
 
 	private vector2 m_guipos;
@@ -42,7 +43,32 @@ class Character : pawn
 		vector2 direction(0, 0);
 		float dist = 0.0f;
 
-		if(m_targetbody !is null){
+		if(m_controller.has_actions()){//if our controller has actions to give us
+			
+			const string action = m_controller.get_action();//this gets the action we need to try and perform
+
+			if(action == "harvest" || action == "collect miner"){
+				
+				body@ target = m_controller.get_target_body();//since i only harvest bodies, I have to assume that I am trying to get a body object
+				set_destination(target.get_position());
+
+				if( m_destination_distance > length(target.get_size()) ){
+					move(m_destination_direction);
+				}else{
+					if(action == "harvest"){
+						deposit_miner(target);
+					}
+					if(action == "collect miner"){
+						collect_miner(target);
+					}
+					//now remove the action from the list
+					m_controller.remove_action();
+				}
+			}
+		
+		}
+
+		/*if(m_targetbody !is null){
 			if(m_action!="none"){
 				if(m_action=="harvest"){
 					set_destination(m_targetbody.get_position());
@@ -90,7 +116,7 @@ class Character : pawn
 				}
 			}
 			check_weapon_projectiles();
-		}
+		}*/
 
 		for (uint t=0; t<m_miners.length(); t++){
 			m_miners[t].update();
@@ -184,10 +210,10 @@ class Character : pawn
 			m_minerscount-=1;
 		}
 	}
-	void set_targetbody(body@ target){
+	/*void set_targetbody(body@ target){
 		@m_targetbody = target;
 	}
 	void set_targetenemy(enemy@ target){
 		@m_targetenemy = target;
-	}
+	}*/
 }

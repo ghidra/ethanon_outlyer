@@ -56,11 +56,13 @@ class pawn : actor{
 	private uint m_attacktype;//0 is do not attack, 1 basic 2 strong etc, potentially -1 is defend
 	private string m_actionweapon = "none";//this is a variable to manage weapon actions
 
-	private controller@ m_controller;//the controller of this thing
+	private controller@ m_controller;//the movement controller of this thing
+	private controller@ m_attcontroller;//the attack controller of this thing
 
 	pawn(const string &in entityName, const vector2 pos){
 		super(entityName,pos);
 		@m_controller = controller();
+		@m_attcontroller = controller();
 	}
 
 	void update(){
@@ -103,19 +105,37 @@ class pawn : actor{
 	}
 	//setting the action with the target of the action
 	void set_action(const string action, actor@ target){
-		actor::set_action(action);
+		//actor::set_action(action);
 		m_controller.set_action(action,target);
 	}
 	void set_action(const string action, pawn@ target){
-		actor::set_action(action);
+		//actor::set_action(action);
 		m_controller.set_action(action,target);
 	}
 	void set_action(const string action, body@ target){
-		actor::set_action(action);
+		//actor::set_action(action);
 		m_controller.set_action(action,target);
 	}
 	void set_action(const string action, enemy@ target){
-		actor::set_action(action);
+		//actor::set_action(action);
 		m_controller.set_action(action,target);
 	}
+	//-----
+	void set_attack(const string action, actor@ target){
+		//actor::set_action(action);
+		m_attcontroller.set_action(action,target);
+	}
+	void set_attack(const string action, pawn@ target){
+		//actor::set_action(action);
+		m_attcontroller.set_action(action,target);
+	}
+	void set_attack(const string action, body@ target){
+		//actor::set_action(action);
+		m_attcontroller.set_action(action,target);
+	}
+	void set_attack(const string action, enemy@ target){
+		//actor::set_action(action);
+		m_attcontroller.set_action(action,target);
+	}
+	//----
 }

@@ -67,7 +67,7 @@ class GameScene : Scene
    	 		if(m_bodies[t].get_action() != "none"){
    	 			//m_character.set_action( m_bodies[t].m_action );
    	 			m_character.set_action( m_bodies[t].m_action , m_bodies[t] );
-   	 			m_character.set_targetbody( m_bodies[t] );
+   	 			//m_character.set_targetbody( m_bodies[t] );
    	 		}
 		}
 
@@ -75,7 +75,8 @@ class GameScene : Scene
    	 		m_enemies[t].update();
    	 		//if we have been given an action based on button press, we need to pass it to the character
    	 		if(m_enemies[t].get_action() != "none"){
-   	 			m_character.set_action( m_enemies[t].m_action , m_enemies[t] );
+   	 			m_character.set_attack( m_enemies[t].m_action , m_enemies[t] );
+   	 			//m_character.set_action( m_enemies[t].m_action , m_enemies[t] );
    	 			//m_character.set_action_weapon( m_enemies[t].m_action );
    	 			//m_character.set_targetenemy( m_enemies[t] );
    	 		}
