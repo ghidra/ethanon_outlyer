@@ -68,31 +68,38 @@ class Character : pawn
 		
 		}
 
-		/*if(m_targetbody !is null){
-			if(m_action!="none"){
-				if(m_action=="harvest"){
-					set_destination(m_targetbody.get_position());
+		//i need to use this just to fire off the action
+		//then another loop to update the weapon and remove the action from the queue as soon as it has been fired
+		if(m_attcontroller.has_actions()){//if our attack controller has actions to give us
+			const string action = m_attcontroller.get_action();//this gets the action we need to try and perform
+			if(action == "attack"){
+			//if(m_weapon.get_action_local() != "none"){//if the weapon is trying to fire
 
-					if( m_destination_distance > length(m_targetbody.get_size()) ){
-						move(m_destination_direction);
-					}else{
-						deposit_miner(m_targetbody);
-						//deposit_miner(m_atarget[0]);
-						m_action = "none";
-					}
-				}
-				if(m_action=="collect miner"){
-					set_destination(m_targetbody.get_position());
+				enemy@ target = m_attcontroller.get_target_enemy();//since i only attack enemies(curremtly anyway), I have to assume that I am trying to get a enemy object
+				//set_destination(target.get_position());
 
-					if( m_destination_distance > length(m_targetbody.get_size()) ){
-						move(m_destination_direction);
-					}else{
-						collect_miner(m_targetbody);
-						m_action = "none";
-					}
+				m_weapon.set_target(target);
+				//m_weapon.set_destination(target.get_position());
+				
+				//m_weapon.update();
+				//m_weapon.draw_tbar();
+
+			//}else{//if the weapon has not been set to fire, set it to fire, and the attack type
+
+				m_weapon.set_action( "attack" );
+				//m_attacktype = 1;//just make it try anything right now
+				if(m_weapon.shots_fired()){
+					m_attcontroller.remove_action();
 				}
 			}
+
 		}
+
+		if( m_weapon.should_update() ){
+			m_weapon.update();
+		}
+
+		/*
 		//we have an enemy to fire at
 		if(m_targetenemy !is null){
 			if(m_actionweapon!="none"){
@@ -132,6 +139,7 @@ class Character : pawn
 		m_mbar.update();
 
 		DrawText(vector2(0,300), "actions:"+m_controller.print_actions()+"", "Verdana14_shadow.fnt", ARGB(250,255,255,255));
+		DrawText(vector2(0,310), "attactions:"+m_attcontroller.print_actions()+"", "Verdana14_shadow.fnt", ARGB(250,255,255,255));
 
 
 
@@ -170,9 +178,9 @@ class Character : pawn
 		*/
 	}
 	//this function overrides the default pawn one, cause I Need to specifically check enimy objects
-	void check_weapon_projectiles(){//loop through the projectiles and find out if they have hit our target
-		m_weapon.check_projectiles_hit_target(m_targetenemy);
-	}
+	//void check_weapon_projectiles(){//loop through the projectiles and find out if they have hit our target
+	//	m_weapon.check_projectiles_hit_target(m_targetenemy);
+	//}
 	void deposit_miner(body@ target){//put a minor on the target
 		if(target !is null){
 			if(m_rp>3.0f){

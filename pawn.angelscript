@@ -85,9 +85,9 @@ class pawn : actor{
 	}
 
 	//------weapons functions
-	void check_weapon_projectiles(){//loop through the projectiles and find out if they have hit our target
-		m_weapon.check_projectiles_hit_target(m_targetpawn);
-	}
+	//void check_weapon_projectiles(){//loop through the projectiles and find out if they have hit our target
+	//	m_weapon.check_projectiles_hit_target(m_targetpawn);
+	//}
 	//------
 	void set_action_weapon(const string action){
 		m_actionweapon = action;//this sets the weapon specific action

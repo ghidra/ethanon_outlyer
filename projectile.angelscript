@@ -1,4 +1,7 @@
 ﻿#include "actor.angelscript"
+#include "body.angelscript"
+#include "enemy.angelscript"
+#include "pawn.angelscript"
 
 class projectile : actor
 {
@@ -8,6 +11,13 @@ class projectile : actor
 
 	private bool m_explosion_done = false;
 	private uint m_explosion_frames = 15;
+
+	private body@ m_target_body;//variables to hold the target of the actions
+	private enemy@ m_target_enemy;
+	private pawn@ m_target_pawn;
+	private actor@ m_target_actor;
+
+	private string m_target_type;
 
 	private ETHEntity@ m_explosion;//this will hold the explosion graphic
 
@@ -24,6 +34,37 @@ class projectile : actor
 
 		if(!m_hit){//if we havent hit anything yet
 			move(m_destination_direction);//move
+
+			//now check again, so next time around we can do what we need to
+			//collision testing against the target that was assigned
+			vector2 tpos = vector2(0.0f,0.0f);
+			float tsize = 0.0f;
+			if(m_target_type=="actor"){
+				tpos = vector2(m_target_actor.get_position());
+				tsize = length(m_target_actor.get_size())/3;
+			}
+			if(m_target_type=="pawn"){
+				tpos = vector2(m_target_pawn.get_position());
+				tsize = length(m_target_pawn.get_size())/3;
+			}
+			if(m_target_type=="body"){
+				tpos = vector2(m_target_body.get_position());
+				tsize = length(m_target_body.get_size())/3;
+			}
+			if(m_target_type=="enemy"){
+				tpos = vector2(m_target_enemy.get_position());
+				tsize = length(m_target_enemy.get_size())/3;
+			}
+
+			const float d = length( tpos - m_pos ); 
+			if( d < tsize ){//deterime hit
+				set_hit();//we have hit
+			}
+			//if found, we set this to hit
+			//
+
+			//	vector2 tpos = target.get_position();
+			//	float tsize = length(target.get_size())/3;
 		}else{//if we have hit something
 			if(!m_exploding){//then we need to check if we have initialized the exploding
 				//remove projectile graphic, set explode graphic
@@ -42,6 +83,23 @@ class projectile : actor
 		}
 	}
 	//------
+	void set_target(actor@ target){
+		@m_target_actor = target; 
+		m_target_type = "actor";
+	}
+	void set_target(pawn@ target){
+		@m_target_pawn = target;
+		m_target_type = "pawn";
+	}
+	void set_target(body@ target){
+		@m_target_body = target;
+		m_target_type = "body";
+	}
+	void set_target(enemy@ target){
+		@m_target_enemy = target;
+		m_target_type = "enemy";
+	}
+	//-----
 	void set_hit(){//this is one way, if it hit something it hit something
 		m_hit = true;
 	}

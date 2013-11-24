@@ -13,11 +13,10 @@ notes
 ------------
 -progress
 ------------
+
 starting on enemy pawn. basic ai
 
--i need to relook at my m_action method of causing charcter to react. I cant have 2 actions at once
-	-and i need to reset it when an action is finished.. just needs to be looked at.
-	-some sort of object to handle actinos would be good potentially
+-actions mostly working now. m_action_local unnessisary, only issues seems to be my 'read out' of attcontroller, removes the array values, but still works anyway
 
 -weapon projectile needs remove hit pints
 -weapon projectile needs to exlode after max range reached

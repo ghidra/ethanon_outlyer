@@ -40,7 +40,7 @@ class enemy : pawn
 		//vector2 temp = m_targetpawn.get_position();
 		//DrawText(m_pos+vector2(20.0f,-20.0f),temp.x+":"+temp.y,m_font, m_red);
 
-		if(m_targetpawn !is null){
+		/*if(m_targetpawn !is null){
 			if(m_actionlocal!="none"){
 				if(m_actionlocal=="attack pawn"){
 					if(m_attacktype!=0){//we are ready to attack something
@@ -51,6 +51,7 @@ class enemy : pawn
 						m_attacktype = 1;//just make it try anything right now
 						//m_weapon.m_action="attack";
 					}
+		*/
 
 					/*set_destination(m_targetpawn.get_position());
 					
@@ -60,10 +61,12 @@ class enemy : pawn
 						m_action = "none";
 					}
 					*/
+		/*
 				}
 			}
 			check_weapon_projectiles();
 		}
+		*/
 
 		//button drawing
 		if(m_mouseover){//if the mouse if over us
