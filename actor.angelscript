@@ -35,7 +35,7 @@ class actor : obj
 	private float m_rpmax=0.0f;
 
 	string m_action = "none";// what the pawn should be trying to do
-	private string m_actionlocal = "none";//this is a variable that is useful to do local actions
+	//private string m_actionlocal = "none";//this is a variable that is useful to do local actions
 	//m_action is used for the main character to determine if we need to act on it, from the users perspective
 	//obj@ m_target;//this holds a target that we can talk to for specific purposes
 	//-----------------
@@ -130,12 +130,12 @@ class actor : obj
 	string get_action(){
 		return m_action;
 	}
-	void set_action_local(const string action){
+	/*void set_action_local(const string action){
 		m_actionlocal = action;
 	}
 	string get_action_local(){
 		return m_actionlocal;
-	}
+	}*/
 	/*vector2 get_destination(){
 		return m_destination;
 	}*/

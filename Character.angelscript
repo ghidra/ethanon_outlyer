@@ -31,7 +31,7 @@ class Character : pawn
 		@m_mbar = progressbar("miners",m_minerscount,0.0f,m_minersmax,m_guipos+vector2(0.0f,26.0f));
 
 		//weapons
-		init_inventory();
+		//init_inventory();
 		m_inventory.add_weapon( weapon("random.ent", get_position()) );//now we have a weapon in the inventory
 		@m_weapon = m_inventory.get_weapon(0);//go ahead and equip the weapon just created
 	}
@@ -73,23 +73,15 @@ class Character : pawn
 		if(m_attcontroller.has_actions()){//if our attack controller has actions to give us
 			const string action = m_attcontroller.get_action();//this gets the action we need to try and perform
 			if(action == "attack"){
-			//if(m_weapon.get_action_local() != "none"){//if the weapon is trying to fire
+				if(m_weapon.get_action() == "none"){//if the weapon is trying to fire
 
-				enemy@ target = m_attcontroller.get_target_enemy();//since i only attack enemies(curremtly anyway), I have to assume that I am trying to get a enemy object
-				//set_destination(target.get_position());
+					enemy@ target = m_attcontroller.get_target_enemy();//since i only attack enemies(curremtly anyway), I have to assume that I am trying to get a enemy object
 
-				m_weapon.set_target(target);
-				//m_weapon.set_destination(target.get_position());
-				
-				//m_weapon.update();
-				//m_weapon.draw_tbar();
-
-			//}else{//if the weapon has not been set to fire, set it to fire, and the attack type
-
-				m_weapon.set_action( "attack" );
-				//m_attacktype = 1;//just make it try anything right now
-				if(m_weapon.shots_fired()){
+					m_weapon.set_target(target);
+					m_weapon.set_action( "attack" );
+					//m_attacktype = 1;//just make it try anything right now
 					m_attcontroller.remove_action();
+					//once you fire a shot, its gone. cant yet figure out how to cancel first shot
 				}
 			}
 
@@ -98,32 +90,7 @@ class Character : pawn
 		if( m_weapon.should_update() ){
 			m_weapon.update();
 		}
-
-		/*
-		//we have an enemy to fire at
-		if(m_targetenemy !is null){
-			if(m_actionweapon!="none"){
-				if(m_actionweapon=="attack"){
-					if(m_attacktype!=0){//we are ready to attack something
-						//m_weapon.set_action_local( "attack" );
-						//DrawText(vector2(0,280), "weaponaction:"+m_weapon.get_action_local()+"", "Verdana14_shadow.fnt", ARGB(250,255,255,255));
-						//string weapon_action = m_weapon.get_action_local();//have to do this, because it isnt getting the value iside the if
-						if(m_weapon.get_action_local() != "none"){//if the weapon is trying to fire
-							m_weapon.set_destination(m_targetenemy.get_position());
-							m_weapon.update();
-							m_weapon.draw_tbar();
-						//}else{//after it has fired, reset our actinos so we can do something again
-							//m_action="none";
-						}
-						
-					}else{//we do now know how to attaack yet, decide how to attack
-						m_weapon.set_action_local( "attack" );//this aint working
-						m_attacktype = 1;//just make it try anything right now
-					}
-				}
-			}
-			check_weapon_projectiles();
-		}*/
+		////////////
 
 		for (uint t=0; t<m_miners.length(); t++){
 			m_miners[t].update();

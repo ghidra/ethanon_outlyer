@@ -16,7 +16,9 @@ notes
 
 starting on enemy pawn. basic ai
 
--actions mostly working now. m_action_local unnessisary, only issues seems to be my 'read out' of attcontroller, removes the array values, but still works anyway
+
+-build a class to hold all the different possible target classes
+
 
 -weapon projectile needs remove hit pints
 -weapon projectile needs to exlode after max range reached

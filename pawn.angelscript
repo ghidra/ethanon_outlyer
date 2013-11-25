@@ -63,6 +63,7 @@ class pawn : actor{
 		super(entityName,pos);
 		@m_controller = controller();
 		@m_attcontroller = controller();
+		@m_inventory = inventory();
 	}
 
 	void update(){
@@ -80,9 +81,9 @@ class pawn : actor{
 		@m_target = target;
 	}
 
-	void init_inventory(){//call this to initialize the inventory
+	/*void init_inventory(){//call this to initialize the inventory
 		@m_inventory = inventory();
-	}
+	}*/
 
 	//------weapons functions
 	//void check_weapon_projectiles(){//loop through the projectiles and find out if they have hit our target

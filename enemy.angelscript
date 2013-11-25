@@ -15,7 +15,7 @@ class enemy : pawn
 		m_rp = 10.0f;
 		m_rpmax = 50.0f;
 
-		init_inventory();
+		//init_inventory();
 		m_inventory.add_weapon( weapon("random.ent", get_position()) );//now we have a weapon in the inventory
 		@m_weapon = m_inventory.get_weapon(0);//go ahead and equip the weapon just created
 		//m_weapon.set_destination(targetpawn.get_position());
@@ -24,7 +24,7 @@ class enemy : pawn
 		//@m_targetbodies = targetbodies;
 
 		//@m_rbar = progressbar("resources",m_rp,0.0f,m_rpmax,m_pos);
-		m_actionlocal="attack pawn";
+		//m_actionlocal="attack pawn";
 		m_attacktype=0;
 	}
 
