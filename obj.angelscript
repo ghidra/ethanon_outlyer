@@ -106,6 +106,6 @@ class obj
 		//DrawLine();
 
 		const float l = length(p2-p1);
-		DrawShapedSprite("sprites/pixel_white.png", p1, vector2(w, l), m_white);
+		DrawShapedSprite("sprites/pixel_white.png", p1, vector2(l, w), m_white);
 	}
 }
