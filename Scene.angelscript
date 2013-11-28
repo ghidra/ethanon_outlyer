@@ -7,6 +7,7 @@
 
 	void onCreated()
 	{
+		SetPositionRoundUp(true);
 	}
 
 	void onUpdate()

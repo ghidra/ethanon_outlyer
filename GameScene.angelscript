@@ -2,9 +2,14 @@
 #include "Character.angelscript"
 #include "body.angelscript"
 #include "enemy.angelscript"
+#include "camera.angelscript"
+#include "minimap.angelscript"
 
 class GameScene : Scene
 {
+	private camera@ m_camera;
+	private minimap@ m_minimap;
+
 	private Button@ m_exitButton;
 	private Character@ m_character;
 
@@ -27,11 +32,17 @@ class GameScene : Scene
 
 	void onCreated()
 	{
+		Scene::onCreated();
+		SetPositionRoundUp(true);//this is supposed to do pixel style rendering, but needs images to be power of 2
 		@m_exitButton = Button("menu", vector2(0.0f, 0.0f), vector2(0.0f, 0.0f));
 
 		const vector2 screenMiddle(GetScreenSize() * 0.5f);
 		//@m_character = Character("witch.ent", screenMiddle);
-		@m_character = Character("random.ent", screenMiddle);
+		@m_character = Character("random.ent", vector2(0.0f,0.0f));
+
+		@m_camera = camera();
+		m_camera.set_target(m_character);
+		m_camera.set_position(m_character.get_position());
 
 		//temp = "";
 		//-----making random lights
@@ -47,13 +58,13 @@ class GameScene : Scene
 
 		m_enemies.insertLast( enemy("random.ent", vector2(200.0f,200.0f),m_character) );
 
+		@m_minimap = minimap();
+
 	}
 
 	void onUpdate()
 	{
 		
-		
-
 		//m_exitButton.putButton();
 		m_exitButton.update();
 		if (m_exitButton.is_pressed())
@@ -86,15 +97,16 @@ class GameScene : Scene
 
 		//now lets update the character
 		m_character.update();
-
+		m_camera.update();
+		m_minimap.update();
 		//-----------------
 		//-----------------
 
-		ETHInput@ input = GetInputHandle();
+		/*ETHInput@ input = GetInputHandle();
 		const uint RED = 0xFFFF0000;
 		const uint WHITE = 0xFFFFFFFF;
 
-		vector2 mp = input.GetCursorPos();
+		vector2 mp = input.GetCursorPos();*/
 		//float db = this.debug(mp);
 		//DrawText(vector2(0,200), "x"+mp.x+" y:"+mp.y, "Verdana14_shadow.fnt", ARGB(250,255,255,255));
 		//DrawText(vector2(0,212), "iter:"+temp, "Verdana14_shadow.fnt", ARGB(250,255,255,255));

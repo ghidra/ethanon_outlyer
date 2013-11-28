@@ -29,7 +29,8 @@ class body : pawn
 		m_action = "none";
 		pawn::update();
 
-		vector2 pos = get_relative_position();
+		//vector2 pos = get_relative_position();
+		vector2 pos = get_screen_position();
 		vector2 pos2 = pos+vector2(0.0f,14.0f);
 		
 		//string team = 'neutral';
@@ -80,11 +81,14 @@ class body : pawn
 				//}
 			//}
 		}
-		DrawText( pos , m_label, m_font, m_white);		
-		DrawText( pos2 , m_being_harvested+"" , m_font, m_white);
+		if(m_onscreen){
+			DrawText( pos , m_label, m_font, m_white);		
+			DrawText( pos2 , m_being_harvested+"" , m_font, m_white);
+			m_rbar.set_value(m_rp);
+			m_rbar.set_position(pos);
+			m_rbar.update();
+		}
 		//m_rbar.set_value(m_rbar.get_value()-0.01f);
-		m_rbar.set_value(m_rp);
-		m_rbar.update();
 
 		
 

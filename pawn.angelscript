@@ -38,6 +38,7 @@ class pawn : actor{
 	//string 
 
 	private progressbar@ m_rbar;//progress bar to hold resource read out
+	private progressbar@ m_hbar;//hip point bar
 
 	private inventory@ m_inventory;
 
@@ -48,7 +49,7 @@ class pawn : actor{
 
 	private int m_state = 0;//
 	//obj@ m_target;
-	actor@ m_target;
+	//actor@ m_target;
 
 	//----
 	pawn@ m_targetpawn;//the body that we are targeting, the main character
@@ -64,6 +65,8 @@ class pawn : actor{
 		@m_controller = controller();
 		@m_attcontroller = controller();
 		@m_inventory = inventory();
+
+		@m_hbar = progressbar("hit points",m_hp,0.0f,m_hpmax,vector2(0.0f,0.0f));
 	}
 
 	void update(){
@@ -75,11 +78,11 @@ class pawn : actor{
 		
 	}
 
-	void set_target(actor@ target){
+	/*void set_target(actor@ target){
 		//m_atarget.removeAt(0);
 		//m_atarget.insertLast(target);
 		@m_target = target;
-	}
+	}*/
 
 	/*void init_inventory(){//call this to initialize the inventory
 		@m_inventory = inventory();

@@ -60,8 +60,15 @@ class weapon : actor
 		//manage_projectiles();
 	}
 
+	void set_position(const vector2 pos){
+		//need this, cause I need to put the entity graphic in place, not moving it or whatever, just place that sucker
+		actor::set_position(pos);
+		m_entity.SetPosition(vector3(pos,0.0f));
+	}
+
 	void draw_tbar(){
 		//i need to have this thing placed specifically before drawing it anyway 
+		m_tbar.set_position(get_screen_position());
 		m_tbar.update();
 	}
 	//-------

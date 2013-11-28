@@ -26,10 +26,10 @@ class actor : obj
 	private FrameTimer m_frametimer;
 	private uint m_currentframe;
 
-	private int m_hp=3;//everything has hit points
-	private int m_hpmax=3;//everything has hit points
+	private float m_hp=10.0f;//everything has hit points
+	private float m_hpmax=10.0f;//everything has hit points
 	private int m_exp=0;//experience
-	private int8 m_lvl=0;
+	private int m_lvl=0;
 	
 	private float m_rp=0.0f;//resource points
 	private float m_rpmax=0.0f;
@@ -75,6 +75,10 @@ class actor : obj
 		vector3 pos = m_entity.GetPosition();
 		m_pos = vector2(pos.x,pos.y);
 		return m_pos;
+	}
+	//z
+	void set_z(const float z){
+		m_entity.SetPositionZ(z);
 	}
 	//scale
 	void set_scale(const float s){
@@ -152,6 +156,11 @@ class actor : obj
 
 		get_position();//this also sets the position variable
 	}
+	//-------
+	void take_damage(const float amount){
+		m_hp = max(0.0f,min(m_hp-amount,m_hpmax));
+	}
+
 	//-------
 	void delete_entity(){//removes the entity
 		DeleteEntity(m_entity);

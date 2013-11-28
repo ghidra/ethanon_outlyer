@@ -29,6 +29,7 @@ class Character : pawn
 
 		@m_rbar = progressbar("resources",m_rp,0.0f,m_rpmax,m_guipos);
 		@m_mbar = progressbar("miners",m_minerscount,0.0f,m_minersmax,m_guipos+vector2(0.0f,26.0f));
+		m_hbar.set_position(m_guipos+vector2(0.0f,52.0f));
 
 		//weapons
 		//init_inventory();
@@ -68,6 +69,9 @@ class Character : pawn
 		
 		}
 
+		//need to update the weapons positions, so they dont hover in air and not move
+		m_weapon.set_position(m_pos);
+
 		//i need to use this just to fire off the action
 		//then another loop to update the weapon and remove the action from the queue as soon as it has been fired
 		if(m_attcontroller.has_actions()){//if our attack controller has actions to give us
@@ -99,11 +103,13 @@ class Character : pawn
 		}
 
 		m_rbar.set_value(m_rp);
-		//m_rbar.set_position(m_pos);
 		m_rbar.update();
 
 		m_mbar.set_value(m_minerscount);
 		m_mbar.update();
+
+		m_hbar.set_value(m_hp);
+		m_hbar.update();
 
 		DrawText(vector2(0,300), "actions:"+m_controller.print_actions()+"", "Verdana14_shadow.fnt", ARGB(250,255,255,255));
 		DrawText(vector2(0,310), "attactions:"+m_attcontroller.print_actions()+"", "Verdana14_shadow.fnt", ARGB(250,255,255,255));

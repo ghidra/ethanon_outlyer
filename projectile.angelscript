@@ -25,12 +25,13 @@ class projectile : actor
 		super(entityName,pos);
 		m_spd = 1.0f;
 		set_scale(0.25f);
+		set_z(1.0f);
 		set_destination(destination);
 	}
 
 	void update(){
 		actor::update();
-		DrawText( m_pos , m_destination.x+":"+m_destination.y, m_font, m_red);
+		DrawText( get_screen_position() , m_destination.x+":"+m_destination.y, m_font, m_red);
 
 		if(!m_hit){//if we havent hit anything yet
 			move(m_destination_direction);//move
@@ -70,10 +71,24 @@ class projectile : actor
 				//remove projectile graphic, set explode graphic
 				delete_entity();
 				init_entity("explosion_01.ent",m_pos);
-				m_entity.Scale(2);
+				set_z(1.0f);
+				//m_entity.Scale(4.0f);
 				m_exploding = true;
+				//remove hit points from the target
+				if(m_target_type=="actor"){
+					m_target_actor.take_damage(1.0f);
+				}
+				if(m_target_type=="pawn"){
+					m_target_pawn.take_damage(1.0f);
+				}
+				if(m_target_type=="body"){
+					m_target_body.take_damage(1.0f);
+				}
+				if(m_target_type=="enemy"){
+					m_target_enemy.take_damage(1.0f);
+				}
 			}else{//we did start the explosion, update the frames, until we reach the end, then remove it, and allow weapon class to remove us from its array
-				m_frametimer.update(0, m_explosion_frames, 18);
+				m_frametimer.update(0, m_explosion_frames, 36);
 				const uint frame = m_frametimer.getCurrentFrame(); 
 				m_entity.SetFrame(frame);
 				if(frame>=m_explosion_frames){

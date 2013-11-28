@@ -14,14 +14,11 @@ notes
 -progress
 ------------
 
+building a mini map, need to give it all the object to plot.
+use minimap to zoom the camera in and out, as well as to allow a free camera.
+
 starting on enemy pawn. basic ai
 
-
--build a class to hold all the different possible target classes
-
-
--weapon projectile needs remove hit pints
--weapon projectile needs to exlode after max range reached
 -maybe put the explosion in its own class to make it more versitile for other weapons
 -i have weapons now, need to look at using different ones
 
@@ -31,6 +28,10 @@ then build base on planet
 weapon type classes
 	missles that cost resources, and cause more damage
 	phasers that cost no resources, but cause little damage
+
+//----to do more
+-build a class to hold all the different possible target classes
+-weapon projectile needs to exlode after max range reached
 
 ------------
 ----game play notes----

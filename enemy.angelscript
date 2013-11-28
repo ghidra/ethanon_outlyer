@@ -68,6 +68,10 @@ class enemy : pawn
 		}
 		*/
 
+		m_hbar.set_value(m_hp);
+		//m_hbar.set_position(m_pos);
+		m_hbar.set_position(get_screen_position());
+
 		//button drawing
 		if(m_mouseover){//if the mouse if over us
 			//first clear out the button array
@@ -78,13 +82,17 @@ class enemy : pawn
 			vector2 stack_start = vector2(0.0f,14.0f);//here to start the menu relative to the body
 			
 			if(m_mouseover){
-   	 			m_buttons.insertLast( Button( 'attack', get_relative_position()+(stack_start)) );
+   	 			//m_buttons.insertLast( Button( 'attack', get_relative_position()+(stack_start)) );
+   	 			m_buttons.insertLast( Button( 'attack', get_screen_position()+(stack_start)) );
 			}
 
 			m_menu_bool = true;
 			for (uint t=0; t<m_buttons.length(); t++){
 	   	 		m_buttons[t].update();
 			}
+
+			m_hbar.update();
+
 		}
 
 		set_button_action();
