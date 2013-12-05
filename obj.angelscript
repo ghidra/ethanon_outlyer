@@ -105,7 +105,14 @@ class obj
 	void draw_line(const vector2 p1, const vector2 p2, const uint c1, const uint c2, const float w){
 		//DrawLine();
 
+		//i need to determine the direction this line is going
+		//right now I only support horizontal and vertical 
+		float a = 0.0f;//this is to dial in the angle to draw the line at
+		if( !( abs(p1.x-p2.x)>0.0f) ){//this is a vertical line
+			a = -90.0f;//this angle draws straight down
+		}
+
 		const float l = length(p2-p1);
-		DrawShapedSprite("sprites/pixel_white.png", p1, vector2(l, w), m_white);
+		DrawShapedSprite("sprites/pixel_white.png", p1, vector2(l, w), c1,a);
 	}
 }

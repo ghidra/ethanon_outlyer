@@ -35,9 +35,11 @@ class progressbar : obj
 		const float bar_width = m_size.x * ( rescale(m_value,0.0f,m_bounds.y,0.0f,1.0f));
 		//draw the bar part
 		//DrawShapedSprite("sprites/pixel_white.png", m_pos, vector2(bar_width, m_size.y), m_white);
-		draw_line( m_pos, vector2(m_pos.x+bar_width, m_pos.y),1,1,m_size.y);
+		draw_line( m_pos, vector2(m_pos.x+bar_width, m_pos.y),m_white,m_white,m_size.y);
 		//draw the ending marker
-		DrawShapedSprite("sprites/pixel_white.png", m_pos+vector2(m_size.x,0.0f), vector2(1.0f,m_size.y), m_red);
+		//DrawShapedSprite("sprites/pixel_white.png", m_pos+vector2(m_size.x,0.0f), vector2(1.0f,m_size.y), m_red);
+		const vector2 pos2 = m_pos+vector2(m_size.x,0.0f);
+		draw_line(pos2, pos2+vector2(1.0f,0.0f),m_red,m_red,m_size.y);
 		//then draw the label 
 		DrawText( m_pos , m_label, m_font, m_white);
 		DrawText( m_pos+vector2(0.0f,12.0f), decimal(m_value)+"/"+decimal(m_bounds.y), m_font, m_white);
