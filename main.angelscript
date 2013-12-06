@@ -15,7 +15,15 @@ notes
 ------------
 
 building a mini map, need to give it all the object to plot.
-use minimap to zoom the camera in and out, as well as to allow a free camera.
+use minimap to allow a free camera.
+show camera dimensions on the map, with corners, or something
+
+camera causes scaling
+make scaling happen at the key press
+
+update all positional data, botton hover overs, UI element placing, take into account the global scale
+
+scaling out makes the button commands multiply a lot for whatever reason
 
 starting on enemy pawn. basic ai
 

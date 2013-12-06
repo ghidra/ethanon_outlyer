@@ -63,8 +63,7 @@ class GameScene : Scene
 	}
 
 	void onUpdate()
-	{
-		
+	{	
 		//m_exitButton.putButton();
 		m_exitButton.update();
 		if (m_exitButton.is_pressed())
@@ -80,6 +79,8 @@ class GameScene : Scene
    	 			m_character.set_action( m_bodies[t].m_action , m_bodies[t] );
    	 			//m_character.set_targetbody( m_bodies[t] );
    	 		}
+   	 		//if I want them on the minimap, I have to give the positions at least and a color to the minimap object
+   	 		m_minimap.plottable(m_bodies[t].get_position());
 		}
 
 		for (uint t=0; t<m_enemies.length(); t++){
@@ -93,11 +94,15 @@ class GameScene : Scene
    	 		}
    	 		//the above breaks it because I am using m_action locally on the enemy to tell it what to do.
    	 		//chances are that I need to rethink that logic, since bodies may also want a specific actino to do later
+			m_minimap.plottable(m_enemies[t].get_position());
 		}
 
 		//now lets update the character
 		m_character.update();
 		m_camera.update();
+
+		m_minimap.plottable(m_character.get_position());
+
 		m_minimap.update();
 		//-----------------
 		//-----------------

@@ -18,11 +18,54 @@ class camera
 
 	private bool m_track_target = true;
 
+	//scene scale information
+	private float m_scale = 1.0f;
+
+	private bool m_scalepressed = false;
+	private float m_scalestartpos;//this will be set based on where the press was started, x or y, to begin the scalling
+	private float m_scalefactor = 0.0f;//the amount to add to the scale
+	private float m_scaledragmultiplier = 0.001;//the amount to multiply the drag by to add to the scale
+	private float m_scaleprevious;//this hold the previous scale value, so we dont get a weird pop everytime we try this
+
 	camera(){
 
 	}
 
 	void update(){
+
+		//-------------------------------
+		//-------------------------------
+		//scale to simulate zooming in and out
+
+		//this only uses the mouse currently, and no use of touch commands
+		ETHInput@ input = GetInputHandle();
+		const vector2 mousepos = input.GetCursorPos();
+
+		//const uint touchCount = input.GetMaxTouchCount();
+		//for (uint t = 0; t < touchCount; t++)
+		//{
+			//const vector2 mp = input.GetTouchPos(t); 
+			//if (input.GetTouchState(t) == KS_HIT)
+			if(input.GetRightClickState()==KS_HIT && !m_scalepressed)
+			{
+				m_scalestartpos = mousepos.x;//mp.x;
+				m_scaleprevious = m_scale;
+				m_scalepressed=true;
+				//temp = "hit";
+			}
+			if(input.GetRightClickState()==KS_DOWN && m_scalepressed){
+				m_scalefactor = (mousepos.x-m_scalestartpos)*m_scaledragmultiplier;//mp.x-m_scalestart;
+				m_scale = m_scaleprevious+m_scalefactor;
+				SetScaleFactor(m_scale);
+			}
+			if(input.GetRightClickState()==KS_RELEASE && m_scalepressed){
+				m_scalepressed=false;
+			}
+		//}
+		//-------------------------------
+		//-------------------------------
+
+		//now track the target
 		if(m_track_target){
 			const vector2 target = m_target_actor.get_position();
 			const vector2 screenMiddle(GetScreenSize() * 0.5f);
