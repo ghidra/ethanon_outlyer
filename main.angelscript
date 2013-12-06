@@ -14,7 +14,7 @@ notes
 -progress
 ------------
 
-building a mini map, need to give it all the object to plot.
+building a mini map, has objects to plot.
 use minimap to allow a free camera.
 show camera dimensions on the map, with corners, or something
 
