@@ -1,6 +1,697 @@
 [Z:\home\jimmy\Documents\projects\outlyer\_error.log.txt]
+Function: void minimap::update()
+Section: Z:\home\jimmy\Documents\projects\outlyer\minimap.angelscript
+Line: 86
+Description: Index out of bounds
 
-AngelScript ERROR (Z:\home\jimmy\Documents\projects\outlyer\minimap.angelscript line 44): 
-No matching signatures to 'array::inserLast(const uint)'
-ERROR - Failed while building module.
-ERROR - ETHEngine::StartEngine: the script has set no scene to load.
+ERROR - Exception: Index out of bounds
+Function: void minimap::update()
+Section: Z:\home\jimmy\Documents\projects\outlyer\minimap.angelscript
+Line: 86
+Description: Index out of bounds
+
+ERROR - Exception: Index out of bounds
+Function: void minimap::update()
+Section: Z:\home\jimmy\Documents\projects\outlyer\minimap.angelscript
+Line: 86
+Description: Index out of bounds
+
+ERROR - Exception: Index out of bounds
+Function: void minimap::update()
+Section: Z:\home\jimmy\Documents\projects\outlyer\minimap.angelscript
+Line: 86
+Description: Index out of bounds
+
+ERROR - Exception: Index out of bounds
+Function: void minimap::update()
+Section: Z:\home\jimmy\Documents\projects\outlyer\minimap.angelscript
+Line: 86
+Description: Index out of bounds
+
+ERROR - Exception: Index out of bounds
+Function: void minimap::update()
+Section: Z:\home\jimmy\Documents\projects\outlyer\minimap.angelscript
+Line: 86
+Description: Index out of bounds
+
+ERROR - Exception: Index out of bounds
+Function: void minimap::update()
+Section: Z:\home\jimmy\Documents\projects\outlyer\minimap.angelscript
+Line: 86
+Description: Index out of bounds
+
+ERROR - Exception: Index out of bounds
+Function: void minimap::update()
+Section: Z:\home\jimmy\Documents\projects\outlyer\minimap.angelscript
+Line: 86
+Description: Index out of bounds
+
+ERROR - Exception: Index out of bounds
+Function: void minimap::update()
+Section: Z:\home\jimmy\Documents\projects\outlyer\minimap.angelscript
+Line: 86
+Description: Index out of bounds
+
+ERROR - Exception: Index out of bounds
+Function: void minimap::update()
+Section: Z:\home\jimmy\Documents\projects\outlyer\minimap.angelscript
+Line: 86
+Description: Index out of bounds
+
+ERROR - Exception: Index out of bounds
+Function: void minimap::update()
+Section: Z:\home\jimmy\Documents\projects\outlyer\minimap.angelscript
+Line: 86
+Description: Index out of bounds
+
+ERROR - Exception: Index out of bounds
+Function: void minimap::update()
+Section: Z:\home\jimmy\Documents\projects\outlyer\minimap.angelscript
+Line: 86
+Description: Index out of bounds
+
+ERROR - Exception: Index out of bounds
+Function: void minimap::update()
+Section: Z:\home\jimmy\Documents\projects\outlyer\minimap.angelscript
+Line: 86
+Description: Index out of bounds
+
+ERROR - Exception: Index out of bounds
+Function: void minimap::update()
+Section: Z:\home\jimmy\Documents\projects\outlyer\minimap.angelscript
+Line: 86
+Description: Index out of bounds
+
+ERROR - Exception: Index out of bounds
+Function: void minimap::update()
+Section: Z:\home\jimmy\Documents\projects\outlyer\minimap.angelscript
+Line: 86
+Description: Index out of bounds
+
+ERROR - Exception: Index out of bounds
+Function: void minimap::update()
+Section: Z:\home\jimmy\Documents\projects\outlyer\minimap.angelscript
+Line: 86
+Description: Index out of bounds
+
+ERROR - Exception: Index out of bounds
+Function: void minimap::update()
+Section: Z:\home\jimmy\Documents\projects\outlyer\minimap.angelscript
+Line: 86
+Description: Index out of bounds
+
+ERROR - Exception: Index out of bounds
+Function: void minimap::update()
+Section: Z:\home\jimmy\Documents\projects\outlyer\minimap.angelscript
+Line: 86
+Description: Index out of bounds
+
+ERROR - Exception: Index out of bounds
+Function: void minimap::update()
+Section: Z:\home\jimmy\Documents\projects\outlyer\minimap.angelscript
+Line: 86
+Description: Index out of bounds
+
+ERROR - Exception: Index out of bounds
+Function: void minimap::update()
+Section: Z:\home\jimmy\Documents\projects\outlyer\minimap.angelscript
+Line: 86
+Description: Index out of bounds
+
+ERROR - Exception: Index out of bounds
+Function: void minimap::update()
+Section: Z:\home\jimmy\Documents\projects\outlyer\minimap.angelscript
+Line: 86
+Description: Index out of bounds
+
+ERROR - Exception: Index out of bounds
+Function: void minimap::update()
+Section: Z:\home\jimmy\Documents\projects\outlyer\minimap.angelscript
+Line: 86
+Description: Index out of bounds
+
+ERROR - Exception: Index out of bounds
+Function: void minimap::update()
+Section: Z:\home\jimmy\Documents\projects\outlyer\minimap.angelscript
+Line: 86
+Description: Index out of bounds
+
+ERROR - Exception: Index out of bounds
+Function: void minimap::update()
+Section: Z:\home\jimmy\Documents\projects\outlyer\minimap.angelscript
+Line: 86
+Description: Index out of bounds
+
+ERROR - Exception: Index out of bounds
+Function: void minimap::update()
+Section: Z:\home\jimmy\Documents\projects\outlyer\minimap.angelscript
+Line: 86
+Description: Index out of bounds
+
+ERROR - Exception: Index out of bounds
+Function: void minimap::update()
+Section: Z:\home\jimmy\Documents\projects\outlyer\minimap.angelscript
+Line: 86
+Description: Index out of bounds
+
+ERROR - Exception: Index out of bounds
+Function: void minimap::update()
+Section: Z:\home\jimmy\Documents\projects\outlyer\minimap.angelscript
+Line: 86
+Description: Index out of bounds
+
+ERROR - Exception: Index out of bounds
+Function: void minimap::update()
+Section: Z:\home\jimmy\Documents\projects\outlyer\minimap.angelscript
+Line: 86
+Description: Index out of bounds
+
+ERROR - Exception: Index out of bounds
+Function: void minimap::update()
+Section: Z:\home\jimmy\Documents\projects\outlyer\minimap.angelscript
+Line: 86
+Description: Index out of bounds
+
+ERROR - Exception: Index out of bounds
+Function: void minimap::update()
+Section: Z:\home\jimmy\Documents\projects\outlyer\minimap.angelscript
+Line: 86
+Description: Index out of bounds
+
+ERROR - Exception: Index out of bounds
+Function: void minimap::update()
+Section: Z:\home\jimmy\Documents\projects\outlyer\minimap.angelscript
+Line: 86
+Description: Index out of bounds
+
+ERROR - Exception: Index out of bounds
+Function: void minimap::update()
+Section: Z:\home\jimmy\Documents\projects\outlyer\minimap.angelscript
+Line: 86
+Description: Index out of bounds
+
+ERROR - Exception: Index out of bounds
+Function: void minimap::update()
+Section: Z:\home\jimmy\Documents\projects\outlyer\minimap.angelscript
+Line: 86
+Description: Index out of bounds
+
+ERROR - Exception: Index out of bounds
+Function: void minimap::update()
+Section: Z:\home\jimmy\Documents\projects\outlyer\minimap.angelscript
+Line: 86
+Description: Index out of bounds
+
+ERROR - Exception: Index out of bounds
+Function: void minimap::update()
+Section: Z:\home\jimmy\Documents\projects\outlyer\minimap.angelscript
+Line: 86
+Description: Index out of bounds
+
+ERROR - Exception: Index out of bounds
+Function: void minimap::update()
+Section: Z:\home\jimmy\Documents\projects\outlyer\minimap.angelscript
+Line: 86
+Description: Index out of bounds
+
+ERROR - Exception: Index out of bounds
+Function: void minimap::update()
+Section: Z:\home\jimmy\Documents\projects\outlyer\minimap.angelscript
+Line: 86
+Description: Index out of bounds
+
+ERROR - Exception: Index out of bounds
+Function: void minimap::update()
+Section: Z:\home\jimmy\Documents\projects\outlyer\minimap.angelscript
+Line: 86
+Description: Index out of bounds
+
+ERROR - Exception: Index out of bounds
+Function: void minimap::update()
+Section: Z:\home\jimmy\Documents\projects\outlyer\minimap.angelscript
+Line: 86
+Description: Index out of bounds
+
+ERROR - Exception: Index out of bounds
+Function: void minimap::update()
+Section: Z:\home\jimmy\Documents\projects\outlyer\minimap.angelscript
+Line: 86
+Description: Index out of bounds
+
+ERROR - Exception: Index out of bounds
+Function: void minimap::update()
+Section: Z:\home\jimmy\Documents\projects\outlyer\minimap.angelscript
+Line: 86
+Description: Index out of bounds
+
+ERROR - Exception: Index out of bounds
+Function: void minimap::update()
+Section: Z:\home\jimmy\Documents\projects\outlyer\minimap.angelscript
+Line: 86
+Description: Index out of bounds
+
+ERROR - Exception: Index out of bounds
+Function: void minimap::update()
+Section: Z:\home\jimmy\Documents\projects\outlyer\minimap.angelscript
+Line: 86
+Description: Index out of bounds
+
+ERROR - Exception: Index out of bounds
+Function: void minimap::update()
+Section: Z:\home\jimmy\Documents\projects\outlyer\minimap.angelscript
+Line: 86
+Description: Index out of bounds
+
+ERROR - Exception: Index out of bounds
+Function: void minimap::update()
+Section: Z:\home\jimmy\Documents\projects\outlyer\minimap.angelscript
+Line: 86
+Description: Index out of bounds
+
+ERROR - Exception: Index out of bounds
+Function: void minimap::update()
+Section: Z:\home\jimmy\Documents\projects\outlyer\minimap.angelscript
+Line: 86
+Description: Index out of bounds
+
+ERROR - Exception: Index out of bounds
+Function: void minimap::update()
+Section: Z:\home\jimmy\Documents\projects\outlyer\minimap.angelscript
+Line: 86
+Description: Index out of bounds
+
+ERROR - Exception: Index out of bounds
+Function: void minimap::update()
+Section: Z:\home\jimmy\Documents\projects\outlyer\minimap.angelscript
+Line: 86
+Description: Index out of bounds
+
+ERROR - Exception: Index out of bounds
+Function: void minimap::update()
+Section: Z:\home\jimmy\Documents\projects\outlyer\minimap.angelscript
+Line: 86
+Description: Index out of bounds
+
+ERROR - Exception: Index out of bounds
+Function: void minimap::update()
+Section: Z:\home\jimmy\Documents\projects\outlyer\minimap.angelscript
+Line: 86
+Description: Index out of bounds
+
+ERROR - Exception: Index out of bounds
+Function: void minimap::update()
+Section: Z:\home\jimmy\Documents\projects\outlyer\minimap.angelscript
+Line: 86
+Description: Index out of bounds
+
+ERROR - Exception: Index out of bounds
+Function: void minimap::update()
+Section: Z:\home\jimmy\Documents\projects\outlyer\minimap.angelscript
+Line: 86
+Description: Index out of bounds
+
+ERROR - Exception: Index out of bounds
+Function: void minimap::update()
+Section: Z:\home\jimmy\Documents\projects\outlyer\minimap.angelscript
+Line: 86
+Description: Index out of bounds
+
+ERROR - Exception: Index out of bounds
+Function: void minimap::update()
+Section: Z:\home\jimmy\Documents\projects\outlyer\minimap.angelscript
+Line: 86
+Description: Index out of bounds
+
+ERROR - Exception: Index out of bounds
+Function: void minimap::update()
+Section: Z:\home\jimmy\Documents\projects\outlyer\minimap.angelscript
+Line: 86
+Description: Index out of bounds
+
+ERROR - Exception: Index out of bounds
+Function: void minimap::update()
+Section: Z:\home\jimmy\Documents\projects\outlyer\minimap.angelscript
+Line: 86
+Description: Index out of bounds
+
+ERROR - Exception: Index out of bounds
+Function: void minimap::update()
+Section: Z:\home\jimmy\Documents\projects\outlyer\minimap.angelscript
+Line: 86
+Description: Index out of bounds
+
+ERROR - Exception: Index out of bounds
+Function: void minimap::update()
+Section: Z:\home\jimmy\Documents\projects\outlyer\minimap.angelscript
+Line: 86
+Description: Index out of bounds
+
+ERROR - Exception: Index out of bounds
+Function: void minimap::update()
+Section: Z:\home\jimmy\Documents\projects\outlyer\minimap.angelscript
+Line: 86
+Description: Index out of bounds
+
+ERROR - Exception: Index out of bounds
+Function: void minimap::update()
+Section: Z:\home\jimmy\Documents\projects\outlyer\minimap.angelscript
+Line: 86
+Description: Index out of bounds
+
+ERROR - Exception: Index out of bounds
+Function: void minimap::update()
+Section: Z:\home\jimmy\Documents\projects\outlyer\minimap.angelscript
+Line: 86
+Description: Index out of bounds
+
+ERROR - Exception: Index out of bounds
+Function: void minimap::update()
+Section: Z:\home\jimmy\Documents\projects\outlyer\minimap.angelscript
+Line: 86
+Description: Index out of bounds
+
+ERROR - Exception: Index out of bounds
+Function: void minimap::update()
+Section: Z:\home\jimmy\Documents\projects\outlyer\minimap.angelscript
+Line: 86
+Description: Index out of bounds
+
+ERROR - Exception: Index out of bounds
+Function: void minimap::update()
+Section: Z:\home\jimmy\Documents\projects\outlyer\minimap.angelscript
+Line: 86
+Description: Index out of bounds
+
+ERROR - Exception: Index out of bounds
+Function: void minimap::update()
+Section: Z:\home\jimmy\Documents\projects\outlyer\minimap.angelscript
+Line: 86
+Description: Index out of bounds
+
+ERROR - Exception: Index out of bounds
+Function: void minimap::update()
+Section: Z:\home\jimmy\Documents\projects\outlyer\minimap.angelscript
+Line: 86
+Description: Index out of bounds
+
+ERROR - Exception: Index out of bounds
+Function: void minimap::update()
+Section: Z:\home\jimmy\Documents\projects\outlyer\minimap.angelscript
+Line: 86
+Description: Index out of bounds
+
+ERROR - Exception: Index out of bounds
+Function: void minimap::update()
+Section: Z:\home\jimmy\Documents\projects\outlyer\minimap.angelscript
+Line: 86
+Description: Index out of bounds
+
+ERROR - Exception: Index out of bounds
+Function: void minimap::update()
+Section: Z:\home\jimmy\Documents\projects\outlyer\minimap.angelscript
+Line: 86
+Description: Index out of bounds
+
+ERROR - Exception: Index out of bounds
+Function: void minimap::update()
+Section: Z:\home\jimmy\Documents\projects\outlyer\minimap.angelscript
+Line: 86
+Description: Index out of bounds
+
+ERROR - Exception: Index out of bounds
+Function: void minimap::update()
+Section: Z:\home\jimmy\Documents\projects\outlyer\minimap.angelscript
+Line: 86
+Description: Index out of bounds
+
+ERROR - Exception: Index out of bounds
+Function: void minimap::update()
+Section: Z:\home\jimmy\Documents\projects\outlyer\minimap.angelscript
+Line: 86
+Description: Index out of bounds
+
+ERROR - Exception: Index out of bounds
+Function: void minimap::update()
+Section: Z:\home\jimmy\Documents\projects\outlyer\minimap.angelscript
+Line: 86
+Description: Index out of bounds
+
+ERROR - Exception: Index out of bounds
+Function: void minimap::update()
+Section: Z:\home\jimmy\Documents\projects\outlyer\minimap.angelscript
+Line: 86
+Description: Index out of bounds
+
+ERROR - Exception: Index out of bounds
+Function: void minimap::update()
+Section: Z:\home\jimmy\Documents\projects\outlyer\minimap.angelscript
+Line: 86
+Description: Index out of bounds
+
+ERROR - Exception: Index out of bounds
+Function: void minimap::update()
+Section: Z:\home\jimmy\Documents\projects\outlyer\minimap.angelscript
+Line: 86
+Description: Index out of bounds
+
+ERROR - Exception: Index out of bounds
+Function: void minimap::update()
+Section: Z:\home\jimmy\Documents\projects\outlyer\minimap.angelscript
+Line: 86
+Description: Index out of bounds
+
+ERROR - Exception: Index out of bounds
+Function: void minimap::update()
+Section: Z:\home\jimmy\Documents\projects\outlyer\minimap.angelscript
+Line: 86
+Description: Index out of bounds
+
+ERROR - Exception: Index out of bounds
+Function: void minimap::update()
+Section: Z:\home\jimmy\Documents\projects\outlyer\minimap.angelscript
+Line: 86
+Description: Index out of bounds
+
+ERROR - Exception: Index out of bounds
+Function: void minimap::update()
+Section: Z:\home\jimmy\Documents\projects\outlyer\minimap.angelscript
+Line: 86
+Description: Index out of bounds
+
+ERROR - Exception: Index out of bounds
+Function: void minimap::update()
+Section: Z:\home\jimmy\Documents\projects\outlyer\minimap.angelscript
+Line: 86
+Description: Index out of bounds
+
+ERROR - Exception: Index out of bounds
+Function: void minimap::update()
+Section: Z:\home\jimmy\Documents\projects\outlyer\minimap.angelscript
+Line: 86
+Description: Index out of bounds
+
+ERROR - Exception: Index out of bounds
+Function: void minimap::update()
+Section: Z:\home\jimmy\Documents\projects\outlyer\minimap.angelscript
+Line: 86
+Description: Index out of bounds
+
+ERROR - Exception: Index out of bounds
+Function: void minimap::update()
+Section: Z:\home\jimmy\Documents\projects\outlyer\minimap.angelscript
+Line: 86
+Description: Index out of bounds
+
+ERROR - Exception: Index out of bounds
+Function: void minimap::update()
+Section: Z:\home\jimmy\Documents\projects\outlyer\minimap.angelscript
+Line: 86
+Description: Index out of bounds
+
+ERROR - Exception: Index out of bounds
+Function: void minimap::update()
+Section: Z:\home\jimmy\Documents\projects\outlyer\minimap.angelscript
+Line: 86
+Description: Index out of bounds
+
+ERROR - Exception: Index out of bounds
+Function: void minimap::update()
+Section: Z:\home\jimmy\Documents\projects\outlyer\minimap.angelscript
+Line: 86
+Description: Index out of bounds
+
+ERROR - Exception: Index out of bounds
+Function: void minimap::update()
+Section: Z:\home\jimmy\Documents\projects\outlyer\minimap.angelscript
+Line: 86
+Description: Index out of bounds
+
+ERROR - Exception: Index out of bounds
+Function: void minimap::update()
+Section: Z:\home\jimmy\Documents\projects\outlyer\minimap.angelscript
+Line: 86
+Description: Index out of bounds
+
+ERROR - Exception: Index out of bounds
+Function: void minimap::update()
+Section: Z:\home\jimmy\Documents\projects\outlyer\minimap.angelscript
+Line: 86
+Description: Index out of bounds
+
+ERROR - Exception: Index out of bounds
+Function: void minimap::update()
+Section: Z:\home\jimmy\Documents\projects\outlyer\minimap.angelscript
+Line: 86
+Description: Index out of bounds
+
+ERROR - Exception: Index out of bounds
+Function: void minimap::update()
+Section: Z:\home\jimmy\Documents\projects\outlyer\minimap.angelscript
+Line: 86
+Description: Index out of bounds
+
+ERROR - Exception: Index out of bounds
+Function: void minimap::update()
+Section: Z:\home\jimmy\Documents\projects\outlyer\minimap.angelscript
+Line: 86
+Description: Index out of bounds
+
+ERROR - Exception: Index out of bounds
+Function: void minimap::update()
+Section: Z:\home\jimmy\Documents\projects\outlyer\minimap.angelscript
+Line: 86
+Description: Index out of bounds
+
+ERROR - Exception: Index out of bounds
+Function: void minimap::update()
+Section: Z:\home\jimmy\Documents\projects\outlyer\minimap.angelscript
+Line: 86
+Description: Index out of bounds
+
+ERROR - Exception: Index out of bounds
+Function: void minimap::update()
+Section: Z:\home\jimmy\Documents\projects\outlyer\minimap.angelscript
+Line: 86
+Description: Index out of bounds
+
+ERROR - Exception: Index out of bounds
+Function: void minimap::update()
+Section: Z:\home\jimmy\Documents\projects\outlyer\minimap.angelscript
+Line: 86
+Description: Index out of bounds
+
+ERROR - Exception: Index out of bounds
+Function: void minimap::update()
+Section: Z:\home\jimmy\Documents\projects\outlyer\minimap.angelscript
+Line: 86
+Description: Index out of bounds
+
+ERROR - Exception: Index out of bounds
+Function: void minimap::update()
+Section: Z:\home\jimmy\Documents\projects\outlyer\minimap.angelscript
+Line: 86
+Description: Index out of bounds
+
+ERROR - Exception: Index out of bounds
+Function: void minimap::update()
+Section: Z:\home\jimmy\Documents\projects\outlyer\minimap.angelscript
+Line: 86
+Description: Index out of bounds
+
+ERROR - Exception: Index out of bounds
+Function: void minimap::update()
+Section: Z:\home\jimmy\Documents\projects\outlyer\minimap.angelscript
+Line: 86
+Description: Index out of bounds
+
+ERROR - Exception: Index out of bounds
+Function: void minimap::update()
+Section: Z:\home\jimmy\Documents\projects\outlyer\minimap.angelscript
+Line: 86
+Description: Index out of bounds
+
+ERROR - Exception: Index out of bounds
+Function: void minimap::update()
+Section: Z:\home\jimmy\Documents\projects\outlyer\minimap.angelscript
+Line: 86
+Description: Index out of bounds
+
+ERROR - Exception: Index out of bounds
+Function: void minimap::update()
+Section: Z:\home\jimmy\Documents\projects\outlyer\minimap.angelscript
+Line: 86
+Description: Index out of bounds
+
+ERROR - Exception: Index out of bounds
+Function: void minimap::update()
+Section: Z:\home\jimmy\Documents\projects\outlyer\minimap.angelscript
+Line: 86
+Description: Index out of bounds
+
+ERROR - Exception: Index out of bounds
+Function: void minimap::update()
+Section: Z:\home\jimmy\Documents\projects\outlyer\minimap.angelscript
+Line: 86
+Description: Index out of bounds
+
+ERROR - Exception: Index out of bounds
+Function: void minimap::update()
+Section: Z:\home\jimmy\Documents\projects\outlyer\minimap.angelscript
+Line: 86
+Description: Index out of bounds
+
+ERROR - Exception: Index out of bounds
+Function: void minimap::update()
+Section: Z:\home\jimmy\Documents\projects\outlyer\minimap.angelscript
+Line: 86
+Description: Index out of bounds
+
+ERROR - Exception: Index out of bounds
+Function: void minimap::update()
+Section: Z:\home\jimmy\Documents\projects\outlyer\minimap.angelscript
+Line: 86
+Description: Index out of bounds
+
+ERROR - Exception: Index out of bounds
+Function: void minimap::update()
+Section: Z:\home\jimmy\Documents\projects\outlyer\minimap.angelscript
+Line: 86
+Description: Index out of bounds
+
+ERROR - Exception: Index out of bounds
+Function: void minimap::update()
+Section: Z:\home\jimmy\Documents\projects\outlyer\minimap.angelscript
+Line: 86
+Description: Index out of bounds
+
+ERROR - Exception: Index out of bounds
+Function: void minimap::update()
+Section: Z:\home\jimmy\Documents\projects\outlyer\minimap.angelscript
+Line: 86
+Description: Index out of bounds
+
+ERROR - Exception: Index out of bounds
+Function: void minimap::update()
+Section: Z:\home\jimmy\Documents\projects\outlyer\minimap.angelscript
+Line: 86
+Description: Index out of bounds
+
+ERROR - Exception: Index out of bounds
+Function: void minimap::update()
+Section: Z:\home\jimmy\Documents\projects\outlyer\minimap.angelscript
+Line: 86
+Description: Index out of bounds
+
+ERROR - Exception: Index out of bounds
+Function: void minimap::update()
+Section: Z:\home\jimmy\Documents\projects\outlyer\minimap.angelscript
+Line: 86
+Description: Index out of bounds
+
+ERROR - Exception: Index out of bounds
+Function: void minimap::update()
+Section: Z:\home\jimmy\Documents\projects\outlyer\minimap.angelscript
+Line: 86
+Description: Index out of bounds
+
+ERROR - Exception: Index out of bounds
