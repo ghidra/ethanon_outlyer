@@ -66,15 +66,16 @@ class actor : obj
 
 		const uint m_currentframe = m_frametimer.getCurrentFrame();
 		*/
-
+		m_pos = m_entity.GetPositionXY();//this is so that the global scale hands the xy value to the object here
 		m_spd_ups = UnitsPerSecond(m_spd);
 		m_tspd_ups = UnitsPerSecond(m_tspd);
 	}
 	///--------
 	vector2 get_position(){
-		vector3 pos = m_entity.GetPosition();
-		m_pos = vector2(pos.x,pos.y);
-		return m_pos;
+		//vector3 pos = m_entity.GetPosition();
+		//m_pos = vector2(pos.x,pos.y);
+		//m_pos = m_entity.GetPositionXY();
+		return vector2(m_pos);
 	}
 	//z
 	void set_z(const float z){

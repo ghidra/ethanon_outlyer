@@ -61,6 +61,7 @@ class camera
 			if(input.GetRightClickState()==KS_RELEASE && m_scalepressed){
 				m_scalepressed=false;
 			}
+			//DrawText(vector2(0,200), "camera scale:"+m_scale+"", "Verdana14_shadow.fnt", ARGB(250,255,255,255));
 		//}
 		//-------------------------------
 		//-------------------------------

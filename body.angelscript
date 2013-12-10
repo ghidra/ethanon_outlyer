@@ -66,8 +66,8 @@ class body : pawn
 						if(m_being_harvested>0){
 							m_buttons.insertLast( Button( 'collect miner', pos2+(stack_start*(c+2))) );	
 						}
-						//DrawText( pos2+vector2(0.0f,14.0f) , 'harvest' , m_font, m_white);
-						//DrawText( pos2+vector2(0.0f,28.0f) , 'build base' , m_font, m_white);
+						DrawText( pos2+vector2(0.0f,14.0f) , 'harvest' , m_font, m_white);
+						DrawText( pos2+vector2(0.0f,28.0f) , 'build base' , m_font, m_white);
 					}
 				}
 				m_menu_bool = true;
@@ -84,6 +84,8 @@ class body : pawn
 		if(m_onscreen){
 			DrawText( pos , m_label, m_font, m_white);		
 			DrawText( pos2 , m_being_harvested+"" , m_font, m_white);
+			//DrawText( pos, (m_pos.x*(1/GetScale()))+"" , m_font, m_white);
+			//DrawText( pos2, (m_pos.y*(1/GetScale()))+"" , m_font, m_white);
 			m_rbar.set_value(m_rp);
 			m_rbar.set_position(pos);
 			m_rbar.update();

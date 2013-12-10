@@ -77,27 +77,35 @@ class minimap : obj
 			vector2 amaptrans;//the vector to get it back in the map space
 			//float ad;
 
+			float mult =1.0f;///GetScale();
+			const float scl = GetScale();
+			//i have to multiply in the scalw values for whatever reason to make this work right. It is also 
+			//physically moving the objects for some reaosn as well, need to look at why that is
+			if(scl > 1.0f){
+				mult = 1.0f/scl;
+			}
+
 			for(uint t = 0; t < m_plottable_positions.length(); t++){//loop plottable objects
 				//uint i = m_plottable_positions.length()-(t+1);//use this to go backwards, so that we remove them from the end first
+				const vector2 scalled_pos = vector2(m_plottable_positions[t]* mult) ;
+				
 				if(t==0){
-					atl = vector2(m_plottable_positions[t]);
-					abr = vector2(m_plottable_positions[t]);
+					atl = vector2(scalled_pos);
+					abr = vector2(scalled_pos);
 				}else{
-					if(m_plottable_positions[t].x<atl.x){
-						atl.x=m_plottable_positions[t].x;
+					if(scalled_pos.x<atl.x){
+						atl.x=scalled_pos.x;
 					}
-					if(m_plottable_positions[t].y<atl.y){
-						atl.y=m_plottable_positions[t].y;
+					if(scalled_pos.y<atl.y){
+						atl.y=scalled_pos.y;
 					}
-					if(m_plottable_positions[t].x>abr.x){
-						abr.x=m_plottable_positions[t].x;
+					if(scalled_pos.x>abr.x){
+						abr.x=scalled_pos.x;
 					}
-					if(m_plottable_positions[t].y>abr.y){
-						abr.y=m_plottable_positions[t].y;
+					if(scalled_pos.y>abr.y){
+						abr.y=scalled_pos.y;
 					}
 				}
-				//now remove the positions from the array
-				//m_plottable_positions.removeLast();
 
 			}
 
@@ -105,8 +113,8 @@ class minimap : obj
 			//match the aspect of the screen
 			adime = vector2(abs(abr.x-atl.x),abs(abr.y-atl.y));
 			aaspect = adime.x/adime.y;
-
-			/*if(m_aspect<aaspect){//we need to expant the left and right edges
+			/*
+			if(m_aspect<aaspect){//we need to expant the left and right edges
 				//ad = fdistance(abr.x,atl.x);//this is the width of the layout
 				aexpand = expand(m_aspect,aaspect, fdistance(abr.x,atl.x) );//abs((((m_aspect/aaspect)*ad)-ad)/2);
 				atl.x-aexpand;
@@ -116,7 +124,7 @@ class minimap : obj
 				aexpand = expand(m_aspect,aaspect, fdistance(abr.y,atl.y) ); //abs((((m_aspect/aaspect)*ad)-ad)/2);
 				atl.y-aexpand;
 				abr.y+aexpand;
-			}*/
+			}
 			//now we know the bounding points add in some margins
 			atl+=vector2(-m_intmargin,-m_intmargin);
 			abr+=vector2(m_intmargin,m_intmargin);
@@ -132,27 +140,33 @@ class minimap : obj
 			//get the direction of the center of the object to 0,0
 			azerotrans = vector2()-acenter;
 			amaptrans = m_center-vector2();
-
+			*/
 			//now move all the points by this vector
-			temp = m_plottable_positions.length();
 			for(uint t = 0; t < m_plottable_positions.length(); t++){
 				uint i = m_plottable_positions.length()-1;//go inrevers because we will remove them from the array now as well
-				m_plottable_positions[i] += azerotrans;//translate them toward center
-				m_plottable_positions[i] *= ascale;//scale them fuckers
-				m_plottable_positions[i] += amaptrans;//move it to map space
+			/*	vector2 scalled_pos = vector2(m_plottable_positions[i]*mult);
+				//m_plottable_positions[i] += azerotrans;//translate them toward center
+				//m_plottable_positions[i] *= ascale;//scale them fuckers
+				//m_plottable_positions[i] += amaptrans;//move it to map space
+				scalled_pos += azerotrans;//translate them toward center
+				scalled_pos *= ascale;//scale them fuckers
+				scalled_pos += amaptrans;//move it to map space
 
 				//now we can draw the point
-				DrawShapedSprite("sprites/pixel_white.png", m_plottable_positions[i], vector2(2, 2), m_white,0.0);
-
+				//DrawShapedSprite("sprites/pixel_white.png", m_plottable_positions[i], vector2(2, 2), m_white,0.0);
+				DrawShapedSprite("sprites/pixel_white.png", scalled_pos, vector2(2, 2), m_white,0.0);
+			*/
 				//once we are done, remove those fuckers
 				m_plottable_positions.removeLast();
 			}
 
 			//now I need to force it into my screen ratio, so that I can scale all the positins down to fit where I need them to fit in the map
-
-			//DrawText(vector2(0,80), "map x:"+aformat.x+"", "Verdana14_shadow.fnt", ARGB(250,255,255,255));
-			DrawText(vector2(0,100), "plottable:"+temp+"", "Verdana14_shadow.fnt", ARGB(250,255,255,255));
-			DrawText(vector2(0,120), "map scale:"+ascale+"", "Verdana14_shadow.fnt", ARGB(250,255,255,255));
+			
+			DrawText(vector2(0,80), "atl x:"+abr.x+"/y:"+abr.y, "Verdana14_shadow.fnt", ARGB(250,255,255,255));
+			DrawText(vector2(0,100), "adime x:"+adime.x+"/y:"+adime.y, "Verdana14_shadow.fnt", ARGB(250,255,255,255));
+			//DrawText(vector2(0,120), "map scale:"+ascale+"", "Verdana14_shadow.fnt", ARGB(250,255,255,255));
+			//DrawText(vector2(0,140), "plotaspect:"+aaspect+"", "Verdana14_shadow.fnt", ARGB(250,255,255,255));
+			DrawText(vector2(0,160), "sreen aspect:"+m_aspect+"", "Verdana14_shadow.fnt", ARGB(250,255,255,255));
 		}
 
 	}
