@@ -14,15 +14,10 @@ notes
 -progress
 ------------
 
-use minimap to allow a free camera.
-show camera dimensions on the map, with corners, or something
+use minimap to allow a free camera. add temporary plottable objects, that dont effect the overall map scale.
 
-camera causes scaling
-make scaling happen at the key press
 
-update all positional data, botton hover overs, UI element placing, take into account the global scale
-
-scaling out makes the button commands multiply a lot for whatever reason
+take into account the global scale, for weapons projectiles, and distancec checks. minor orbit function weird
 
 starting on enemy pawn. basic ai
 

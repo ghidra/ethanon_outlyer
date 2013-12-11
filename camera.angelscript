@@ -77,6 +77,9 @@ class camera
 	void set_position(const vector2 pos){
 		SetCameraPos(pos);
 	}
+	vector2 get_position(){
+		return vector2(GetCameraPos());
+	}
 	//-------
 	void set_track_target(const bool b){
 		m_track_target=b;

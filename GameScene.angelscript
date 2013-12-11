@@ -37,12 +37,17 @@ class GameScene : Scene
 		@m_exitButton = Button("menu", vector2(0.0f, 0.0f), vector2(0.0f, 0.0f));
 
 		const vector2 screenMiddle(GetScreenSize() * 0.5f);
+
+		@m_minimap = minimap();
+
 		//@m_character = Character("witch.ent", screenMiddle);
 		@m_character = Character("random.ent", vector2(0.0f,0.0f));
+		//m_minimap.plottable(m_character);
 
 		@m_camera = camera();
 		m_camera.set_target(m_character);
 		m_camera.set_position(m_character.get_position());
+		m_minimap.plottable(m_camera);//give it the camera to plot
 
 		//temp = "";
 		//-----making random lights
@@ -54,11 +59,11 @@ class GameScene : Scene
 			
 			m_bodies.insertLast( body("simple_light.ent",put) );//http://www.angelcode.com/angelscript/sdk/docs/manual/doc_datatypes_arrays.html
 			m_bodies[t].set_label(m_names[t]);
+			m_minimap.plottable(m_bodies[t]);
 		}
 
 		m_enemies.insertLast( enemy("random.ent", vector2(200.0f,200.0f),m_character) );
-
-		@m_minimap = minimap();
+		//m_minimap.plottable(m_enemies[m_enemies.length()-1]);
 
 	}
 
@@ -80,7 +85,7 @@ class GameScene : Scene
    	 			//m_character.set_targetbody( m_bodies[t] );
    	 		}
    	 		//if I want them on the minimap, I have to give the positions at least and a color to the minimap object
-   	 		m_minimap.plottable(m_bodies[t].get_position());
+   	 		//m_minimap.plottable(m_bodies[t].get_position());
 		}
 
 		for (uint t=0; t<m_enemies.length(); t++){
@@ -94,14 +99,14 @@ class GameScene : Scene
    	 		}
    	 		//the above breaks it because I am using m_action locally on the enemy to tell it what to do.
    	 		//chances are that I need to rethink that logic, since bodies may also want a specific actino to do later
-			m_minimap.plottable(m_enemies[t].get_position());
+			//m_minimap.plottable(m_enemies[t].get_position());
 		}
 
 		//now lets update the character
 		m_character.update();
 		m_camera.update();
 
-		m_minimap.plottable(m_character.get_position());
+		//m_minimap.plottable(m_character.get_position());
 
 		m_minimap.update();
 		//-----------------
@@ -116,6 +121,10 @@ class GameScene : Scene
 		//DrawText(vector2(0,200), "x"+mp.x+" y:"+mp.y, "Verdana14_shadow.fnt", ARGB(250,255,255,255));
 		//DrawText(vector2(0,212), "iter:"+temp, "Verdana14_shadow.fnt", ARGB(250,255,255,255));
 		DrawText(vector2(0,224), "fps:"+GetFPSRate()+"", "Verdana14_shadow.fnt", ARGB(250,255,255,255));
+
+		//DrawText(vector2(0,244), "bodies:"+m_bodies.length()+"", "Verdana14_shadow.fnt", ARGB(250,255,255,255));
+		//DrawText(vector2(0,264), "enemies:"+m_enemies.length()+"", "Verdana14_shadow.fnt", ARGB(250,255,255,255));
+		
 		//DrawText(vector2(0,234), m_character.m_action+"", "Verdana14_shadow.fnt", ARGB(250,255,255,255));
 		//DrawText(vector2(0,244), m_character.m_target.get_label()+"", "Verdana14_shadow.fnt", ARGB(250,255,255,255));
 		//DrawText(vector2(0,212), "over:"+m_character.isPointInBB(input.GetCursorPos()), "Verdana14_shadow.fnt", ARGB(250,255,255,255));
