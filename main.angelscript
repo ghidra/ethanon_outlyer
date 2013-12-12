@@ -16,13 +16,12 @@ notes
 
 use minimap to allow a free camera. add temporary plottable objects, that dont effect the overall map scale.
 
-
-take into account the global scale, for weapons projectiles, and distancec checks. minor orbit function weird
-
 starting on enemy pawn. basic ai
 
 -maybe put the explosion in its own class to make it more versitile for other weapons
 -i have weapons now, need to look at using different ones
+
+take into account the global scale, for weapons projectiles, and distancec checks
 
 look into a smaller font potentially.
 then build base on planet

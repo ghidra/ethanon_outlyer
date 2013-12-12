@@ -58,7 +58,7 @@ class projectile : actor
 			}
 
 			const float d = length( tpos - m_pos ); 
-			if( d < tsize ){//deterime hit
+			if( d < tsize*m_gscale ){//deterime hit
 				set_hit();//we have hit
 			}
 			//if found, we set this to hit

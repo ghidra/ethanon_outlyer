@@ -53,7 +53,7 @@ class Character : pawn
 				body@ target = m_controller.get_target_body();//since i only harvest bodies, I have to assume that I am trying to get a body object
 				set_destination(target.get_position());
 
-				if( m_destination_distance > length(target.get_size()) ){
+				if( m_destination_distance > length(target.get_size())*m_gscale ){
 					move(m_destination_direction);
 				}else{
 					if(action == "harvest"){
@@ -160,7 +160,7 @@ class Character : pawn
 				vector2 target_pos = target.get_position();
 				vector2 target_size = target.get_size()*0.75f;
 				vector2 drop_dir = normalize(get_position()-target.get_position());
-				vector2 drop_zone = target_pos+(drop_dir*target_size);
+				vector2 drop_zone = target_pos+(drop_dir*(target_size*m_gscale));
 				uint len = m_miners.length;
 				if(len<m_minersmax){
 					m_miners.insertLast( miner("random.ent", drop_zone, target, m_minerscount) );

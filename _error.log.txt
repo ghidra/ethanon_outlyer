@@ -1,9 +1,1027 @@
 [Z:\home\jimmy\Documents\projects\outlyer\_error.log.txt]
+Function: actor@ controller::get_target_actor(const uint arg0 = 0)
+Section: Z:\home\jimmy\Documents\projects\outlyer\controller.angelscript
+Line: 65
+Description: Index out of bounds
 
-AngelScript ERROR (Z:\home\jimmy\Documents\projects\outlyer\minimap.angelscript line 185): 
-'acamtr' is not declared
+ERROR - Exception: Index out of bounds
+Function: actor@ controller::get_target_actor(const uint arg0 = 0)
+Section: Z:\home\jimmy\Documents\projects\outlyer\controller.angelscript
+Line: 65
+Description: Index out of bounds
 
-AngelScript ERROR (Z:\home\jimmy\Documents\projects\outlyer\minimap.angelscript line 187): 
-'acambl' is not declared
-ERROR - Failed while building module.
-ERROR - ETHEngine::StartEngine: the script has set no scene to load.
+ERROR - Exception: Index out of bounds
+Function: actor@ controller::get_target_actor(const uint arg0 = 0)
+Section: Z:\home\jimmy\Documents\projects\outlyer\controller.angelscript
+Line: 65
+Description: Index out of bounds
+
+ERROR - Exception: Index out of bounds
+Function: actor@ controller::get_target_actor(const uint arg0 = 0)
+Section: Z:\home\jimmy\Documents\projects\outlyer\controller.angelscript
+Line: 65
+Description: Index out of bounds
+
+ERROR - Exception: Index out of bounds
+Function: actor@ controller::get_target_actor(const uint arg0 = 0)
+Section: Z:\home\jimmy\Documents\projects\outlyer\controller.angelscript
+Line: 65
+Description: Index out of bounds
+
+ERROR - Exception: Index out of bounds
+Function: actor@ controller::get_target_actor(const uint arg0 = 0)
+Section: Z:\home\jimmy\Documents\projects\outlyer\controller.angelscript
+Line: 65
+Description: Index out of bounds
+
+ERROR - Exception: Index out of bounds
+Function: actor@ controller::get_target_actor(const uint arg0 = 0)
+Section: Z:\home\jimmy\Documents\projects\outlyer\controller.angelscript
+Line: 65
+Description: Index out of bounds
+
+ERROR - Exception: Index out of bounds
+Function: actor@ controller::get_target_actor(const uint arg0 = 0)
+Section: Z:\home\jimmy\Documents\projects\outlyer\controller.angelscript
+Line: 65
+Description: Index out of bounds
+
+ERROR - Exception: Index out of bounds
+Function: actor@ controller::get_target_actor(const uint arg0 = 0)
+Section: Z:\home\jimmy\Documents\projects\outlyer\controller.angelscript
+Line: 65
+Description: Index out of bounds
+
+ERROR - Exception: Index out of bounds
+Function: actor@ controller::get_target_actor(const uint arg0 = 0)
+Section: Z:\home\jimmy\Documents\projects\outlyer\controller.angelscript
+Line: 65
+Description: Index out of bounds
+
+ERROR - Exception: Index out of bounds
+Function: actor@ controller::get_target_actor(const uint arg0 = 0)
+Section: Z:\home\jimmy\Documents\projects\outlyer\controller.angelscript
+Line: 65
+Description: Index out of bounds
+
+ERROR - Exception: Index out of bounds
+Function: actor@ controller::get_target_actor(const uint arg0 = 0)
+Section: Z:\home\jimmy\Documents\projects\outlyer\controller.angelscript
+Line: 65
+Description: Index out of bounds
+
+ERROR - Exception: Index out of bounds
+Function: actor@ controller::get_target_actor(const uint arg0 = 0)
+Section: Z:\home\jimmy\Documents\projects\outlyer\controller.angelscript
+Line: 65
+Description: Index out of bounds
+
+ERROR - Exception: Index out of bounds
+Function: actor@ controller::get_target_actor(const uint arg0 = 0)
+Section: Z:\home\jimmy\Documents\projects\outlyer\controller.angelscript
+Line: 65
+Description: Index out of bounds
+
+ERROR - Exception: Index out of bounds
+Function: actor@ controller::get_target_actor(const uint arg0 = 0)
+Section: Z:\home\jimmy\Documents\projects\outlyer\controller.angelscript
+Line: 65
+Description: Index out of bounds
+
+ERROR - Exception: Index out of bounds
+Function: actor@ controller::get_target_actor(const uint arg0 = 0)
+Section: Z:\home\jimmy\Documents\projects\outlyer\controller.angelscript
+Line: 65
+Description: Index out of bounds
+
+ERROR - Exception: Index out of bounds
+Function: actor@ controller::get_target_actor(const uint arg0 = 0)
+Section: Z:\home\jimmy\Documents\projects\outlyer\controller.angelscript
+Line: 65
+Description: Index out of bounds
+
+ERROR - Exception: Index out of bounds
+Function: actor@ controller::get_target_actor(const uint arg0 = 0)
+Section: Z:\home\jimmy\Documents\projects\outlyer\controller.angelscript
+Line: 65
+Description: Index out of bounds
+
+ERROR - Exception: Index out of bounds
+Function: actor@ controller::get_target_actor(const uint arg0 = 0)
+Section: Z:\home\jimmy\Documents\projects\outlyer\controller.angelscript
+Line: 65
+Description: Index out of bounds
+
+ERROR - Exception: Index out of bounds
+Function: actor@ controller::get_target_actor(const uint arg0 = 0)
+Section: Z:\home\jimmy\Documents\projects\outlyer\controller.angelscript
+Line: 65
+Description: Index out of bounds
+
+ERROR - Exception: Index out of bounds
+Function: actor@ controller::get_target_actor(const uint arg0 = 0)
+Section: Z:\home\jimmy\Documents\projects\outlyer\controller.angelscript
+Line: 65
+Description: Index out of bounds
+
+ERROR - Exception: Index out of bounds
+Function: actor@ controller::get_target_actor(const uint arg0 = 0)
+Section: Z:\home\jimmy\Documents\projects\outlyer\controller.angelscript
+Line: 65
+Description: Index out of bounds
+
+ERROR - Exception: Index out of bounds
+Function: actor@ controller::get_target_actor(const uint arg0 = 0)
+Section: Z:\home\jimmy\Documents\projects\outlyer\controller.angelscript
+Line: 65
+Description: Index out of bounds
+
+ERROR - Exception: Index out of bounds
+Function: actor@ controller::get_target_actor(const uint arg0 = 0)
+Section: Z:\home\jimmy\Documents\projects\outlyer\controller.angelscript
+Line: 65
+Description: Index out of bounds
+
+ERROR - Exception: Index out of bounds
+Function: actor@ controller::get_target_actor(const uint arg0 = 0)
+Section: Z:\home\jimmy\Documents\projects\outlyer\controller.angelscript
+Line: 65
+Description: Index out of bounds
+
+ERROR - Exception: Index out of bounds
+Function: actor@ controller::get_target_actor(const uint arg0 = 0)
+Section: Z:\home\jimmy\Documents\projects\outlyer\controller.angelscript
+Line: 65
+Description: Index out of bounds
+
+ERROR - Exception: Index out of bounds
+Function: actor@ controller::get_target_actor(const uint arg0 = 0)
+Section: Z:\home\jimmy\Documents\projects\outlyer\controller.angelscript
+Line: 65
+Description: Index out of bounds
+
+ERROR - Exception: Index out of bounds
+Function: actor@ controller::get_target_actor(const uint arg0 = 0)
+Section: Z:\home\jimmy\Documents\projects\outlyer\controller.angelscript
+Line: 65
+Description: Index out of bounds
+
+ERROR - Exception: Index out of bounds
+Function: actor@ controller::get_target_actor(const uint arg0 = 0)
+Section: Z:\home\jimmy\Documents\projects\outlyer\controller.angelscript
+Line: 65
+Description: Index out of bounds
+
+ERROR - Exception: Index out of bounds
+Function: actor@ controller::get_target_actor(const uint arg0 = 0)
+Section: Z:\home\jimmy\Documents\projects\outlyer\controller.angelscript
+Line: 65
+Description: Index out of bounds
+
+ERROR - Exception: Index out of bounds
+Function: actor@ controller::get_target_actor(const uint arg0 = 0)
+Section: Z:\home\jimmy\Documents\projects\outlyer\controller.angelscript
+Line: 65
+Description: Index out of bounds
+
+ERROR - Exception: Index out of bounds
+Function: actor@ controller::get_target_actor(const uint arg0 = 0)
+Section: Z:\home\jimmy\Documents\projects\outlyer\controller.angelscript
+Line: 65
+Description: Index out of bounds
+
+ERROR - Exception: Index out of bounds
+Function: actor@ controller::get_target_actor(const uint arg0 = 0)
+Section: Z:\home\jimmy\Documents\projects\outlyer\controller.angelscript
+Line: 65
+Description: Index out of bounds
+
+ERROR - Exception: Index out of bounds
+Function: actor@ controller::get_target_actor(const uint arg0 = 0)
+Section: Z:\home\jimmy\Documents\projects\outlyer\controller.angelscript
+Line: 65
+Description: Index out of bounds
+
+ERROR - Exception: Index out of bounds
+Function: actor@ controller::get_target_actor(const uint arg0 = 0)
+Section: Z:\home\jimmy\Documents\projects\outlyer\controller.angelscript
+Line: 65
+Description: Index out of bounds
+
+ERROR - Exception: Index out of bounds
+Function: actor@ controller::get_target_actor(const uint arg0 = 0)
+Section: Z:\home\jimmy\Documents\projects\outlyer\controller.angelscript
+Line: 65
+Description: Index out of bounds
+
+ERROR - Exception: Index out of bounds
+Function: actor@ controller::get_target_actor(const uint arg0 = 0)
+Section: Z:\home\jimmy\Documents\projects\outlyer\controller.angelscript
+Line: 65
+Description: Index out of bounds
+
+ERROR - Exception: Index out of bounds
+Function: actor@ controller::get_target_actor(const uint arg0 = 0)
+Section: Z:\home\jimmy\Documents\projects\outlyer\controller.angelscript
+Line: 65
+Description: Index out of bounds
+
+ERROR - Exception: Index out of bounds
+Function: actor@ controller::get_target_actor(const uint arg0 = 0)
+Section: Z:\home\jimmy\Documents\projects\outlyer\controller.angelscript
+Line: 65
+Description: Index out of bounds
+
+ERROR - Exception: Index out of bounds
+Function: actor@ controller::get_target_actor(const uint arg0 = 0)
+Section: Z:\home\jimmy\Documents\projects\outlyer\controller.angelscript
+Line: 65
+Description: Index out of bounds
+
+ERROR - Exception: Index out of bounds
+Function: actor@ controller::get_target_actor(const uint arg0 = 0)
+Section: Z:\home\jimmy\Documents\projects\outlyer\controller.angelscript
+Line: 65
+Description: Index out of bounds
+
+ERROR - Exception: Index out of bounds
+Function: actor@ controller::get_target_actor(const uint arg0 = 0)
+Section: Z:\home\jimmy\Documents\projects\outlyer\controller.angelscript
+Line: 65
+Description: Index out of bounds
+
+ERROR - Exception: Index out of bounds
+Function: actor@ controller::get_target_actor(const uint arg0 = 0)
+Section: Z:\home\jimmy\Documents\projects\outlyer\controller.angelscript
+Line: 65
+Description: Index out of bounds
+
+ERROR - Exception: Index out of bounds
+Function: actor@ controller::get_target_actor(const uint arg0 = 0)
+Section: Z:\home\jimmy\Documents\projects\outlyer\controller.angelscript
+Line: 65
+Description: Index out of bounds
+
+ERROR - Exception: Index out of bounds
+Function: actor@ controller::get_target_actor(const uint arg0 = 0)
+Section: Z:\home\jimmy\Documents\projects\outlyer\controller.angelscript
+Line: 65
+Description: Index out of bounds
+
+ERROR - Exception: Index out of bounds
+Function: actor@ controller::get_target_actor(const uint arg0 = 0)
+Section: Z:\home\jimmy\Documents\projects\outlyer\controller.angelscript
+Line: 65
+Description: Index out of bounds
+
+ERROR - Exception: Index out of bounds
+Function: actor@ controller::get_target_actor(const uint arg0 = 0)
+Section: Z:\home\jimmy\Documents\projects\outlyer\controller.angelscript
+Line: 65
+Description: Index out of bounds
+
+ERROR - Exception: Index out of bounds
+Function: actor@ controller::get_target_actor(const uint arg0 = 0)
+Section: Z:\home\jimmy\Documents\projects\outlyer\controller.angelscript
+Line: 65
+Description: Index out of bounds
+
+ERROR - Exception: Index out of bounds
+Function: actor@ controller::get_target_actor(const uint arg0 = 0)
+Section: Z:\home\jimmy\Documents\projects\outlyer\controller.angelscript
+Line: 65
+Description: Index out of bounds
+
+ERROR - Exception: Index out of bounds
+Function: actor@ controller::get_target_actor(const uint arg0 = 0)
+Section: Z:\home\jimmy\Documents\projects\outlyer\controller.angelscript
+Line: 65
+Description: Index out of bounds
+
+ERROR - Exception: Index out of bounds
+Function: actor@ controller::get_target_actor(const uint arg0 = 0)
+Section: Z:\home\jimmy\Documents\projects\outlyer\controller.angelscript
+Line: 65
+Description: Index out of bounds
+
+ERROR - Exception: Index out of bounds
+Function: actor@ controller::get_target_actor(const uint arg0 = 0)
+Section: Z:\home\jimmy\Documents\projects\outlyer\controller.angelscript
+Line: 65
+Description: Index out of bounds
+
+ERROR - Exception: Index out of bounds
+Function: actor@ controller::get_target_actor(const uint arg0 = 0)
+Section: Z:\home\jimmy\Documents\projects\outlyer\controller.angelscript
+Line: 65
+Description: Index out of bounds
+
+ERROR - Exception: Index out of bounds
+Function: actor@ controller::get_target_actor(const uint arg0 = 0)
+Section: Z:\home\jimmy\Documents\projects\outlyer\controller.angelscript
+Line: 65
+Description: Index out of bounds
+
+ERROR - Exception: Index out of bounds
+Function: actor@ controller::get_target_actor(const uint arg0 = 0)
+Section: Z:\home\jimmy\Documents\projects\outlyer\controller.angelscript
+Line: 65
+Description: Index out of bounds
+
+ERROR - Exception: Index out of bounds
+Function: actor@ controller::get_target_actor(const uint arg0 = 0)
+Section: Z:\home\jimmy\Documents\projects\outlyer\controller.angelscript
+Line: 65
+Description: Index out of bounds
+
+ERROR - Exception: Index out of bounds
+Function: actor@ controller::get_target_actor(const uint arg0 = 0)
+Section: Z:\home\jimmy\Documents\projects\outlyer\controller.angelscript
+Line: 65
+Description: Index out of bounds
+
+ERROR - Exception: Index out of bounds
+Function: actor@ controller::get_target_actor(const uint arg0 = 0)
+Section: Z:\home\jimmy\Documents\projects\outlyer\controller.angelscript
+Line: 65
+Description: Index out of bounds
+
+ERROR - Exception: Index out of bounds
+Function: actor@ controller::get_target_actor(const uint arg0 = 0)
+Section: Z:\home\jimmy\Documents\projects\outlyer\controller.angelscript
+Line: 65
+Description: Index out of bounds
+
+ERROR - Exception: Index out of bounds
+Function: actor@ controller::get_target_actor(const uint arg0 = 0)
+Section: Z:\home\jimmy\Documents\projects\outlyer\controller.angelscript
+Line: 65
+Description: Index out of bounds
+
+ERROR - Exception: Index out of bounds
+Function: actor@ controller::get_target_actor(const uint arg0 = 0)
+Section: Z:\home\jimmy\Documents\projects\outlyer\controller.angelscript
+Line: 65
+Description: Index out of bounds
+
+ERROR - Exception: Index out of bounds
+Function: actor@ controller::get_target_actor(const uint arg0 = 0)
+Section: Z:\home\jimmy\Documents\projects\outlyer\controller.angelscript
+Line: 65
+Description: Index out of bounds
+
+ERROR - Exception: Index out of bounds
+Function: actor@ controller::get_target_actor(const uint arg0 = 0)
+Section: Z:\home\jimmy\Documents\projects\outlyer\controller.angelscript
+Line: 65
+Description: Index out of bounds
+
+ERROR - Exception: Index out of bounds
+Function: actor@ controller::get_target_actor(const uint arg0 = 0)
+Section: Z:\home\jimmy\Documents\projects\outlyer\controller.angelscript
+Line: 65
+Description: Index out of bounds
+
+ERROR - Exception: Index out of bounds
+Function: actor@ controller::get_target_actor(const uint arg0 = 0)
+Section: Z:\home\jimmy\Documents\projects\outlyer\controller.angelscript
+Line: 65
+Description: Index out of bounds
+
+ERROR - Exception: Index out of bounds
+Function: actor@ controller::get_target_actor(const uint arg0 = 0)
+Section: Z:\home\jimmy\Documents\projects\outlyer\controller.angelscript
+Line: 65
+Description: Index out of bounds
+
+ERROR - Exception: Index out of bounds
+Function: actor@ controller::get_target_actor(const uint arg0 = 0)
+Section: Z:\home\jimmy\Documents\projects\outlyer\controller.angelscript
+Line: 65
+Description: Index out of bounds
+
+ERROR - Exception: Index out of bounds
+Function: actor@ controller::get_target_actor(const uint arg0 = 0)
+Section: Z:\home\jimmy\Documents\projects\outlyer\controller.angelscript
+Line: 65
+Description: Index out of bounds
+
+ERROR - Exception: Index out of bounds
+Function: actor@ controller::get_target_actor(const uint arg0 = 0)
+Section: Z:\home\jimmy\Documents\projects\outlyer\controller.angelscript
+Line: 65
+Description: Index out of bounds
+
+ERROR - Exception: Index out of bounds
+Function: actor@ controller::get_target_actor(const uint arg0 = 0)
+Section: Z:\home\jimmy\Documents\projects\outlyer\controller.angelscript
+Line: 65
+Description: Index out of bounds
+
+ERROR - Exception: Index out of bounds
+Function: actor@ controller::get_target_actor(const uint arg0 = 0)
+Section: Z:\home\jimmy\Documents\projects\outlyer\controller.angelscript
+Line: 65
+Description: Index out of bounds
+
+ERROR - Exception: Index out of bounds
+Function: actor@ controller::get_target_actor(const uint arg0 = 0)
+Section: Z:\home\jimmy\Documents\projects\outlyer\controller.angelscript
+Line: 65
+Description: Index out of bounds
+
+ERROR - Exception: Index out of bounds
+Function: actor@ controller::get_target_actor(const uint arg0 = 0)
+Section: Z:\home\jimmy\Documents\projects\outlyer\controller.angelscript
+Line: 65
+Description: Index out of bounds
+
+ERROR - Exception: Index out of bounds
+Function: actor@ controller::get_target_actor(const uint arg0 = 0)
+Section: Z:\home\jimmy\Documents\projects\outlyer\controller.angelscript
+Line: 65
+Description: Index out of bounds
+
+ERROR - Exception: Index out of bounds
+Function: actor@ controller::get_target_actor(const uint arg0 = 0)
+Section: Z:\home\jimmy\Documents\projects\outlyer\controller.angelscript
+Line: 65
+Description: Index out of bounds
+
+ERROR - Exception: Index out of bounds
+Function: actor@ controller::get_target_actor(const uint arg0 = 0)
+Section: Z:\home\jimmy\Documents\projects\outlyer\controller.angelscript
+Line: 65
+Description: Index out of bounds
+
+ERROR - Exception: Index out of bounds
+Function: actor@ controller::get_target_actor(const uint arg0 = 0)
+Section: Z:\home\jimmy\Documents\projects\outlyer\controller.angelscript
+Line: 65
+Description: Index out of bounds
+
+ERROR - Exception: Index out of bounds
+Function: actor@ controller::get_target_actor(const uint arg0 = 0)
+Section: Z:\home\jimmy\Documents\projects\outlyer\controller.angelscript
+Line: 65
+Description: Index out of bounds
+
+ERROR - Exception: Index out of bounds
+Function: actor@ controller::get_target_actor(const uint arg0 = 0)
+Section: Z:\home\jimmy\Documents\projects\outlyer\controller.angelscript
+Line: 65
+Description: Index out of bounds
+
+ERROR - Exception: Index out of bounds
+Function: actor@ controller::get_target_actor(const uint arg0 = 0)
+Section: Z:\home\jimmy\Documents\projects\outlyer\controller.angelscript
+Line: 65
+Description: Index out of bounds
+
+ERROR - Exception: Index out of bounds
+Function: actor@ controller::get_target_actor(const uint arg0 = 0)
+Section: Z:\home\jimmy\Documents\projects\outlyer\controller.angelscript
+Line: 65
+Description: Index out of bounds
+
+ERROR - Exception: Index out of bounds
+Function: actor@ controller::get_target_actor(const uint arg0 = 0)
+Section: Z:\home\jimmy\Documents\projects\outlyer\controller.angelscript
+Line: 65
+Description: Index out of bounds
+
+ERROR - Exception: Index out of bounds
+Function: actor@ controller::get_target_actor(const uint arg0 = 0)
+Section: Z:\home\jimmy\Documents\projects\outlyer\controller.angelscript
+Line: 65
+Description: Index out of bounds
+
+ERROR - Exception: Index out of bounds
+Function: actor@ controller::get_target_actor(const uint arg0 = 0)
+Section: Z:\home\jimmy\Documents\projects\outlyer\controller.angelscript
+Line: 65
+Description: Index out of bounds
+
+ERROR - Exception: Index out of bounds
+Function: actor@ controller::get_target_actor(const uint arg0 = 0)
+Section: Z:\home\jimmy\Documents\projects\outlyer\controller.angelscript
+Line: 65
+Description: Index out of bounds
+
+ERROR - Exception: Index out of bounds
+Function: actor@ controller::get_target_actor(const uint arg0 = 0)
+Section: Z:\home\jimmy\Documents\projects\outlyer\controller.angelscript
+Line: 65
+Description: Index out of bounds
+
+ERROR - Exception: Index out of bounds
+Function: actor@ controller::get_target_actor(const uint arg0 = 0)
+Section: Z:\home\jimmy\Documents\projects\outlyer\controller.angelscript
+Line: 65
+Description: Index out of bounds
+
+ERROR - Exception: Index out of bounds
+Function: actor@ controller::get_target_actor(const uint arg0 = 0)
+Section: Z:\home\jimmy\Documents\projects\outlyer\controller.angelscript
+Line: 65
+Description: Index out of bounds
+
+ERROR - Exception: Index out of bounds
+Function: actor@ controller::get_target_actor(const uint arg0 = 0)
+Section: Z:\home\jimmy\Documents\projects\outlyer\controller.angelscript
+Line: 65
+Description: Index out of bounds
+
+ERROR - Exception: Index out of bounds
+Function: actor@ controller::get_target_actor(const uint arg0 = 0)
+Section: Z:\home\jimmy\Documents\projects\outlyer\controller.angelscript
+Line: 65
+Description: Index out of bounds
+
+ERROR - Exception: Index out of bounds
+Function: actor@ controller::get_target_actor(const uint arg0 = 0)
+Section: Z:\home\jimmy\Documents\projects\outlyer\controller.angelscript
+Line: 65
+Description: Index out of bounds
+
+ERROR - Exception: Index out of bounds
+Function: actor@ controller::get_target_actor(const uint arg0 = 0)
+Section: Z:\home\jimmy\Documents\projects\outlyer\controller.angelscript
+Line: 65
+Description: Index out of bounds
+
+ERROR - Exception: Index out of bounds
+Function: actor@ controller::get_target_actor(const uint arg0 = 0)
+Section: Z:\home\jimmy\Documents\projects\outlyer\controller.angelscript
+Line: 65
+Description: Index out of bounds
+
+ERROR - Exception: Index out of bounds
+Function: actor@ controller::get_target_actor(const uint arg0 = 0)
+Section: Z:\home\jimmy\Documents\projects\outlyer\controller.angelscript
+Line: 65
+Description: Index out of bounds
+
+ERROR - Exception: Index out of bounds
+Function: actor@ controller::get_target_actor(const uint arg0 = 0)
+Section: Z:\home\jimmy\Documents\projects\outlyer\controller.angelscript
+Line: 65
+Description: Index out of bounds
+
+ERROR - Exception: Index out of bounds
+Function: actor@ controller::get_target_actor(const uint arg0 = 0)
+Section: Z:\home\jimmy\Documents\projects\outlyer\controller.angelscript
+Line: 65
+Description: Index out of bounds
+
+ERROR - Exception: Index out of bounds
+Function: actor@ controller::get_target_actor(const uint arg0 = 0)
+Section: Z:\home\jimmy\Documents\projects\outlyer\controller.angelscript
+Line: 65
+Description: Index out of bounds
+
+ERROR - Exception: Index out of bounds
+Function: actor@ controller::get_target_actor(const uint arg0 = 0)
+Section: Z:\home\jimmy\Documents\projects\outlyer\controller.angelscript
+Line: 65
+Description: Index out of bounds
+
+ERROR - Exception: Index out of bounds
+Function: actor@ controller::get_target_actor(const uint arg0 = 0)
+Section: Z:\home\jimmy\Documents\projects\outlyer\controller.angelscript
+Line: 65
+Description: Index out of bounds
+
+ERROR - Exception: Index out of bounds
+Function: actor@ controller::get_target_actor(const uint arg0 = 0)
+Section: Z:\home\jimmy\Documents\projects\outlyer\controller.angelscript
+Line: 65
+Description: Index out of bounds
+
+ERROR - Exception: Index out of bounds
+Function: actor@ controller::get_target_actor(const uint arg0 = 0)
+Section: Z:\home\jimmy\Documents\projects\outlyer\controller.angelscript
+Line: 65
+Description: Index out of bounds
+
+ERROR - Exception: Index out of bounds
+Function: actor@ controller::get_target_actor(const uint arg0 = 0)
+Section: Z:\home\jimmy\Documents\projects\outlyer\controller.angelscript
+Line: 65
+Description: Index out of bounds
+
+ERROR - Exception: Index out of bounds
+Function: actor@ controller::get_target_actor(const uint arg0 = 0)
+Section: Z:\home\jimmy\Documents\projects\outlyer\controller.angelscript
+Line: 65
+Description: Index out of bounds
+
+ERROR - Exception: Index out of bounds
+Function: actor@ controller::get_target_actor(const uint arg0 = 0)
+Section: Z:\home\jimmy\Documents\projects\outlyer\controller.angelscript
+Line: 65
+Description: Index out of bounds
+
+ERROR - Exception: Index out of bounds
+Function: actor@ controller::get_target_actor(const uint arg0 = 0)
+Section: Z:\home\jimmy\Documents\projects\outlyer\controller.angelscript
+Line: 65
+Description: Index out of bounds
+
+ERROR - Exception: Index out of bounds
+Function: actor@ controller::get_target_actor(const uint arg0 = 0)
+Section: Z:\home\jimmy\Documents\projects\outlyer\controller.angelscript
+Line: 65
+Description: Index out of bounds
+
+ERROR - Exception: Index out of bounds
+Function: actor@ controller::get_target_actor(const uint arg0 = 0)
+Section: Z:\home\jimmy\Documents\projects\outlyer\controller.angelscript
+Line: 65
+Description: Index out of bounds
+
+ERROR - Exception: Index out of bounds
+Function: actor@ controller::get_target_actor(const uint arg0 = 0)
+Section: Z:\home\jimmy\Documents\projects\outlyer\controller.angelscript
+Line: 65
+Description: Index out of bounds
+
+ERROR - Exception: Index out of bounds
+Function: actor@ controller::get_target_actor(const uint arg0 = 0)
+Section: Z:\home\jimmy\Documents\projects\outlyer\controller.angelscript
+Line: 65
+Description: Index out of bounds
+
+ERROR - Exception: Index out of bounds
+Function: actor@ controller::get_target_actor(const uint arg0 = 0)
+Section: Z:\home\jimmy\Documents\projects\outlyer\controller.angelscript
+Line: 65
+Description: Index out of bounds
+
+ERROR - Exception: Index out of bounds
+Function: actor@ controller::get_target_actor(const uint arg0 = 0)
+Section: Z:\home\jimmy\Documents\projects\outlyer\controller.angelscript
+Line: 65
+Description: Index out of bounds
+
+ERROR - Exception: Index out of bounds
+Function: actor@ controller::get_target_actor(const uint arg0 = 0)
+Section: Z:\home\jimmy\Documents\projects\outlyer\controller.angelscript
+Line: 65
+Description: Index out of bounds
+
+ERROR - Exception: Index out of bounds
+Function: actor@ controller::get_target_actor(const uint arg0 = 0)
+Section: Z:\home\jimmy\Documents\projects\outlyer\controller.angelscript
+Line: 65
+Description: Index out of bounds
+
+ERROR - Exception: Index out of bounds
+Function: actor@ controller::get_target_actor(const uint arg0 = 0)
+Section: Z:\home\jimmy\Documents\projects\outlyer\controller.angelscript
+Line: 65
+Description: Index out of bounds
+
+ERROR - Exception: Index out of bounds
+Function: actor@ controller::get_target_actor(const uint arg0 = 0)
+Section: Z:\home\jimmy\Documents\projects\outlyer\controller.angelscript
+Line: 65
+Description: Index out of bounds
+
+ERROR - Exception: Index out of bounds
+Function: actor@ controller::get_target_actor(const uint arg0 = 0)
+Section: Z:\home\jimmy\Documents\projects\outlyer\controller.angelscript
+Line: 65
+Description: Index out of bounds
+
+ERROR - Exception: Index out of bounds
+Function: actor@ controller::get_target_actor(const uint arg0 = 0)
+Section: Z:\home\jimmy\Documents\projects\outlyer\controller.angelscript
+Line: 65
+Description: Index out of bounds
+
+ERROR - Exception: Index out of bounds
+Function: actor@ controller::get_target_actor(const uint arg0 = 0)
+Section: Z:\home\jimmy\Documents\projects\outlyer\controller.angelscript
+Line: 65
+Description: Index out of bounds
+
+ERROR - Exception: Index out of bounds
+Function: actor@ controller::get_target_actor(const uint arg0 = 0)
+Section: Z:\home\jimmy\Documents\projects\outlyer\controller.angelscript
+Line: 65
+Description: Index out of bounds
+
+ERROR - Exception: Index out of bounds
+Function: actor@ controller::get_target_actor(const uint arg0 = 0)
+Section: Z:\home\jimmy\Documents\projects\outlyer\controller.angelscript
+Line: 65
+Description: Index out of bounds
+
+ERROR - Exception: Index out of bounds
+Function: actor@ controller::get_target_actor(const uint arg0 = 0)
+Section: Z:\home\jimmy\Documents\projects\outlyer\controller.angelscript
+Line: 65
+Description: Index out of bounds
+
+ERROR - Exception: Index out of bounds
+Function: actor@ controller::get_target_actor(const uint arg0 = 0)
+Section: Z:\home\jimmy\Documents\projects\outlyer\controller.angelscript
+Line: 65
+Description: Index out of bounds
+
+ERROR - Exception: Index out of bounds
+Function: actor@ controller::get_target_actor(const uint arg0 = 0)
+Section: Z:\home\jimmy\Documents\projects\outlyer\controller.angelscript
+Line: 65
+Description: Index out of bounds
+
+ERROR - Exception: Index out of bounds
+Function: actor@ controller::get_target_actor(const uint arg0 = 0)
+Section: Z:\home\jimmy\Documents\projects\outlyer\controller.angelscript
+Line: 65
+Description: Index out of bounds
+
+ERROR - Exception: Index out of bounds
+Function: actor@ controller::get_target_actor(const uint arg0 = 0)
+Section: Z:\home\jimmy\Documents\projects\outlyer\controller.angelscript
+Line: 65
+Description: Index out of bounds
+
+ERROR - Exception: Index out of bounds
+Function: actor@ controller::get_target_actor(const uint arg0 = 0)
+Section: Z:\home\jimmy\Documents\projects\outlyer\controller.angelscript
+Line: 65
+Description: Index out of bounds
+
+ERROR - Exception: Index out of bounds
+Function: actor@ controller::get_target_actor(const uint arg0 = 0)
+Section: Z:\home\jimmy\Documents\projects\outlyer\controller.angelscript
+Line: 65
+Description: Index out of bounds
+
+ERROR - Exception: Index out of bounds
+Function: actor@ controller::get_target_actor(const uint arg0 = 0)
+Section: Z:\home\jimmy\Documents\projects\outlyer\controller.angelscript
+Line: 65
+Description: Index out of bounds
+
+ERROR - Exception: Index out of bounds
+Function: actor@ controller::get_target_actor(const uint arg0 = 0)
+Section: Z:\home\jimmy\Documents\projects\outlyer\controller.angelscript
+Line: 65
+Description: Index out of bounds
+
+ERROR - Exception: Index out of bounds
+Function: actor@ controller::get_target_actor(const uint arg0 = 0)
+Section: Z:\home\jimmy\Documents\projects\outlyer\controller.angelscript
+Line: 65
+Description: Index out of bounds
+
+ERROR - Exception: Index out of bounds
+Function: actor@ controller::get_target_actor(const uint arg0 = 0)
+Section: Z:\home\jimmy\Documents\projects\outlyer\controller.angelscript
+Line: 65
+Description: Index out of bounds
+
+ERROR - Exception: Index out of bounds
+Function: actor@ controller::get_target_actor(const uint arg0 = 0)
+Section: Z:\home\jimmy\Documents\projects\outlyer\controller.angelscript
+Line: 65
+Description: Index out of bounds
+
+ERROR - Exception: Index out of bounds
+Function: actor@ controller::get_target_actor(const uint arg0 = 0)
+Section: Z:\home\jimmy\Documents\projects\outlyer\controller.angelscript
+Line: 65
+Description: Index out of bounds
+
+ERROR - Exception: Index out of bounds
+Function: actor@ controller::get_target_actor(const uint arg0 = 0)
+Section: Z:\home\jimmy\Documents\projects\outlyer\controller.angelscript
+Line: 65
+Description: Index out of bounds
+
+ERROR - Exception: Index out of bounds
+Function: actor@ controller::get_target_actor(const uint arg0 = 0)
+Section: Z:\home\jimmy\Documents\projects\outlyer\controller.angelscript
+Line: 65
+Description: Index out of bounds
+
+ERROR - Exception: Index out of bounds
+Function: actor@ controller::get_target_actor(const uint arg0 = 0)
+Section: Z:\home\jimmy\Documents\projects\outlyer\controller.angelscript
+Line: 65
+Description: Index out of bounds
+
+ERROR - Exception: Index out of bounds
+Function: actor@ controller::get_target_actor(const uint arg0 = 0)
+Section: Z:\home\jimmy\Documents\projects\outlyer\controller.angelscript
+Line: 65
+Description: Index out of bounds
+
+ERROR - Exception: Index out of bounds
+Function: actor@ controller::get_target_actor(const uint arg0 = 0)
+Section: Z:\home\jimmy\Documents\projects\outlyer\controller.angelscript
+Line: 65
+Description: Index out of bounds
+
+ERROR - Exception: Index out of bounds
+Function: actor@ controller::get_target_actor(const uint arg0 = 0)
+Section: Z:\home\jimmy\Documents\projects\outlyer\controller.angelscript
+Line: 65
+Description: Index out of bounds
+
+ERROR - Exception: Index out of bounds
+Function: actor@ controller::get_target_actor(const uint arg0 = 0)
+Section: Z:\home\jimmy\Documents\projects\outlyer\controller.angelscript
+Line: 65
+Description: Index out of bounds
+
+ERROR - Exception: Index out of bounds
+Function: actor@ controller::get_target_actor(const uint arg0 = 0)
+Section: Z:\home\jimmy\Documents\projects\outlyer\controller.angelscript
+Line: 65
+Description: Index out of bounds
+
+ERROR - Exception: Index out of bounds
+Function: actor@ controller::get_target_actor(const uint arg0 = 0)
+Section: Z:\home\jimmy\Documents\projects\outlyer\controller.angelscript
+Line: 65
+Description: Index out of bounds
+
+ERROR - Exception: Index out of bounds
+Function: actor@ controller::get_target_actor(const uint arg0 = 0)
+Section: Z:\home\jimmy\Documents\projects\outlyer\controller.angelscript
+Line: 65
+Description: Index out of bounds
+
+ERROR - Exception: Index out of bounds
+Function: actor@ controller::get_target_actor(const uint arg0 = 0)
+Section: Z:\home\jimmy\Documents\projects\outlyer\controller.angelscript
+Line: 65
+Description: Index out of bounds
+
+ERROR - Exception: Index out of bounds
+Function: actor@ controller::get_target_actor(const uint arg0 = 0)
+Section: Z:\home\jimmy\Documents\projects\outlyer\controller.angelscript
+Line: 65
+Description: Index out of bounds
+
+ERROR - Exception: Index out of bounds
+Function: actor@ controller::get_target_actor(const uint arg0 = 0)
+Section: Z:\home\jimmy\Documents\projects\outlyer\controller.angelscript
+Line: 65
+Description: Index out of bounds
+
+ERROR - Exception: Index out of bounds
+Function: actor@ controller::get_target_actor(const uint arg0 = 0)
+Section: Z:\home\jimmy\Documents\projects\outlyer\controller.angelscript
+Line: 65
+Description: Index out of bounds
+
+ERROR - Exception: Index out of bounds
+Function: actor@ controller::get_target_actor(const uint arg0 = 0)
+Section: Z:\home\jimmy\Documents\projects\outlyer\controller.angelscript
+Line: 65
+Description: Index out of bounds
+
+ERROR - Exception: Index out of bounds
+Function: actor@ controller::get_target_actor(const uint arg0 = 0)
+Section: Z:\home\jimmy\Documents\projects\outlyer\controller.angelscript
+Line: 65
+Description: Index out of bounds
+
+ERROR - Exception: Index out of bounds
+Function: actor@ controller::get_target_actor(const uint arg0 = 0)
+Section: Z:\home\jimmy\Documents\projects\outlyer\controller.angelscript
+Line: 65
+Description: Index out of bounds
+
+ERROR - Exception: Index out of bounds
+Function: actor@ controller::get_target_actor(const uint arg0 = 0)
+Section: Z:\home\jimmy\Documents\projects\outlyer\controller.angelscript
+Line: 65
+Description: Index out of bounds
+
+ERROR - Exception: Index out of bounds
+Function: actor@ controller::get_target_actor(const uint arg0 = 0)
+Section: Z:\home\jimmy\Documents\projects\outlyer\controller.angelscript
+Line: 65
+Description: Index out of bounds
+
+ERROR - Exception: Index out of bounds
+Function: actor@ controller::get_target_actor(const uint arg0 = 0)
+Section: Z:\home\jimmy\Documents\projects\outlyer\controller.angelscript
+Line: 65
+Description: Index out of bounds
+
+ERROR - Exception: Index out of bounds
+Function: actor@ controller::get_target_actor(const uint arg0 = 0)
+Section: Z:\home\jimmy\Documents\projects\outlyer\controller.angelscript
+Line: 65
+Description: Index out of bounds
+
+ERROR - Exception: Index out of bounds
+Function: actor@ controller::get_target_actor(const uint arg0 = 0)
+Section: Z:\home\jimmy\Documents\projects\outlyer\controller.angelscript
+Line: 65
+Description: Index out of bounds
+
+ERROR - Exception: Index out of bounds
+Function: actor@ controller::get_target_actor(const uint arg0 = 0)
+Section: Z:\home\jimmy\Documents\projects\outlyer\controller.angelscript
+Line: 65
+Description: Index out of bounds
+
+ERROR - Exception: Index out of bounds
+Function: actor@ controller::get_target_actor(const uint arg0 = 0)
+Section: Z:\home\jimmy\Documents\projects\outlyer\controller.angelscript
+Line: 65
+Description: Index out of bounds
+
+ERROR - Exception: Index out of bounds
+Function: actor@ controller::get_target_actor(const uint arg0 = 0)
+Section: Z:\home\jimmy\Documents\projects\outlyer\controller.angelscript
+Line: 65
+Description: Index out of bounds
+
+ERROR - Exception: Index out of bounds
+Function: actor@ controller::get_target_actor(const uint arg0 = 0)
+Section: Z:\home\jimmy\Documents\projects\outlyer\controller.angelscript
+Line: 65
+Description: Index out of bounds
+
+ERROR - Exception: Index out of bounds
+Function: actor@ controller::get_target_actor(const uint arg0 = 0)
+Section: Z:\home\jimmy\Documents\projects\outlyer\controller.angelscript
+Line: 65
+Description: Index out of bounds
+
+ERROR - Exception: Index out of bounds
+Function: actor@ controller::get_target_actor(const uint arg0 = 0)
+Section: Z:\home\jimmy\Documents\projects\outlyer\controller.angelscript
+Line: 65
+Description: Index out of bounds
+
+ERROR - Exception: Index out of bounds
+Function: actor@ controller::get_target_actor(const uint arg0 = 0)
+Section: Z:\home\jimmy\Documents\projects\outlyer\controller.angelscript
+Line: 65
+Description: Index out of bounds
+
+ERROR - Exception: Index out of bounds
+Function: actor@ controller::get_target_actor(const uint arg0 = 0)
+Section: Z:\home\jimmy\Documents\projects\outlyer\controller.angelscript
+Line: 65
+Description: Index out of bounds
+
+ERROR - Exception: Index out of bounds
+Function: actor@ controller::get_target_actor(const uint arg0 = 0)
+Section: Z:\home\jimmy\Documents\projects\outlyer\controller.angelscript
+Line: 65
+Description: Index out of bounds
+
+ERROR - Exception: Index out of bounds
+Function: actor@ controller::get_target_actor(const uint arg0 = 0)
+Section: Z:\home\jimmy\Documents\projects\outlyer\controller.angelscript
+Line: 65
+Description: Index out of bounds
+
+ERROR - Exception: Index out of bounds
+Function: actor@ controller::get_target_actor(const uint arg0 = 0)
+Section: Z:\home\jimmy\Documents\projects\outlyer\controller.angelscript
+Line: 65
+Description: Index out of bounds
+
+ERROR - Exception: Index out of bounds
+Function: actor@ controller::get_target_actor(const uint arg0 = 0)
+Section: Z:\home\jimmy\Documents\projects\outlyer\controller.angelscript
+Line: 65
+Description: Index out of bounds
+
+ERROR - Exception: Index out of bounds
+Function: actor@ controller::get_target_actor(const uint arg0 = 0)
+Section: Z:\home\jimmy\Documents\projects\outlyer\controller.angelscript
+Line: 65
+Description: Index out of bounds
+
+ERROR - Exception: Index out of bounds
+Function: actor@ controller::get_target_actor(const uint arg0 = 0)
+Section: Z:\home\jimmy\Documents\projects\outlyer\controller.angelscript
+Line: 65
+Description: Index out of bounds
+
+ERROR - Exception: Index out of bounds
+Function: actor@ controller::get_target_actor(const uint arg0 = 0)
+Section: Z:\home\jimmy\Documents\projects\outlyer\controller.angelscript
+Line: 65
+Description: Index out of bounds
+
+ERROR - Exception: Index out of bounds
+Function: actor@ controller::get_target_actor(const uint arg0 = 0)
+Section: Z:\home\jimmy\Documents\projects\outlyer\controller.angelscript
+Line: 65
+Description: Index out of bounds
+
+ERROR - Exception: Index out of bounds

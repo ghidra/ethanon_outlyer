@@ -7,6 +7,7 @@ class obj
 	private vector2 m_size;
 	private vector2 m_pos;
 	private vector2 m_origin = vector2(0.5f,0.5f);
+	private float m_gscale = 1.0f;
 
 	private uint m_uid;//this can be used as a unique id identifier
 
@@ -47,6 +48,8 @@ class obj
 		}else{
 			m_mouseover=false;
 		}
+
+		m_gscale = GetScale();
 
 	}
 

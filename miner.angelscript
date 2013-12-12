@@ -15,7 +15,7 @@ class miner : pawn
 	}
 
 	void update(){
-
+		pawn::update();
 		//const vector2 screen_middle(GetScreenSize() * 0.5f);
 		
 		//I want to rotate around the planet
@@ -30,11 +30,18 @@ class miner : pawn
 
 		m_entity.AddToPositionXY(direction);
 
+
 		//now i need to suck away the planets resources
 
 		const float a_rp = m_minee.get_rp();//available resource points
 		m_minee.set_rp(a_rp-m_spd);//take some resources based on speed
 
 		m_rp = a_rp-m_minee.get_rp();//this gives me the amount that we took from the body, so that the character to absorbe it
+		
+		//DrawText(vector2(0,80), "offset x:"+offset.x+"/y:"+offset.y, "Verdana14_shadow.fnt", ARGB(250,255,255,255));
+		//DrawText(vector2(0,100), "trans x:"+trans.x+"/y:"+trans.y, "Verdana14_shadow.fnt", ARGB(250,255,255,255));
+		//DrawText(vector2(0,120), "direction:"+direction.x+"/y:"+direction.y, "Verdana14_shadow.fnt", ARGB(250,255,255,255));
+			
+
 	}
 }

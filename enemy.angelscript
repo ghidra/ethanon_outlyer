@@ -4,6 +4,7 @@ class enemy : pawn
 {
 	
 	//body@[]@ m_targetbodies;//bodies that are targetable
+	private actor@ m_atarget;//cast down from pawn to actor
 
 	//private progressbar@ m_mbar;//miners bar
 
@@ -21,11 +22,15 @@ class enemy : pawn
 		//m_weapon.set_destination(targetpawn.get_position());
 
 		@m_targetpawn = targetpawn;
+		@m_atarget = m_targetpawn;//cast down
 		//@m_targetbodies = targetbodies;
 
 		//@m_rbar = progressbar("resources",m_rp,0.0f,m_rpmax,m_pos);
 		//m_actionlocal="attack pawn";
 		m_attacktype=0;
+
+		set_attack( "attack",m_atarget);
+
 	}
 
 	void update(){
@@ -36,6 +41,26 @@ class enemy : pawn
 
 		vector2 direction(0, 0);
 		float dist = 0.0f;
+
+		if(m_attcontroller.has_actions()){//if our attack controller has actions to give us
+			const string action = m_attcontroller.get_action();//this gets the action we need to try and perform
+			if(action == "attack"){
+				if(m_weapon.get_action() == "none"){//if the weapon is trying to fire
+
+					//pawn@ target = m_attcontroller.get_target_pawn();//since i only attack enemies(curremtly anyway), I have to assume that I am trying to get a enemy object
+					actor@ target = m_attcontroller.get_target_actor();
+
+					m_weapon.set_target(target);
+					m_weapon.set_action( "attack" );
+					m_attcontroller.remove_action();
+				}
+			}
+
+		}
+
+		if( m_weapon.should_update() ){
+			m_weapon.update();
+		}
 
 		//vector2 temp = m_targetpawn.get_position();
 		//DrawText(m_pos+vector2(20.0f,-20.0f),temp.x+":"+temp.y,m_font, m_red);
