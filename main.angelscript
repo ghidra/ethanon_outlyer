@@ -15,15 +15,14 @@ notes
 ------------
 
 use minimap to allow a free camera. add temporary plottable objects, that dont effect the overall map scale.
+press on character to drag out a ghost to move him// it reads out distance and cost, and you must confirm, or have auto confirm option
+add a boss into the mix
 
 starting on enemy pawn. basic ai
 
 -maybe put the explosion in its own class to make it more versitile for other weapons
 -i have weapons now, need to look at using different ones
 
-take into account the global scale, for weapons projectiles, and distancec checks
-
-look into a smaller font potentially.
 then build base on planet
 
 weapon type classes

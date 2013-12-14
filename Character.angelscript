@@ -72,28 +72,13 @@ class Character : pawn
 		//need to update the weapons positions, so they dont hover in air and not move
 		m_weapon.set_position(m_pos);
 
-		//i need to use this just to fire off the action
-		//then another loop to update the weapon and remove the action from the queue as soon as it has been fired
-		if(m_attcontroller.has_actions()){//if our attack controller has actions to give us
-			const string action = m_attcontroller.get_action();//this gets the action we need to try and perform
-			if(action == "attack"){
-				if(m_weapon.get_action() == "none"){//if the weapon is trying to fire
-
-					enemy@ target = m_attcontroller.get_target_enemy();//since i only attack enemies(curremtly anyway), I have to assume that I am trying to get a enemy object
-
-					m_weapon.set_target(target);
-					m_weapon.set_action( "attack" );
-					//m_attacktype = 1;//just make it try anything right now
-					m_attcontroller.remove_action();
-					//once you fire a shot, its gone. cant yet figure out how to cancel first shot
-				}
-			}
-
+		/////////////
+		//attack
+		if(attack_ready()){
+			enemy@ target = m_attcontroller.get_target_enemy();
+			attack(target);
 		}
-
-		if( m_weapon.should_update() ){
-			m_weapon.update();
-		}
+		update_weapon();
 		////////////
 
 		for (uint t=0; t<m_miners.length(); t++){

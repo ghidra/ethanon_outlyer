@@ -19,7 +19,7 @@ class projectile : actor
 
 	private string m_target_type;
 
-	private ETHEntity@ m_explosion;//this will hold the explosion graphic
+	//private ETHEntity@ m_explosion;//this will hold the explosion graphic
 
 	projectile(const string &in entityName, const vector2 &in pos, const vector2 &in destination){
 		super(entityName,pos);

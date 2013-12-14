@@ -26,7 +26,7 @@ class actor : obj
 	private FrameTimer m_frametimer;
 	private uint m_currentframe;
 
-	private float m_hp=10.0f;//everything has hit points
+	private float m_hp=3.0f;//everything has hit points
 	private float m_hpmax=10.0f;//everything has hit points
 	private int m_exp=0;//experience
 	private int m_lvl=0;
@@ -160,6 +160,14 @@ class actor : obj
 	//-------
 	void take_damage(const float amount){
 		m_hp = max(0.0f,min(m_hp-amount,m_hpmax));
+		if(m_hp<=0.0f){
+			die();
+		}
+	}
+
+	void die(){//start the dying process
+		delete_entity();
+		//init_entity("explosion_01.ent",m_pos);
 	}
 
 	//-------

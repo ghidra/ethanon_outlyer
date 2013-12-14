@@ -1,6 +1,6 @@
-﻿#include "pawn.angelscript"
+﻿#include "enemy.angelscript"
 
-class enemy : pawn
+class enemy_boss : enemy
 {
 	
 	//body@[]@ m_targetbodies;//bodies that are targetable
@@ -8,10 +8,11 @@ class enemy : pawn
 
 	//private progressbar@ m_mbar;//miners bar
 
-	enemy(const string &in entityName, const vector2 pos, pawn @targetpawn){
-		super(entityName,pos);
+	enemy_boss(const string &in entityName, const vector2 pos, pawn @targetpawn){
+		super(entityName,pos,targetpawn);
 		
-		m_spd = 1.0f;
+		set_scale(4.0f);
+		/*m_spd = 1.0f;
 
 		m_rp = 10.0f;
 		m_rpmax = 50.0f;
@@ -31,13 +32,13 @@ class enemy : pawn
 
 		for(uint t = 0; t < 11; t++){
 			set_attack( "attack",m_targetpawn);
-		}
+		}*/
 
 	}
 
 	void update(){
-
-		m_action="none";
+		enemy::update();
+		/*m_action="none";
 
 		pawn::update();
 
@@ -83,7 +84,7 @@ class enemy : pawn
 		}
 
 		set_button_action();
-
+		*/
 	}
 
 	//void set_targetbody(pawn@ target){

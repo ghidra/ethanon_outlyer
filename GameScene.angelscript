@@ -2,6 +2,7 @@
 #include "Character.angelscript"
 #include "body.angelscript"
 #include "enemy.angelscript"
+#include "enemy_boss.angelscript"
 #include "camera.angelscript"
 #include "minimap.angelscript"
 
@@ -19,6 +20,7 @@ class GameScene : Scene
 	private string[] m_names = { 'drb78','jrg711','ckg31','jqg525','x'};
 
 	private enemy@[] m_enemies;//array to hold all the enemies
+	private enemy_boss@ m_boss;
 	
 	private string temp;
 
@@ -65,6 +67,8 @@ class GameScene : Scene
 		m_enemies.insertLast( enemy("random.ent", vector2(200.0f,200.0f),m_character) );
 		//m_minimap.plottable(m_enemies[m_enemies.length()-1]);
 
+		//place a boss
+		m_enemies.insertLast( enemy("random.ent", vector2(500.0f,100.0f),m_character) );
 	}
 
 	void onUpdate()

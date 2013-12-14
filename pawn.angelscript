@@ -142,4 +142,55 @@ class pawn : actor{
 		m_attcontroller.set_action(action,target);
 	}
 	//----
+
+	//----
+	//these functions are called on every update, to determine if we need to attack, and if so, handle the attacking
+
+	bool attack_ready(){
+		bool attack = false;
+		if(m_attcontroller.has_actions()){//if our attack controller has actions to give us
+			const string action = m_attcontroller.get_action();//this gets the action we need to try and perform
+			if(action == "attack"){
+				if(m_weapon.get_action() == "none"){//if the weapon is trying to fire
+					attack = true;//we are go with starting another attack
+				}
+			}
+		}
+		return attack;
+	}
+
+	void attack(actor@ target){
+		m_weapon.set_target(target);
+		attack_start();
+	}
+	void attack(pawn@ target){
+		m_weapon.set_target(target);
+		attack_start();
+	}
+	void attack(body@ target){
+		m_weapon.set_target(target);
+		attack_start();
+	}
+	void attack(enemy@ target){
+		m_weapon.set_target(target);
+		attack_start();
+	}
+	//---
+	void attack_start(){
+		m_weapon.set_action( "attack" );
+		m_attcontroller.remove_action();
+	}
+	void update_weapon(){
+		if( m_weapon.should_update() ){
+			m_weapon.update();
+		}
+	}
+	//-----------------
+	//-----------------
+	void die(){
+		actor::die();
+		if(m_weapon !is null){
+			m_weapon.die();
+		}
+	}
 }
