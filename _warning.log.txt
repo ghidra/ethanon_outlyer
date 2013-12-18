@@ -1,4 +1,4 @@
 [Z:\home\jimmy\Documents\projects\outlyer\_warning.log.txt]
 
-AngelScript WARNING (Z:\home\jimmy\Documents\projects\outlyer\minimap.angelscript line 194): 
-'temp' is not initialized.
+AngelScript WARNING (Z:\home\jimmy\Documents\projects\outlyer\Character.angelscript line 88): 
+'touchCount' is not initialized.

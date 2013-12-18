@@ -17,10 +17,14 @@ class Character : pawn
 
 	private progressbar@ m_mbar;//miners bar
 
+	private bool m_moving = false;//set when I am manually setting a destination with a mouse drag out
+
 	Character(const string &in entityName, const vector2 pos){
 		super(entityName,pos);
 		
 		m_spd = 1.0f;
+
+		m_hp = 100.0f;
 
 		m_rp = 10.0f;
 		m_rpmax = 50.0f;
@@ -54,6 +58,7 @@ class Character : pawn
 				set_destination(target.get_position());
 
 				if( m_destination_distance > length(target.get_size())*m_gscale ){
+					//m_moving=true;
 					move(m_destination_direction);
 				}else{
 					if(action == "harvest"){
@@ -64,9 +69,53 @@ class Character : pawn
 					}
 					//now remove the action from the list
 					m_controller.remove_action();
+					m_moving=false;
 				}
 			}
 		
+		}else{//if we have no actions we are allowed to get directions
+		//Determine if we are trying to drag out a direction for travel
+		////////////
+		//m_pressed = false;
+		//const uint touchCount = m_input.GetMaxTouchCount();
+		//for (uint t = 0; t < touchCount; t++)
+		//{
+			/*if (m_input.GetTouchState(t) == KS_HIT)
+			{
+				//if (isPointInButton(input.GetTouchPos(t)))
+				if (m_mouseover)
+				{
+					m_pressed = true;
+				}
+			}*/
+			if (m_mouseover){
+				if(m_input.GetLeftClickState()==KS_HIT && !m_pressed && !m_moving){
+					m_pressed=true;
+				}
+			}
+			if(m_input.GetLeftClickState()==KS_DOWN && m_pressed){
+				draw_line(m_pos-m_camerapos,m_mousepos,m_white,m_white,1.0f);
+				//m_scalefactor = (mousepos.x-m_scalestartpos)*m_scaledragmultiplier;//mp.x-m_scalestart;
+				//m_scale = m_scaleprevious+m_scalefactor;
+				//SetScaleFactor(m_scale);
+			}
+			if(m_input.GetLeftClickState()==KS_RELEASE && m_pressed){
+				//set the destination
+				set_destination(m_relativemousepos);
+				m_moving=true;
+				m_pressed=false;
+			}
+
+			//-------
+			//now if we are flagged to m_moving, move it to the destination
+
+			if( m_destination_distance >  m_spd*2 && m_moving){
+				move(m_destination_direction);
+			}else{
+				m_moving=false;
+			}
+
+		//}
 		}
 
 		//need to update the weapons positions, so they dont hover in air and not move
@@ -79,6 +128,10 @@ class Character : pawn
 			attack(target);
 		}
 		update_weapon();
+		////////////
+
+
+		DrawText(vector2(0,280), "destination distance:"+m_destination_distance+"", "Verdana14_shadow.fnt", ARGB(250,255,255,255));
 		////////////
 
 		for (uint t=0; t<m_miners.length(); t++){

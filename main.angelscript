@@ -18,6 +18,11 @@ use minimap to allow a free camera. add temporary plottable objects, that dont e
 press on character to drag out a ghost to move him// it reads out distance and cost, and you must confirm, or have auto confirm option
 add a boss into the mix
 
+add a dead boolean to objects, so that if they need to to removed, we can check that boolea, and delete the instance of the object in a class using it
+go to menu when main character dies
+
+build prettier gui read out data for objects
+
 starting on enemy pawn. basic ai
 
 -maybe put the explosion in its own class to make it more versitile for other weapons
@@ -32,6 +37,7 @@ weapon type classes
 //----to do more
 -build a class to hold all the different possible target classes
 -weapon projectile needs to exlode after max range reached
+path finding
 
 ------------
 ----game play notes----

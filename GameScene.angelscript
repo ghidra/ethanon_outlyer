@@ -68,7 +68,7 @@ class GameScene : Scene
 		//m_minimap.plottable(m_enemies[m_enemies.length()-1]);
 
 		//place a boss
-		m_enemies.insertLast( enemy("random.ent", vector2(500.0f,100.0f),m_character) );
+		@m_boss = enemy_boss("random.ent", vector2(500.0f,100.0f),m_character);
 	}
 
 	void onUpdate()
@@ -106,6 +106,7 @@ class GameScene : Scene
 			//m_minimap.plottable(m_enemies[t].get_position());
 		}
 
+		m_boss.update();
 		//now lets update the character
 		m_character.update();
 		m_camera.update();

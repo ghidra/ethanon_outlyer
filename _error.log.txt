@@ -1,3 +1,1153 @@
 [Z:\home\jimmy\Documents\projects\outlyer\_error.log.txt]
-Couldn't find the entity to delete: ID1
-Couldn't find the entity to delete: ID2
+Function: void weapon::set_position(const vector2)
+Section: Z:\home\jimmy\Documents\projects\outlyer\weapon.angelscript
+Line: 66
+Description: Null pointer access
+
+ERROR - Exception: Null pointer access
+Function: void weapon::set_position(const vector2)
+Section: Z:\home\jimmy\Documents\projects\outlyer\weapon.angelscript
+Line: 66
+Description: Null pointer access
+
+ERROR - Exception: Null pointer access
+Function: void weapon::set_position(const vector2)
+Section: Z:\home\jimmy\Documents\projects\outlyer\weapon.angelscript
+Line: 66
+Description: Null pointer access
+
+ERROR - Exception: Null pointer access
+Function: void weapon::set_position(const vector2)
+Section: Z:\home\jimmy\Documents\projects\outlyer\weapon.angelscript
+Line: 66
+Description: Null pointer access
+
+ERROR - Exception: Null pointer access
+Function: void weapon::set_position(const vector2)
+Section: Z:\home\jimmy\Documents\projects\outlyer\weapon.angelscript
+Line: 66
+Description: Null pointer access
+
+ERROR - Exception: Null pointer access
+Function: void weapon::set_position(const vector2)
+Section: Z:\home\jimmy\Documents\projects\outlyer\weapon.angelscript
+Line: 66
+Description: Null pointer access
+
+ERROR - Exception: Null pointer access
+Function: void weapon::set_position(const vector2)
+Section: Z:\home\jimmy\Documents\projects\outlyer\weapon.angelscript
+Line: 66
+Description: Null pointer access
+
+ERROR - Exception: Null pointer access
+Function: void weapon::set_position(const vector2)
+Section: Z:\home\jimmy\Documents\projects\outlyer\weapon.angelscript
+Line: 66
+Description: Null pointer access
+
+ERROR - Exception: Null pointer access
+Function: void weapon::set_position(const vector2)
+Section: Z:\home\jimmy\Documents\projects\outlyer\weapon.angelscript
+Line: 66
+Description: Null pointer access
+
+ERROR - Exception: Null pointer access
+Function: void weapon::set_position(const vector2)
+Section: Z:\home\jimmy\Documents\projects\outlyer\weapon.angelscript
+Line: 66
+Description: Null pointer access
+
+ERROR - Exception: Null pointer access
+Function: void weapon::set_position(const vector2)
+Section: Z:\home\jimmy\Documents\projects\outlyer\weapon.angelscript
+Line: 66
+Description: Null pointer access
+
+ERROR - Exception: Null pointer access
+Function: void weapon::set_position(const vector2)
+Section: Z:\home\jimmy\Documents\projects\outlyer\weapon.angelscript
+Line: 66
+Description: Null pointer access
+
+ERROR - Exception: Null pointer access
+Function: void weapon::set_position(const vector2)
+Section: Z:\home\jimmy\Documents\projects\outlyer\weapon.angelscript
+Line: 66
+Description: Null pointer access
+
+ERROR - Exception: Null pointer access
+Function: void weapon::set_position(const vector2)
+Section: Z:\home\jimmy\Documents\projects\outlyer\weapon.angelscript
+Line: 66
+Description: Null pointer access
+
+ERROR - Exception: Null pointer access
+Function: void weapon::set_position(const vector2)
+Section: Z:\home\jimmy\Documents\projects\outlyer\weapon.angelscript
+Line: 66
+Description: Null pointer access
+
+ERROR - Exception: Null pointer access
+Function: void weapon::set_position(const vector2)
+Section: Z:\home\jimmy\Documents\projects\outlyer\weapon.angelscript
+Line: 66
+Description: Null pointer access
+
+ERROR - Exception: Null pointer access
+Function: void weapon::set_position(const vector2)
+Section: Z:\home\jimmy\Documents\projects\outlyer\weapon.angelscript
+Line: 66
+Description: Null pointer access
+
+ERROR - Exception: Null pointer access
+Function: void weapon::set_position(const vector2)
+Section: Z:\home\jimmy\Documents\projects\outlyer\weapon.angelscript
+Line: 66
+Description: Null pointer access
+
+ERROR - Exception: Null pointer access
+Function: void weapon::set_position(const vector2)
+Section: Z:\home\jimmy\Documents\projects\outlyer\weapon.angelscript
+Line: 66
+Description: Null pointer access
+
+ERROR - Exception: Null pointer access
+Function: void weapon::set_position(const vector2)
+Section: Z:\home\jimmy\Documents\projects\outlyer\weapon.angelscript
+Line: 66
+Description: Null pointer access
+
+ERROR - Exception: Null pointer access
+Function: void weapon::set_position(const vector2)
+Section: Z:\home\jimmy\Documents\projects\outlyer\weapon.angelscript
+Line: 66
+Description: Null pointer access
+
+ERROR - Exception: Null pointer access
+Function: void weapon::set_position(const vector2)
+Section: Z:\home\jimmy\Documents\projects\outlyer\weapon.angelscript
+Line: 66
+Description: Null pointer access
+
+ERROR - Exception: Null pointer access
+Function: void weapon::set_position(const vector2)
+Section: Z:\home\jimmy\Documents\projects\outlyer\weapon.angelscript
+Line: 66
+Description: Null pointer access
+
+ERROR - Exception: Null pointer access
+Function: void weapon::set_position(const vector2)
+Section: Z:\home\jimmy\Documents\projects\outlyer\weapon.angelscript
+Line: 66
+Description: Null pointer access
+
+ERROR - Exception: Null pointer access
+Function: void weapon::set_position(const vector2)
+Section: Z:\home\jimmy\Documents\projects\outlyer\weapon.angelscript
+Line: 66
+Description: Null pointer access
+
+ERROR - Exception: Null pointer access
+Function: void weapon::set_position(const vector2)
+Section: Z:\home\jimmy\Documents\projects\outlyer\weapon.angelscript
+Line: 66
+Description: Null pointer access
+
+ERROR - Exception: Null pointer access
+Function: void weapon::set_position(const vector2)
+Section: Z:\home\jimmy\Documents\projects\outlyer\weapon.angelscript
+Line: 66
+Description: Null pointer access
+
+ERROR - Exception: Null pointer access
+Function: void weapon::set_position(const vector2)
+Section: Z:\home\jimmy\Documents\projects\outlyer\weapon.angelscript
+Line: 66
+Description: Null pointer access
+
+ERROR - Exception: Null pointer access
+Function: void weapon::set_position(const vector2)
+Section: Z:\home\jimmy\Documents\projects\outlyer\weapon.angelscript
+Line: 66
+Description: Null pointer access
+
+ERROR - Exception: Null pointer access
+Function: void weapon::set_position(const vector2)
+Section: Z:\home\jimmy\Documents\projects\outlyer\weapon.angelscript
+Line: 66
+Description: Null pointer access
+
+ERROR - Exception: Null pointer access
+Function: void weapon::set_position(const vector2)
+Section: Z:\home\jimmy\Documents\projects\outlyer\weapon.angelscript
+Line: 66
+Description: Null pointer access
+
+ERROR - Exception: Null pointer access
+Function: void weapon::set_position(const vector2)
+Section: Z:\home\jimmy\Documents\projects\outlyer\weapon.angelscript
+Line: 66
+Description: Null pointer access
+
+ERROR - Exception: Null pointer access
+Function: void weapon::set_position(const vector2)
+Section: Z:\home\jimmy\Documents\projects\outlyer\weapon.angelscript
+Line: 66
+Description: Null pointer access
+
+ERROR - Exception: Null pointer access
+Function: void weapon::set_position(const vector2)
+Section: Z:\home\jimmy\Documents\projects\outlyer\weapon.angelscript
+Line: 66
+Description: Null pointer access
+
+ERROR - Exception: Null pointer access
+Function: void weapon::set_position(const vector2)
+Section: Z:\home\jimmy\Documents\projects\outlyer\weapon.angelscript
+Line: 66
+Description: Null pointer access
+
+ERROR - Exception: Null pointer access
+Function: void weapon::set_position(const vector2)
+Section: Z:\home\jimmy\Documents\projects\outlyer\weapon.angelscript
+Line: 66
+Description: Null pointer access
+
+ERROR - Exception: Null pointer access
+Function: void weapon::set_position(const vector2)
+Section: Z:\home\jimmy\Documents\projects\outlyer\weapon.angelscript
+Line: 66
+Description: Null pointer access
+
+ERROR - Exception: Null pointer access
+Function: void weapon::set_position(const vector2)
+Section: Z:\home\jimmy\Documents\projects\outlyer\weapon.angelscript
+Line: 66
+Description: Null pointer access
+
+ERROR - Exception: Null pointer access
+Function: void weapon::set_position(const vector2)
+Section: Z:\home\jimmy\Documents\projects\outlyer\weapon.angelscript
+Line: 66
+Description: Null pointer access
+
+ERROR - Exception: Null pointer access
+Function: void weapon::set_position(const vector2)
+Section: Z:\home\jimmy\Documents\projects\outlyer\weapon.angelscript
+Line: 66
+Description: Null pointer access
+
+ERROR - Exception: Null pointer access
+Function: void weapon::set_position(const vector2)
+Section: Z:\home\jimmy\Documents\projects\outlyer\weapon.angelscript
+Line: 66
+Description: Null pointer access
+
+ERROR - Exception: Null pointer access
+Function: void weapon::set_position(const vector2)
+Section: Z:\home\jimmy\Documents\projects\outlyer\weapon.angelscript
+Line: 66
+Description: Null pointer access
+
+ERROR - Exception: Null pointer access
+Function: void weapon::set_position(const vector2)
+Section: Z:\home\jimmy\Documents\projects\outlyer\weapon.angelscript
+Line: 66
+Description: Null pointer access
+
+ERROR - Exception: Null pointer access
+Function: void weapon::set_position(const vector2)
+Section: Z:\home\jimmy\Documents\projects\outlyer\weapon.angelscript
+Line: 66
+Description: Null pointer access
+
+ERROR - Exception: Null pointer access
+Function: void weapon::set_position(const vector2)
+Section: Z:\home\jimmy\Documents\projects\outlyer\weapon.angelscript
+Line: 66
+Description: Null pointer access
+
+ERROR - Exception: Null pointer access
+Function: void weapon::set_position(const vector2)
+Section: Z:\home\jimmy\Documents\projects\outlyer\weapon.angelscript
+Line: 66
+Description: Null pointer access
+
+ERROR - Exception: Null pointer access
+Function: void weapon::set_position(const vector2)
+Section: Z:\home\jimmy\Documents\projects\outlyer\weapon.angelscript
+Line: 66
+Description: Null pointer access
+
+ERROR - Exception: Null pointer access
+Function: void weapon::set_position(const vector2)
+Section: Z:\home\jimmy\Documents\projects\outlyer\weapon.angelscript
+Line: 66
+Description: Null pointer access
+
+ERROR - Exception: Null pointer access
+Function: void weapon::set_position(const vector2)
+Section: Z:\home\jimmy\Documents\projects\outlyer\weapon.angelscript
+Line: 66
+Description: Null pointer access
+
+ERROR - Exception: Null pointer access
+Function: void weapon::set_position(const vector2)
+Section: Z:\home\jimmy\Documents\projects\outlyer\weapon.angelscript
+Line: 66
+Description: Null pointer access
+
+ERROR - Exception: Null pointer access
+Function: void weapon::set_position(const vector2)
+Section: Z:\home\jimmy\Documents\projects\outlyer\weapon.angelscript
+Line: 66
+Description: Null pointer access
+
+ERROR - Exception: Null pointer access
+Function: void weapon::set_position(const vector2)
+Section: Z:\home\jimmy\Documents\projects\outlyer\weapon.angelscript
+Line: 66
+Description: Null pointer access
+
+ERROR - Exception: Null pointer access
+Function: void weapon::set_position(const vector2)
+Section: Z:\home\jimmy\Documents\projects\outlyer\weapon.angelscript
+Line: 66
+Description: Null pointer access
+
+ERROR - Exception: Null pointer access
+Function: void weapon::set_position(const vector2)
+Section: Z:\home\jimmy\Documents\projects\outlyer\weapon.angelscript
+Line: 66
+Description: Null pointer access
+
+ERROR - Exception: Null pointer access
+Function: void weapon::set_position(const vector2)
+Section: Z:\home\jimmy\Documents\projects\outlyer\weapon.angelscript
+Line: 66
+Description: Null pointer access
+
+ERROR - Exception: Null pointer access
+Function: void weapon::set_position(const vector2)
+Section: Z:\home\jimmy\Documents\projects\outlyer\weapon.angelscript
+Line: 66
+Description: Null pointer access
+
+ERROR - Exception: Null pointer access
+Function: void weapon::set_position(const vector2)
+Section: Z:\home\jimmy\Documents\projects\outlyer\weapon.angelscript
+Line: 66
+Description: Null pointer access
+
+ERROR - Exception: Null pointer access
+Function: void weapon::set_position(const vector2)
+Section: Z:\home\jimmy\Documents\projects\outlyer\weapon.angelscript
+Line: 66
+Description: Null pointer access
+
+ERROR - Exception: Null pointer access
+Function: void weapon::set_position(const vector2)
+Section: Z:\home\jimmy\Documents\projects\outlyer\weapon.angelscript
+Line: 66
+Description: Null pointer access
+
+ERROR - Exception: Null pointer access
+Function: void weapon::set_position(const vector2)
+Section: Z:\home\jimmy\Documents\projects\outlyer\weapon.angelscript
+Line: 66
+Description: Null pointer access
+
+ERROR - Exception: Null pointer access
+Function: void weapon::set_position(const vector2)
+Section: Z:\home\jimmy\Documents\projects\outlyer\weapon.angelscript
+Line: 66
+Description: Null pointer access
+
+ERROR - Exception: Null pointer access
+Function: void weapon::set_position(const vector2)
+Section: Z:\home\jimmy\Documents\projects\outlyer\weapon.angelscript
+Line: 66
+Description: Null pointer access
+
+ERROR - Exception: Null pointer access
+Function: void weapon::set_position(const vector2)
+Section: Z:\home\jimmy\Documents\projects\outlyer\weapon.angelscript
+Line: 66
+Description: Null pointer access
+
+ERROR - Exception: Null pointer access
+Function: void weapon::set_position(const vector2)
+Section: Z:\home\jimmy\Documents\projects\outlyer\weapon.angelscript
+Line: 66
+Description: Null pointer access
+
+ERROR - Exception: Null pointer access
+Function: void weapon::set_position(const vector2)
+Section: Z:\home\jimmy\Documents\projects\outlyer\weapon.angelscript
+Line: 66
+Description: Null pointer access
+
+ERROR - Exception: Null pointer access
+Function: void weapon::set_position(const vector2)
+Section: Z:\home\jimmy\Documents\projects\outlyer\weapon.angelscript
+Line: 66
+Description: Null pointer access
+
+ERROR - Exception: Null pointer access
+Function: void weapon::set_position(const vector2)
+Section: Z:\home\jimmy\Documents\projects\outlyer\weapon.angelscript
+Line: 66
+Description: Null pointer access
+
+ERROR - Exception: Null pointer access
+Function: void weapon::set_position(const vector2)
+Section: Z:\home\jimmy\Documents\projects\outlyer\weapon.angelscript
+Line: 66
+Description: Null pointer access
+
+ERROR - Exception: Null pointer access
+Function: void weapon::set_position(const vector2)
+Section: Z:\home\jimmy\Documents\projects\outlyer\weapon.angelscript
+Line: 66
+Description: Null pointer access
+
+ERROR - Exception: Null pointer access
+Function: void weapon::set_position(const vector2)
+Section: Z:\home\jimmy\Documents\projects\outlyer\weapon.angelscript
+Line: 66
+Description: Null pointer access
+
+ERROR - Exception: Null pointer access
+Function: void weapon::set_position(const vector2)
+Section: Z:\home\jimmy\Documents\projects\outlyer\weapon.angelscript
+Line: 66
+Description: Null pointer access
+
+ERROR - Exception: Null pointer access
+Function: void weapon::set_position(const vector2)
+Section: Z:\home\jimmy\Documents\projects\outlyer\weapon.angelscript
+Line: 66
+Description: Null pointer access
+
+ERROR - Exception: Null pointer access
+Function: void weapon::set_position(const vector2)
+Section: Z:\home\jimmy\Documents\projects\outlyer\weapon.angelscript
+Line: 66
+Description: Null pointer access
+
+ERROR - Exception: Null pointer access
+Function: void weapon::set_position(const vector2)
+Section: Z:\home\jimmy\Documents\projects\outlyer\weapon.angelscript
+Line: 66
+Description: Null pointer access
+
+ERROR - Exception: Null pointer access
+Function: void weapon::set_position(const vector2)
+Section: Z:\home\jimmy\Documents\projects\outlyer\weapon.angelscript
+Line: 66
+Description: Null pointer access
+
+ERROR - Exception: Null pointer access
+Function: void weapon::set_position(const vector2)
+Section: Z:\home\jimmy\Documents\projects\outlyer\weapon.angelscript
+Line: 66
+Description: Null pointer access
+
+ERROR - Exception: Null pointer access
+Function: void weapon::set_position(const vector2)
+Section: Z:\home\jimmy\Documents\projects\outlyer\weapon.angelscript
+Line: 66
+Description: Null pointer access
+
+ERROR - Exception: Null pointer access
+Function: void weapon::set_position(const vector2)
+Section: Z:\home\jimmy\Documents\projects\outlyer\weapon.angelscript
+Line: 66
+Description: Null pointer access
+
+ERROR - Exception: Null pointer access
+Function: void weapon::set_position(const vector2)
+Section: Z:\home\jimmy\Documents\projects\outlyer\weapon.angelscript
+Line: 66
+Description: Null pointer access
+
+ERROR - Exception: Null pointer access
+Function: void weapon::set_position(const vector2)
+Section: Z:\home\jimmy\Documents\projects\outlyer\weapon.angelscript
+Line: 66
+Description: Null pointer access
+
+ERROR - Exception: Null pointer access
+Function: void weapon::set_position(const vector2)
+Section: Z:\home\jimmy\Documents\projects\outlyer\weapon.angelscript
+Line: 66
+Description: Null pointer access
+
+ERROR - Exception: Null pointer access
+Function: void weapon::set_position(const vector2)
+Section: Z:\home\jimmy\Documents\projects\outlyer\weapon.angelscript
+Line: 66
+Description: Null pointer access
+
+ERROR - Exception: Null pointer access
+Function: void weapon::set_position(const vector2)
+Section: Z:\home\jimmy\Documents\projects\outlyer\weapon.angelscript
+Line: 66
+Description: Null pointer access
+
+ERROR - Exception: Null pointer access
+Function: void weapon::set_position(const vector2)
+Section: Z:\home\jimmy\Documents\projects\outlyer\weapon.angelscript
+Line: 66
+Description: Null pointer access
+
+ERROR - Exception: Null pointer access
+Function: void weapon::set_position(const vector2)
+Section: Z:\home\jimmy\Documents\projects\outlyer\weapon.angelscript
+Line: 66
+Description: Null pointer access
+
+ERROR - Exception: Null pointer access
+Function: void weapon::set_position(const vector2)
+Section: Z:\home\jimmy\Documents\projects\outlyer\weapon.angelscript
+Line: 66
+Description: Null pointer access
+
+ERROR - Exception: Null pointer access
+Function: void weapon::set_position(const vector2)
+Section: Z:\home\jimmy\Documents\projects\outlyer\weapon.angelscript
+Line: 66
+Description: Null pointer access
+
+ERROR - Exception: Null pointer access
+Function: void weapon::set_position(const vector2)
+Section: Z:\home\jimmy\Documents\projects\outlyer\weapon.angelscript
+Line: 66
+Description: Null pointer access
+
+ERROR - Exception: Null pointer access
+Function: void weapon::set_position(const vector2)
+Section: Z:\home\jimmy\Documents\projects\outlyer\weapon.angelscript
+Line: 66
+Description: Null pointer access
+
+ERROR - Exception: Null pointer access
+Function: void weapon::set_position(const vector2)
+Section: Z:\home\jimmy\Documents\projects\outlyer\weapon.angelscript
+Line: 66
+Description: Null pointer access
+
+ERROR - Exception: Null pointer access
+Function: void weapon::set_position(const vector2)
+Section: Z:\home\jimmy\Documents\projects\outlyer\weapon.angelscript
+Line: 66
+Description: Null pointer access
+
+ERROR - Exception: Null pointer access
+Function: void weapon::set_position(const vector2)
+Section: Z:\home\jimmy\Documents\projects\outlyer\weapon.angelscript
+Line: 66
+Description: Null pointer access
+
+ERROR - Exception: Null pointer access
+Function: void weapon::set_position(const vector2)
+Section: Z:\home\jimmy\Documents\projects\outlyer\weapon.angelscript
+Line: 66
+Description: Null pointer access
+
+ERROR - Exception: Null pointer access
+Function: void weapon::set_position(const vector2)
+Section: Z:\home\jimmy\Documents\projects\outlyer\weapon.angelscript
+Line: 66
+Description: Null pointer access
+
+ERROR - Exception: Null pointer access
+Function: void weapon::set_position(const vector2)
+Section: Z:\home\jimmy\Documents\projects\outlyer\weapon.angelscript
+Line: 66
+Description: Null pointer access
+
+ERROR - Exception: Null pointer access
+Function: void weapon::set_position(const vector2)
+Section: Z:\home\jimmy\Documents\projects\outlyer\weapon.angelscript
+Line: 66
+Description: Null pointer access
+
+ERROR - Exception: Null pointer access
+Function: void weapon::set_position(const vector2)
+Section: Z:\home\jimmy\Documents\projects\outlyer\weapon.angelscript
+Line: 66
+Description: Null pointer access
+
+ERROR - Exception: Null pointer access
+Function: void weapon::set_position(const vector2)
+Section: Z:\home\jimmy\Documents\projects\outlyer\weapon.angelscript
+Line: 66
+Description: Null pointer access
+
+ERROR - Exception: Null pointer access
+Function: void weapon::set_position(const vector2)
+Section: Z:\home\jimmy\Documents\projects\outlyer\weapon.angelscript
+Line: 66
+Description: Null pointer access
+
+ERROR - Exception: Null pointer access
+Function: void weapon::set_position(const vector2)
+Section: Z:\home\jimmy\Documents\projects\outlyer\weapon.angelscript
+Line: 66
+Description: Null pointer access
+
+ERROR - Exception: Null pointer access
+Function: void weapon::set_position(const vector2)
+Section: Z:\home\jimmy\Documents\projects\outlyer\weapon.angelscript
+Line: 66
+Description: Null pointer access
+
+ERROR - Exception: Null pointer access
+Function: void weapon::set_position(const vector2)
+Section: Z:\home\jimmy\Documents\projects\outlyer\weapon.angelscript
+Line: 66
+Description: Null pointer access
+
+ERROR - Exception: Null pointer access
+Function: void weapon::set_position(const vector2)
+Section: Z:\home\jimmy\Documents\projects\outlyer\weapon.angelscript
+Line: 66
+Description: Null pointer access
+
+ERROR - Exception: Null pointer access
+Function: void weapon::set_position(const vector2)
+Section: Z:\home\jimmy\Documents\projects\outlyer\weapon.angelscript
+Line: 66
+Description: Null pointer access
+
+ERROR - Exception: Null pointer access
+Function: void weapon::set_position(const vector2)
+Section: Z:\home\jimmy\Documents\projects\outlyer\weapon.angelscript
+Line: 66
+Description: Null pointer access
+
+ERROR - Exception: Null pointer access
+Function: void weapon::set_position(const vector2)
+Section: Z:\home\jimmy\Documents\projects\outlyer\weapon.angelscript
+Line: 66
+Description: Null pointer access
+
+ERROR - Exception: Null pointer access
+Function: void weapon::set_position(const vector2)
+Section: Z:\home\jimmy\Documents\projects\outlyer\weapon.angelscript
+Line: 66
+Description: Null pointer access
+
+ERROR - Exception: Null pointer access
+Function: void weapon::set_position(const vector2)
+Section: Z:\home\jimmy\Documents\projects\outlyer\weapon.angelscript
+Line: 66
+Description: Null pointer access
+
+ERROR - Exception: Null pointer access
+Function: void weapon::set_position(const vector2)
+Section: Z:\home\jimmy\Documents\projects\outlyer\weapon.angelscript
+Line: 66
+Description: Null pointer access
+
+ERROR - Exception: Null pointer access
+Function: void weapon::set_position(const vector2)
+Section: Z:\home\jimmy\Documents\projects\outlyer\weapon.angelscript
+Line: 66
+Description: Null pointer access
+
+ERROR - Exception: Null pointer access
+Function: void weapon::set_position(const vector2)
+Section: Z:\home\jimmy\Documents\projects\outlyer\weapon.angelscript
+Line: 66
+Description: Null pointer access
+
+ERROR - Exception: Null pointer access
+Function: void weapon::set_position(const vector2)
+Section: Z:\home\jimmy\Documents\projects\outlyer\weapon.angelscript
+Line: 66
+Description: Null pointer access
+
+ERROR - Exception: Null pointer access
+Function: void weapon::set_position(const vector2)
+Section: Z:\home\jimmy\Documents\projects\outlyer\weapon.angelscript
+Line: 66
+Description: Null pointer access
+
+ERROR - Exception: Null pointer access
+Function: void weapon::set_position(const vector2)
+Section: Z:\home\jimmy\Documents\projects\outlyer\weapon.angelscript
+Line: 66
+Description: Null pointer access
+
+ERROR - Exception: Null pointer access
+Function: void weapon::set_position(const vector2)
+Section: Z:\home\jimmy\Documents\projects\outlyer\weapon.angelscript
+Line: 66
+Description: Null pointer access
+
+ERROR - Exception: Null pointer access
+Function: void weapon::set_position(const vector2)
+Section: Z:\home\jimmy\Documents\projects\outlyer\weapon.angelscript
+Line: 66
+Description: Null pointer access
+
+ERROR - Exception: Null pointer access
+Function: void weapon::set_position(const vector2)
+Section: Z:\home\jimmy\Documents\projects\outlyer\weapon.angelscript
+Line: 66
+Description: Null pointer access
+
+ERROR - Exception: Null pointer access
+Function: void weapon::set_position(const vector2)
+Section: Z:\home\jimmy\Documents\projects\outlyer\weapon.angelscript
+Line: 66
+Description: Null pointer access
+
+ERROR - Exception: Null pointer access
+Function: void weapon::set_position(const vector2)
+Section: Z:\home\jimmy\Documents\projects\outlyer\weapon.angelscript
+Line: 66
+Description: Null pointer access
+
+ERROR - Exception: Null pointer access
+Function: void weapon::set_position(const vector2)
+Section: Z:\home\jimmy\Documents\projects\outlyer\weapon.angelscript
+Line: 66
+Description: Null pointer access
+
+ERROR - Exception: Null pointer access
+Function: void weapon::set_position(const vector2)
+Section: Z:\home\jimmy\Documents\projects\outlyer\weapon.angelscript
+Line: 66
+Description: Null pointer access
+
+ERROR - Exception: Null pointer access
+Function: void weapon::set_position(const vector2)
+Section: Z:\home\jimmy\Documents\projects\outlyer\weapon.angelscript
+Line: 66
+Description: Null pointer access
+
+ERROR - Exception: Null pointer access
+Function: void weapon::set_position(const vector2)
+Section: Z:\home\jimmy\Documents\projects\outlyer\weapon.angelscript
+Line: 66
+Description: Null pointer access
+
+ERROR - Exception: Null pointer access
+Function: void weapon::set_position(const vector2)
+Section: Z:\home\jimmy\Documents\projects\outlyer\weapon.angelscript
+Line: 66
+Description: Null pointer access
+
+ERROR - Exception: Null pointer access
+Function: void weapon::set_position(const vector2)
+Section: Z:\home\jimmy\Documents\projects\outlyer\weapon.angelscript
+Line: 66
+Description: Null pointer access
+
+ERROR - Exception: Null pointer access
+Function: void weapon::set_position(const vector2)
+Section: Z:\home\jimmy\Documents\projects\outlyer\weapon.angelscript
+Line: 66
+Description: Null pointer access
+
+ERROR - Exception: Null pointer access
+Function: void weapon::set_position(const vector2)
+Section: Z:\home\jimmy\Documents\projects\outlyer\weapon.angelscript
+Line: 66
+Description: Null pointer access
+
+ERROR - Exception: Null pointer access
+Function: void weapon::set_position(const vector2)
+Section: Z:\home\jimmy\Documents\projects\outlyer\weapon.angelscript
+Line: 66
+Description: Null pointer access
+
+ERROR - Exception: Null pointer access
+Function: void weapon::set_position(const vector2)
+Section: Z:\home\jimmy\Documents\projects\outlyer\weapon.angelscript
+Line: 66
+Description: Null pointer access
+
+ERROR - Exception: Null pointer access
+Function: void weapon::set_position(const vector2)
+Section: Z:\home\jimmy\Documents\projects\outlyer\weapon.angelscript
+Line: 66
+Description: Null pointer access
+
+ERROR - Exception: Null pointer access
+Function: void weapon::set_position(const vector2)
+Section: Z:\home\jimmy\Documents\projects\outlyer\weapon.angelscript
+Line: 66
+Description: Null pointer access
+
+ERROR - Exception: Null pointer access
+Function: void weapon::set_position(const vector2)
+Section: Z:\home\jimmy\Documents\projects\outlyer\weapon.angelscript
+Line: 66
+Description: Null pointer access
+
+ERROR - Exception: Null pointer access
+Function: void weapon::set_position(const vector2)
+Section: Z:\home\jimmy\Documents\projects\outlyer\weapon.angelscript
+Line: 66
+Description: Null pointer access
+
+ERROR - Exception: Null pointer access
+Function: void weapon::set_position(const vector2)
+Section: Z:\home\jimmy\Documents\projects\outlyer\weapon.angelscript
+Line: 66
+Description: Null pointer access
+
+ERROR - Exception: Null pointer access
+Function: void weapon::set_position(const vector2)
+Section: Z:\home\jimmy\Documents\projects\outlyer\weapon.angelscript
+Line: 66
+Description: Null pointer access
+
+ERROR - Exception: Null pointer access
+Function: void weapon::set_position(const vector2)
+Section: Z:\home\jimmy\Documents\projects\outlyer\weapon.angelscript
+Line: 66
+Description: Null pointer access
+
+ERROR - Exception: Null pointer access
+Function: void weapon::set_position(const vector2)
+Section: Z:\home\jimmy\Documents\projects\outlyer\weapon.angelscript
+Line: 66
+Description: Null pointer access
+
+ERROR - Exception: Null pointer access
+Function: void weapon::set_position(const vector2)
+Section: Z:\home\jimmy\Documents\projects\outlyer\weapon.angelscript
+Line: 66
+Description: Null pointer access
+
+ERROR - Exception: Null pointer access
+Function: void weapon::set_position(const vector2)
+Section: Z:\home\jimmy\Documents\projects\outlyer\weapon.angelscript
+Line: 66
+Description: Null pointer access
+
+ERROR - Exception: Null pointer access
+Function: void weapon::set_position(const vector2)
+Section: Z:\home\jimmy\Documents\projects\outlyer\weapon.angelscript
+Line: 66
+Description: Null pointer access
+
+ERROR - Exception: Null pointer access
+Function: void weapon::set_position(const vector2)
+Section: Z:\home\jimmy\Documents\projects\outlyer\weapon.angelscript
+Line: 66
+Description: Null pointer access
+
+ERROR - Exception: Null pointer access
+Function: void weapon::set_position(const vector2)
+Section: Z:\home\jimmy\Documents\projects\outlyer\weapon.angelscript
+Line: 66
+Description: Null pointer access
+
+ERROR - Exception: Null pointer access
+Function: void weapon::set_position(const vector2)
+Section: Z:\home\jimmy\Documents\projects\outlyer\weapon.angelscript
+Line: 66
+Description: Null pointer access
+
+ERROR - Exception: Null pointer access
+Function: void weapon::set_position(const vector2)
+Section: Z:\home\jimmy\Documents\projects\outlyer\weapon.angelscript
+Line: 66
+Description: Null pointer access
+
+ERROR - Exception: Null pointer access
+Function: void weapon::set_position(const vector2)
+Section: Z:\home\jimmy\Documents\projects\outlyer\weapon.angelscript
+Line: 66
+Description: Null pointer access
+
+ERROR - Exception: Null pointer access
+Function: void weapon::set_position(const vector2)
+Section: Z:\home\jimmy\Documents\projects\outlyer\weapon.angelscript
+Line: 66
+Description: Null pointer access
+
+ERROR - Exception: Null pointer access
+Function: void weapon::set_position(const vector2)
+Section: Z:\home\jimmy\Documents\projects\outlyer\weapon.angelscript
+Line: 66
+Description: Null pointer access
+
+ERROR - Exception: Null pointer access
+Function: void weapon::set_position(const vector2)
+Section: Z:\home\jimmy\Documents\projects\outlyer\weapon.angelscript
+Line: 66
+Description: Null pointer access
+
+ERROR - Exception: Null pointer access
+Function: void weapon::set_position(const vector2)
+Section: Z:\home\jimmy\Documents\projects\outlyer\weapon.angelscript
+Line: 66
+Description: Null pointer access
+
+ERROR - Exception: Null pointer access
+Function: void weapon::set_position(const vector2)
+Section: Z:\home\jimmy\Documents\projects\outlyer\weapon.angelscript
+Line: 66
+Description: Null pointer access
+
+ERROR - Exception: Null pointer access
+Function: void weapon::set_position(const vector2)
+Section: Z:\home\jimmy\Documents\projects\outlyer\weapon.angelscript
+Line: 66
+Description: Null pointer access
+
+ERROR - Exception: Null pointer access
+Function: void weapon::set_position(const vector2)
+Section: Z:\home\jimmy\Documents\projects\outlyer\weapon.angelscript
+Line: 66
+Description: Null pointer access
+
+ERROR - Exception: Null pointer access
+Function: void weapon::set_position(const vector2)
+Section: Z:\home\jimmy\Documents\projects\outlyer\weapon.angelscript
+Line: 66
+Description: Null pointer access
+
+ERROR - Exception: Null pointer access
+Function: void weapon::set_position(const vector2)
+Section: Z:\home\jimmy\Documents\projects\outlyer\weapon.angelscript
+Line: 66
+Description: Null pointer access
+
+ERROR - Exception: Null pointer access
+Function: void weapon::set_position(const vector2)
+Section: Z:\home\jimmy\Documents\projects\outlyer\weapon.angelscript
+Line: 66
+Description: Null pointer access
+
+ERROR - Exception: Null pointer access
+Function: void weapon::set_position(const vector2)
+Section: Z:\home\jimmy\Documents\projects\outlyer\weapon.angelscript
+Line: 66
+Description: Null pointer access
+
+ERROR - Exception: Null pointer access
+Function: void weapon::set_position(const vector2)
+Section: Z:\home\jimmy\Documents\projects\outlyer\weapon.angelscript
+Line: 66
+Description: Null pointer access
+
+ERROR - Exception: Null pointer access
+Function: void weapon::set_position(const vector2)
+Section: Z:\home\jimmy\Documents\projects\outlyer\weapon.angelscript
+Line: 66
+Description: Null pointer access
+
+ERROR - Exception: Null pointer access
+Function: void weapon::set_position(const vector2)
+Section: Z:\home\jimmy\Documents\projects\outlyer\weapon.angelscript
+Line: 66
+Description: Null pointer access
+
+ERROR - Exception: Null pointer access
+Function: void weapon::set_position(const vector2)
+Section: Z:\home\jimmy\Documents\projects\outlyer\weapon.angelscript
+Line: 66
+Description: Null pointer access
+
+ERROR - Exception: Null pointer access
+Function: void weapon::set_position(const vector2)
+Section: Z:\home\jimmy\Documents\projects\outlyer\weapon.angelscript
+Line: 66
+Description: Null pointer access
+
+ERROR - Exception: Null pointer access
+Function: void weapon::set_position(const vector2)
+Section: Z:\home\jimmy\Documents\projects\outlyer\weapon.angelscript
+Line: 66
+Description: Null pointer access
+
+ERROR - Exception: Null pointer access
+Function: void weapon::set_position(const vector2)
+Section: Z:\home\jimmy\Documents\projects\outlyer\weapon.angelscript
+Line: 66
+Description: Null pointer access
+
+ERROR - Exception: Null pointer access
+Function: void weapon::set_position(const vector2)
+Section: Z:\home\jimmy\Documents\projects\outlyer\weapon.angelscript
+Line: 66
+Description: Null pointer access
+
+ERROR - Exception: Null pointer access
+Function: void weapon::set_position(const vector2)
+Section: Z:\home\jimmy\Documents\projects\outlyer\weapon.angelscript
+Line: 66
+Description: Null pointer access
+
+ERROR - Exception: Null pointer access
+Function: void weapon::set_position(const vector2)
+Section: Z:\home\jimmy\Documents\projects\outlyer\weapon.angelscript
+Line: 66
+Description: Null pointer access
+
+ERROR - Exception: Null pointer access
+Function: void weapon::set_position(const vector2)
+Section: Z:\home\jimmy\Documents\projects\outlyer\weapon.angelscript
+Line: 66
+Description: Null pointer access
+
+ERROR - Exception: Null pointer access
+Function: void weapon::set_position(const vector2)
+Section: Z:\home\jimmy\Documents\projects\outlyer\weapon.angelscript
+Line: 66
+Description: Null pointer access
+
+ERROR - Exception: Null pointer access
+Function: void weapon::set_position(const vector2)
+Section: Z:\home\jimmy\Documents\projects\outlyer\weapon.angelscript
+Line: 66
+Description: Null pointer access
+
+ERROR - Exception: Null pointer access
+Function: void weapon::set_position(const vector2)
+Section: Z:\home\jimmy\Documents\projects\outlyer\weapon.angelscript
+Line: 66
+Description: Null pointer access
+
+ERROR - Exception: Null pointer access
+Function: void weapon::set_position(const vector2)
+Section: Z:\home\jimmy\Documents\projects\outlyer\weapon.angelscript
+Line: 66
+Description: Null pointer access
+
+ERROR - Exception: Null pointer access
+Function: void weapon::set_position(const vector2)
+Section: Z:\home\jimmy\Documents\projects\outlyer\weapon.angelscript
+Line: 66
+Description: Null pointer access
+
+ERROR - Exception: Null pointer access
+Function: void weapon::set_position(const vector2)
+Section: Z:\home\jimmy\Documents\projects\outlyer\weapon.angelscript
+Line: 66
+Description: Null pointer access
+
+ERROR - Exception: Null pointer access
+Function: void weapon::set_position(const vector2)
+Section: Z:\home\jimmy\Documents\projects\outlyer\weapon.angelscript
+Line: 66
+Description: Null pointer access
+
+ERROR - Exception: Null pointer access
+Function: void weapon::set_position(const vector2)
+Section: Z:\home\jimmy\Documents\projects\outlyer\weapon.angelscript
+Line: 66
+Description: Null pointer access
+
+ERROR - Exception: Null pointer access
+Function: void weapon::set_position(const vector2)
+Section: Z:\home\jimmy\Documents\projects\outlyer\weapon.angelscript
+Line: 66
+Description: Null pointer access
+
+ERROR - Exception: Null pointer access
+Function: void weapon::set_position(const vector2)
+Section: Z:\home\jimmy\Documents\projects\outlyer\weapon.angelscript
+Line: 66
+Description: Null pointer access
+
+ERROR - Exception: Null pointer access
+Function: void weapon::set_position(const vector2)
+Section: Z:\home\jimmy\Documents\projects\outlyer\weapon.angelscript
+Line: 66
+Description: Null pointer access
+
+ERROR - Exception: Null pointer access
+Function: void weapon::set_position(const vector2)
+Section: Z:\home\jimmy\Documents\projects\outlyer\weapon.angelscript
+Line: 66
+Description: Null pointer access
+
+ERROR - Exception: Null pointer access
+Function: void weapon::set_position(const vector2)
+Section: Z:\home\jimmy\Documents\projects\outlyer\weapon.angelscript
+Line: 66
+Description: Null pointer access
+
+ERROR - Exception: Null pointer access
+Function: void weapon::set_position(const vector2)
+Section: Z:\home\jimmy\Documents\projects\outlyer\weapon.angelscript
+Line: 66
+Description: Null pointer access
+
+ERROR - Exception: Null pointer access
+Function: void weapon::set_position(const vector2)
+Section: Z:\home\jimmy\Documents\projects\outlyer\weapon.angelscript
+Line: 66
+Description: Null pointer access
+
+ERROR - Exception: Null pointer access
+Function: void weapon::set_position(const vector2)
+Section: Z:\home\jimmy\Documents\projects\outlyer\weapon.angelscript
+Line: 66
+Description: Null pointer access
+
+ERROR - Exception: Null pointer access
+Function: void weapon::set_position(const vector2)
+Section: Z:\home\jimmy\Documents\projects\outlyer\weapon.angelscript
+Line: 66
+Description: Null pointer access
+
+ERROR - Exception: Null pointer access
+Function: void weapon::set_position(const vector2)
+Section: Z:\home\jimmy\Documents\projects\outlyer\weapon.angelscript
+Line: 66
+Description: Null pointer access
+
+ERROR - Exception: Null pointer access
+Function: void weapon::set_position(const vector2)
+Section: Z:\home\jimmy\Documents\projects\outlyer\weapon.angelscript
+Line: 66
+Description: Null pointer access
+
+ERROR - Exception: Null pointer access
+Function: void weapon::set_position(const vector2)
+Section: Z:\home\jimmy\Documents\projects\outlyer\weapon.angelscript
+Line: 66
+Description: Null pointer access
+
+ERROR - Exception: Null pointer access
+Function: void weapon::set_position(const vector2)
+Section: Z:\home\jimmy\Documents\projects\outlyer\weapon.angelscript
+Line: 66
+Description: Null pointer access
+
+ERROR - Exception: Null pointer access
+Function: void weapon::set_position(const vector2)
+Section: Z:\home\jimmy\Documents\projects\outlyer\weapon.angelscript
+Line: 66
+Description: Null pointer access
+
+ERROR - Exception: Null pointer access
+Function: void weapon::set_position(const vector2)
+Section: Z:\home\jimmy\Documents\projects\outlyer\weapon.angelscript
+Line: 66
+Description: Null pointer access
+
+ERROR - Exception: Null pointer access
+Function: void weapon::set_position(const vector2)
+Section: Z:\home\jimmy\Documents\projects\outlyer\weapon.angelscript
+Line: 66
+Description: Null pointer access
+
+ERROR - Exception: Null pointer access
+Function: void weapon::set_position(const vector2)
+Section: Z:\home\jimmy\Documents\projects\outlyer\weapon.angelscript
+Line: 66
+Description: Null pointer access
+
+ERROR - Exception: Null pointer access

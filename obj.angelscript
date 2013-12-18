@@ -13,11 +13,21 @@ class obj
 
 	private string m_font = "Verdana14_shadow.fnt";
 
+	private ETHInput@ m_input;
+
 	private bool m_mouseover=false;
 	private bool m_mousedown=false;
 	private bool m_pressed=false;
 
 	private bool m_onscreen=false;
+
+	private vector2 m_relativemousepos;
+	private vector2 m_mousepos;
+	private vector2 m_camerapos;
+	private vector2 m_screensize;
+
+	private vector2 m_vo = vector2(1.0f,0.0f);//the 0 direction angle vector
+	private vector2 m_vu = vector2(0.0f,-1.0f);//vector that points up, these are to check angles against
 
 	private string m_label = "none";
 
@@ -31,19 +41,20 @@ class obj
 	obj(){}
 
 	void update(){
-		ETHInput@ input = GetInputHandle();
-		const vector2 mousepos = input.GetCursorPos();
-		const vector2 screensize = GetScreenSize();
-		const vector2 camerapos = GetCameraPos();
+		//ETHInput@ input = GetInputHandle();
+		@m_input = GetInputHandle();
+		m_mousepos = m_input.GetCursorPos();
+		m_screensize = GetScreenSize();
+		m_camerapos = GetCameraPos();
 
-		const vector2 relmousepos = mousepos+camerapos;//the mouse position relative to the camera
+		m_relativemousepos = m_mousepos+m_camerapos;//the mouse position relative to the camera
 		//const vector2 screencenter = screensize*0.5f;
 		//const vector2 relscreenpos = camerapos;//the position relative to the camera
 
 		//trying to figure out if this object is even visible on screen
-		m_onscreen = isPointInRect(m_pos, camerapos, screensize, vector2(0.0f,0.0f));
+		m_onscreen = isPointInRect(m_pos, m_camerapos, m_screensize, vector2(0.0f,0.0f));
 
-		if( is_point_in_bb(relmousepos) && m_onscreen){
+		if( is_point_in_bb(m_relativemousepos) && m_onscreen){
 			m_mouseover=true;
 		}else{
 			m_mouseover=false;
@@ -109,13 +120,24 @@ class obj
 		//DrawLine();
 
 		//i need to determine the direction this line is going
-		//right now I only support horizontal and vertical 
-		float a = 0.0f;//this is to dial in the angle to draw the line at
-		if( !( abs(p1.x-p2.x)>0.0f) ){//this is a vertical line
-			a = -90.0f;//this angle draws straight down
-		}
-
+		const float a = draw_angle(normalize(p2-p1));
 		const float l = length(p2-p1);
+
 		DrawShapedSprite("sprites/pixel_white.png", p1, vector2(l, w), c1,a);
+	}
+	//get the dot product between 2 vectors
+	float dot(const vector2 v1, const vector2 v2){
+		return v1.x*v2.x + v1.y* v2.y;
+	}
+	float angle_between(const vector2 v1, const vector2 v2){
+		return acos(dot(v1,v2))*(180/PI);
+	}
+	float draw_angle(const vector2 dir){
+		const float neg = dot(dir, m_vu);//determine if we need to negate the angle value
+		float a = angle_between(dir,m_vo);
+		if(neg<0.0f){
+			a*=-1;
+		}
+		return a;
 	}
 }

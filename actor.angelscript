@@ -66,9 +66,13 @@ class actor : obj
 
 		const uint m_currentframe = m_frametimer.getCurrentFrame();
 		*/
-		m_pos = m_entity.GetPositionXY();//this is so that the global scale hands the xy value to the object here
+		if(m_entity !is null){
+			m_pos = m_entity.GetPositionXY();//this is so that the global scale hands the xy value to the object here
+		}
 		m_spd_ups = UnitsPerSecond(m_spd);
 		m_tspd_ups = UnitsPerSecond(m_tspd);
+
+		update_destination_distance();
 	}
 	///--------
 	vector2 get_position(){
@@ -124,9 +128,16 @@ class actor : obj
 		//now set the new destination information
 		m_destination = destination;
 		m_destination_direction = destination-get_position();
-		m_destination_distance = length(m_destination_direction);
 		m_destination_distance_init = length(m_destination_direction);
-		
+		//m_destination_distance = length(m_destination_direction);
+		update_destination_distance();
+	}
+	void update_destination_distance(){
+		m_destination_distance = length(m_destination-get_position());
+		//m_destination_distance_init = length(m_destination_direction);
+	}
+	void clear_destination(){
+
 	}
 	//------
 	void set_action(const string action){
@@ -172,6 +183,9 @@ class actor : obj
 
 	//-------
 	void delete_entity(){//removes the entity
-		DeleteEntity(m_entity);
+		if(m_entity !is null){
+			@m_entity = DeleteEntity(m_entity);
+
+		}
 	}
 }

@@ -11,7 +11,7 @@ class enemy_boss : enemy
 	enemy_boss(const string &in entityName, const vector2 pos, pawn @targetpawn){
 		super(entityName,pos,targetpawn);
 		
-		set_scale(4.0f);
+		set_scale(2.0f);
 		/*m_spd = 1.0f;
 
 		m_rp = 10.0f;
@@ -29,7 +29,7 @@ class enemy_boss : enemy
 		//@m_rbar = progressbar("resources",m_rp,0.0f,m_rpmax,m_pos);
 		//m_actionlocal="attack pawn";
 		m_attacktype=0;
-
+	
 		for(uint t = 0; t < 11; t++){
 			set_attack( "attack",m_targetpawn);
 		}*/
