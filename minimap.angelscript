@@ -31,6 +31,8 @@ class minimap : obj
 	private actor@[] m_plottable_actors;
 	private camera@ m_plottable_camera;
 
+	private uint m_bgcolor = ARGB(200,0,0,0);//the background color of the map
+
 	minimap(){
 		set_format(m_format);
 		clear_plottable();
@@ -78,6 +80,8 @@ class minimap : obj
 		draw_line( m_tr, m_br, m_white, m_white, 1.0f );//right
 		draw_line( m_bl, m_br, m_white, m_white, 1.0f );//bottom
 		draw_line( m_tl, m_bl, m_white, m_white, 1.0f );//left
+
+		DrawShapedSprite("sprites/pixel_white.png", m_tl+vector2(0.0f,1.0f), vector2(abs(m_tr.x-m_tl.x), abs(m_bl.y-m_tl.y))-vector2(1.0f,1.0f), m_bgcolor,0.0);
 
 		m_center = vector2( m_tl.x+(fdistance(m_tl.x,m_tr.x)/2), m_tl.y+(fdistance(m_tl.y,m_bl.y)/2) );
 

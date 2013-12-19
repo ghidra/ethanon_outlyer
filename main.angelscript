@@ -15,8 +15,6 @@ notes
 ------------
 
 use minimap to allow a free camera. add temporary plottable objects, that dont effect the overall map scale.
-press on character to drag out a ghost to move him// it reads out distance and cost, and you must confirm, or have auto confirm option
-add a boss into the mix
 
 add a dead boolean to objects, so that if they need to to removed, we can check that boolea, and delete the instance of the object in a class using it
 go to menu when main character dies

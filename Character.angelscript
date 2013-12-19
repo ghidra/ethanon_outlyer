@@ -14,6 +14,10 @@ class Character : pawn
 	enemy@ m_targetenemy;//the body that we are targeting
 
 	private vector2 m_guipos;
+	private vector2 m_guibarsize = vector2(20.0f,20.0f);//size of the bar
+	private vector2 m_guibardir = vector2(-0.5f,-0.5f);//size of the bar
+	private float m_guimargin = 20.0f;
+
 
 	private progressbar@ m_mbar;//miners bar
 
@@ -29,10 +33,12 @@ class Character : pawn
 		m_rp = 10.0f;
 		m_rpmax = 50.0f;
 
-		m_guipos = vector2(GetScreenSize() * vector2(0.0f,0.8f) );
+		m_guipos = vector2(GetScreenSize() * vector2(0.1f,0.8f) );
 
-		@m_rbar = progressbar("resources",m_rp,0.0f,m_rpmax,m_guipos);
-		@m_mbar = progressbar("miners",m_minerscount,0.0f,m_minersmax,m_guipos+vector2(0.0f,26.0f));
+		//@m_rbar = progressbar("resources",m_rp,0.0f,m_rpmax,m_guipos);
+		@m_rbar = progressbar("resources",m_rp,0.0f,m_rpmax,m_guipos,vector2(),m_guibarsize,m_guibardir,1);
+		//@m_mbar = progressbar("miners",m_minerscount,0.0f,m_minersmax,m_guipos+vector2(0.0f,26.0f));
+		@m_mbar = progressbar("miners",m_minerscount,0.0f,m_minersmax,m_guipos+vector2(0.0f,26.0f),vector2(),m_guibarsize,m_guibardir,1);
 		m_hbar.set_position(m_guipos+vector2(0.0f,52.0f));
 
 		//weapons
