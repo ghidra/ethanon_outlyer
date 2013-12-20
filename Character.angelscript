@@ -14,8 +14,6 @@ class Character : pawn
 	enemy@ m_targetenemy;//the body that we are targeting
 
 	private vector2 m_guipos;
-	private vector2 m_guibarsize = vector2(20.0f,20.0f);//size of the bar
-	private vector2 m_guibardir = vector2(-0.5f,-0.5f);//size of the bar
 	private float m_guimargin = 20.0f;
 
 
@@ -33,13 +31,13 @@ class Character : pawn
 		m_rp = 10.0f;
 		m_rpmax = 50.0f;
 
-		m_guipos = vector2(GetScreenSize() * vector2(0.1f,0.8f) );
+		const vector2 ss = GetScreenSize();
+		const float pwidth = pythagorean(m_guibarsize.x,m_guibarsize.y);//this is the width horizonatally and vertically based on pythagorean
+		m_guipos = vector2( m_guimargin+(m_guibarsize.x/2), ss.y-m_guimargin );
 
-		//@m_rbar = progressbar("resources",m_rp,0.0f,m_rpmax,m_guipos);
-		@m_rbar = progressbar("resources",m_rp,0.0f,m_rpmax,m_guipos,vector2(),m_guibarsize,m_guibardir,1);
-		//@m_mbar = progressbar("miners",m_minerscount,0.0f,m_minersmax,m_guipos+vector2(0.0f,26.0f));
-		@m_mbar = progressbar("miners",m_minerscount,0.0f,m_minersmax,m_guipos+vector2(0.0f,26.0f),vector2(),m_guibarsize,m_guibardir,1);
-		m_hbar.set_position(m_guipos+vector2(0.0f,52.0f));
+		m_hbar.set_position(m_guipos+vector2((pwidth/2.0f)+4.0f,-(pwidth+8.0f)));//default healt bar
+		@m_rbar = progressbar("resources",m_rp,0.0f,m_rpmax,m_guipos+vector2(0.0f,-((pwidth/2.0f)+4.0f)),vector2(),m_guibarsize,m_guibardir,1,0,0);
+		@m_mbar = progressbar("miners",m_minerscount,0.0f,m_minersmax,m_guipos+vector2( (pwidth/2.0f)+4.0f,0.0f),vector2(),m_guibarsize,m_guibardir,1,0,0);
 
 		//weapons
 		//init_inventory();
@@ -137,7 +135,7 @@ class Character : pawn
 		////////////
 
 
-		DrawText(vector2(0,280), "destination distance:"+m_destination_distance+"", "Verdana14_shadow.fnt", ARGB(250,255,255,255));
+		//DrawText(vector2(0,280), "destination distance:"+m_destination_distance+"", "Verdana14_shadow.fnt", ARGB(250,255,255,255));
 		////////////
 
 		for (uint t=0; t<m_miners.length(); t++){

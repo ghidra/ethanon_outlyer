@@ -46,10 +46,11 @@ class progressbar : obj
 
 		m_pos = _pos;
 		m_dir = normalize(_dir);
-		m_pos2 = m_pos+(m_dir*m_size.x);//this is max the end postion
+		/*m_pos2 = m_pos+(m_dir*m_size.x);//this is max the end postion
 		m_dir2 = multiply(m_dir,rotateZ(-90*(PI/180)));
 		m_pos3 = m_pos2+(m_dir2*m_size.y);
-		m_pos4 = m_pos+(m_dir2*m_size.y);
+		m_pos4 = m_pos+(m_dir2*m_size.y);*/
+		set_border_positions();
 
 		m_lpos = _pos;//_pos+(m_margin*0.5f);
 
@@ -109,6 +110,18 @@ class progressbar : obj
 	}
 	float decimal(const float v){
 		return floor(v*m_decimal)/m_decimal;
+	}
+	//------look
+	void set_border_positions(){
+		m_pos2 = m_pos+(m_dir*m_size.x);//this is max the end postion
+		m_dir2 = multiply(m_dir,rotateZ(-90*(PI/180)));
+		m_pos3 = m_pos2+(m_dir2*m_size.y);
+		m_pos4 = m_pos+(m_dir2*m_size.y);
+	}
+	void set_position(const vector2 pos){
+		obj::set_position(pos);
+
+		set_border_positions();
 	}
 }
 

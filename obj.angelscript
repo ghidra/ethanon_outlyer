@@ -141,4 +141,8 @@ class obj
 		}
 		return a;
 	}
+	//Pythagorean theory a2+b2=c2;
+	float pythagorean(const float x, const float y){
+		return sqrt(pow(x,2.0f)+pow(y,2.0f));
+	}
 }

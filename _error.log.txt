@@ -1,6 +1,1075 @@
 [Z:\home\jimmy\Documents\projects\outlyer\_error.log.txt]
+Function: void actor::move(const vector2)
+Section: Z:\home\jimmy\Documents\projects\outlyer\actor.angelscript
+Line: 166
+Description: Null pointer access
 
-AngelScript ERROR (Z:\home\jimmy\Documents\projects\outlyer\progressbar.angelscript line 50): 
-No matching operator that takes the types 'vector2' and 'matrix4x4' found
-ERROR - Failed while building module.
-ERROR - ETHEngine::StartEngine: the script has set no scene to load.
+ERROR - Exception: Null pointer access
+Function: void actor::move(const vector2)
+Section: Z:\home\jimmy\Documents\projects\outlyer\actor.angelscript
+Line: 166
+Description: Null pointer access
+
+ERROR - Exception: Null pointer access
+Function: void actor::move(const vector2)
+Section: Z:\home\jimmy\Documents\projects\outlyer\actor.angelscript
+Line: 166
+Description: Null pointer access
+
+ERROR - Exception: Null pointer access
+Function: void actor::move(const vector2)
+Section: Z:\home\jimmy\Documents\projects\outlyer\actor.angelscript
+Line: 166
+Description: Null pointer access
+
+ERROR - Exception: Null pointer access
+Function: void actor::move(const vector2)
+Section: Z:\home\jimmy\Documents\projects\outlyer\actor.angelscript
+Line: 166
+Description: Null pointer access
+
+ERROR - Exception: Null pointer access
+Function: void actor::move(const vector2)
+Section: Z:\home\jimmy\Documents\projects\outlyer\actor.angelscript
+Line: 166
+Description: Null pointer access
+
+ERROR - Exception: Null pointer access
+Function: void actor::move(const vector2)
+Section: Z:\home\jimmy\Documents\projects\outlyer\actor.angelscript
+Line: 166
+Description: Null pointer access
+
+ERROR - Exception: Null pointer access
+Function: void actor::move(const vector2)
+Section: Z:\home\jimmy\Documents\projects\outlyer\actor.angelscript
+Line: 166
+Description: Null pointer access
+
+ERROR - Exception: Null pointer access
+Function: void actor::move(const vector2)
+Section: Z:\home\jimmy\Documents\projects\outlyer\actor.angelscript
+Line: 166
+Description: Null pointer access
+
+ERROR - Exception: Null pointer access
+Function: void actor::move(const vector2)
+Section: Z:\home\jimmy\Documents\projects\outlyer\actor.angelscript
+Line: 166
+Description: Null pointer access
+
+ERROR - Exception: Null pointer access
+Function: void actor::move(const vector2)
+Section: Z:\home\jimmy\Documents\projects\outlyer\actor.angelscript
+Line: 166
+Description: Null pointer access
+
+ERROR - Exception: Null pointer access
+Function: void actor::move(const vector2)
+Section: Z:\home\jimmy\Documents\projects\outlyer\actor.angelscript
+Line: 166
+Description: Null pointer access
+
+ERROR - Exception: Null pointer access
+Function: void actor::move(const vector2)
+Section: Z:\home\jimmy\Documents\projects\outlyer\actor.angelscript
+Line: 166
+Description: Null pointer access
+
+ERROR - Exception: Null pointer access
+Function: void actor::move(const vector2)
+Section: Z:\home\jimmy\Documents\projects\outlyer\actor.angelscript
+Line: 166
+Description: Null pointer access
+
+ERROR - Exception: Null pointer access
+Function: void actor::move(const vector2)
+Section: Z:\home\jimmy\Documents\projects\outlyer\actor.angelscript
+Line: 166
+Description: Null pointer access
+
+ERROR - Exception: Null pointer access
+Function: void actor::move(const vector2)
+Section: Z:\home\jimmy\Documents\projects\outlyer\actor.angelscript
+Line: 166
+Description: Null pointer access
+
+ERROR - Exception: Null pointer access
+Function: void actor::move(const vector2)
+Section: Z:\home\jimmy\Documents\projects\outlyer\actor.angelscript
+Line: 166
+Description: Null pointer access
+
+ERROR - Exception: Null pointer access
+Function: void actor::move(const vector2)
+Section: Z:\home\jimmy\Documents\projects\outlyer\actor.angelscript
+Line: 166
+Description: Null pointer access
+
+ERROR - Exception: Null pointer access
+Function: void actor::move(const vector2)
+Section: Z:\home\jimmy\Documents\projects\outlyer\actor.angelscript
+Line: 166
+Description: Null pointer access
+
+ERROR - Exception: Null pointer access
+Function: void actor::move(const vector2)
+Section: Z:\home\jimmy\Documents\projects\outlyer\actor.angelscript
+Line: 166
+Description: Null pointer access
+
+ERROR - Exception: Null pointer access
+Function: void actor::move(const vector2)
+Section: Z:\home\jimmy\Documents\projects\outlyer\actor.angelscript
+Line: 166
+Description: Null pointer access
+
+ERROR - Exception: Null pointer access
+Function: void actor::move(const vector2)
+Section: Z:\home\jimmy\Documents\projects\outlyer\actor.angelscript
+Line: 166
+Description: Null pointer access
+
+ERROR - Exception: Null pointer access
+Function: void actor::move(const vector2)
+Section: Z:\home\jimmy\Documents\projects\outlyer\actor.angelscript
+Line: 166
+Description: Null pointer access
+
+ERROR - Exception: Null pointer access
+Function: void actor::move(const vector2)
+Section: Z:\home\jimmy\Documents\projects\outlyer\actor.angelscript
+Line: 166
+Description: Null pointer access
+
+ERROR - Exception: Null pointer access
+Function: void actor::move(const vector2)
+Section: Z:\home\jimmy\Documents\projects\outlyer\actor.angelscript
+Line: 166
+Description: Null pointer access
+
+ERROR - Exception: Null pointer access
+Function: void actor::move(const vector2)
+Section: Z:\home\jimmy\Documents\projects\outlyer\actor.angelscript
+Line: 166
+Description: Null pointer access
+
+ERROR - Exception: Null pointer access
+Function: void actor::move(const vector2)
+Section: Z:\home\jimmy\Documents\projects\outlyer\actor.angelscript
+Line: 166
+Description: Null pointer access
+
+ERROR - Exception: Null pointer access
+Function: void actor::move(const vector2)
+Section: Z:\home\jimmy\Documents\projects\outlyer\actor.angelscript
+Line: 166
+Description: Null pointer access
+
+ERROR - Exception: Null pointer access
+Function: void actor::move(const vector2)
+Section: Z:\home\jimmy\Documents\projects\outlyer\actor.angelscript
+Line: 166
+Description: Null pointer access
+
+ERROR - Exception: Null pointer access
+Function: void actor::move(const vector2)
+Section: Z:\home\jimmy\Documents\projects\outlyer\actor.angelscript
+Line: 166
+Description: Null pointer access
+
+ERROR - Exception: Null pointer access
+Function: void actor::move(const vector2)
+Section: Z:\home\jimmy\Documents\projects\outlyer\actor.angelscript
+Line: 166
+Description: Null pointer access
+
+ERROR - Exception: Null pointer access
+Function: void actor::move(const vector2)
+Section: Z:\home\jimmy\Documents\projects\outlyer\actor.angelscript
+Line: 166
+Description: Null pointer access
+
+ERROR - Exception: Null pointer access
+Function: void actor::move(const vector2)
+Section: Z:\home\jimmy\Documents\projects\outlyer\actor.angelscript
+Line: 166
+Description: Null pointer access
+
+ERROR - Exception: Null pointer access
+Function: void actor::move(const vector2)
+Section: Z:\home\jimmy\Documents\projects\outlyer\actor.angelscript
+Line: 166
+Description: Null pointer access
+
+ERROR - Exception: Null pointer access
+Function: void actor::move(const vector2)
+Section: Z:\home\jimmy\Documents\projects\outlyer\actor.angelscript
+Line: 166
+Description: Null pointer access
+
+ERROR - Exception: Null pointer access
+Function: void actor::move(const vector2)
+Section: Z:\home\jimmy\Documents\projects\outlyer\actor.angelscript
+Line: 166
+Description: Null pointer access
+
+ERROR - Exception: Null pointer access
+Function: void actor::move(const vector2)
+Section: Z:\home\jimmy\Documents\projects\outlyer\actor.angelscript
+Line: 166
+Description: Null pointer access
+
+ERROR - Exception: Null pointer access
+Function: void actor::move(const vector2)
+Section: Z:\home\jimmy\Documents\projects\outlyer\actor.angelscript
+Line: 166
+Description: Null pointer access
+
+ERROR - Exception: Null pointer access
+Function: void actor::move(const vector2)
+Section: Z:\home\jimmy\Documents\projects\outlyer\actor.angelscript
+Line: 166
+Description: Null pointer access
+
+ERROR - Exception: Null pointer access
+Function: void actor::move(const vector2)
+Section: Z:\home\jimmy\Documents\projects\outlyer\actor.angelscript
+Line: 166
+Description: Null pointer access
+
+ERROR - Exception: Null pointer access
+Function: void actor::move(const vector2)
+Section: Z:\home\jimmy\Documents\projects\outlyer\actor.angelscript
+Line: 166
+Description: Null pointer access
+
+ERROR - Exception: Null pointer access
+Function: void actor::move(const vector2)
+Section: Z:\home\jimmy\Documents\projects\outlyer\actor.angelscript
+Line: 166
+Description: Null pointer access
+
+ERROR - Exception: Null pointer access
+Function: void actor::move(const vector2)
+Section: Z:\home\jimmy\Documents\projects\outlyer\actor.angelscript
+Line: 166
+Description: Null pointer access
+
+ERROR - Exception: Null pointer access
+Function: void actor::move(const vector2)
+Section: Z:\home\jimmy\Documents\projects\outlyer\actor.angelscript
+Line: 166
+Description: Null pointer access
+
+ERROR - Exception: Null pointer access
+Function: void actor::move(const vector2)
+Section: Z:\home\jimmy\Documents\projects\outlyer\actor.angelscript
+Line: 166
+Description: Null pointer access
+
+ERROR - Exception: Null pointer access
+Function: void actor::move(const vector2)
+Section: Z:\home\jimmy\Documents\projects\outlyer\actor.angelscript
+Line: 166
+Description: Null pointer access
+
+ERROR - Exception: Null pointer access
+Function: void actor::move(const vector2)
+Section: Z:\home\jimmy\Documents\projects\outlyer\actor.angelscript
+Line: 166
+Description: Null pointer access
+
+ERROR - Exception: Null pointer access
+Function: void actor::move(const vector2)
+Section: Z:\home\jimmy\Documents\projects\outlyer\actor.angelscript
+Line: 166
+Description: Null pointer access
+
+ERROR - Exception: Null pointer access
+Function: void actor::move(const vector2)
+Section: Z:\home\jimmy\Documents\projects\outlyer\actor.angelscript
+Line: 166
+Description: Null pointer access
+
+ERROR - Exception: Null pointer access
+Function: void actor::move(const vector2)
+Section: Z:\home\jimmy\Documents\projects\outlyer\actor.angelscript
+Line: 166
+Description: Null pointer access
+
+ERROR - Exception: Null pointer access
+Function: void actor::move(const vector2)
+Section: Z:\home\jimmy\Documents\projects\outlyer\actor.angelscript
+Line: 166
+Description: Null pointer access
+
+ERROR - Exception: Null pointer access
+Function: void actor::move(const vector2)
+Section: Z:\home\jimmy\Documents\projects\outlyer\actor.angelscript
+Line: 166
+Description: Null pointer access
+
+ERROR - Exception: Null pointer access
+Function: void actor::move(const vector2)
+Section: Z:\home\jimmy\Documents\projects\outlyer\actor.angelscript
+Line: 166
+Description: Null pointer access
+
+ERROR - Exception: Null pointer access
+Function: void actor::move(const vector2)
+Section: Z:\home\jimmy\Documents\projects\outlyer\actor.angelscript
+Line: 166
+Description: Null pointer access
+
+ERROR - Exception: Null pointer access
+Function: void actor::move(const vector2)
+Section: Z:\home\jimmy\Documents\projects\outlyer\actor.angelscript
+Line: 166
+Description: Null pointer access
+
+ERROR - Exception: Null pointer access
+Function: void actor::move(const vector2)
+Section: Z:\home\jimmy\Documents\projects\outlyer\actor.angelscript
+Line: 166
+Description: Null pointer access
+
+ERROR - Exception: Null pointer access
+Function: void actor::move(const vector2)
+Section: Z:\home\jimmy\Documents\projects\outlyer\actor.angelscript
+Line: 166
+Description: Null pointer access
+
+ERROR - Exception: Null pointer access
+Function: void actor::move(const vector2)
+Section: Z:\home\jimmy\Documents\projects\outlyer\actor.angelscript
+Line: 166
+Description: Null pointer access
+
+ERROR - Exception: Null pointer access
+Function: void actor::move(const vector2)
+Section: Z:\home\jimmy\Documents\projects\outlyer\actor.angelscript
+Line: 166
+Description: Null pointer access
+
+ERROR - Exception: Null pointer access
+Function: void actor::move(const vector2)
+Section: Z:\home\jimmy\Documents\projects\outlyer\actor.angelscript
+Line: 166
+Description: Null pointer access
+
+ERROR - Exception: Null pointer access
+Function: void actor::move(const vector2)
+Section: Z:\home\jimmy\Documents\projects\outlyer\actor.angelscript
+Line: 166
+Description: Null pointer access
+
+ERROR - Exception: Null pointer access
+Function: void actor::move(const vector2)
+Section: Z:\home\jimmy\Documents\projects\outlyer\actor.angelscript
+Line: 166
+Description: Null pointer access
+
+ERROR - Exception: Null pointer access
+Function: void actor::move(const vector2)
+Section: Z:\home\jimmy\Documents\projects\outlyer\actor.angelscript
+Line: 166
+Description: Null pointer access
+
+ERROR - Exception: Null pointer access
+Function: void actor::move(const vector2)
+Section: Z:\home\jimmy\Documents\projects\outlyer\actor.angelscript
+Line: 166
+Description: Null pointer access
+
+ERROR - Exception: Null pointer access
+Function: void actor::move(const vector2)
+Section: Z:\home\jimmy\Documents\projects\outlyer\actor.angelscript
+Line: 166
+Description: Null pointer access
+
+ERROR - Exception: Null pointer access
+Function: void actor::move(const vector2)
+Section: Z:\home\jimmy\Documents\projects\outlyer\actor.angelscript
+Line: 166
+Description: Null pointer access
+
+ERROR - Exception: Null pointer access
+Function: void actor::move(const vector2)
+Section: Z:\home\jimmy\Documents\projects\outlyer\actor.angelscript
+Line: 166
+Description: Null pointer access
+
+ERROR - Exception: Null pointer access
+Function: void actor::move(const vector2)
+Section: Z:\home\jimmy\Documents\projects\outlyer\actor.angelscript
+Line: 166
+Description: Null pointer access
+
+ERROR - Exception: Null pointer access
+Function: void actor::move(const vector2)
+Section: Z:\home\jimmy\Documents\projects\outlyer\actor.angelscript
+Line: 166
+Description: Null pointer access
+
+ERROR - Exception: Null pointer access
+Function: void actor::move(const vector2)
+Section: Z:\home\jimmy\Documents\projects\outlyer\actor.angelscript
+Line: 166
+Description: Null pointer access
+
+ERROR - Exception: Null pointer access
+Function: void actor::move(const vector2)
+Section: Z:\home\jimmy\Documents\projects\outlyer\actor.angelscript
+Line: 166
+Description: Null pointer access
+
+ERROR - Exception: Null pointer access
+Function: void actor::move(const vector2)
+Section: Z:\home\jimmy\Documents\projects\outlyer\actor.angelscript
+Line: 166
+Description: Null pointer access
+
+ERROR - Exception: Null pointer access
+Function: void actor::move(const vector2)
+Section: Z:\home\jimmy\Documents\projects\outlyer\actor.angelscript
+Line: 166
+Description: Null pointer access
+
+ERROR - Exception: Null pointer access
+Function: void actor::move(const vector2)
+Section: Z:\home\jimmy\Documents\projects\outlyer\actor.angelscript
+Line: 166
+Description: Null pointer access
+
+ERROR - Exception: Null pointer access
+Function: void actor::move(const vector2)
+Section: Z:\home\jimmy\Documents\projects\outlyer\actor.angelscript
+Line: 166
+Description: Null pointer access
+
+ERROR - Exception: Null pointer access
+Function: void actor::move(const vector2)
+Section: Z:\home\jimmy\Documents\projects\outlyer\actor.angelscript
+Line: 166
+Description: Null pointer access
+
+ERROR - Exception: Null pointer access
+Function: void actor::move(const vector2)
+Section: Z:\home\jimmy\Documents\projects\outlyer\actor.angelscript
+Line: 166
+Description: Null pointer access
+
+ERROR - Exception: Null pointer access
+Function: void actor::move(const vector2)
+Section: Z:\home\jimmy\Documents\projects\outlyer\actor.angelscript
+Line: 166
+Description: Null pointer access
+
+ERROR - Exception: Null pointer access
+Function: void actor::move(const vector2)
+Section: Z:\home\jimmy\Documents\projects\outlyer\actor.angelscript
+Line: 166
+Description: Null pointer access
+
+ERROR - Exception: Null pointer access
+Function: void actor::move(const vector2)
+Section: Z:\home\jimmy\Documents\projects\outlyer\actor.angelscript
+Line: 166
+Description: Null pointer access
+
+ERROR - Exception: Null pointer access
+Function: void actor::move(const vector2)
+Section: Z:\home\jimmy\Documents\projects\outlyer\actor.angelscript
+Line: 166
+Description: Null pointer access
+
+ERROR - Exception: Null pointer access
+Function: void actor::move(const vector2)
+Section: Z:\home\jimmy\Documents\projects\outlyer\actor.angelscript
+Line: 166
+Description: Null pointer access
+
+ERROR - Exception: Null pointer access
+Function: void actor::move(const vector2)
+Section: Z:\home\jimmy\Documents\projects\outlyer\actor.angelscript
+Line: 166
+Description: Null pointer access
+
+ERROR - Exception: Null pointer access
+Function: void actor::move(const vector2)
+Section: Z:\home\jimmy\Documents\projects\outlyer\actor.angelscript
+Line: 166
+Description: Null pointer access
+
+ERROR - Exception: Null pointer access
+Function: void actor::move(const vector2)
+Section: Z:\home\jimmy\Documents\projects\outlyer\actor.angelscript
+Line: 166
+Description: Null pointer access
+
+ERROR - Exception: Null pointer access
+Function: void actor::move(const vector2)
+Section: Z:\home\jimmy\Documents\projects\outlyer\actor.angelscript
+Line: 166
+Description: Null pointer access
+
+ERROR - Exception: Null pointer access
+Function: void actor::move(const vector2)
+Section: Z:\home\jimmy\Documents\projects\outlyer\actor.angelscript
+Line: 166
+Description: Null pointer access
+
+ERROR - Exception: Null pointer access
+Function: void actor::move(const vector2)
+Section: Z:\home\jimmy\Documents\projects\outlyer\actor.angelscript
+Line: 166
+Description: Null pointer access
+
+ERROR - Exception: Null pointer access
+Function: void actor::move(const vector2)
+Section: Z:\home\jimmy\Documents\projects\outlyer\actor.angelscript
+Line: 166
+Description: Null pointer access
+
+ERROR - Exception: Null pointer access
+Function: void actor::move(const vector2)
+Section: Z:\home\jimmy\Documents\projects\outlyer\actor.angelscript
+Line: 166
+Description: Null pointer access
+
+ERROR - Exception: Null pointer access
+Function: void actor::move(const vector2)
+Section: Z:\home\jimmy\Documents\projects\outlyer\actor.angelscript
+Line: 166
+Description: Null pointer access
+
+ERROR - Exception: Null pointer access
+Function: void actor::move(const vector2)
+Section: Z:\home\jimmy\Documents\projects\outlyer\actor.angelscript
+Line: 166
+Description: Null pointer access
+
+ERROR - Exception: Null pointer access
+Function: void actor::move(const vector2)
+Section: Z:\home\jimmy\Documents\projects\outlyer\actor.angelscript
+Line: 166
+Description: Null pointer access
+
+ERROR - Exception: Null pointer access
+Function: void actor::move(const vector2)
+Section: Z:\home\jimmy\Documents\projects\outlyer\actor.angelscript
+Line: 166
+Description: Null pointer access
+
+ERROR - Exception: Null pointer access
+Function: void actor::move(const vector2)
+Section: Z:\home\jimmy\Documents\projects\outlyer\actor.angelscript
+Line: 166
+Description: Null pointer access
+
+ERROR - Exception: Null pointer access
+Function: void actor::move(const vector2)
+Section: Z:\home\jimmy\Documents\projects\outlyer\actor.angelscript
+Line: 166
+Description: Null pointer access
+
+ERROR - Exception: Null pointer access
+Function: void actor::move(const vector2)
+Section: Z:\home\jimmy\Documents\projects\outlyer\actor.angelscript
+Line: 166
+Description: Null pointer access
+
+ERROR - Exception: Null pointer access
+Function: void actor::move(const vector2)
+Section: Z:\home\jimmy\Documents\projects\outlyer\actor.angelscript
+Line: 166
+Description: Null pointer access
+
+ERROR - Exception: Null pointer access
+Function: void actor::move(const vector2)
+Section: Z:\home\jimmy\Documents\projects\outlyer\actor.angelscript
+Line: 166
+Description: Null pointer access
+
+ERROR - Exception: Null pointer access
+Function: void actor::move(const vector2)
+Section: Z:\home\jimmy\Documents\projects\outlyer\actor.angelscript
+Line: 166
+Description: Null pointer access
+
+ERROR - Exception: Null pointer access
+Function: void actor::move(const vector2)
+Section: Z:\home\jimmy\Documents\projects\outlyer\actor.angelscript
+Line: 166
+Description: Null pointer access
+
+ERROR - Exception: Null pointer access
+Function: void actor::move(const vector2)
+Section: Z:\home\jimmy\Documents\projects\outlyer\actor.angelscript
+Line: 166
+Description: Null pointer access
+
+ERROR - Exception: Null pointer access
+Function: void actor::move(const vector2)
+Section: Z:\home\jimmy\Documents\projects\outlyer\actor.angelscript
+Line: 166
+Description: Null pointer access
+
+ERROR - Exception: Null pointer access
+Function: void actor::move(const vector2)
+Section: Z:\home\jimmy\Documents\projects\outlyer\actor.angelscript
+Line: 166
+Description: Null pointer access
+
+ERROR - Exception: Null pointer access
+Function: void actor::move(const vector2)
+Section: Z:\home\jimmy\Documents\projects\outlyer\actor.angelscript
+Line: 166
+Description: Null pointer access
+
+ERROR - Exception: Null pointer access
+Function: void actor::move(const vector2)
+Section: Z:\home\jimmy\Documents\projects\outlyer\actor.angelscript
+Line: 166
+Description: Null pointer access
+
+ERROR - Exception: Null pointer access
+Function: void actor::move(const vector2)
+Section: Z:\home\jimmy\Documents\projects\outlyer\actor.angelscript
+Line: 166
+Description: Null pointer access
+
+ERROR - Exception: Null pointer access
+Function: void actor::move(const vector2)
+Section: Z:\home\jimmy\Documents\projects\outlyer\actor.angelscript
+Line: 166
+Description: Null pointer access
+
+ERROR - Exception: Null pointer access
+Function: void actor::move(const vector2)
+Section: Z:\home\jimmy\Documents\projects\outlyer\actor.angelscript
+Line: 166
+Description: Null pointer access
+
+ERROR - Exception: Null pointer access
+Function: void actor::move(const vector2)
+Section: Z:\home\jimmy\Documents\projects\outlyer\actor.angelscript
+Line: 166
+Description: Null pointer access
+
+ERROR - Exception: Null pointer access
+Function: void actor::move(const vector2)
+Section: Z:\home\jimmy\Documents\projects\outlyer\actor.angelscript
+Line: 166
+Description: Null pointer access
+
+ERROR - Exception: Null pointer access
+Function: void actor::move(const vector2)
+Section: Z:\home\jimmy\Documents\projects\outlyer\actor.angelscript
+Line: 166
+Description: Null pointer access
+
+ERROR - Exception: Null pointer access
+Function: void actor::move(const vector2)
+Section: Z:\home\jimmy\Documents\projects\outlyer\actor.angelscript
+Line: 166
+Description: Null pointer access
+
+ERROR - Exception: Null pointer access
+Function: void actor::move(const vector2)
+Section: Z:\home\jimmy\Documents\projects\outlyer\actor.angelscript
+Line: 166
+Description: Null pointer access
+
+ERROR - Exception: Null pointer access
+Function: void actor::move(const vector2)
+Section: Z:\home\jimmy\Documents\projects\outlyer\actor.angelscript
+Line: 166
+Description: Null pointer access
+
+ERROR - Exception: Null pointer access
+Function: void actor::move(const vector2)
+Section: Z:\home\jimmy\Documents\projects\outlyer\actor.angelscript
+Line: 166
+Description: Null pointer access
+
+ERROR - Exception: Null pointer access
+Function: void actor::move(const vector2)
+Section: Z:\home\jimmy\Documents\projects\outlyer\actor.angelscript
+Line: 166
+Description: Null pointer access
+
+ERROR - Exception: Null pointer access
+Function: void actor::move(const vector2)
+Section: Z:\home\jimmy\Documents\projects\outlyer\actor.angelscript
+Line: 166
+Description: Null pointer access
+
+ERROR - Exception: Null pointer access
+Function: void actor::move(const vector2)
+Section: Z:\home\jimmy\Documents\projects\outlyer\actor.angelscript
+Line: 166
+Description: Null pointer access
+
+ERROR - Exception: Null pointer access
+Function: void actor::move(const vector2)
+Section: Z:\home\jimmy\Documents\projects\outlyer\actor.angelscript
+Line: 166
+Description: Null pointer access
+
+ERROR - Exception: Null pointer access
+Function: void actor::move(const vector2)
+Section: Z:\home\jimmy\Documents\projects\outlyer\actor.angelscript
+Line: 166
+Description: Null pointer access
+
+ERROR - Exception: Null pointer access
+Function: void actor::move(const vector2)
+Section: Z:\home\jimmy\Documents\projects\outlyer\actor.angelscript
+Line: 166
+Description: Null pointer access
+
+ERROR - Exception: Null pointer access
+Function: void actor::move(const vector2)
+Section: Z:\home\jimmy\Documents\projects\outlyer\actor.angelscript
+Line: 166
+Description: Null pointer access
+
+ERROR - Exception: Null pointer access
+Function: void actor::move(const vector2)
+Section: Z:\home\jimmy\Documents\projects\outlyer\actor.angelscript
+Line: 166
+Description: Null pointer access
+
+ERROR - Exception: Null pointer access
+Function: void actor::move(const vector2)
+Section: Z:\home\jimmy\Documents\projects\outlyer\actor.angelscript
+Line: 166
+Description: Null pointer access
+
+ERROR - Exception: Null pointer access
+Function: void actor::move(const vector2)
+Section: Z:\home\jimmy\Documents\projects\outlyer\actor.angelscript
+Line: 166
+Description: Null pointer access
+
+ERROR - Exception: Null pointer access
+Function: void actor::move(const vector2)
+Section: Z:\home\jimmy\Documents\projects\outlyer\actor.angelscript
+Line: 166
+Description: Null pointer access
+
+ERROR - Exception: Null pointer access
+Function: void actor::move(const vector2)
+Section: Z:\home\jimmy\Documents\projects\outlyer\actor.angelscript
+Line: 166
+Description: Null pointer access
+
+ERROR - Exception: Null pointer access
+Function: void actor::move(const vector2)
+Section: Z:\home\jimmy\Documents\projects\outlyer\actor.angelscript
+Line: 166
+Description: Null pointer access
+
+ERROR - Exception: Null pointer access
+Function: void actor::move(const vector2)
+Section: Z:\home\jimmy\Documents\projects\outlyer\actor.angelscript
+Line: 166
+Description: Null pointer access
+
+ERROR - Exception: Null pointer access
+Function: void actor::move(const vector2)
+Section: Z:\home\jimmy\Documents\projects\outlyer\actor.angelscript
+Line: 166
+Description: Null pointer access
+
+ERROR - Exception: Null pointer access
+Function: void actor::move(const vector2)
+Section: Z:\home\jimmy\Documents\projects\outlyer\actor.angelscript
+Line: 166
+Description: Null pointer access
+
+ERROR - Exception: Null pointer access
+Function: void actor::move(const vector2)
+Section: Z:\home\jimmy\Documents\projects\outlyer\actor.angelscript
+Line: 166
+Description: Null pointer access
+
+ERROR - Exception: Null pointer access
+Function: void actor::move(const vector2)
+Section: Z:\home\jimmy\Documents\projects\outlyer\actor.angelscript
+Line: 166
+Description: Null pointer access
+
+ERROR - Exception: Null pointer access
+Function: void actor::move(const vector2)
+Section: Z:\home\jimmy\Documents\projects\outlyer\actor.angelscript
+Line: 166
+Description: Null pointer access
+
+ERROR - Exception: Null pointer access
+Function: void actor::move(const vector2)
+Section: Z:\home\jimmy\Documents\projects\outlyer\actor.angelscript
+Line: 166
+Description: Null pointer access
+
+ERROR - Exception: Null pointer access
+Function: void actor::move(const vector2)
+Section: Z:\home\jimmy\Documents\projects\outlyer\actor.angelscript
+Line: 166
+Description: Null pointer access
+
+ERROR - Exception: Null pointer access
+Function: void actor::move(const vector2)
+Section: Z:\home\jimmy\Documents\projects\outlyer\actor.angelscript
+Line: 166
+Description: Null pointer access
+
+ERROR - Exception: Null pointer access
+Function: void actor::move(const vector2)
+Section: Z:\home\jimmy\Documents\projects\outlyer\actor.angelscript
+Line: 166
+Description: Null pointer access
+
+ERROR - Exception: Null pointer access
+Function: void actor::move(const vector2)
+Section: Z:\home\jimmy\Documents\projects\outlyer\actor.angelscript
+Line: 166
+Description: Null pointer access
+
+ERROR - Exception: Null pointer access
+Function: void actor::move(const vector2)
+Section: Z:\home\jimmy\Documents\projects\outlyer\actor.angelscript
+Line: 166
+Description: Null pointer access
+
+ERROR - Exception: Null pointer access
+Function: void actor::move(const vector2)
+Section: Z:\home\jimmy\Documents\projects\outlyer\actor.angelscript
+Line: 166
+Description: Null pointer access
+
+ERROR - Exception: Null pointer access
+Function: void actor::move(const vector2)
+Section: Z:\home\jimmy\Documents\projects\outlyer\actor.angelscript
+Line: 166
+Description: Null pointer access
+
+ERROR - Exception: Null pointer access
+Function: void actor::move(const vector2)
+Section: Z:\home\jimmy\Documents\projects\outlyer\actor.angelscript
+Line: 166
+Description: Null pointer access
+
+ERROR - Exception: Null pointer access
+Function: void actor::move(const vector2)
+Section: Z:\home\jimmy\Documents\projects\outlyer\actor.angelscript
+Line: 166
+Description: Null pointer access
+
+ERROR - Exception: Null pointer access
+Function: void actor::move(const vector2)
+Section: Z:\home\jimmy\Documents\projects\outlyer\actor.angelscript
+Line: 166
+Description: Null pointer access
+
+ERROR - Exception: Null pointer access
+Function: void actor::move(const vector2)
+Section: Z:\home\jimmy\Documents\projects\outlyer\actor.angelscript
+Line: 166
+Description: Null pointer access
+
+ERROR - Exception: Null pointer access
+Function: void actor::move(const vector2)
+Section: Z:\home\jimmy\Documents\projects\outlyer\actor.angelscript
+Line: 166
+Description: Null pointer access
+
+ERROR - Exception: Null pointer access
+Function: void actor::move(const vector2)
+Section: Z:\home\jimmy\Documents\projects\outlyer\actor.angelscript
+Line: 166
+Description: Null pointer access
+
+ERROR - Exception: Null pointer access
+Function: void actor::move(const vector2)
+Section: Z:\home\jimmy\Documents\projects\outlyer\actor.angelscript
+Line: 166
+Description: Null pointer access
+
+ERROR - Exception: Null pointer access
+Function: void actor::move(const vector2)
+Section: Z:\home\jimmy\Documents\projects\outlyer\actor.angelscript
+Line: 166
+Description: Null pointer access
+
+ERROR - Exception: Null pointer access
+Function: void actor::move(const vector2)
+Section: Z:\home\jimmy\Documents\projects\outlyer\actor.angelscript
+Line: 166
+Description: Null pointer access
+
+ERROR - Exception: Null pointer access
+Function: void actor::move(const vector2)
+Section: Z:\home\jimmy\Documents\projects\outlyer\actor.angelscript
+Line: 166
+Description: Null pointer access
+
+ERROR - Exception: Null pointer access
+Function: void actor::move(const vector2)
+Section: Z:\home\jimmy\Documents\projects\outlyer\actor.angelscript
+Line: 166
+Description: Null pointer access
+
+ERROR - Exception: Null pointer access
+Function: void actor::move(const vector2)
+Section: Z:\home\jimmy\Documents\projects\outlyer\actor.angelscript
+Line: 166
+Description: Null pointer access
+
+ERROR - Exception: Null pointer access
+Function: void actor::move(const vector2)
+Section: Z:\home\jimmy\Documents\projects\outlyer\actor.angelscript
+Line: 166
+Description: Null pointer access
+
+ERROR - Exception: Null pointer access
+Function: void actor::move(const vector2)
+Section: Z:\home\jimmy\Documents\projects\outlyer\actor.angelscript
+Line: 166
+Description: Null pointer access
+
+ERROR - Exception: Null pointer access
+Function: void actor::move(const vector2)
+Section: Z:\home\jimmy\Documents\projects\outlyer\actor.angelscript
+Line: 166
+Description: Null pointer access
+
+ERROR - Exception: Null pointer access
+Function: void actor::move(const vector2)
+Section: Z:\home\jimmy\Documents\projects\outlyer\actor.angelscript
+Line: 166
+Description: Null pointer access
+
+ERROR - Exception: Null pointer access
+Function: void actor::move(const vector2)
+Section: Z:\home\jimmy\Documents\projects\outlyer\actor.angelscript
+Line: 166
+Description: Null pointer access
+
+ERROR - Exception: Null pointer access
+Function: void actor::move(const vector2)
+Section: Z:\home\jimmy\Documents\projects\outlyer\actor.angelscript
+Line: 166
+Description: Null pointer access
+
+ERROR - Exception: Null pointer access
+Function: void actor::move(const vector2)
+Section: Z:\home\jimmy\Documents\projects\outlyer\actor.angelscript
+Line: 166
+Description: Null pointer access
+
+ERROR - Exception: Null pointer access
+Function: void actor::move(const vector2)
+Section: Z:\home\jimmy\Documents\projects\outlyer\actor.angelscript
+Line: 166
+Description: Null pointer access
+
+ERROR - Exception: Null pointer access
+Function: void actor::move(const vector2)
+Section: Z:\home\jimmy\Documents\projects\outlyer\actor.angelscript
+Line: 166
+Description: Null pointer access
+
+ERROR - Exception: Null pointer access
+Function: void actor::move(const vector2)
+Section: Z:\home\jimmy\Documents\projects\outlyer\actor.angelscript
+Line: 166
+Description: Null pointer access
+
+ERROR - Exception: Null pointer access
+Function: void actor::move(const vector2)
+Section: Z:\home\jimmy\Documents\projects\outlyer\actor.angelscript
+Line: 166
+Description: Null pointer access
+
+ERROR - Exception: Null pointer access
+Function: void actor::move(const vector2)
+Section: Z:\home\jimmy\Documents\projects\outlyer\actor.angelscript
+Line: 166
+Description: Null pointer access
+
+ERROR - Exception: Null pointer access
+Function: void actor::move(const vector2)
+Section: Z:\home\jimmy\Documents\projects\outlyer\actor.angelscript
+Line: 166
+Description: Null pointer access
+
+ERROR - Exception: Null pointer access
+Function: void actor::move(const vector2)
+Section: Z:\home\jimmy\Documents\projects\outlyer\actor.angelscript
+Line: 166
+Description: Null pointer access
+
+ERROR - Exception: Null pointer access
+Function: void actor::move(const vector2)
+Section: Z:\home\jimmy\Documents\projects\outlyer\actor.angelscript
+Line: 166
+Description: Null pointer access
+
+ERROR - Exception: Null pointer access
+Function: void actor::move(const vector2)
+Section: Z:\home\jimmy\Documents\projects\outlyer\actor.angelscript
+Line: 166
+Description: Null pointer access
+
+ERROR - Exception: Null pointer access
+Function: void actor::move(const vector2)
+Section: Z:\home\jimmy\Documents\projects\outlyer\actor.angelscript
+Line: 166
+Description: Null pointer access
+
+ERROR - Exception: Null pointer access
+Function: void actor::move(const vector2)
+Section: Z:\home\jimmy\Documents\projects\outlyer\actor.angelscript
+Line: 166
+Description: Null pointer access
+
+ERROR - Exception: Null pointer access
+Function: void actor::move(const vector2)
+Section: Z:\home\jimmy\Documents\projects\outlyer\actor.angelscript
+Line: 166
+Description: Null pointer access
+
+ERROR - Exception: Null pointer access
+Function: void actor::move(const vector2)
+Section: Z:\home\jimmy\Documents\projects\outlyer\actor.angelscript
+Line: 166
+Description: Null pointer access
+
+ERROR - Exception: Null pointer access
+Function: void actor::move(const vector2)
+Section: Z:\home\jimmy\Documents\projects\outlyer\actor.angelscript
+Line: 166
+Description: Null pointer access
+
+ERROR - Exception: Null pointer access
+Function: void actor::move(const vector2)
+Section: Z:\home\jimmy\Documents\projects\outlyer\actor.angelscript
+Line: 166
+Description: Null pointer access
+
+ERROR - Exception: Null pointer access
+Function: void actor::move(const vector2)
+Section: Z:\home\jimmy\Documents\projects\outlyer\actor.angelscript
+Line: 166
+Description: Null pointer access
+
+ERROR - Exception: Null pointer access
+Function: void actor::move(const vector2)
+Section: Z:\home\jimmy\Documents\projects\outlyer\actor.angelscript
+Line: 166
+Description: Null pointer access
+
+ERROR - Exception: Null pointer access

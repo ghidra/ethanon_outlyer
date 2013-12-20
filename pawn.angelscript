@@ -60,13 +60,16 @@ class pawn : actor{
 	private controller@ m_controller;//the movement controller of this thing
 	private controller@ m_attcontroller;//the attack controller of this thing
 
+	private vector2 m_guibarsize = vector2(20.0f,20.0f);//size of the bar
+	private vector2 m_guibardir = vector2(-0.5f,-0.5f);//size of the bar
+
 	pawn(const string &in entityName, const vector2 pos){
 		super(entityName,pos);
 		@m_controller = controller();
 		@m_attcontroller = controller();
 		@m_inventory = inventory();
 
-		@m_hbar = progressbar("hit points",m_hp,0.0f,m_hpmax,vector2(0.0f,0.0f));
+		@m_hbar = progressbar("hit points",m_hp,0.0f,m_hpmax,vector2(),vector2(),m_guibarsize,m_guibardir,1,0,0);
 	}
 
 	void update(){
