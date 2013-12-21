@@ -47,7 +47,8 @@ class enemy : pawn
 		//attack
 		//----------------------
 		if(attack_ready()){
-			pawn@ target = m_attcontroller.get_target_pawn();
+			actor@ target = m_attcontroller.get_target_actor();
+			//pawn@ target = m_attcontroller.get_target_pawn();
 			attack(target);
 		}
 		update_weapon();

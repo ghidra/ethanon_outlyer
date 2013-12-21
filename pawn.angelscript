@@ -73,7 +73,7 @@ class pawn : actor{
 	}
 
 	void update(){
-		actor::update();
+		if(!has_died()) actor::update();//if we have died, there is no reason to update this stuff anymore
 		//if(m_mouseover){
 		//	vector2 pos = get_relative_position();
 		//	DrawText( pos , m_label, m_font, m_white);
@@ -113,37 +113,37 @@ class pawn : actor{
 	//setting the action with the target of the action
 	void set_action(const string action, actor@ target){
 		//actor::set_action(action);
-		m_controller.set_action(action,target);
+		if(!has_died()) m_controller.set_action(action,target);
 	}
-	void set_action(const string action, pawn@ target){
+	/*void set_action(const string action, pawn@ target){
 		//actor::set_action(action);
-		m_controller.set_action(action,target);
+		if(!has_died()) m_controller.set_action(action,target);
 	}
 	void set_action(const string action, body@ target){
 		//actor::set_action(action);
-		m_controller.set_action(action,target);
+		if(!has_died()) m_controller.set_action(action,target);
 	}
 	void set_action(const string action, enemy@ target){
 		//actor::set_action(action);
-		m_controller.set_action(action,target);
-	}
+		if(!has_died()) m_controller.set_action(action,target);
+	}*/
 	//-----
 	void set_attack(const string action, actor@ target){
 		//actor::set_action(action);
-		m_attcontroller.set_action(action,target);
+		if(!has_died()) m_attcontroller.set_action(action,target);
 	}
-	void set_attack(const string action, pawn@ target){
+	/*void set_attack(const string action, pawn@ target){
 		//actor::set_action(action);
-		m_attcontroller.set_action(action,target);
+		if(!has_died()) m_attcontroller.set_action(action,target);
 	}
 	void set_attack(const string action, body@ target){
 		//actor::set_action(action);
-		m_attcontroller.set_action(action,target);
+		if(!has_died()) m_attcontroller.set_action(action,target);
 	}
 	void set_attack(const string action, enemy@ target){
 		//actor::set_action(action);
-		m_attcontroller.set_action(action,target);
-	}
+		if(!has_died()) m_attcontroller.set_action(action,target);
+	}*/
 	//----
 
 	//----
@@ -151,7 +151,7 @@ class pawn : actor{
 
 	bool attack_ready(){
 		bool attack = false;
-		if(m_attcontroller.has_actions()){//if our attack controller has actions to give us
+		if(m_attcontroller.has_actions() && !has_died()){//if our attack controller has actions to give us
 			const string action = m_attcontroller.get_action();//this gets the action we need to try and perform
 			if(action == "attack"){
 				if(m_weapon.get_action() == "none"){//if the weapon is trying to fire
@@ -163,37 +163,50 @@ class pawn : actor{
 	}
 
 	void attack(actor@ target){
-		m_weapon.set_target(target);
-		attack_start();
+		if(!has_died()){
+			m_weapon.set_target(target);
+			//attack_start();
+			m_weapon.set_action( "attack" );
+			m_attcontroller.remove_action();
+		}
 	}
-	void attack(pawn@ target){
-		m_weapon.set_target(target);
-		attack_start();
+	/*void attack(pawn@ target){
+		if(!has_died()){
+			m_weapon.set_target(target);
+			attack_start();
+		}
 	}
 	void attack(body@ target){
-		m_weapon.set_target(target);
-		attack_start();
+		if(!has_died()){
+			m_weapon.set_target(target);
+			attack_start();
+		}
 	}
 	void attack(enemy@ target){
-		m_weapon.set_target(target);
-		attack_start();
-	}
+		if(!has_died()){
+			m_weapon.set_target(target);
+			attack_start();
+		}
+	}*/
 	//---
-	void attack_start(){
-		m_weapon.set_action( "attack" );
-		m_attcontroller.remove_action();
-	}
+	/*void attack_start(){
+		if(!has_died()){
+			m_weapon.set_action( "attack" );
+			m_attcontroller.remove_action();
+		}
+	}*/
 	void update_weapon(){
 		if( m_weapon.should_update() ){
+			if(has_died()) m_weapon.set_action("none");//make sure we dont fire again after we are dead
 			m_weapon.update();
 		}
 	}
 	//-----------------
 	//-----------------
 	void die(){
-		actor::die();
 		if(m_weapon !is null){
 			m_weapon.die();
 		}
+		actor::die();
 	}
 }

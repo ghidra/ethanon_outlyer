@@ -16,26 +16,31 @@ notes
 
 use minimap to allow a free camera. add temporary plottable objects, that dont effect the overall map scale.
 
-add a dead boolean to objects, so that if they need to to removed, we can check that boolea, and delete the instance of the object in a class using it
-go to menu when main character dies
+body and enemiy gui neds work
+rollover buttons on bodies and enemies need the timer before disappearing
 
-build prettier gui read out data for objects
+body gui is at least drawing the build button twice, once in world space without scale, so there are 2 buttons for that?
 
 starting on enemy pawn. basic ai
 
--maybe put the explosion in its own class to make it more versitile for other weapons
--i have weapons now, need to look at using different ones
+projectiles need to shoot toward pawn, basically it is shooting to where the pawn was before actually shooting, the position is not updating at time of fire
 
-then build base on planet
+-maybe put the explosion in its own class to make it more versitile for other weapons
 
 weapon type classes
 	missles that cost resources, and cause more damage
 	phasers that cost no resources, but cause little damage
 
 //----to do more
--build a class to hold all the different possible target classes
 -weapon projectile needs to exlode after max range reached
-path finding
+-path finding
+-kill screen
+-load screen
+
+
+
+
+
 
 ------------
 ----game play notes----

@@ -107,6 +107,7 @@ class GameScene : Scene
 		}
 
 		m_boss.update();
+		if(m_boss.get_action() != "none") m_character.set_attack( m_boss.m_action , m_boss );
 		//now lets update the character
 		m_character.update();
 		m_camera.update();
@@ -125,7 +126,8 @@ class GameScene : Scene
 		//float db = this.debug(mp);
 		//DrawText(vector2(0,200), "x"+mp.x+" y:"+mp.y, "Verdana14_shadow.fnt", ARGB(250,255,255,255));
 		//DrawText(vector2(0,212), "iter:"+temp, "Verdana14_shadow.fnt", ARGB(250,255,255,255));
-		DrawText(vector2(0,224), "fps:"+GetFPSRate()+"", "Verdana14_shadow.fnt", ARGB(250,255,255,255));
+		
+		//DrawText(vector2(0,224), "fps:"+GetFPSRate()+"", "Verdana14_shadow.fnt", ARGB(250,255,255,255));
 
 		//DrawText(vector2(0,244), "bodies:"+m_bodies.length()+"", "Verdana14_shadow.fnt", ARGB(250,255,255,255));
 		//DrawText(vector2(0,264), "enemies:"+m_enemies.length()+"", "Verdana14_shadow.fnt", ARGB(250,255,255,255));

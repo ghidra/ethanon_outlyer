@@ -14,6 +14,7 @@ class Character : pawn
 	enemy@ m_targetenemy;//the body that we are targeting
 
 	private vector2 m_guipos;
+	private vector2 m_guiactionspos;
 	private float m_guimargin = 20.0f;
 
 
@@ -34,10 +35,11 @@ class Character : pawn
 		const vector2 ss = GetScreenSize();
 		const float pwidth = pythagorean(m_guibarsize.x,m_guibarsize.y);//this is the width horizonatally and vertically based on pythagorean
 		m_guipos = vector2( m_guimargin+(m_guibarsize.x/2), ss.y-m_guimargin );
+		m_guiactionspos = vector2(m_guimargin,m_guimargin+100);//start the list of actions
 
 		m_hbar.set_position(m_guipos+vector2((pwidth/2.0f)+4.0f,-(pwidth+8.0f)));//default healt bar
 		@m_rbar = progressbar("resources",m_rp,0.0f,m_rpmax,m_guipos+vector2(0.0f,-((pwidth/2.0f)+4.0f)),vector2(),m_guibarsize,m_guibardir,1,0,0);
-		@m_mbar = progressbar("miners",m_minerscount,0.0f,m_minersmax,m_guipos+vector2( (pwidth/2.0f)+4.0f,0.0f),vector2(),m_guibarsize,m_guibardir,1,0,0);
+		@m_mbar = progressbar("miners",m_minersmax-m_minerscount,0.0f,m_minersmax,m_guipos+vector2( (pwidth/2.0f)+4.0f,0.0f),vector2(),m_guibarsize,m_guibardir,1,0,0);
 
 		//weapons
 		//init_inventory();
@@ -58,7 +60,8 @@ class Character : pawn
 
 			if(action == "harvest" || action == "collect miner"){
 				
-				body@ target = m_controller.get_target_body();//since i only harvest bodies, I have to assume that I am trying to get a body object
+				//body@ target = m_controller.get_target_body();//since i only harvest bodies, I have to assume that I am trying to get a body object
+				actor@ target = m_controller.get_target_actor();
 				set_destination(target.get_position());
 
 				if( m_destination_distance > length(target.get_size())*m_gscale ){
@@ -66,10 +69,10 @@ class Character : pawn
 					move(m_destination_direction);
 				}else{
 					if(action == "harvest"){
-						deposit_miner(target);
+						deposit_miner(cast<body>(target));
 					}
 					if(action == "collect miner"){
-						collect_miner(target);
+						collect_miner(cast<body>(target));
 					}
 					//now remove the action from the list
 					m_controller.remove_action();
@@ -128,7 +131,8 @@ class Character : pawn
 		/////////////
 		//attack
 		if(attack_ready()){
-			enemy@ target = m_attcontroller.get_target_enemy();
+			//enemy@ target = m_attcontroller.get_target_enemy();
+			actor@ target = m_attcontroller.get_target_actor();
 			attack(target);
 		}
 		update_weapon();
@@ -147,14 +151,43 @@ class Character : pawn
 		m_rbar.set_value(m_rp);
 		m_rbar.update();
 
-		m_mbar.set_value(m_minerscount);
+		m_mbar.set_value(m_minersmax-m_minerscount);
 		m_mbar.update();
 
 		m_hbar.set_value(m_hp);
 		m_hbar.update();
 
-		DrawText(vector2(0,300), "actions:"+m_controller.print_actions()+"", "Verdana14_shadow.fnt", ARGB(250,255,255,255));
-		DrawText(vector2(0,310), "attactions:"+m_attcontroller.print_actions()+"", "Verdana14_shadow.fnt", ARGB(250,255,255,255));
+		//////////////////////
+		//print out any actions I might have queued up
+		const string[] queact = m_controller.get_actions();
+		const uint queactlen = queact.length();
+		const string[] queattact = m_attcontroller.get_actions();
+		const uint queattactlen = queattact.length();
+
+		vector2 guiattactpos = vector2(m_guiactionspos.x, m_guiactionspos.y+((queactlen+1)*12)+6);//set the place to start the attack action list, make room for a bar inbetween
+		if(queactlen==0){
+			guiattactpos = m_guiactionspos;
+		}
+		
+		if(queactlen>0){
+			DrawText(m_guiactionspos, "actions:", "Verdana14_shadow.fnt", ARGB(250,255,255,255));
+			for(uint t=0; t<queactlen; t++){
+				DrawText(vector2(m_guiactionspos.x,m_guiactionspos.y+(12*(t+1))), ""+queact[t], "Verdana14_shadow.fnt", ARGB(255,100,100,100));
+			}
+			const vector2 linepos = vector2(m_guiactionspos.x,m_guiactionspos.y+(12*(queactlen+1))+3);
+			draw_line(linepos, vector2(linepos.x+10,linepos.y),m_grey,m_grey,1.0f);
+		}
+
+		if(queattactlen>0){
+			DrawText(guiattactpos, "attacks:", "Verdana14_shadow.fnt", ARGB(250,255,255,255));
+			for(uint t=0; t<queattactlen; t++){
+				DrawText(vector2(guiattactpos.x,guiattactpos.y+(12*(t+1))), ""+queattact[t], "Verdana14_shadow.fnt", ARGB(255,100,100,100));
+			}
+		}
+		//////////////////////
+
+		//DrawText(vector2(0,300), "actions:"+m_controller.print_actions()+"", "Verdana14_shadow.fnt", ARGB(250,255,255,255));
+		//DrawText(vector2(0,310), "attactions:"+m_attcontroller.print_actions()+"", "Verdana14_shadow.fnt", ARGB(250,255,255,255));
 
 
 

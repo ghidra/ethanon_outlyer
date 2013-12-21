@@ -31,7 +31,7 @@ class projectile : actor
 
 	void update(){
 		actor::update();
-		DrawText( get_screen_position() , m_destination.x+":"+m_destination.y, m_font, m_red);
+		//DrawText( get_screen_position() , m_destination.x+":"+m_destination.y, m_font, m_red);
 
 		if(!m_hit){//if we havent hit anything yet
 			move(m_destination_direction);//move
@@ -40,26 +40,33 @@ class projectile : actor
 			//collision testing against the target that was assigned
 			vector2 tpos = vector2(0.0f,0.0f);
 			float tsize = 0.0f;
+			bool tdied = false; 
 			if(m_target_type=="actor"){
 				tpos = vector2(m_target_actor.get_position());
 				tsize = length(m_target_actor.get_size())/3;
+				tdied = m_target_actor.has_died();
 			}
 			if(m_target_type=="pawn"){
 				tpos = vector2(m_target_pawn.get_position());
 				tsize = length(m_target_pawn.get_size())/3;
+				tdied = m_target_pawn.has_died();
 			}
 			if(m_target_type=="body"){
 				tpos = vector2(m_target_body.get_position());
 				tsize = length(m_target_body.get_size())/3;
+				tdied = m_target_body.has_died();
 			}
 			if(m_target_type=="enemy"){
 				tpos = vector2(m_target_enemy.get_position());
 				tsize = length(m_target_enemy.get_size())/3;
+				tdied = m_target_enemy.has_died();
 			}
 
-			const float d = length( tpos - m_pos ); 
-			if( d < tsize*m_gscale ){//deterime hit
-				set_hit();//we have hit
+			if(!tdied){
+				const float d = length( tpos - m_pos ); 
+				if( d < tsize*m_gscale ){//deterime hit
+					set_hit();//we have hit
+				}
 			}
 			//if found, we set this to hit
 			//

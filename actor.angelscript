@@ -35,6 +35,8 @@ class actor : obj
 	private float m_rpmax=0.0f;
 
 	string m_action = "none";// what the pawn should be trying to do
+	//bool m_dying = false;
+	bool m_died = false;
 	//private string m_actionlocal = "none";//this is a variable that is useful to do local actions
 	//m_action is used for the main character to determine if we need to act on it, from the users perspective
 	//obj@ m_target;//this holds a target that we can talk to for specific purposes
@@ -178,7 +180,11 @@ class actor : obj
 
 	void die(){//start the dying process
 		delete_entity();
+		m_died = true;
 		//init_entity("explosion_01.ent",m_pos);
+	}
+	bool has_died(){
+		return m_died;
 	}
 
 	//-------
