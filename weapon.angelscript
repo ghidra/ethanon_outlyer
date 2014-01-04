@@ -19,10 +19,16 @@ class weapon : actor
 
 	private string m_target_type;
 
+	//duplicate variables from pawn, since this doesnt need to be a pawn
+	private vector2 m_guibarsize = vector2(20.0f,20.0f);//size of the bar
+	private vector2 m_guibardir = vector2(-0.5f,-0.5f);//size of the bar
+	//private float m_guibarwidth;//this will be the pythagorean width if i need it, for stacking shit
+
 	weapon(const string &in entityName, const vector2 &in pos = vector2(0.0f,0.0f) ){
 		super(entityName,pos);
 
-		@m_tbar = progressbar("attack",m_timer,0.0f,1.0f,pos);
+		//@m_tbar = progressbar("attack",m_timer,0.0f,1.0f,pos);
+		@m_tbar = progressbar("attack",m_timer,0.0f,1.0f,vector2(),vector2(),m_guibarsize,m_guibardir,1,0,0);
 
 		//@m_projectile = projectile("random.ent");
 	}
@@ -38,7 +44,8 @@ class weapon : actor
 			}else{
 				update_timer();
 				m_tbar.set_value(get_timer());
-				draw_tbar();
+				m_tbar.update();
+				//draw_tbar();
 				//m_action = "attack";
 			}
 		}
@@ -67,12 +74,15 @@ class weapon : actor
 			m_entity.SetPosition(vector3(pos,0.0f));
 		}
 	}
-
-	void draw_tbar(){
-		//i need to have this thing placed specifically before drawing it anyway 
-		m_tbar.set_position(get_screen_position());
-		m_tbar.update();
+	void set_bar_position(const vector2 pos){
+		m_tbar.set_position(pos);
 	}
+
+	//void draw_tbar(){
+		//i need to have this thing placed specifically before drawing it anyway 
+		//m_tbar.set_position(get_screen_position());
+	//	m_tbar.update();
+	//}
 	//-------
 	void set_target(actor@ target){
 		set_destination(target.get_position());

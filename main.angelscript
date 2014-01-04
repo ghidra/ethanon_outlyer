@@ -16,8 +16,8 @@ notes
 
 use minimap to allow a free camera. add temporary plottable objects, that dont effect the overall map scale.
 
-body and enemiy gui neds work
 rollover buttons on bodies and enemies need the timer before disappearing
+and to be made by pressing, then timer starts, then dissapears
 
 body gui is at least drawing the build button twice, once in world space without scale, so there are 2 buttons for that?
 

@@ -7,8 +7,7 @@ class Button : obj
 	private vector2 m_margin = vector2(4.0f,4.0f);
 	private vector2 m_lpos; //the label position taking the margin into account
 
-	Button(const string _label, const vector2 &in _pos, const vector2 &in _origin = vector2(0.5f, 0.5f))
-	{
+	Button(const string _label, const vector2 &in _pos, const vector2 &in _origin = vector2(0.5f, 0.5f)){
 		m_origin = _origin;
 		m_label = _label;
 
@@ -21,17 +20,18 @@ class Button : obj
 
 	void update()
 	{
-		ETHInput@ input = GetInputHandle();
+		obj::update();
+		//ETHInput@ input = GetInputHandle();
 
 		m_pressed=false;
 		// check if any touch (or mouse) input is pressing the button
-		const uint touchCount = input.GetMaxTouchCount();
+		const uint touchCount = m_input.GetMaxTouchCount();
 		for (uint t = 0; t < touchCount; t++)
 		{
-			if (input.GetTouchState(t) == KS_HIT)
+			if (m_input.GetTouchState(t) == KS_HIT)
 			{
 				//if (isPointInButton(input.GetTouchPos(t)))
-				if (is_point_in_bb(input.GetTouchPos(t)))
+				if (is_point_in_bb(m_input.GetTouchPos(t)))
 				{
 					m_pressed = true;
 				}
@@ -39,7 +39,7 @@ class Button : obj
 		}
 
 		///---draw
-		if( this.is_point_in_bb(input.GetCursorPos()) ){
+		if( this.is_point_in_bb(m_input.GetCursorPos()) ){
 			DrawShapedSprite("sprites/pixel_white.png", m_pos-m_offset, m_size, m_white);
 		}else{
 			DrawShapedSprite("sprites/pixel_white.png", m_pos-m_offset, m_size, m_grey);

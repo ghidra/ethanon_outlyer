@@ -51,6 +51,11 @@ class enemy : pawn
 			//pawn@ target = m_attcontroller.get_target_pawn();
 			attack(target);
 		}
+
+		const vector2 scl = get_scale();//i need to know how large this thing is. hopefully i never scale non uniformly
+		const vector2 bpos = get_screen_position()+vector2(m_size.x*scl.x*0.6f,m_guibarwidth/2.0f);
+
+		m_weapon.set_bar_position(bpos);
 		update_weapon();
 		//------------------------
 		//-----------------------
@@ -58,7 +63,7 @@ class enemy : pawn
 
 		m_hbar.set_value(m_hp);
 		//m_hbar.set_position(m_pos);
-		m_hbar.set_position(get_screen_position());
+		m_hbar.set_position(bpos+vector2(m_guibarmargin+(m_guibarwidth/2.0f)));
 
 		//button drawing
 		if(m_mouseover){//if the mouse if over us

@@ -1,12 +1,6 @@
 [Z:\home\jimmy\Documents\projects\outlyer\_error.log.txt]
 
-AngelScript ERROR (Z:\home\jimmy\Documents\projects\outlyer\controller.angelscript line 88): 
-'target_type' is not declared
-
-AngelScript ERROR (Z:\home\jimmy\Documents\projects\outlyer\controller.angelscript line 88): 
-Expression must be of boolean type
-
-AngelScript ERROR (Z:\home\jimmy\Documents\projects\outlyer\controller.angelscript line 89): 
-'target_index' is not declared
+AngelScript ERROR (Z:\home\jimmy\Documents\projects\outlyer\body.angelscript line 54): 
+'b' is not declared
 ERROR - Failed while building module.
 ERROR - ETHEngine::StartEngine: the script has set no scene to load.

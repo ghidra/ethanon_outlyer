@@ -3,6 +3,7 @@
 #include "progressbar.angelscript"
 #include "weapon.angelscript"
 #include "Button.angelscript"
+#include "button_menu.angelscript"
 #include "controller.angelscript"
 #include "enemy.angelscript"
 #include "body.angelscript"
@@ -43,6 +44,7 @@ class pawn : actor{
 	private inventory@ m_inventory;
 
 	private Button@[] m_buttons;//hold buttons
+	private button_menu@ m_button_menu;
 
 	private bool m_menu_bool = false;//if we have triggered the menu to display
 	private float m_menu_timer = 5;//how long we have with the mouse not over the menu
@@ -62,6 +64,9 @@ class pawn : actor{
 
 	private vector2 m_guibarsize = vector2(20.0f,20.0f);//size of the bar
 	private vector2 m_guibardir = vector2(-0.5f,-0.5f);//size of the bar
+	private float m_guibarwidth;//this will be the pythagorean width if i need it, for stacking shit
+	private float m_guibarmargin = 4.0f;
+	private float m_guimargin = 20.0f;
 
 	pawn(const string &in entityName, const vector2 pos){
 		super(entityName,pos);
@@ -70,6 +75,7 @@ class pawn : actor{
 		@m_inventory = inventory();
 
 		@m_hbar = progressbar("hit points",m_hp,0.0f,m_hpmax,vector2(),vector2(),m_guibarsize,m_guibardir,1,0,0);
+		m_guibarwidth = pythagorean(m_guibarsize.x,m_guibarsize.y);
 	}
 
 	void update(){

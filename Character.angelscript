@@ -15,7 +15,6 @@ class Character : pawn
 
 	private vector2 m_guipos;
 	private vector2 m_guiactionspos;
-	private float m_guimargin = 20.0f;
 
 
 	private progressbar@ m_mbar;//miners bar
@@ -33,18 +32,18 @@ class Character : pawn
 		m_rpmax = 50.0f;
 
 		const vector2 ss = GetScreenSize();
-		const float pwidth = pythagorean(m_guibarsize.x,m_guibarsize.y);//this is the width horizonatally and vertically based on pythagorean
 		m_guipos = vector2( m_guimargin+(m_guibarsize.x/2), ss.y-m_guimargin );
 		m_guiactionspos = vector2(m_guimargin,m_guimargin+100);//start the list of actions
 
-		m_hbar.set_position(m_guipos+vector2((pwidth/2.0f)+4.0f,-(pwidth+8.0f)));//default healt bar
-		@m_rbar = progressbar("resources",m_rp,0.0f,m_rpmax,m_guipos+vector2(0.0f,-((pwidth/2.0f)+4.0f)),vector2(),m_guibarsize,m_guibardir,1,0,0);
-		@m_mbar = progressbar("miners",m_minersmax-m_minerscount,0.0f,m_minersmax,m_guipos+vector2( (pwidth/2.0f)+4.0f,0.0f),vector2(),m_guibarsize,m_guibardir,1,0,0);
+		m_hbar.set_position(m_guipos+vector2((m_guibarwidth/2.0f)+m_guibarmargin,-(m_guibarwidth+(m_guibarmargin*2))));//default healt bar
+		@m_rbar = progressbar("resources",m_rp,0.0f,m_rpmax,m_guipos+vector2(0.0f,-((m_guibarwidth/2.0f)+m_guibarmargin)),vector2(),m_guibarsize,m_guibardir,1,0,0);
+		@m_mbar = progressbar("miners",m_minersmax-m_minerscount,0.0f,m_minersmax,m_guipos+vector2( (m_guibarwidth/2.0f)+m_guibarmargin,0.0f),vector2(),m_guibarsize,m_guibardir,1,0,0);
 
 		//weapons
 		//init_inventory();
 		m_inventory.add_weapon( weapon("random.ent", get_position()) );//now we have a weapon in the inventory
 		@m_weapon = m_inventory.get_weapon(0);//go ahead and equip the weapon just created
+		m_weapon.set_bar_position( m_guipos+vector2( ((m_guibarwidth/2.0f)+m_guibarmargin)*2 ,-((m_guibarwidth/2.0f)+m_guibarmargin)) );
 	}
 
 	void update(){

@@ -21,7 +21,9 @@ class body : pawn
 		m_rp = 10.0f;
 		m_rpmax = m_rp;
 
-		@m_rbar = progressbar("resources",m_rp,0.0f,m_rpmax,m_pos);
+		//@m_rbar = progressbar("resources",m_rp,0.0f,m_rpmax,m_pos);
+		@m_rbar = progressbar("resources",m_rp,0.0f,m_rpmax,vector2(),vector2(),m_guibarsize,m_guibardir,1,0,0);
+		@m_button_menu = button_menu(m_label,m_pos,m_buttons_neutral,m_buttons_neutral);//set the initial button menu data
 	}
 
 	void update(){
@@ -37,9 +39,26 @@ class body : pawn
 
 
 		if(m_mouseover){//if the mouse if over us
+			//string[] b;
+			if(m_allegiance!=0){
+				//not used at the moment
+				if(m_allegiance>0){
+					//m_button_menu.set_buttons();
+				}
+			}else{
+				if(m_being_harvested>0){
+					string[] b = {"harvest"};
+					m_button_menu.set_buttons(b,b);
+				}else{
+					string[] b = {"harvest","collect miner"};
+					m_button_menu.set_buttons(b,b);
+				}
+				m_button_menu.set_postion(pos);
+			}
+		}
 			//if(m_menu_bool == false){//and the menu has not been triggered
 				//first clear out the button array
-				for(uint t = 0; t<m_buttons.length(); t++){
+				/*for(uint t = 0; t<m_buttons.length(); t++){
 					m_buttons.removeLast();
 				}
 				//here we trigger the utton menus, and set the button array to have them in it
@@ -50,7 +69,7 @@ class body : pawn
 						if(m_mouseover){
 							DrawText( pos2+vector2(0.0f,14.0f) , 'defend' , m_font, m_white);
 						}
-					}else{
+						
 						//string team = 'enemy';
 						if(m_mouseover){ 
 							DrawText( pos2+vector2(0.0f,14.0f) , 'attack' , m_font, m_white);
@@ -73,21 +92,24 @@ class body : pawn
 				m_menu_bool = true;
 				for (uint t=0; t<m_buttons.length(); t++){
 		   	 		m_buttons[t].update();
-				}
+				}*/
 			//}else{
 				//meu has already been set, just keep drawing it, until timer runs out
 			//	for (uint t=0; t<m_buttons.length(); t++){
 		   	 //		m_buttons[t].update();
 				//}
 			//}
-		}
+		//}
 		if(m_onscreen){
-			DrawText( pos , m_label, m_font, m_white);		
-			DrawText( pos2 , m_being_harvested+"" , m_font, m_white);
+			//DrawText( pos , m_label, m_font, m_white);		
+			//DrawText( pos2 , m_being_harvested+"" , m_font, m_white);
 			//DrawText( pos, (m_pos.x*(1/GetScale()))+"" , m_font, m_white);
 			//DrawText( pos2, (m_pos.y*(1/GetScale()))+"" , m_font, m_white);
 			m_rbar.set_value(m_rp);
-			m_rbar.set_position(pos);
+
+			const vector2 scl = get_scale();
+			m_rbar.set_position(get_screen_position()+vector2(m_size.x*scl.x*0.6f,m_guibarwidth/2.0f));
+			//m_rbar.set_position(pos);
 			m_rbar.update();
 		}
 		//m_rbar.set_value(m_rbar.get_value()-0.01f);

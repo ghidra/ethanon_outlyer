@@ -85,14 +85,22 @@ class actor : obj
 	}
 	//z
 	void set_z(const float z){
-		m_entity.SetPositionZ(z);
+		if(m_entity !is null){
+			m_entity.SetPositionZ(z);
+		}
 	}
 	//scale
 	void set_scale(const float s){
-		m_entity.Scale(s);
+		if(m_entity !is null){
+			m_entity.Scale(s);
+		}
 	}
 	vector2 get_scale(){
-		return m_entity.GetScale();
+		vector2 scl = vector2(1.0f);
+		if(m_entity !is null){
+			scl = m_entity.GetScale();
+		}
+		return scl;
 	}
 	//resource points
 	float get_rp(){//get the resource points for an object
