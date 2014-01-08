@@ -82,6 +82,9 @@ class obj
 	vector2 get_size(){
 		return m_size;
 	}
+	void set_size(const vector2 s){
+		m_size = s;
+	}
 	uint get_uid(){
 		return m_uid;
 	}

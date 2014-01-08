@@ -68,8 +68,8 @@ class pawn : actor{
 	private float m_guibarmargin = 4.0f;
 	private float m_guimargin = 20.0f;
 
-	pawn(const string &in entityName, const vector2 pos){
-		super(entityName,pos);
+	pawn(const string &in entityName, const vector2 pos, const string &in label = "unknown"){
+		super(entityName,pos,label);
 		@m_controller = controller();
 		@m_attcontroller = controller();
 		@m_inventory = inventory();

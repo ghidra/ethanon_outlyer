@@ -42,7 +42,9 @@ class actor : obj
 	//obj@ m_target;//this holds a target that we can talk to for specific purposes
 	//-----------------
 
-	actor(const string &in entityName, const vector2 pos){
+	actor(const string &in entityName, const vector2 pos, const string &in label = "unknown"){
+		//super(label);
+		set_label(label);
 		/*obj::update();
 		AddEntity(entityName, vector3(pos, 0.0f), m_entity);
 		m_size = m_entity.GetSize();

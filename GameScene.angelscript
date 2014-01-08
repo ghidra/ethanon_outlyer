@@ -59,7 +59,7 @@ class GameScene : Scene
 			const float ry=randF(1);
 			const vector2 put(rx*(screenMiddle.x*2),ry*(screenMiddle.y*2));
 			
-			m_bodies.insertLast( body("simple_light.ent",put) );//http://www.angelcode.com/angelscript/sdk/docs/manual/doc_datatypes_arrays.html
+			m_bodies.insertLast( body("simple_light.ent",put,m_names[t]) );//http://www.angelcode.com/angelscript/sdk/docs/manual/doc_datatypes_arrays.html
 			m_bodies[t].set_label(m_names[t]);
 			m_minimap.plottable(m_bodies[t]);
 		}

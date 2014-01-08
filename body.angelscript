@@ -15,15 +15,15 @@ class body : pawn
 
 	//string m_action = "none";//this is the action we should take, //set from pressing a button
 
-	body(const string &in entityName, const vector2 pos){
-		super(entityName,pos);
+	body(const string &in entityName, const vector2 pos, const string &in label = "unknown"){
+		super(entityName,pos,label);
 
 		m_rp = 10.0f;
 		m_rpmax = m_rp;
 
 		//@m_rbar = progressbar("resources",m_rp,0.0f,m_rpmax,m_pos);
 		@m_rbar = progressbar("resources",m_rp,0.0f,m_rpmax,vector2(),vector2(),m_guibarsize,m_guibardir,1,0,0);
-		@m_button_menu = button_menu(m_label,m_pos,m_buttons_neutral,m_buttons_neutral);//set the initial button menu data
+		@m_button_menu = button_menu(m_label,m_pos,m_buttons_neutral);//set the initial button menu data
 	}
 
 	void update(){
@@ -48,12 +48,13 @@ class body : pawn
 			}else{
 				if(m_being_harvested>0){
 					string[] b = {"harvest"};
-					m_button_menu.set_buttons(b,b);
+					m_button_menu.set_buttons(b);
 				}else{
 					string[] b = {"harvest","collect miner"};
-					m_button_menu.set_buttons(b,b);
+					m_button_menu.set_buttons(b);
 				}
-				m_button_menu.set_postion(pos);
+				m_button_menu.set_position(pos);
+				m_button_menu.update();
 			}
 		}
 			//if(m_menu_bool == false){//and the menu has not been triggered

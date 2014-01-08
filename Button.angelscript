@@ -11,11 +11,13 @@ class Button : obj
 		m_origin = _origin;
 		m_label = _label;
 
-		m_size = ComputeTextBoxSize(m_font, m_label) + m_margin;//GetSpriteFrameSize(m_spriteName);
-		m_offset = m_size*m_origin; 
+		set_size(ComputeTextBoxSize(m_font, m_label) + m_margin);
+		//m_size = ComputeTextBoxSize(m_font, m_label) + m_margin;//GetSpriteFrameSize(m_spriteName);
+		//m_offset = m_size*m_origin;
 
-		m_pos = _pos;
-		m_lpos = _pos+(m_margin*0.5f);
+		set_position(_pos);
+		//m_pos = _pos;
+		//m_lpos = _pos+(m_margin*0.5f);
 	}
 
 	void update()
@@ -46,6 +48,17 @@ class Button : obj
 		}
 		DrawText( m_lpos-m_offset , m_label, m_font, m_white);
 		
+	}
+
+	//when setting the size, we also need to set the origin
+	void set_size(const vector2 s){
+		m_size = s;
+		m_offset = m_size*m_origin;//justified the button
+	}
+	//when setting the position, we need to set the lable position too
+	void set_position(const vector2 pos){
+		m_pos = pos;
+		m_lpos = pos+(m_margin*0.5f);
 	}
 
 }
