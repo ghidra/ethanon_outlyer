@@ -83,7 +83,7 @@ class GameScene : Scene
 		for (uint t=0; t<m_bodies.length(); t++){
    	 		m_bodies[t].update();
    	 		//if we have been given an action based on button press, we need to pass it to the character
-   	 		if(m_bodies[t].get_action() != "none"){
+   	 		if(m_bodies[t].get_action() != "none" && m_bodies[t].get_action() != "pressed header"){
    	 			//m_character.set_action( m_bodies[t].m_action );
    	 			m_character.set_action( m_bodies[t].m_action , m_bodies[t] );
    	 			//m_character.set_targetbody( m_bodies[t] );

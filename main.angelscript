@@ -16,11 +16,6 @@ notes
 
 use minimap to allow a free camera. add temporary plottable objects, that dont effect the overall map scale.
 
-rollover buttons on bodies and enemies need the timer before disappearing
-and to be made by pressing, then timer starts, then dissapears
-
-body gui is at least drawing the build button twice, once in world space without scale, so there are 2 buttons for that?
-
 starting on enemy pawn. basic ai
 
 projectiles need to shoot toward pawn, basically it is shooting to where the pawn was before actually shooting, the position is not updating at time of fire

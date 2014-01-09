@@ -144,6 +144,10 @@ class obj
 		}
 		return a;
 	}
+	//for shortening floats to managable lengths
+	float decimal(const float v,const uint d){
+		return floor(v*d)/d;
+	}
 	//Pythagorean theory a2+b2=c2;
 	float pythagorean(const float x, const float y){
 		return sqrt(pow(x,2.0f)+pow(y,2.0f));

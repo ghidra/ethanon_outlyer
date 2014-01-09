@@ -38,24 +38,32 @@ class body : pawn
 		//string team = 'neutral';
 
 
+		//logic to build the proper button menu based on what state this body is in
+		//--------
 		if(m_mouseover){//if the mouse if over us
-			//string[] b;
-			if(m_allegiance!=0){
-				//not used at the moment
-				if(m_allegiance>0){
-					//m_button_menu.set_buttons();
-				}
-			}else{
-				if(m_being_harvested>0){
-					string[] b = {"harvest"};
-					m_button_menu.set_buttons(b);
+			if(m_input.GetLeftClickState()==KS_HIT && !m_button_menu.is_open() ){
+				m_pressed=true;
+				m_button_menu.open();
+				//string[] b;
+				if(m_allegiance!=0){
+					//not used at the moment
+					if(m_allegiance>0){
+						//m_button_menu.set_buttons();
+					}
 				}else{
-					string[] b = {"harvest","collect miner"};
-					m_button_menu.set_buttons(b);
+					if(m_being_harvested>0){
+						string[] b = {"harvest","collect miner"};
+						m_button_menu.set_buttons(b);
+					}else{
+						string[] b = {"harvest"};
+						m_button_menu.set_buttons(b);
+					}
 				}
-				m_button_menu.set_position(pos);
-				m_button_menu.update();
 			}
+		}
+		if(m_button_menu.is_open()){
+			m_button_menu.set_position(pos);
+			m_button_menu.update();
 		}
 			//if(m_menu_bool == false){//and the menu has not been triggered
 				//first clear out the button array

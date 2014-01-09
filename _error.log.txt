@@ -1,12 +1,9 @@
 [Z:\home\jimmy\Documents\projects\outlyer\_error.log.txt]
 
-AngelScript ERROR (Z:\home\jimmy\Documents\projects\outlyer\Button.angelscript line 10): 
-Base class doesn't have default constructor. Make explicit call to base constructor
+AngelScript ERROR (Z:\home\jimmy\Documents\projects\outlyer\button_menu.angelscript line 136): 
+'is_pressed' is not declared
 
-AngelScript ERROR (Z:\home\jimmy\Documents\projects\outlyer\progressbar.angelscript line 38): 
-Base class doesn't have default constructor. Make explicit call to base constructor
-
-AngelScript ERROR (Z:\home\jimmy\Documents\projects\outlyer\minimap.angelscript line 36): 
-Base class doesn't have default constructor. Make explicit call to base constructor
+AngelScript ERROR (Z:\home\jimmy\Documents\projects\outlyer\button_menu.angelscript line 136): 
+Expression must be of boolean type
 ERROR - Failed while building module.
 ERROR - ETHEngine::StartEngine: the script has set no scene to load.

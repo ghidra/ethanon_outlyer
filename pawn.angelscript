@@ -110,10 +110,20 @@ class pawn : actor{
 	}
 	//-----
 	void set_button_action(){//this sets m_action based on button use
-		for (uint t=0; t<m_buttons.length(); t++){
-			if(m_buttons[t].is_pressed()){
-				m_action = m_buttons[t].get_label();
+		
+		if(m_button_menu !is null){
+			//if we even have a button menu, use this command, if not use the hopefully soon to obsolete m_buttons array
+			m_action = m_button_menu.get_action();
+		}else{
+			//this should soon be removed once all parties use the button menu
+			//-----
+			for (uint t=0; t<m_buttons.length(); t++){
+				if(m_buttons[t].is_pressed()){
+					m_action = m_buttons[t].get_label();
+				}
 			}
+			///
+			////
 		}
 	}
 	//setting the action with the target of the action

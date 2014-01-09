@@ -15,7 +15,7 @@ class progressbar : obj
 
 	private vector2 m_bounds; //the lower and upper bounds of the bar
 	private float m_value;
-	private int m_decimal=1;//the decimal i want to show to
+	private uint m_decimal=1;//the decimal i want to show to
 
 	private uint m_border;
 	private uint m_showvalue;
@@ -86,7 +86,7 @@ class progressbar : obj
 			DrawText( m_pos , m_label, m_font, m_white);
 		}
 		if(m_showvalue>0){
-			DrawText( m_pos+vector2(0.0f,12.0f), decimal(m_value)+"/"+decimal(m_bounds.y), m_font, m_white);
+			DrawText( m_pos+vector2(0.0f,12.0f), decimal(m_value,m_decimal)+"/"+decimal(m_bounds.y,m_decimal), m_font, m_white);
 		}
 	}
 	void set_value(float v){
@@ -107,9 +107,6 @@ class progressbar : obj
 	void refresh(const float _value, const float _max, const float _min = 0.0f){
 		set_bounds(_min,_max);
 	 	m_value = _value;
-	}
-	float decimal(const float v){
-		return floor(v*m_decimal)/m_decimal;
 	}
 	//------look
 	void set_border_positions(){
