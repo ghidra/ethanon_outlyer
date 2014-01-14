@@ -29,6 +29,7 @@ class minimap : obj
 	private uint[] m_plottable_colors;//colors
 
 	private actor@[] m_plottable_actors;
+	//private actor@[] m_plottable_actors_dynamic;//a seperate array to plot dynamic objects that should not effect the svale of the map
 	private camera@ m_plottable_camera;
 
 	private uint m_bgcolor = ARGB(200,0,0,0);//the background color of the map
@@ -53,21 +54,18 @@ class minimap : obj
 	}
 
 	void plottable(const vector2 p){//positions and color
-		
 		m_plottable_positions.insertLast(p);
 		//m_plottable_colors.inserLast(c);
-
 	}
 	void plottable(actor@ a){//positions and color
-		
 		m_plottable_actors.insertLast(a);
-
 	}
 	void plottable(camera@ c){//positions and color
-		
 		@m_plottable_camera = c;
-
 	}
+	/*void plottable_dynamic(actor@ a){
+		m_plottable_actors_dynamic.insertLast(a);
+	}*/
 	void clear_plottable(){
 		for(uint t = 0; t < m_plottable_positions.length(); t++){
 			m_plottable_positions.removeLast();

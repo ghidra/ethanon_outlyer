@@ -17,7 +17,7 @@ class GameScene : Scene
 	//private actor@ m_light;
 	//private ETHEntityArray m_bodies;
 	private body@[] m_bodies;
-	private string[] m_names = { 'drb78','jrg711','ckg31','jqg525','x'};
+	//private string[] m_names = { 'drb78','jrg711','ckg31','jqg525','x'};
 
 	private enemy@[] m_enemies;//array to hold all the enemies
 	private enemy_boss@ m_boss;
@@ -44,7 +44,7 @@ class GameScene : Scene
 
 		//@m_character = Character("witch.ent", screenMiddle);
 		@m_character = Character("random.ent", vector2(0.0f,0.0f));
-		//m_minimap.plottable(m_character);
+		m_minimap.plottable(m_character);
 
 		@m_camera = camera();
 		m_camera.set_target(m_character);
@@ -52,23 +52,25 @@ class GameScene : Scene
 		m_minimap.plottable(m_camera);//give it the camera to plot
 
 		//temp = "";
-		//-----making random lights
-		for (uint t = 0; t < 3; t++)
+		//-----making random bodies
+		for (uint t = 0; t < 23; t++)
     	{
-			const float rx=randF(1);
-			const float ry=randF(1);
-			const vector2 put(rx*(screenMiddle.x*2),ry*(screenMiddle.y*2));
-			
-			m_bodies.insertLast( body("simple_light.ent",put,m_names[t]) );//http://www.angelcode.com/angelscript/sdk/docs/manual/doc_datatypes_arrays.html
-			m_bodies[t].set_label(m_names[t]);
+			const float rx = (randF(1)-0.5)*1000;
+			const float ry = (randF(1)-0.8)*5000;
+			const vector2 put(rx,ry);
+			const string nm = t+""+randF(t)*1000;
+
+			m_bodies.insertLast( body("simple_light.ent",put,nm) );//http://www.angelcode.com/angelscript/sdk/docs/manual/doc_datatypes_arrays.html
+			m_bodies[t].set_label(nm);
 			m_minimap.plottable(m_bodies[t]);
 		}
 
 		m_enemies.insertLast( enemy("random.ent", vector2(200.0f,200.0f),m_character) );
-		//m_minimap.plottable(m_enemies[m_enemies.length()-1]);
+		m_minimap.plottable(m_enemies[m_enemies.length()-1]);
 
 		//place a boss
 		@m_boss = enemy_boss("random.ent", vector2(500.0f,100.0f),m_character);
+		m_minimap.plottable(m_boss);
 	}
 
 	void onUpdate()
@@ -127,7 +129,7 @@ class GameScene : Scene
 		//DrawText(vector2(0,200), "x"+mp.x+" y:"+mp.y, "Verdana14_shadow.fnt", ARGB(250,255,255,255));
 		//DrawText(vector2(0,212), "iter:"+temp, "Verdana14_shadow.fnt", ARGB(250,255,255,255));
 		
-		//DrawText(vector2(0,224), "fps:"+GetFPSRate()+"", "Verdana14_shadow.fnt", ARGB(250,255,255,255));
+		DrawText(vector2(0,224), "fps:"+GetFPSRate()+"", "Verdana14_shadow.fnt", ARGB(250,255,255,255));
 
 		//DrawText(vector2(0,244), "bodies:"+m_bodies.length()+"", "Verdana14_shadow.fnt", ARGB(250,255,255,255));
 		//DrawText(vector2(0,264), "enemies:"+m_enemies.length()+"", "Verdana14_shadow.fnt", ARGB(250,255,255,255));

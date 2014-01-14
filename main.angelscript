@@ -14,7 +14,13 @@ notes
 -progress
 ------------
 
-use minimap to allow a free camera. add temporary plottable objects, that dont effect the overall map scale.
+level 1
+	layout of bodies
+	creation of boss, and how he eats bodies, and how enemies are created
+
+dialouge window, info window
+
+use minimap to allow a free camera. 
 
 starting on enemy pawn. basic ai
 
@@ -31,6 +37,9 @@ weapon type classes
 -path finding
 -kill screen
 -load screen
+
+//---bug
+there is a bug that after setting the characters destination, and you scale the scene (right click drag), you might miss the mark on go on forever
 
 
 

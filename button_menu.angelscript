@@ -14,7 +14,7 @@ class button_menu : Button{
 	private float m_width = 0.0f;//this is the overall width, incase we want to keep it all consistent, which seems only right
 	private float m_height = 0.0f;//this will the the height of everything, all the buttons etc
 
-	button_menu(const string _label, const vector2 &in _pos, const string[] _labels, const vector2 &in _origin = vector2(0.5f, 0.5f))
+	button_menu(const string _label, const vector2 &in _pos, const string[] _labels, const vector2 &in _origin = vector2(0.0f, 0.0f))
 	{
 		super(_label,_pos,_origin);//i have to do this, cause the base class does not have a constructor
 		
@@ -62,7 +62,7 @@ class button_menu : Button{
 
 		//use the timer to determine how long I can be open, and set it to not open when timer is up
 		m_timer+=UnitsPerSecond(m_tspd);
-		DrawText( m_pos+vector2(0.0f,m_height) , decimal(m_timer_duration - m_timer,10)+"", m_font, m_white);
+		DrawText( m_pos+vector2(0.0f,m_height+m_margin.y) , decimal(m_timer_duration - m_timer,10)+"", m_font, m_white);
 		if(m_timer>=m_timer_duration){
 			m_open=false;
 		}
@@ -79,7 +79,7 @@ class button_menu : Button{
 		//make new buttons
 		//float widest = 0.0f;// figure out which is the largest button, so we can make them all the same width
 		for (uint t =0; t<_labels.length(); t++){
-			m_buttons.insertLast( Button( _labels[t], vector2()) );//make a button but done place it
+			m_buttons.insertLast( Button( _labels[t], vector2(),vector2(0.0f)) );//make a button but done place it
 			const vector2 size = m_buttons[t].get_size();
 			if(size.x>m_width){
 				m_width = size.x;
@@ -100,8 +100,9 @@ class button_menu : Button{
 	}
 
 	//setting the position, also nees to set the position of all the buttons under neith this
+	//this will also take the position, and center justify, to bottom right left position it, off the given position
 	void set_position(const vector2 pos){
-		Button::set_position(pos);
+		Button::set_position(pos+m_margin);
 		//now loop the buttons
 		for (uint t =0; t<m_buttons.length(); t++){
 			const vector2 size = m_buttons[t].get_size();
@@ -113,9 +114,10 @@ class button_menu : Button{
 		return m_open;
 	}
 
-	void open(){//when we trigger to open the menu, we need to set some values
+	void open(const vector2 pos){//when we trigger to open the menu, we need to set some values
 		m_open=true;
 		m_timer=0.0f;
+		set_position(pos);
 	}
 	/*void set_open(const bool o = true){//not sure i will ever use this
 		m_open = o;

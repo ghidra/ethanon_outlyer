@@ -1,9 +1,9 @@
 [Z:\home\jimmy\Documents\projects\outlyer\_error.log.txt]
 
-AngelScript ERROR (Z:\home\jimmy\Documents\projects\outlyer\button_menu.angelscript line 136): 
-'is_pressed' is not declared
+AngelScript ERROR (Z:\home\jimmy\Documents\projects\outlyer\GameScene.angelscript line 62): 
+'m_names' is not declared
 
-AngelScript ERROR (Z:\home\jimmy\Documents\projects\outlyer\button_menu.angelscript line 136): 
-Expression must be of boolean type
+AngelScript ERROR (Z:\home\jimmy\Documents\projects\outlyer\GameScene.angelscript line 62): 
+No matching signatures to 'array::insertLast(const int)'
 ERROR - Failed while building module.
 ERROR - ETHEngine::StartEngine: the script has set no scene to load.

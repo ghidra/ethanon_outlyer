@@ -42,8 +42,6 @@ class body : pawn
 		//--------
 		if(m_mouseover){//if the mouse if over us
 			if(m_input.GetLeftClickState()==KS_HIT && !m_button_menu.is_open() ){
-				m_pressed=true;
-				m_button_menu.open();
 				//string[] b;
 				if(m_allegiance!=0){
 					//not used at the moment
@@ -59,10 +57,12 @@ class body : pawn
 						m_button_menu.set_buttons(b);
 					}
 				}
+				m_pressed=true;
+				m_button_menu.open(m_mousepos);
 			}
 		}
 		if(m_button_menu.is_open()){
-			m_button_menu.set_position(pos);
+			//m_button_menu.set_position(m_mousepos);
 			m_button_menu.update();
 		}
 			//if(m_menu_bool == false){//and the menu has not been triggered
