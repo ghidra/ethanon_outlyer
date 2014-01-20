@@ -1,8 +1,7 @@
 [Z:\home\jimmy\Documents\projects\outlyer\eth.log.txt]
 Backbuffer created as 854, 480 on default backbuffer mode
 Loading game script from source-code: main.angelscript
-Compile time: 45 milliseconds
+Compile time: 41 milliseconds
 (Loaded) pixel_white.png
 (Loaded) random_D.png
 (Loaded) random_NM.png
-(Loaded) explosion_01_contact.png

@@ -69,7 +69,7 @@ class GameScene : Scene
 		m_minimap.plottable(m_enemies[m_enemies.length()-1]);
 
 		//place a boss
-		@m_boss = enemy_boss("random.ent", vector2(500.0f,100.0f),m_character);
+		@m_boss = enemy_boss("random.ent", vector2(0.0f,-500.0f),m_character);
 		m_minimap.plottable(m_boss);
 	}
 
