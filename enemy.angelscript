@@ -8,8 +8,10 @@ class enemy : pawn
 
 	//private progressbar@ m_mbar;//miners bar
 
-	enemy(const string &in entityName, const vector2 pos, pawn @targetpawn){
-		super(entityName,pos);
+	private string[] m_buttons_neutral = {"attack"};
+
+	enemy(const string &in entityName, const vector2 pos, pawn @targetpawn, const string &in label = "unknown"){
+		super(entityName,pos,label);
 		
 		m_spd = 1.0f;
 
@@ -32,6 +34,8 @@ class enemy : pawn
 		for(uint t = 0; t < 11; t++){
 			set_attack( "attack",m_targetpawn);
 		}
+
+		@m_button_menu = button_menu(m_label,m_pos,m_buttons_neutral);
 
 	}
 
@@ -67,6 +71,19 @@ class enemy : pawn
 
 		//button drawing
 		if(m_mouseover){//if the mouse if over us
+			if(m_input.GetLeftClickState()==KS_HIT && !m_button_menu.is_open() ){
+				//string[] b = {"harvest","collect miner"};
+				m_button_menu.set_buttons(m_buttons_neutral);
+
+				m_pressed=true;
+				m_button_menu.open(m_mousepos);
+			}
+		}
+		if(m_button_menu.is_open()){
+			m_button_menu.update();
+		}
+		/*
+		if(m_mouseover){//if the mouse if over us
 			//first clear out the button array
 			for(uint t = 0; t<m_buttons.length(); t++){
 				m_buttons.removeLast();
@@ -87,6 +104,7 @@ class enemy : pawn
 			m_hbar.update();
 
 		}
+		*/
 
 		set_button_action();
 

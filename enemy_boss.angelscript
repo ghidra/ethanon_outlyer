@@ -8,10 +8,10 @@ class enemy_boss : enemy
 
 	//private progressbar@ m_mbar;//miners bar
 
-	enemy_boss(const string &in entityName, const vector2 pos, pawn @targetpawn){
-		super(entityName,pos,targetpawn);
+	enemy_boss(const string &in entityName, const vector2 pos, pawn @targetpawn, const string &in label = "unknown"){
+		super(entityName,pos,targetpawn,label);
 		
-		set_scale(2.0f);
+		set_scale(4.0f);
 		/*m_spd = 1.0f;
 
 		m_rp = 10.0f;

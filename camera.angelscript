@@ -27,6 +27,14 @@ class camera
 	private float m_scaledragmultiplier = 0.001;//the amount to multiply the drag by to add to the scale
 	private float m_scaleprevious;//this hold the previous scale value, so we dont get a weird pop everytime we try this
 
+	//dragging variables
+	private bool m_dragpressed = false;//used to determine if we have started the drag
+	private bool m_drag = false;//we are told that we can drag this from another class
+	private vector2 m_dragstart;//where we started the drag in camera space
+	private vector2 m_relativedragstart;//where we started the drag in screen space
+	private vector2 m_relativemousepos;
+	private vector2 m_pos;//where we are
+
 	camera(){
 
 	}
@@ -63,6 +71,35 @@ class camera
 			}
 			//DrawText(vector2(0,200), "camera scale:"+m_scale+"", "Verdana14_shadow.fnt", ARGB(250,255,255,255));
 		//}
+			//dragging
+			if(input.GetLeftClickState()==KS_HIT && !m_dragpressed && m_drag){
+				m_dragpressed=true;
+				m_relativedragstart = mousepos+m_pos;//mousepos+(m_pos*(1/GetScale()));
+			}
+			if(input.GetLeftClickState()==KS_DOWN && m_dragpressed && m_drag){
+				//draw_line(m_pos-m_camerapos,m_mousepos,m_white,m_white,1.0f);
+
+				//keep the camera on the mouse
+				/*m_relativemousepos = mousepos - GetCameraPos();
+
+				const vector2 target = m_relativemousepos; //m_target_actor.get_position();
+				const vector2 screenMiddle(GetScreenSize() * 0.5f);
+				set_position(target-screenMiddle);*/
+
+				//const vector2 campos = GetCameraPos();
+				const vector2 dragged = m_relativedragstart-mousepos;
+				const vector2 place = m_dragstart+dragged;
+
+				set_position(place);
+				DrawText(vector2(0,24), "m_pos:"+mousepos.x+","+mousepos.y+"", "Verdana14_shadow.fnt", ARGB(250,255,255,255));
+			}
+			if(input.GetLeftClickState()==KS_RELEASE && m_dragpressed && m_drag){
+				//set the destination
+				//set_destination(m_relativemousepos);
+				//m_moving=true;
+				m_dragpressed=false;
+				m_drag=false;
+			}
 		//-------------------------------
 		//-------------------------------
 
@@ -76,6 +113,7 @@ class camera
 
 	void set_position(const vector2 pos){
 		SetCameraPos(pos);
+		m_pos=pos;
 	}
 	vector2 get_position(){
 		return vector2(GetCameraPos());
@@ -105,4 +143,11 @@ class camera
 		@m_target_enemy = target;
 		m_target_type = "enemy";
 	}*/
+	bool get_drag(){
+		return m_drag;
+	}
+	void set_drag(const bool d = true){
+		m_drag=d;
+	}
+
 }
