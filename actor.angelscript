@@ -22,6 +22,8 @@ class actor : obj
 	private float m_distance_travelled;//the distance covered so far
 	private vector2 m_destination_direction;//the direction to get to the distance
 
+	private float m_travel_cost_per_unit = 0.01f;//the cost per unit to travel
+
 	private uint m_directionline = 0;
 	private FrameTimer m_frametimer;
 	private uint m_currentframe;

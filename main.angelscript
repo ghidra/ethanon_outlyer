@@ -22,6 +22,9 @@ dialouge window, info window
 
 use minimap to allow a free camera. 
 
+resource cost to travel
+bdies need to tell you how much resources it will cost to travel there and drop a miner
+
 starting on enemy pawn. basic ai
 
 projectiles need to shoot toward pawn, basically it is shooting to where the pawn was before actually shooting, the position is not updating at time of fire

@@ -65,8 +65,8 @@ class GameScene : Scene
 			m_minimap.plottable(m_bodies[t]);
 		}
 
-		m_enemies.insertLast( enemy("random.ent", vector2(200.0f,200.0f),m_character) );
-		m_minimap.plottable(m_enemies[m_enemies.length()-1]);
+		//m_enemies.insertLast( enemy("random.ent", vector2(200.0f,200.0f),m_character) );
+		//m_minimap.plottable(m_enemies[m_enemies.length()-1]);
 
 		//place a boss
 		@m_boss = enemy_boss("random.ent", vector2(0.0f,-500.0f),m_character);

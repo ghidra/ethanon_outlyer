@@ -19,6 +19,8 @@ class Character : pawn
 
 	private progressbar@ m_mbar;//miners bar
 
+	private float m_drag_distance = 0.0f;//this is to check how far we have dragged out our travel vector, so that if it is small, we can ignore it
+	private float m_drag_distance_threshold = 100.0f;
 	private bool m_moving = false;//set when I am manually setting a destination with a mouse drag out
 
 	Character(const string &in entityName, const vector2 pos){
@@ -100,15 +102,26 @@ class Character : pawn
 				}
 			}
 			if(m_input.GetLeftClickState()==KS_DOWN && m_pressed){
-				draw_line(m_pos-m_camerapos,m_mousepos,m_white,m_white,1.0f);
+				vector2 chpos = m_pos-m_camerapos;//the character position
+				m_drag_distance = length(chpos-m_mousepos);//the distance dragged out
+				
+				draw_line(chpos,m_mousepos,m_white,m_white,1.0f);
+				
+				DrawText( m_mousepos+vector2(12.0f,-4.0f) , "est. cost:", "Verdana14_shadow.fnt", ARGB(250,255,255,255));
+				DrawText( m_mousepos+vector2(12.0f,8.0f) , decimal(m_drag_distance*m_travel_cost_per_unit,10)+"", "Verdana14_shadow.fnt", ARGB(250,255,255,255));
+
 				//m_scalefactor = (mousepos.x-m_scalestartpos)*m_scaledragmultiplier;//mp.x-m_scalestart;
 				//m_scale = m_scaleprevious+m_scalefactor;
 				//SetScaleFactor(m_scale);
 			}
 			if(m_input.GetLeftClickState()==KS_RELEASE && m_pressed){
 				//set the destination
-				set_destination(m_relativemousepos);
-				m_moving=true;
+				if(m_drag_distance>m_drag_distance_threshold){
+					set_destination(m_relativemousepos);
+					m_moving=true;
+				}else{
+					m_moving=false;
+				}
 				m_pressed=false;
 			}
 
@@ -116,7 +129,8 @@ class Character : pawn
 			//now if we are flagged to m_moving, move it to the destination
 
 			if( m_destination_distance >  m_spd*2 && m_moving){
-				move(m_destination_direction);
+				move(normalize(m_destination-m_pos));
+				//move(m_destination_direction);
 			}else{
 				m_moving=false;
 			}
@@ -149,12 +163,15 @@ class Character : pawn
 
 		m_rbar.set_value(m_rp);
 		m_rbar.update();
+		DrawText( (m_rbar.get_centeroffset()*vector2(-1.0f,1.0f))+m_rbar.get_position()+vector2(-24.0f,7.0f), "r", "Verdana14_shadow.fnt", ARGB(250,255,255,255));
 
 		m_mbar.set_value(m_minersmax-m_minerscount);
 		m_mbar.update();
+		DrawText( m_mbar.get_centeroffset()+m_mbar.get_position()+vector2(18.0f,7.0f), "m", "Verdana14_shadow.fnt", ARGB(250,255,255,255) );
 
 		m_hbar.set_value(m_hp);
 		m_hbar.update();
+		DrawText( m_hbar.get_centeroffset()+m_hbar.get_position()+vector2(18.0f,7.0f), "hp", "Verdana14_shadow.fnt", ARGB(250,255,255,255));
 
 		//////////////////////
 		//print out any actions I might have queued up

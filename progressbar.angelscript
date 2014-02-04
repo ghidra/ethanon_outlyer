@@ -110,6 +110,7 @@ class progressbar : obj
 	}
 	//------look
 	void set_border_positions(){
+		//this basically builds the diaond shape.
 		m_pos2 = m_pos+(m_dir*m_size.x);//this is max the end postion
 		m_dir2 = multiply(m_dir,rotateZ(-90*(PI/180)));
 		m_pos3 = m_pos2+(m_dir2*m_size.y);
@@ -119,6 +120,12 @@ class progressbar : obj
 		obj::set_position(pos);
 
 		set_border_positions();
+	}
+
+	vector2 get_centeroffset(){
+		//this will return the position of the third point, the middle right part off the diamond, fo placement, 
+		//inverse it to get the the left side, or at least invert the x value.
+		return vector2(m_pos3-m_pos);
 	}
 }
 
