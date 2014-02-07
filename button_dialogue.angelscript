@@ -2,8 +2,8 @@
 
 class button_dialogue : Button{
 
-	private Button@[] m_buttons;
-	private string[] m_labels;//hold the labels to the buttons
+	//private Button@[] m_buttons;
+	//private string[] m_labels;//hold the labels to the buttons
 	private string m_action="none";
 
 	private bool m_open = false;//wether this thing is open
@@ -14,44 +14,57 @@ class button_dialogue : Button{
 	private float m_width = 0.0f;//this is the overall width, incase we want to keep it all consistent, which seems only right
 	private float m_height = 0.0f;//this will the the height of everything, all the buttons etc
 
-	button_menu(const string _label, const vector2 &in _pos, const string[] _labels, const vector2 &in _origin = vector2(0.0f, 0.0f))
+	//private vector2 m_bgpos;
+	//private vector2 m_bgsize;
+
+	button_dialogue(const string _label, global@ _g, const vector2 &in _pos = vector2(0.0f,0.0f), const vector2 &in _origin = vector2(0.0f, 0.0f))
 	{
 		super(_label,_pos,_origin);//i have to do this, cause the base class does not have a constructor
-		
+
 		m_width = m_size.x;//get the width of the main button, to start off the size.
 
-		set_buttons(_labels);
+		set_global_object(_g);
+
+		open();
 	}
 
 	void update()
 	{
-		Button::update();
+		//Button::update();
+		obj::update();
 		//ETHInput@ input = GetInputHandle();
 
-		//m_pressed=false;
+		m_pressed=false;
+		//m_screensize = GetScreenSize();
+		vector2 bgpos = vector2(0.0f, (m_screensize.y/2)-(m_size.y/2) ) ;
+		vector2 bgsize = vector2(m_screensize.x,m_size.y);
+		//center text
+		vector2 tpos = vector2( (bgsize.x/2)-(m_size.x/2), bgpos.y );
 		// check if any touch (or mouse) input is pressing the button
-		/*const uint touchCount = m_input.GetMaxTouchCount();
+		const uint touchCount = m_input.GetMaxTouchCount();
 		for (uint t = 0; t < touchCount; t++)
 		{
-			if (m_input.GetTouchState(t) == KS_HIT)
+			if (m_input.GetTouchState(t) == KS_HIT && m_timer>0.0f)
 			{
 				//if (isPointInButton(input.GetTouchPos(t)))
-				if (is_point_in_bb(m_input.GetTouchPos(t)))
-				{
+				//if (is_point_in_bb(m_input.GetTouchPos(t)))
+				//{
 					m_pressed = true;
-				}
+				//}
 			}
 		}
-
+		//m_timer+=UnitsPerSecond(m_tspd);
+		m_timer+=1.0f;
 		///---draw
-		if( this.is_point_in_bb(m_input.GetCursorPos()) ){
+		/*if( this.is_point_in_bb(m_input.GetCursorPos()) ){
 			DrawShapedSprite("sprites/pixel_white.png", m_pos-m_offset, m_size, m_white);
 		}else{
 			DrawShapedSprite("sprites/pixel_white.png", m_pos-m_offset, m_size, m_grey);
-		}
-		DrawText( m_lpos-m_offset , m_label, m_font, m_white);
-		*/
-		for (uint t =0; t<m_buttons.length(); t++){
+		}*/
+		DrawShapedSprite("sprites/pixel_white.png",bgpos,bgsize,m_grey);
+		DrawText( tpos , m_label + m_pressed, m_font, m_white);
+		
+		/*for (uint t =0; t<m_buttons.length(); t++){
 			m_buttons[t].update();
 		}
 
@@ -60,6 +73,12 @@ class button_dialogue : Button{
 		DrawText( m_pos+vector2(0.0f,m_height+m_margin.y) , decimal(m_timer_duration - m_timer,10)+"", m_font, m_white);
 		if(m_timer>=m_timer_duration){
 			m_open=false;
+		}*/
+		if(m_pressed){
+			m_open=false;
+			if(m_global !is null){
+				m_global.set_time_multiplier(1.0f);
+			}
 		}
 		
 	}
@@ -69,25 +88,32 @@ class button_dialogue : Button{
 	void set_position(const vector2 pos){
 		Button::set_position(pos+m_margin);
 		//now loop the buttons
-		for (uint t =0; t<m_buttons.length(); t++){
+		/*for (uint t =0; t<m_buttons.length(); t++){
 			const vector2 size = m_buttons[t].get_size();
 			m_buttons[t].set_position( m_pos+vector2(0.0f,(size.y+m_margin.y)*(t+1)) );
-		}
+		}*/
 	}
 
 	bool is_open(){//return if we are open already or not
 		return m_open;
 	}
 
-	void open(const vector2 pos){//when we trigger to open the menu, we need to set some values
+	void open(){//when we trigger to open the menu, we need to set some values
 		m_open=true;
 		m_timer=0.0f;
-		set_position(pos);
+
+		if(m_global !is null){
+			m_global.set_time_multiplier(0.0f);
+		}
+		//set_position(pos);
 	}
 
+	//bool is_point_in_bb(const vector2 &in p) const{
+	//	return (isPointInRect(p, m_pos, m_size, m_origin));
+	//}
 	//this loop through the available buttons and see which one is pressed and return the label of that button
 	string get_action(){
-		m_action="none";
+		/*m_action="none";
 		for (uint t=0; t<m_buttons.length(); t++){
 			if(m_buttons[t].is_pressed()){
 				m_action = m_buttons[t].get_label();
@@ -101,6 +127,7 @@ class button_dialogue : Button{
 			m_timer = m_timer_duration;
 			//m_open=false;
 		}
+		*/
 		return m_action;
 	}
 }

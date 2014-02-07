@@ -5,9 +5,14 @@
 #include "enemy_boss.angelscript"
 #include "camera.angelscript"
 #include "minimap.angelscript"
+#include "global.angelscript"
+
+#include "button_dialogue.angelscript"
 
 class GameScene : Scene
 {
+	private global@ m_global;
+
 	private camera@ m_camera;
 	private minimap@ m_minimap;
 
@@ -21,6 +26,14 @@ class GameScene : Scene
 
 	private enemy@[] m_enemies;//array to hold all the enemies
 	private enemy_boss@ m_boss;
+
+	//variables to hold boolesn for dialogue windows, so that we only open them once.
+	private bool m_body_explanation = false;
+	private bool m_enemy_explanation = false;
+	private bool m_boss_explanation = false;
+
+	private bool m_button_dialogue_open = false;
+	private button_dialogue@ m_button_dialogue;//hold our dialouge object when we have one open
 	
 	private string temp;
 
@@ -35,7 +48,9 @@ class GameScene : Scene
 	void onCreated()
 	{
 		Scene::onCreated();
-		SetPositionRoundUp(true);//this is supposed to do pixel style rendering, but needs images to be power of 2
+		//SetPositionRoundUp(true);//this is supposed to do pixel style rendering, but needs images to be power of 2
+		
+		@m_global = global();
 		@m_exitButton = Button("menu", vector2(0.0f, 0.0f), vector2(0.0f, 0.0f));
 
 		const vector2 screenMiddle(GetScreenSize() * 0.5f);
@@ -44,9 +59,11 @@ class GameScene : Scene
 
 		//@m_character = Character("witch.ent", screenMiddle);
 		@m_character = Character("random.ent", vector2(0.0f,0.0f));
+		m_character.set_global_object(m_global);
 		m_minimap.plottable(m_character);
 
 		@m_camera = camera();
+		//m_camera.set_global_object(m_global);
 		m_camera.set_target(m_character);
 		m_camera.set_position(m_character.get_position());
 		m_minimap.plottable(m_camera);//give it the camera to plot
@@ -61,7 +78,8 @@ class GameScene : Scene
 			const string nm = t+""+randF(t)*1000;
 
 			m_bodies.insertLast( body("simple_light.ent",put,nm) );//http://www.angelcode.com/angelscript/sdk/docs/manual/doc_datatypes_arrays.html
-			m_bodies[t].set_label(nm);
+			//m_bodies[t].set_label(nm);
+			m_bodies[t].set_global_object(m_global);
 			m_minimap.plottable(m_bodies[t]);
 		}
 
@@ -70,6 +88,7 @@ class GameScene : Scene
 
 		//place a boss
 		@m_boss = enemy_boss("random.ent", vector2(0.0f,-500.0f),m_character);
+		m_boss.set_global_object(m_global);
 		m_minimap.plottable(m_boss);
 	}
 
@@ -84,6 +103,14 @@ class GameScene : Scene
 
 		for (uint t=0; t<m_bodies.length(); t++){
    	 		m_bodies[t].update();
+   	 		//first we need to determine if we have pressed a body for the first time
+   	 		//if so we can make out dialough box explaining them to the player
+   	 		if( m_bodies[t].is_pressed() && !m_body_explanation && !m_button_dialogue_open ){
+   	 			@m_button_dialogue = button_dialogue('tell me about the bodies',m_global);
+   	 			//m_button_dialogue.set_global_object(m_global);
+   	 			m_button_dialogue_open=true;
+   	 			m_body_explanation=true;
+   	 		}
    	 		//if we have been given an action based on button press, we need to pass it to the character
    	 		if(m_bodies[t].get_action() != "none" && m_bodies[t].get_action() != "pressed header"){
    	 			//m_character.set_action( m_bodies[t].m_action );
@@ -120,6 +147,15 @@ class GameScene : Scene
 		//-----------------
 		//-----------------
 
+		//now if we have a dialogue window open, we can take care of it here:
+		//-----------------
+		if(m_button_dialogue_open){
+			//if(m_button_dialogue.is_open()){
+				m_button_dialogue.update();
+			//}
+			m_button_dialogue_open=m_button_dialogue.is_open();
+		}
+
 		/*ETHInput@ input = GetInputHandle();
 		const uint RED = 0xFFFF0000;
 		const uint WHITE = 0xFFFFFFFF;
@@ -130,6 +166,7 @@ class GameScene : Scene
 		//DrawText(vector2(0,212), "iter:"+temp, "Verdana14_shadow.fnt", ARGB(250,255,255,255));
 		
 		DrawText(vector2(0,224), "fps:"+GetFPSRate()+"", "Verdana14_shadow.fnt", ARGB(250,255,255,255));
+		DrawText(vector2(0,244), "time:"+m_global.time_multiplier()+"", "Verdana14_shadow.fnt", ARGB(250,255,255,255));
 
 		//DrawText(vector2(0,244), "bodies:"+m_bodies.length()+"", "Verdana14_shadow.fnt", ARGB(250,255,255,255));
 		//DrawText(vector2(0,264), "enemies:"+m_enemies.length()+"", "Verdana14_shadow.fnt", ARGB(250,255,255,255));

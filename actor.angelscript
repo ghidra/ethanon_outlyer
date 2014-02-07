@@ -1,10 +1,13 @@
 ﻿#include "obj.angelscript"
+#include "global.angelscript"
 //#include "FrameTimer.angelscript"
 //#include "isPointInRect.angelscript"
 
 class actor : obj
 {
 	ETHEntity@ m_entity;
+
+	//private float TIME_DIALATION = 1.0f;//this will allow me to build in my own paue function, and slwo ans speed up time
 
 	private float m_spd=1.5f;//the speed this character can travel
 	private float m_spd_ups;//speed in units per second
@@ -44,7 +47,7 @@ class actor : obj
 	//obj@ m_target;//this holds a target that we can talk to for specific purposes
 	//-----------------
 
-	actor(const string &in entityName, const vector2 pos, const string &in label = "unknown"){
+	actor(const string &in entityName, const vector2 pos, const string &in label = "unknown" ){
 		//super(label);
 		set_label(label);
 		/*obj::update();
@@ -75,8 +78,12 @@ class actor : obj
 		if(m_entity !is null){
 			m_pos = m_entity.GetPositionXY();//this is so that the global scale hands the xy value to the object here
 		}
-		m_spd_ups = UnitsPerSecond(m_spd);
-		m_tspd_ups = UnitsPerSecond(m_tspd);
+		float t_mult = 1.0f;//time multipler  
+		if(m_global !is null){
+			t_mult = m_global.time_multiplier();
+		}
+		m_spd_ups = UnitsPerSecond(m_spd)*t_mult;// * TIME_DIALATION;
+		m_tspd_ups = UnitsPerSecond(m_tspd)*t_mult;// * TIME_DIALATION;
 
 		update_destination_distance();
 	}
@@ -131,7 +138,6 @@ class actor : obj
 	}
 
 	//-----------
-
 	//----
 	void set_destination(const vector2 destination){
 		//set the past information

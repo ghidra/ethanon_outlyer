@@ -1,6 +1,6 @@
 [Z:\home\jimmy\Documents\projects\outlyer\_error.log.txt]
 
-AngelScript ERROR (Z:\home\jimmy\Documents\projects\outlyer\Character.angelscript line 155): 
-'update' is not a member of 'progressbar'
+AngelScript ERROR (Z:\home\jimmy\Documents\projects\outlyer\button_dialogue.angelscript line 26): 
+No matching signatures to 'button_dialogue::set_global_object(const global&)'
 ERROR - Failed while building module.
 ERROR - ETHEngine::StartEngine: the script has set no scene to load.

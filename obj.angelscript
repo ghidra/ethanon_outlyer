@@ -3,6 +3,7 @@
 
 class obj
 {
+	private global@ m_global;
 
 	private vector2 m_size;
 	private vector2 m_pos;
@@ -87,6 +88,9 @@ class obj
 	}
 	uint get_uid(){
 		return m_uid;
+	}
+	void set_global_object(global@ g){
+		@m_global = g;
 	}
 
 	//------

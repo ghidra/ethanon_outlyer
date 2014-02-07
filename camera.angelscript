@@ -2,10 +2,11 @@
 #include "pawn.angelscript"
 #include "enemy.angelscript"
 #include "body.angelscript"
+//#include "global.angelscript"
 
 class camera
 {
-
+	//private global@ m_global;
 	//the camera is a default object. All I am doing in this class is giving is a target and speed to keep it in focus.
 	//just basic camera movement control.
 
@@ -131,6 +132,10 @@ class camera
 		//m_target_type = "actor";
 		//update();
 	}
+
+	/*void set_global_object(global g){
+		@m_global = g;
+	}*/
 	/*void set_target(pawn@ target){
 		@m_target_pawn = target;
 		m_target_type = "pawn";
