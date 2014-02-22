@@ -56,11 +56,12 @@ class GameScene : Scene
 		const vector2 screenMiddle(GetScreenSize() * 0.5f);
 
 		@m_minimap = minimap();
+		m_global.set_minimap(m_minimap);
 
 		//@m_character = Character("witch.ent", screenMiddle);
 		@m_character = Character("random.ent", vector2(0.0f,0.0f));
 		m_character.set_global_object(m_global);
-		m_minimap.plottable(m_character);
+		//m_minimap.plottable(m_character);
 
 		@m_camera = camera();
 		//m_camera.set_global_object(m_global);
@@ -80,7 +81,7 @@ class GameScene : Scene
 			m_bodies.insertLast( body("simple_light.ent",put,nm) );//http://www.angelcode.com/angelscript/sdk/docs/manual/doc_datatypes_arrays.html
 			//m_bodies[t].set_label(nm);
 			m_bodies[t].set_global_object(m_global);
-			m_minimap.plottable(m_bodies[t]);
+			//m_minimap.plottable(m_bodies[t]);
 		}
 
 		//m_enemies.insertLast( enemy("random.ent", vector2(200.0f,200.0f),m_character) );
@@ -89,7 +90,8 @@ class GameScene : Scene
 		//place a boss
 		@m_boss = enemy_boss("random.ent", vector2(0.0f,-500.0f),m_character);
 		m_boss.set_global_object(m_global);
-		m_minimap.plottable(m_boss);
+		//m_boss.m_factory.spawn( enemy("random.ent", vector2(200.0f,200.0f),m_targetpawn) );
+		//m_minimap.plottable(m_boss);
 	}
 
 	void onUpdate()
@@ -121,7 +123,7 @@ class GameScene : Scene
    	 		//m_minimap.plottable(m_bodies[t].get_position());
 		}
 
-		for (uint t=0; t<m_enemies.length(); t++){
+		/*for (uint t=0; t<m_enemies.length(); t++){
    	 		m_enemies[t].update();
    	 		//if we have been given an action based on button press, we need to pass it to the character
    	 		if(m_enemies[t].get_action() != "none"){
@@ -133,7 +135,7 @@ class GameScene : Scene
    	 		//the above breaks it because I am using m_action locally on the enemy to tell it what to do.
    	 		//chances are that I need to rethink that logic, since bodies may also want a specific actino to do later
 			//m_minimap.plottable(m_enemies[t].get_position());
-		}
+		}*/
 
 		m_boss.update();
 		if(m_boss.get_action() != "none") m_character.set_attack( m_boss.m_action , m_boss );

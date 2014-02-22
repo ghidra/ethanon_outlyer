@@ -26,7 +26,7 @@ class Character : pawn
 	Character(const string &in entityName, const vector2 pos){
 		super(entityName,pos);
 		
-		m_spd = 1.0f;
+		m_spd = 100.0f;
 
 		m_hp = 100.0f;
 
@@ -128,7 +128,7 @@ class Character : pawn
 			//-------
 			//now if we are flagged to m_moving, move it to the destination
 
-			if( m_destination_distance >  m_spd*2 && m_moving){
+			if( m_destination_distance >  m_spd_ups*2 && m_moving){
 				move(normalize(m_destination-m_pos));
 				//move(m_destination_direction);
 			}else{
@@ -256,6 +256,7 @@ class Character : pawn
 				if(len<m_minersmax){
 					m_miners.insertLast( miner("random.ent", drop_zone, target, m_minerscount) );
 					m_miners[len].set_scale(0.25f);
+					m_miners[len].set_global_object(m_global);//give it the global object
 					set_rp(get_rp()-3.0f);
 					target.add_miner(m_minerscount);
 					m_minerscount+=1;

@@ -23,7 +23,7 @@ class projectile : actor
 
 	projectile(const string &in entityName, const vector2 &in pos, const vector2 &in destination){
 		super(entityName,pos);
-		m_spd = 1.0f;
+		m_spd = 300.0f;
 		set_scale(0.25f);
 		set_z(1.0f);
 		set_destination(destination);

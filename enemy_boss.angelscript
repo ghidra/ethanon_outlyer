@@ -1,17 +1,23 @@
 ﻿#include "enemy.angelscript"
+#include "enemy_factory.angelscript"
 
 class enemy_boss : enemy
 {
 	
-	//body@[]@ m_targetbodies;//bodies that are targetable
-	//private actor@ m_atarget;//cast down from pawn to actor
-
-	//private progressbar@ m_mbar;//miners bar
+	private enemy_factory@ m_factory;
+	private int m_spawnmax = 0;
 
 	enemy_boss(const string &in entityName, const vector2 pos, pawn @targetpawn, const string &in label = "unknown"){
 		super(entityName,pos,targetpawn,label);
 		
 		set_scale(4.0f);
+
+		@m_factory = enemy_factory( m_targetpawn);
+		//m_factory.spawn( enemy("random.ent", vector2(200.0f,200.0f),m_targetpawn) );
+		//I NOW NEED A WAY TO TELL THE BOSS WHEN TO SPAWN ENEMIES
+		
+		//i need to add this fucker to the minimap somehow now
+
 		/*m_spd = 1.0f;
 
 		m_rp = 10.0f;
@@ -38,6 +44,12 @@ class enemy_boss : enemy
 
 	void update(){
 		enemy::update();
+
+		if(m_factory.num_spawns() < m_spawnmax && m_global !is null){//if we can spawn a dude, i want to make sure that I have a global object just in case as well
+			m_factory.spawn( enemy("random.ent", vector2(200.0f,200.0f),m_targetpawn) );
+		}
+
+		m_factory.update();
 		/*m_action="none";
 
 		pawn::update();
@@ -87,6 +99,10 @@ class enemy_boss : enemy
 		*/
 	}
 
+	void set_global_object(global@ g){
+		enemy::set_global_object(g);
+		m_factory.set_global_object(g);
+	}
 	//void set_targetbody(pawn@ target){
 	//	@m_targetpawn = target;
 	//}

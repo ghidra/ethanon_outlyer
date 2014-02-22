@@ -13,7 +13,7 @@ class enemy : pawn
 	enemy(const string &in entityName, const vector2 pos, pawn @targetpawn, const string &in label = "unknown"){
 		super(entityName,pos,label);
 		
-		m_spd = 1.0f;
+		m_spd = 100.0f;
 
 		m_rp = 10.0f;
 		m_rpmax = 50.0f;

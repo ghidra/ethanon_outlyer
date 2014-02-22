@@ -9,7 +9,7 @@ class actor : obj
 
 	//private float TIME_DIALATION = 1.0f;//this will allow me to build in my own paue function, and slwo ans speed up time
 
-	private float m_spd=1.5f;//the speed this character can travel
+	private float m_spd=100.0f;//the speed this character can travel
 	private float m_spd_ups;//speed in units per second
 	private float m_turnspd=1.5f;
 	private float m_turnspd_ups; 
@@ -183,7 +183,7 @@ class actor : obj
 
 		// update entity
 		const uint currentFrame = m_frametimer.getCurrentFrame();
-		m_entity.AddToPositionXY(normalize(direction) * m_spd);
+		m_entity.AddToPositionXY(normalize(direction) * m_spd_ups);
 		m_entity.SetFrame(currentFrame, m_directionline);
 
 		get_position();//this also sets the position variable

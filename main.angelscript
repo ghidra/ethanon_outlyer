@@ -13,17 +13,18 @@ notes
 ------------
 -progress
 ------------
+when an enemy from a enemy factory is killed, it needs to also remove itself from the enemy array
+when an enemy dies, it also needs to remove it self from code period, it is still around, just the entity is removed
+
 
 level 1
 	layout of bodies
 	creation of boss, and how he eats bodies, and how enemies are created
 
-dialouge window, info window
-
 use minimap to allow a free camera. 
 
 resource cost to travel
-bdies need to tell you how much resources it will cost to travel there and drop a miner
+bodies need to tell you how much resources it will cost to travel there and drop a miner
 
 starting on enemy pawn. basic ai
 

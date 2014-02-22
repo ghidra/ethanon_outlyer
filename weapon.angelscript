@@ -108,6 +108,7 @@ class weapon : actor
 
 	void fire(){//fire projectile
 		m_projectiles.insertLast( projectile("random.ent", m_pos, m_destination) ) ;
+		m_projectiles[m_projectiles.length()-1].set_global_object(m_global);
 
 		if(m_target_type == "actor"){
 			m_projectiles[m_projectiles.length()-1].set_target(m_target_actor);

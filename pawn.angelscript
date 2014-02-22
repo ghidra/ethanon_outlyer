@@ -102,6 +102,16 @@ class pawn : actor{
 	//	m_weapon.check_projectiles_hit_target(m_targetpawn);
 	//}
 	//------
+	void set_global_object(global@ g){
+		@m_global = g;
+		if(m_weapon !is null){
+			m_weapon.set_global_object(g);
+		}
+		if(m_global.has_minimap()){//if the global object has the minimap, lets plot us!
+			m_global.plottable(@this);
+		}
+	}
+
 	void set_action_weapon(const string action){
 		m_actionweapon = action;//this sets the weapon specific action
 	}
