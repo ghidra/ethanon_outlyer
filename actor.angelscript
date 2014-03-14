@@ -39,6 +39,11 @@ class actor : obj
 	private float m_rp=0.0f;//resource points
 	private float m_rpmax=0.0f;
 
+	//moving variables
+	private vector2 m_movingdirection;
+	private float m_movingangle;
+	private float m_angleframes = 360.0f/16.0f;//how many frames we have for each angle
+
 	string m_action = "none";// what the pawn should be trying to do
 	//bool m_dying = false;
 	bool m_died = false;
@@ -181,10 +186,27 @@ class actor : obj
 		else
 			m_frametimer.update(0, 0, 150);
 
+		//update moving variables
+		m_movingdirection = normalize(direction);
+		m_movingangle = draw_angle(m_movingdirection);
+		if(m_movingangle<0){//i need to correct the value given to me by draw angle
+			m_movingangle=360-abs(m_movingangle);
+		}
+		//if the angle is negative we need to add the abs value to 180.
+
 		// update entity
-		const uint currentFrame = m_frametimer.getCurrentFrame();
-		m_entity.AddToPositionXY(normalize(direction) * m_spd_ups);
-		m_entity.SetFrame(currentFrame, m_directionline);
+		//const uint currentFrame = m_frametimer.getCurrentFrame();
+		m_entity.AddToPositionXY(m_movingdirection * m_spd_ups);
+
+		//frame 0 is pointing to the right
+		//frame 4 is pointing up
+		//frame 8 is poiting left
+		//frame 12 is pointing down
+		//frame 16 is almost pointg right again
+
+		//m_entity.SetFrame(currentFrame, m_directionline);
+		uint f = m_movingangle/m_angleframes;
+		m_entity.SetFrame( f );
 
 		get_position();//this also sets the position variable
 	}

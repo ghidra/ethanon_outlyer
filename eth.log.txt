@@ -7,7 +7,10 @@ Compiling void enemy_boss::update()
 
 AngelScript WARNING (Z:\home\jimmy\Documents\projects\outlyer\enemy_boss.angelscript line 48): 
 Signed/Unsigned mismatch
-Compile time: 46 milliseconds
+Compile time: 55 milliseconds
 (Loaded) pixel_white.png
+(Loaded) main_ship_diffuse_contact.png
+(Loaded) main_ship_normal_contact.png
 (Loaded) random_D.png
 (Loaded) random_NM.png
+(Loaded) explosion_01_contact.png

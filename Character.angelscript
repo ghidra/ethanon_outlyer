@@ -152,7 +152,7 @@ class Character : pawn
 		////////////
 
 
-		//DrawText(vector2(0,280), "destination distance:"+m_destination_distance+"", "Verdana14_shadow.fnt", ARGB(250,255,255,255));
+		DrawText(vector2(0,280), "moving angle:"+m_movingangle+"", "Verdana14_shadow.fnt", ARGB(250,255,255,255));
 		////////////
 
 		for (uint t=0; t<m_miners.length(); t++){

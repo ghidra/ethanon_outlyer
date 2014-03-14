@@ -59,7 +59,7 @@ class GameScene : Scene
 		m_global.set_minimap(m_minimap);
 
 		//@m_character = Character("witch.ent", screenMiddle);
-		@m_character = Character("random.ent", vector2(0.0f,0.0f));
+		@m_character = Character("hero.ent", vector2(0.0f,0.0f));
 		m_character.set_global_object(m_global);
 		//m_minimap.plottable(m_character);
 
