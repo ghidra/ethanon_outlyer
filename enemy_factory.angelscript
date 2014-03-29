@@ -7,9 +7,9 @@ class enemy_factory : obj
 	private enemy@[] m_enemies;
 	private pawn@ m_character;// whom or what to attack---i need to use the lower level object, since that is what the enemies use anyway
 
-	enemy_factory(pawn@ character,const string &in label = "unknown"){
+	enemy_factory(actor@ character,const string &in label = "unknown"){
 		set_label(label);
-		@m_character = character;
+		@m_character = cast<pawn>(character);
 	}
 
 

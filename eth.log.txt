@@ -1,13 +1,14 @@
 [Z:\home\jimmy\Documents\projects\outlyer\eth.log.txt]
 Backbuffer created as 854, 480 on default backbuffer mode
+____________________________
+
 Loading game script from source-code: main.angelscript
 
-AngelScript INFO (Z:\home\jimmy\Documents\projects\outlyer\enemy_boss.angelscript line 45): 
-Compiling void enemy_boss::update()
+[INFO ] enemy_boss.angelscript, line 45: Compiling void enemy_boss::update()
 
-AngelScript WARNING (Z:\home\jimmy\Documents\projects\outlyer\enemy_boss.angelscript line 48): 
-Signed/Unsigned mismatch
-Compile time: 47 milliseconds
+[WARN ] enemy_boss.angelscript, line 48: Signed/Unsigned mismatch
+
+Compile time: 45 milliseconds
 (Loaded) pixel_white.png
 (Loaded) main_ship_diffuse_contact.png
 (Loaded) main_ship_normal_contact.png

@@ -61,5 +61,9 @@ class Button : obj
 		m_lpos = pos+(m_margin*0.5f);
 	}
 
+	vector2 get_margin(){
+		return m_margin;
+	}
+
 }
 

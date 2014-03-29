@@ -110,6 +110,13 @@ class button_menu : Button{
 		}
 	}
 
+	vector2 get_button_position(const uint i){
+		return m_buttons[i].get_position();
+	}
+	vector2 get_button_size(const uint i){
+		return ComputeTextBoxSize(m_font, m_buttons[i].get_label()) + m_margin;
+	}
+
 	bool is_open(){//return if we are open already or not
 		return m_open;
 	}

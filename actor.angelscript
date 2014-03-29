@@ -26,6 +26,7 @@ class actor : obj
 	private vector2 m_destination_direction;//the direction to get to the distance
 
 	private float m_travel_cost_per_unit = 0.01f;//the cost per unit to travel
+	private float m_travel_cost = 0.0f;
 
 	private uint m_directionline = 0;
 	private FrameTimer m_frametimer;
@@ -209,6 +210,7 @@ class actor : obj
 		m_entity.SetFrame( f );
 
 		get_position();//this also sets the position variable
+		update_destination_distance();
 	}
 	//-------
 	void take_damage(const float amount){
@@ -216,6 +218,9 @@ class actor : obj
 		if(m_hp<=0.0f){
 			die();
 		}
+	}
+	void spend_resources(const float amount){
+		m_rp = max(0.0f,min(m_rp-amount,m_rpmax));
 	}
 
 	void die(){//start the dying process

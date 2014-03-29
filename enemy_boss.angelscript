@@ -7,12 +7,12 @@ class enemy_boss : enemy
 	private enemy_factory@ m_factory;
 	private int m_spawnmax = 0;
 
-	enemy_boss(const string &in entityName, const vector2 pos, pawn @targetpawn, const string &in label = "unknown"){
-		super(entityName,pos,targetpawn,label);
+	enemy_boss(const string &in entityName, const vector2 pos, actor @target, const string &in label = "unknown"){
+		super(entityName,pos,target,label);
 		
 		//set_scale(4.0f);
 
-		@m_factory = enemy_factory( m_targetpawn);
+		@m_factory = enemy_factory( m_target);
 		//m_factory.spawn( enemy("random.ent", vector2(200.0f,200.0f),m_targetpawn) );
 		//I NOW NEED A WAY TO TELL THE BOSS WHEN TO SPAWN ENEMIES
 		
@@ -46,7 +46,7 @@ class enemy_boss : enemy
 		enemy::update();
 
 		if(m_factory.num_spawns() < m_spawnmax && m_global !is null){//if we can spawn a dude, i want to make sure that I have a global object just in case as well
-			m_factory.spawn( enemy("enemy_0101.ent", vector2(200.0f,200.0f),m_targetpawn) );
+			m_factory.spawn( enemy("enemy_0101.ent", vector2(200.0f,200.0f),m_target) );
 		}
 
 		m_factory.update();

@@ -1,4 +1,3 @@
 [Z:\home\jimmy\Documents\projects\outlyer\_warning.log.txt]
 
-AngelScript WARNING (Z:\home\jimmy\Documents\projects\outlyer\enemy_boss.angelscript line 48): 
-Signed/Unsigned mismatch
+[WARN ] enemy_boss.angelscript, line 48: Signed/Unsigned mismatch

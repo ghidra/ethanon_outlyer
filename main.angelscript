@@ -22,12 +22,8 @@ level 1
 	creation of boss, and how he eats bodies, and how enemies are created
 
 use minimap to allow a free camera. 
-
-resource cost to travel
 bodies need to tell you how much resources it will cost to travel there and drop a miner
-
 starting on enemy pawn. basic ai
-
 projectiles need to shoot toward pawn, basically it is shooting to where the pawn was before actually shooting, the position is not updating at time of fire
 
 -maybe put the explosion in its own class to make it more versitile for other weapons

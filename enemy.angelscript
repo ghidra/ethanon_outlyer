@@ -10,7 +10,7 @@ class enemy : pawn
 
 	private string[] m_buttons_neutral = {"attack"};
 
-	enemy(const string &in entityName, const vector2 pos, pawn @targetpawn, const string &in label = "unknown"){
+	enemy(const string &in entityName, const vector2 pos, actor @target, const string &in label = "unknown"){
 		super(entityName,pos,label);
 		
 		m_spd = 100.0f;
@@ -23,7 +23,7 @@ class enemy : pawn
 		@m_weapon = m_inventory.get_weapon(0);//go ahead and equip the weapon just created
 		//m_weapon.set_destination(targetpawn.get_position());
 
-		@m_targetpawn = targetpawn;
+		@m_target = target;
 		//@m_atarget = m_targetpawn;//cast down
 		//@m_targetbodies = targetbodies;
 
@@ -31,8 +31,9 @@ class enemy : pawn
 		//m_actionlocal="attack pawn";
 		m_attacktype=0;
 
+		//set up attack queue right off the bat here
 		for(uint t = 0; t < 11; t++){
-			set_attack( "attack",m_targetpawn);
+			set_attack( "attack",m_target);
 		}
 
 		@m_button_menu = button_menu(m_label,m_pos,m_buttons_neutral);

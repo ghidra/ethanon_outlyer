@@ -113,6 +113,9 @@ class GameScene : Scene
    	 			m_button_dialogue_open=true;
    	 			m_body_explanation=true;
    	 		}
+   	 		if(m_bodies[t].is_pressed()){//if this has been pressed, lets pass it the character so it can calculate some values
+   	 			m_bodies[t].set_target(m_character);
+   	 		}
    	 		//if we have been given an action based on button press, we need to pass it to the character
    	 		if(m_bodies[t].get_action() != "none" && m_bodies[t].get_action() != "pressed header"){
    	 			//m_character.set_action( m_bodies[t].m_action );

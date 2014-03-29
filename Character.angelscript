@@ -102,13 +102,26 @@ class Character : pawn
 				}
 			}
 			if(m_input.GetLeftClickState()==KS_DOWN && m_pressed){
+				//get travel cost information
+				//also need to determine if we can even make it
 				vector2 chpos = m_pos-m_camerapos;//the character position
+				vector2 lineend = m_mousepos;
 				m_drag_distance = length(chpos-m_mousepos);//the distance dragged out
+
+				m_travel_cost=(m_drag_distance*m_travel_cost_per_unit);
+
+				if(m_travel_cost>m_rp){//if the cost of travel is more than we have resources, we need to adjust our line
+					vector2 ndir = normalize(m_mousepos-chpos);
+					float mdist = m_rp/m_travel_cost_per_unit;//max distance we can travel
+					lineend = chpos+(ndir*mdist);
+					DrawText( lineend+vector2(-12.0f,-4.0f) , "est. cost:", "Verdana14_shadow.fnt", ARGB(250,255,255,255));
+					DrawText( lineend+vector2(-12.0f,8.0f) , decimal(m_rp,10)+"", "Verdana14_shadow.fnt", ARGB(250,255,255,255));
+				}
 				
-				draw_line(chpos,m_mousepos,m_white,m_white,1.0f);
+				draw_line(chpos,lineend,m_white,m_white,1.0f);
 				
 				DrawText( m_mousepos+vector2(12.0f,-4.0f) , "est. cost:", "Verdana14_shadow.fnt", ARGB(250,255,255,255));
-				DrawText( m_mousepos+vector2(12.0f,8.0f) , decimal(m_drag_distance*m_travel_cost_per_unit,10)+"", "Verdana14_shadow.fnt", ARGB(250,255,255,255));
+				DrawText( m_mousepos+vector2(12.0f,8.0f) , decimal(m_travel_cost,10)+"", "Verdana14_shadow.fnt", ARGB(250,255,255,255));
 
 				//m_scalefactor = (mousepos.x-m_scalestartpos)*m_scaledragmultiplier;//mp.x-m_scalestart;
 				//m_scale = m_scaleprevious+m_scalefactor;
@@ -128,11 +141,15 @@ class Character : pawn
 			//-------
 			//now if we are flagged to m_moving, move it to the destination
 
-			if( m_destination_distance >  m_spd_ups*2 && m_moving){
+			if( m_destination_distance >  m_spd_ups*2 && m_moving && m_rp>0 && m_rp>m_travel_cost_per_unit*m_spd_ups){
 				move(normalize(m_destination-m_pos));
+				m_rp-=(m_travel_cost_per_unit*m_spd_ups);//remove the resources
+				//float t = fit(m_destination_distance_init-m_destination_distance,0,m_destination_distance_init);
+				//DrawText(vector2(0,280), "travelled:"+t+"", "Verdana14_shadow.fnt", ARGB(250,255,255,255));
 				//move(m_destination_direction);
 			}else{
 				m_moving=false;
+				//m_rp = 0;//force resouce points to 0,so that we dont have negative values here
 			}
 
 		//}
@@ -152,7 +169,7 @@ class Character : pawn
 		////////////
 
 
-		DrawText(vector2(0,280), "moving angle:"+m_movingangle+"", "Verdana14_shadow.fnt", ARGB(250,255,255,255));
+		//DrawText(vector2(0,280), "moving angle:"+m_movingangle+"", "Verdana14_shadow.fnt", ARGB(250,255,255,255));
 		////////////
 
 		for (uint t=0; t<m_miners.length(); t++){

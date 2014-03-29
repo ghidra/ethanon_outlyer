@@ -1,6 +1,5 @@
 [Z:\home\jimmy\Documents\projects\outlyer\_error.log.txt]
 
-AngelScript ERROR (Z:\home\jimmy\Documents\projects\outlyer\actor.angelscript line 203): 
-Expected '('
+[ERROR] button_menu.angelscript, line 117: Expected ';'
 ERROR - Failed while building module.
-ERROR - ETHEngine::StartEngine: the script has set no scene to load.
+ERROR - ETHEngine::StartEngine: no scene has been loaded.

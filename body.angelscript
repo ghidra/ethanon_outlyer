@@ -1,4 +1,5 @@
 ﻿#include "pawn.angelscript"
+#include "actor.angelscript"
 
 class body : pawn
 {
@@ -64,6 +65,17 @@ class body : pawn
 		if(m_button_menu.is_open()){
 			//m_button_menu.set_position(m_mousepos);
 			m_button_menu.update();
+			//we should show the estimated cost to get to this thing here
+			if(m_target !is null){
+				vector2 bsize = m_button_menu.get_button_size(0);
+				vector2 bpos = m_button_menu.get_button_position(0)+vector2(bsize.x+4.0f,0.0f);
+				DrawText( bpos+vector2(12.0f,-4.0f) , "est. cost:", "Verdana14_shadow.fnt", ARGB(250,255,255,255));
+				DrawText( bpos+vector2(12.0f,8.0f) , decimal(m_travel_cost,10)+"", "Verdana14_shadow.fnt", ARGB(250,255,255,255));
+			}
+		}else{
+			if(m_target !is null){
+				@m_target = null;
+			}
 		}
 			//if(m_menu_bool == false){//and the menu has not been triggered
 				//first clear out the button array

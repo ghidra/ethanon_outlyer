@@ -156,4 +156,7 @@ class obj
 	float pythagorean(const float x, const float y){
 		return sqrt(pow(x,2.0f)+pow(y,2.0f));
 	}
+	float fit(const float f, const float fmin, const float fmax){
+		return (f-fmin)/(fmax-fmin);
+	}
 }

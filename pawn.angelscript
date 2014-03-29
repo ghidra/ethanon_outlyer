@@ -54,7 +54,8 @@ class pawn : actor{
 	//actor@ m_target;
 
 	//----
-	pawn@ m_targetpawn;//the body that we are targeting, the main character
+	//pawn@ m_targetpawn;//the body that we are targeting, the main character
+	actor@ m_target;
 	private weapon@ m_weapon;
 	private uint m_attacktype;//0 is do not attack, 1 basic 2 strong etc, potentially -1 is defend
 	private string m_actionweapon = "none";//this is a variable to manage weapon actions
@@ -87,11 +88,9 @@ class pawn : actor{
 		
 	}
 
-	/*void set_target(actor@ target){
-		//m_atarget.removeAt(0);
-		//m_atarget.insertLast(target);
+	void set_target(actor@ target){
 		@m_target = target;
-	}*/
+	}
 
 	/*void init_inventory(){//call this to initialize the inventory
 		@m_inventory = inventory();
