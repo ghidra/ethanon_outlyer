@@ -9,6 +9,7 @@ class Character : pawn
 	private miner@[] m_miners;//my array of miners
 	private uint m_minerscount=0;//this counte the miners, so that I can give them a unique id, so when i go to delete them, i delete the right one
 	private uint m_minersmax = 3;//at first you can only have 3 miners, maybe later you can have some more
+	private float m_minercost = 3.0f;//the cost to pu down a miner
 
 	//body@ m_targetbody;//the body that we are targeting
 	enemy@ m_targetenemy;//the body that we are targeting
@@ -66,8 +67,8 @@ class Character : pawn
 				set_destination(target.get_position());
 
 				if( m_destination_distance > length(target.get_size())*m_gscale ){
-					//m_moving=true;
-					move(m_destination_direction);
+					m_moving=true;
+					//move(m_destination_direction);
 				}else{
 					if(action == "harvest"){
 						deposit_miner(cast<body>(target));
@@ -96,6 +97,8 @@ class Character : pawn
 					m_pressed = true;
 				}
 			}*/
+			vector2 lineend = m_mousepos;
+
 			if (m_mouseover){
 				if(m_input.GetLeftClickState()==KS_HIT && !m_pressed && !m_moving){
 					m_pressed=true;
@@ -105,7 +108,6 @@ class Character : pawn
 				//get travel cost information
 				//also need to determine if we can even make it
 				vector2 chpos = m_pos-m_camerapos;//the character position
-				vector2 lineend = m_mousepos;
 				m_drag_distance = length(chpos-m_mousepos);//the distance dragged out
 
 				m_travel_cost=(m_drag_distance*m_travel_cost_per_unit);
@@ -130,7 +132,8 @@ class Character : pawn
 			if(m_input.GetLeftClickState()==KS_RELEASE && m_pressed){
 				//set the destination
 				if(m_drag_distance>m_drag_distance_threshold){
-					set_destination(m_relativemousepos);
+					//set_destination(m_relativemousepos);
+					set_destination(lineend+m_camerapos);
 					m_moving=true;
 				}else{
 					m_moving=false;
@@ -141,18 +144,20 @@ class Character : pawn
 			//-------
 			//now if we are flagged to m_moving, move it to the destination
 
-			if( m_destination_distance >  m_spd_ups*2 && m_moving && m_rp>0 && m_rp>m_travel_cost_per_unit*m_spd_ups){
-				move(normalize(m_destination-m_pos));
-				m_rp-=(m_travel_cost_per_unit*m_spd_ups);//remove the resources
-				//float t = fit(m_destination_distance_init-m_destination_distance,0,m_destination_distance_init);
-				//DrawText(vector2(0,280), "travelled:"+t+"", "Verdana14_shadow.fnt", ARGB(250,255,255,255));
-				//move(m_destination_direction);
-			}else{
-				m_moving=false;
-				//m_rp = 0;//force resouce points to 0,so that we dont have negative values here
-			}
+			
 
 		//}
+		}
+		if( m_destination_distance>0 && m_moving && m_rp>m_travel_cost_per_unit*m_spd_ups){
+			move(m_destination_direction);
+			//move(normalize(m_destination-m_pos));
+			m_rp-=(m_travel_cost_per_unit*m_spd_ups);//remove the resources
+			//float t = fit(m_destination_distance_init-m_destination_distance,0,m_destination_distance_init);
+			//DrawText(vector2(0,280), "travelled:"+t+"", "Verdana14_shadow.fnt", ARGB(250,255,255,255));
+			//move(m_destination_direction);
+		}else{
+			m_moving=false;
+			//m_rp = 0;//force resouce points to 0,so that we dont have negative values here
 		}
 
 		//need to update the weapons positions, so they dont hover in air and not move
@@ -264,7 +269,7 @@ class Character : pawn
 	//}
 	void deposit_miner(body@ target){//put a minor on the target
 		if(target !is null){
-			if(m_rp>3.0f){
+			if(m_rp>m_minercost){
 				vector2 target_pos = target.get_position();
 				vector2 target_size = target.get_size()*0.75f;
 				vector2 drop_dir = normalize(get_position()-target.get_position());
@@ -274,7 +279,7 @@ class Character : pawn
 					m_miners.insertLast( miner("random.ent", drop_zone, target, m_minerscount) );
 					m_miners[len].set_scale(0.25f);
 					m_miners[len].set_global_object(m_global);//give it the global object
-					set_rp(get_rp()-3.0f);
+					set_rp(get_rp()-m_minercost);
 					target.add_miner(m_minerscount);
 					m_minerscount+=1;
 				}
@@ -299,6 +304,9 @@ class Character : pawn
 			set_rp(get_rp()+0.5f);//get a little resources back
 			m_minerscount-=1;
 		}
+	}
+	float get_minercost(){
+		return m_minercost;
 	}
 	/*void set_targetbody(body@ target){
 		@m_targetbody = target;

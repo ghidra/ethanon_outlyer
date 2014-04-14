@@ -8,7 +8,7 @@ Loading game script from source-code: main.angelscript
 
 [WARN ] enemy_boss.angelscript, line 48: Signed/Unsigned mismatch
 
-Compile time: 45 milliseconds
+Compile time: 62 milliseconds
 (Loaded) pixel_white.png
 (Loaded) main_ship_diffuse_contact.png
 (Loaded) main_ship_normal_contact.png

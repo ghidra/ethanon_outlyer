@@ -159,7 +159,12 @@ class actor : obj
 		update_destination_distance();
 	}
 	void update_destination_distance(){
-		m_destination_distance = length(m_destination-get_position());
+		vector2 dir = m_destination-get_position();
+		float dp = dot(m_destination_direction,normalize(dir));
+		m_destination_distance = 0;
+		if(dp>0){
+			m_destination_distance = length(dir);
+		}
 		//m_destination_distance_init = length(m_destination_direction);
 	}
 	void clear_destination(){
@@ -211,6 +216,10 @@ class actor : obj
 
 		get_position();//this also sets the position variable
 		update_destination_distance();
+	}
+	float get_travel_cost(const vector2 dest){
+		float dist = length(m_pos - dest);
+		return dist * m_travel_cost_per_unit;
 	}
 	//-------
 	void take_damage(const float amount){

@@ -1,5 +1,6 @@
 ﻿#include "pawn.angelscript"
 #include "actor.angelscript"
+#include "Character.angelscript"//i am casting the target to a character to call a specific function
 
 class body : pawn
 {
@@ -69,8 +70,13 @@ class body : pawn
 			if(m_target !is null){
 				vector2 bsize = m_button_menu.get_button_size(0);
 				vector2 bpos = m_button_menu.get_button_position(0)+vector2(bsize.x+4.0f,0.0f);
-				DrawText( bpos+vector2(12.0f,-4.0f) , "est. cost:", "Verdana14_shadow.fnt", ARGB(250,255,255,255));
-				DrawText( bpos+vector2(12.0f,8.0f) , decimal(m_travel_cost,10)+"", "Verdana14_shadow.fnt", ARGB(250,255,255,255));
+				float tc = decimal( get_travel_cost(m_target.get_position()),10);//travel cost
+				DrawText( bpos+vector2(12.0f,-4.0f) , "rp:"+tc + cast<Character>(m_target).get_minercost(), "Verdana14_shadow.fnt", ARGB(250,255,255,255));
+				if(m_being_harvested>0){//lest also put the data for picking up the miner
+					bsize = m_button_menu.get_button_size(1);
+					bpos = m_button_menu.get_button_position(1)+vector2(bsize.x+4.0f,0.0f);
+					DrawText( bpos+vector2(12.0f,-4.0f) , "rp:"+tc, "Verdana14_shadow.fnt", ARGB(250,255,255,255));
+				}
 			}
 		}else{
 			if(m_target !is null){
