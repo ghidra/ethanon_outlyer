@@ -1,6 +1,6 @@
 ﻿#include "SceneManager.angelscript"
 #include "MainMenuScene.angelscript"
-#include "GameScene.angelscript"
+#include "scene_level.angelscript"
 //#include "TestScene.angelscript"
 
 void main()

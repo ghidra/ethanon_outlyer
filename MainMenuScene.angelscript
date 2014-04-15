@@ -27,7 +27,7 @@ class MainMenuScene : Scene
 
 		if (m_startGameButton.is_pressed())
 		{
-			g_sceneManager.setCurrentScene(GameScene());
+			g_sceneManager.setCurrentScene(scene_level());
 		}
 	}
 }

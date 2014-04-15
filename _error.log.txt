@@ -1,10 +1,5 @@
 [Z:\home\jimmy\Documents\projects\outlyer\_error.log.txt]
-Exception: Index out of bounds
-  Callstack:
-    vector2 button_menu::get_button_size(const uint) (button_menu.angelscript, 117)
-    void body::update() (body.angelscript, 76)
-    void GameScene::onUpdate() (GameScene.angelscript, 107)
-    void SceneManager::runOnSceneUpdateFunction() (SceneManager.angelscript, 21)
-    void onSceneUpdate() (SceneManager.angelscript, 34)
 
-
+[ERROR] grid.angelscript, line 58: 'ep' is not declared
+ERROR - Failed while building module.
+ERROR - ETHEngine::StartEngine: no scene has been loaded.
