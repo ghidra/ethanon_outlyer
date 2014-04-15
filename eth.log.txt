@@ -8,7 +8,7 @@ Loading game script from source-code: main.angelscript
 
 [WARN ] enemy_boss.angelscript, line 48: Signed/Unsigned mismatch
 
-Compile time: 50 milliseconds
+Compile time: 45 milliseconds
 (Loaded) pixel_white.png
 (Loaded) main_ship_diffuse_contact.png
 (Loaded) main_ship_normal_contact.png
@@ -16,4 +16,13 @@ Compile time: 50 milliseconds
 (Loaded) random_NM.png
 (Loaded) boss_ship_0101_diffuse_contact.png
 (Loaded) boss_ship_0101_normal_contact.png
+Exception: Index out of bounds
+  Callstack:
+    vector2 button_menu::get_button_size(const uint) (button_menu.angelscript, 117)
+    void body::update() (body.angelscript, 76)
+    void scene_level::onUpdate() (scene_level.angelscript, 93)
+    void SceneManager::runOnSceneUpdateFunction() (SceneManager.angelscript, 21)
+    void onSceneUpdate() (SceneManager.angelscript, 34)
+
+
 (Loaded) explosion_01_contact.png

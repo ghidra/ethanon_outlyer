@@ -110,8 +110,8 @@ class obj
 			return true;
 	}
 	vector2 get_screen_position(){//get the position of this on screen for drawing of UI elements
-		const vector2 camerapos = GetCameraPos();
-		return m_pos-camerapos;
+		//const vector2 camerapos = GetCameraPos();
+		return m_pos-m_camerapos;
 	}
 	//----
 	bool is_pressed(){

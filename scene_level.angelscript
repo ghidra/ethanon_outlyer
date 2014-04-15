@@ -81,6 +81,8 @@ class scene_level : Scene
 
 	void onUpdate()
 	{	
+		m_grid.update();
+		
 		m_exitButton.update();
 		if (m_exitButton.is_pressed())
 		{
@@ -119,8 +121,7 @@ class scene_level : Scene
 		
 		DrawText(vector2(0,224), "fps:"+GetFPSRate()+"", "Verdana14_shadow.fnt", ARGB(250,255,255,255));
 		DrawText(vector2(0,244), "time:"+m_global.time_multiplier()+"", "Verdana14_shadow.fnt", ARGB(250,255,255,255));
-   	 	
-   	 	m_grid.update();
+
 	}
 
 	float debug(const vector2 &in p) const

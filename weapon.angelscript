@@ -26,6 +26,7 @@ class weapon : actor
 
 	weapon(const string &in entityName, const vector2 &in pos = vector2(0.0f,0.0f) ){
 		super(entityName,pos);
+		set_scale(0.2f);
 
 		//@m_tbar = progressbar("attack",m_timer,0.0f,1.0f,pos);
 		@m_tbar = progressbar("attack",m_timer,0.0f,1.0f,vector2(),vector2(),m_guibarsize,m_guibardir,1,0,0);
