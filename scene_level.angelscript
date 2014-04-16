@@ -77,12 +77,13 @@ class scene_level : Scene
 
 		@m_grid = grid();
 		//m_grid.set_global_object(m_global);
+		SetScaleFactor(0.5);
 	}
 
 	void onUpdate()
 	{	
 		m_grid.update();
-		
+
 		m_exitButton.update();
 		if (m_exitButton.is_pressed())
 		{

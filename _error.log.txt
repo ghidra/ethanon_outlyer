@@ -1,10 +1,9 @@
 [Z:\home\jimmy\Documents\projects\outlyer\_error.log.txt]
-Exception: Index out of bounds
-  Callstack:
-    vector2 button_menu::get_button_size(const uint) (button_menu.angelscript, 117)
-    void body::update() (body.angelscript, 76)
-    void scene_level::onUpdate() (scene_level.angelscript, 93)
-    void SceneManager::runOnSceneUpdateFunction() (SceneManager.angelscript, 21)
-    void onSceneUpdate() (SceneManager.angelscript, 34)
 
+[ERROR] grid.angelscript, line 67: 't_m' is not declared
+[ERROR] grid.angelscript, line 67: 'matrix4x4' is not declared
 
+[ERROR] grid.angelscript, line 70: No matching signatures to 'multiply(vector2, int)'
+[ERROR] grid.angelscript, line 70: No matching signatures to 'multiply(vector2, int)'
+ERROR - Failed while building module.
+ERROR - ETHEngine::StartEngine: no scene has been loaded.
