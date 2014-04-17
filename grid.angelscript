@@ -2,26 +2,36 @@
 
 class grid : obj{
 
-	private uint m_xdiv;
+	private uint m_xdiv;//we need this valus, cause in update we are looking for it to have something
 	private uint m_ydiv;
 	private float m_width;
 	private float m_height;
 	private vector2 m_offset;
+	private float m_xstep;//the distance between x divisions
+	private float m_ystep;
 
 	private vector2[] m_points;
 	private vector2[] m_points_origin;
 
 	private matrix4x4 m_isomatrix;
+	private matrix4x4 m_isomatrix_inverted;//go ahead and keet the inverted one too, since there is no function to do so
 
 	//private uint[][] m_poly;//this should be an array of arrays, for each square
 	private uint[][] m_lines;//this is an array of lines that we want to draw, that is 2 element arrays, from point 0 to point 1
 	private uint[][] m_polys;//the squares
+
+	private vector2[] m_poly_center_origin;//the center point of the polygon
+
+	private vector2 m_isomousepos;//the mouse position relative to the isometric grid
+	private uint m_mousecell;//the polygon that we are in
 
 	private uint m_whitelines = ARGB(50,255,255,255);
 	//private bool m_temp = false;
 
 	grid(const uint xdiv=10, const uint ydiv=10, const float width=1000.0f, const float height=1000.0f ){
 		m_isomatrix = multiply(scale(1.0f,0.5f,1.0f),rotateZ(degreeToRadian(45)));
+		m_isomatrix_inverted = multiply(rotateZ(degreeToRadian(-45)),scale(1.0f,2.0f,1.0f));
+
 		init(xdiv,ydiv,width,height);
 		construct();
 	}
@@ -32,6 +42,8 @@ class grid : obj{
 		m_width = width;
 		m_height = height;
 		m_offset = vector2(width/2.0f,height/2.0f);
+		m_xstep = width/(xdiv-1.0f);
+		m_ystep = height/(ydiv-1.0f);
 	}
 
 	void construct(){
@@ -63,56 +75,81 @@ class grid : obj{
 		}
 
 		//now I can determine which 4 points make a square
-		for(uint t =0; t<(m_xdiv-1)*(m_ydiv-1);t++){
+		float off = 0.0f;
+		for( uint t = 0 ; t < (m_xdiv-1)*(m_ydiv-1) ; t++ ){
+			off = t/(m_xdiv-1);//max(floor(t/max((m_xdiv-2),1)),0);
+			
 			//0,1,11,10-0
 			//1,2,12,11-1
 			//2,3,13,12-2
 			//8,9,19,18-8
-			//10,11,21,20-9
-			//
-			uint p0 =t;
-			uint p1 =t+1;
-			uint p2 =t+1;
-			uint p3 =t+1;
-			if(t%(m_xdiv-1)<1){//if we are 1 less than the x divisions
 
-			}
+			//10,11,21,20-9
+			
+			//20,21,31,30-18
+
+			uint p0 = t + off;
+			uint p1 = p0+1;
+			uint p2 = p0+m_xdiv+1;
+			uint p3 = p0+m_xdiv;
+
+			vector2 add = m_points_origin[p0] + m_points_origin[p1] + m_points_origin[p2] + m_points_origin[p3];
+			m_poly_center_origin.insertLast(add/4.0f); 
+			
 			uint[] pp = {p0,p1,p2,p3};
 			m_polys.insertLast(pp);
+
+			/*if( ==1 ){//if we are 1 less than the x divisions
+				off ++;
+			}*/
 		}
 	}
 
 	void update(){
 		obj::update();
-		//build the view matrix from scale and camera pos
-		matrix4x4 tr_m = translate(-m_camerapos.x,-m_camerapos.y,0.0f);
-		matrix4x4 t_m = multiply(tr_m,scale(m_gscale,m_gscale,m_gscale));
-		for (uint t = 0; t < m_lines.length(); t++){
-			//draw_line( m_points[m_lines[t][0]]-m_camerapos, m_points[m_lines[t][1]]-m_camerapos, m_whitelines, m_whitelines, 1.0f );
-			draw_line( multiply(m_points[m_lines[t][0]],t_m)-m_camerapos, multiply(m_points[m_lines[t][1]],t_m)-m_camerapos, m_whitelines, m_whitelines, 1.0f );
+		if(m_xdiv>0){//this ensures that something has been set before going on. the divide by m_xdiv will crash otherwise
+			//build the view matrix from scale and camera pos
+			matrix4x4 tr_m = translate(-m_camerapos.x,-m_camerapos.y,0.0f);//this is not doing anything, maybe a bug
+			matrix4x4 t_m = multiply(tr_m,scale(m_gscale,m_gscale,m_gscale));
+			for (uint t = 0; t < m_lines.length(); t++){
+				//draw_line( m_points[m_lines[t][0]]-m_camerapos, m_points[m_lines[t][1]]-m_camerapos, m_whitelines, m_whitelines, 1.0f );
+				draw_line( multiply(m_points[m_lines[t][0]],t_m)-m_camerapos, multiply(m_points[m_lines[t][1]],t_m)-m_camerapos, m_whitelines, m_whitelines, 1.0f );
+			}
+
+			//now i can save the mouses position relative to this grids transforms, and iso metric matrix
+			//so i will know what square the mouse is over
+			m_isomousepos = multiply((m_relativemousepos*(1.0f/m_gscale)),m_isomatrix_inverted)+m_offset;//scale the relative mouse position.mutipled by the inverted matrix
+
+			//determine which poly we are over.
+			m_mousecell = ((floor(max(m_isomousepos.x,0.0f)/m_xstep)+1)+( floor(max(m_isomousepos.y,0.0f)/m_ystep)*(m_xdiv-1) ) )-1;
+
+			//now draw line around cell mouse is over
+			if(m_mousecell<=m_polys.length())
+			for (uint t = 0; t < 4; t++){
+				draw_line( multiply(m_points[m_polys[m_mousecell][t]],t_m)-m_camerapos, multiply(m_points[m_polys[m_mousecell][(t+1)%4]],t_m)-m_camerapos, m_whitelines, m_white, 1.0f );
+			}
+
+			DrawText( vector2(0,264) , m_mousecell+"", "Verdana14_shadow.fnt", ARGB(250,255,255,255));
+			DrawText( vector2(0,284) , m_isomousepos.x+":"+m_isomousepos.y, "Verdana14_shadow.fnt", ARGB(250,255,255,255));
+			/*DrawText( vector2(0,304) , m_lines[9][0]+":"+m_lines[9][1], "Verdana14_shadow.fnt", ARGB(250,255,255,255));
+			DrawText( vector2(0,324) , m_lines[10][0]+":"+m_lines[10][1], "Verdana14_shadow.fnt", ARGB(250,255,255,255));
+			*/
+			DrawText( vector2(0,304) , m_polys[0][0]+":"+m_polys[0][1]+":"+m_polys[0][2]+":"+m_polys[0][3], "Verdana14_shadow.fnt", ARGB(250,255,255,255));
+			DrawText( vector2(0,324) , m_polys[1][0]+":"+m_polys[1][1]+":"+m_polys[1][2]+":"+m_polys[1][3], "Verdana14_shadow.fnt", ARGB(250,255,255,255));
+			DrawText( vector2(0,344) , m_polys[2][0]+":"+m_polys[2][1]+":"+m_polys[2][2]+":"+m_polys[2][3], "Verdana14_shadow.fnt", ARGB(250,255,255,255));
+			DrawText( vector2(0,364) , m_polys[9][0]+":"+m_polys[9][1]+":"+m_polys[9][2]+":"+m_polys[9][3], "Verdana14_shadow.fnt", ARGB(250,255,255,255));
+			/*
+			DrawText( vector2(0,264) , t_m.a11+":"+t_m.a12+":"+t_m.a13+":"+t_m.a14, "Verdana14_shadow.fnt", ARGB(250,255,255,255));
+			DrawText( vector2(0,284) , t_m.a21+":"+t_m.a22+":"+t_m.a23+":"+t_m.a24, "Verdana14_shadow.fnt", ARGB(250,255,255,255));
+			DrawText( vector2(0,304) , t_m.a31+":"+t_m.a32+":"+t_m.a33+":"+t_m.a34, "Verdana14_shadow.fnt", ARGB(250,255,255,255));
+			DrawText( vector2(0,324) , t_m.a41+":"+t_m.a42+":"+t_m.a43+":"+t_m.a44, "Verdana14_shadow.fnt", ARGB(250,255,255,255));
+			
+			DrawText( vector2(0,264) , m_points_origin[0].x+":"+m_points_origin[0].y, "Verdana14_shadow.fnt", ARGB(250,255,255,255));
+			DrawText( vector2(0,284) , m_points_origin[1].x+":"+m_points_origin[10].y, "Verdana14_shadow.fnt", ARGB(250,255,255,255));
+			DrawText( vector2(0,304) , m_points_origin[2].x+":"+m_points_origin[20].y, "Verdana14_shadow.fnt", ARGB(250,255,255,255));
+			DrawText( vector2(0,324) , m_points_origin[3].x+":"+m_points_origin[30].y, "Verdana14_shadow.fnt", ARGB(250,255,255,255));
+			*/
 		}
-		
-		/*
-		DrawText( vector2(0,264) , m_lines[7][0]+":"+m_lines[7][1], "Verdana14_shadow.fnt", ARGB(250,255,255,255));
-		DrawText( vector2(0,284) , m_lines[8][0]+":"+m_lines[8][1], "Verdana14_shadow.fnt", ARGB(250,255,255,255));
-		DrawText( vector2(0,304) , m_lines[9][0]+":"+m_lines[9][1], "Verdana14_shadow.fnt", ARGB(250,255,255,255));
-		DrawText( vector2(0,324) , m_lines[10][0]+":"+m_lines[10][1], "Verdana14_shadow.fnt", ARGB(250,255,255,255));
-		
-		DrawText( vector2(0,264) , m_points_origin[0].x+":"+m_points_origin[0].y, "Verdana14_shadow.fnt", ARGB(250,255,255,255));
-		DrawText( vector2(0,284) , m_points_origin[1].x+":"+m_points_origin[10].y, "Verdana14_shadow.fnt", ARGB(250,255,255,255));
-		DrawText( vector2(0,304) , m_points_origin[2].x+":"+m_points_origin[20].y, "Verdana14_shadow.fnt", ARGB(250,255,255,255));
-		DrawText( vector2(0,324) , m_points_origin[3].x+":"+m_points_origin[30].y, "Verdana14_shadow.fnt", ARGB(250,255,255,255));
-		*/
-		DrawText( vector2(0,264) , t_m.a11+":"+t_m.a12+":"+t_m.a13+":"+t_m.a14, "Verdana14_shadow.fnt", ARGB(250,255,255,255));
-		DrawText( vector2(0,284) , t_m.a21+":"+t_m.a22+":"+t_m.a23+":"+t_m.a24, "Verdana14_shadow.fnt", ARGB(250,255,255,255));
-		DrawText( vector2(0,304) , t_m.a31+":"+t_m.a32+":"+t_m.a33+":"+t_m.a34, "Verdana14_shadow.fnt", ARGB(250,255,255,255));
-		DrawText( vector2(0,324) , t_m.a41+":"+t_m.a42+":"+t_m.a43+":"+t_m.a44, "Verdana14_shadow.fnt", ARGB(250,255,255,255));
-		
-		/*DrawText( vector2(0,264) , m_points_origin[0].x+":"+m_points_origin[0].y, "Verdana14_shadow.fnt", ARGB(250,255,255,255));
-		DrawText( vector2(0,284) , m_points_origin[1].x+":"+m_points_origin[10].y, "Verdana14_shadow.fnt", ARGB(250,255,255,255));
-		DrawText( vector2(0,304) , m_points_origin[2].x+":"+m_points_origin[20].y, "Verdana14_shadow.fnt", ARGB(250,255,255,255));
-		DrawText( vector2(0,324) , m_points_origin[3].x+":"+m_points_origin[30].y, "Verdana14_shadow.fnt", ARGB(250,255,255,255));
-		*/
 	}
 
 }

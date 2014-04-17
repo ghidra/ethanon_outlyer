@@ -1,9 +1,5 @@
 [Z:\home\jimmy\Documents\projects\outlyer\_error.log.txt]
 
-[ERROR] grid.angelscript, line 67: 't_m' is not declared
-[ERROR] grid.angelscript, line 67: 'matrix4x4' is not declared
-
-[ERROR] grid.angelscript, line 70: No matching signatures to 'multiply(vector2, int)'
-[ERROR] grid.angelscript, line 70: No matching signatures to 'multiply(vector2, int)'
+[ERROR] grid.angelscript, line 109: Expression must be of boolean type
 ERROR - Failed while building module.
 ERROR - ETHEngine::StartEngine: no scene has been loaded.
