@@ -1,4 +1,5 @@
 ﻿#include "obj.angelscript"
+#include "graph.angelscript"
 
 class grid : obj{
 
@@ -18,9 +19,12 @@ class grid : obj{
 
 	//private uint[][] m_poly;//this should be an array of arrays, for each square
 	private uint[][] m_lines;//this is an array of lines that we want to draw, that is 2 element arrays, from point 0 to point 1
-	private uint[][] m_polys;//the squares
+	
+	private graph@ m_graph;
 
-	private vector2[] m_poly_center_origin;//the center point of the polygon
+	private uint[][] m_corners;//the squares
+	private vector2[] m_centers;//the center point of the polygon
+	private uint[][] m_edges;//the edges that belong, the first is the top, the second is the left. //by nature, the far right, and bottom edges are not represented
 
 	private vector2 m_isomousepos;//the mouse position relative to the isometric grid
 	private uint m_mousecell;//the polygon that we are in
@@ -74,8 +78,11 @@ class grid : obj{
 			m_lines.insertLast(lp);
 		}
 
+		@m_graph = graph(m_points_origin,m_xdiv,m_ydiv);//build the graph
+
 		//now I can determine which 4 points make a square
 		float off = 0.0f;
+		//this is going to loop for each square, so each NODE, not every point of the grid
 		for( uint t = 0 ; t < (m_xdiv-1)*(m_ydiv-1) ; t++ ){
 			off = t/(m_xdiv-1);//max(floor(t/max((m_xdiv-2),1)),0);
 			
@@ -93,11 +100,14 @@ class grid : obj{
 			uint p2 = p0+m_xdiv+1;
 			uint p3 = p0+m_xdiv;
 
+			//get my center points for each square
 			vector2 add = m_points_origin[p0] + m_points_origin[p1] + m_points_origin[p2] + m_points_origin[p3];
-			m_poly_center_origin.insertLast(add/4.0f); 
+			m_centers.insertLast(add/4.0f); 
+			//m_graph.center();
 			
+			//sets the squares corner points
 			uint[] pp = {p0,p1,p2,p3};
-			m_polys.insertLast(pp);
+			m_corners.insertLast(pp);
 
 			/*if( ==1 ){//if we are 1 less than the x divisions
 				off ++;
@@ -111,9 +121,17 @@ class grid : obj{
 			//build the view matrix from scale and camera pos
 			matrix4x4 tr_m = translate(-m_camerapos.x,-m_camerapos.y,0.0f);//this is not doing anything, maybe a bug
 			matrix4x4 t_m = multiply(tr_m,scale(m_gscale,m_gscale,m_gscale));
+
+			//draw line of the grid
 			for (uint t = 0; t < m_lines.length(); t++){
 				//draw_line( m_points[m_lines[t][0]]-m_camerapos, m_points[m_lines[t][1]]-m_camerapos, m_whitelines, m_whitelines, 1.0f );
 				draw_line( multiply(m_points[m_lines[t][0]],t_m)-m_camerapos, multiply(m_points[m_lines[t][1]],t_m)-m_camerapos, m_whitelines, m_whitelines, 1.0f );
+			}
+
+			//draw center points of grids
+			//DEBUGGING
+			for(uint t = 0; t < m_centers.length(); t++){
+				draw_point(multiply(m_centers[t],multiply(t_m,m_isomatrix))-m_camerapos);
 			}
 
 			//now i can save the mouses position relative to this grids transforms, and iso metric matrix
@@ -124,21 +142,21 @@ class grid : obj{
 			m_mousecell = ((floor(max(m_isomousepos.x,0.0f)/m_xstep)+1)+( floor(max(m_isomousepos.y,0.0f)/m_ystep)*(m_xdiv-1) ) )-1;
 
 			//now draw line around cell mouse is over
-			if(m_mousecell<=m_polys.length())
+			if(m_mousecell<=m_corners.length())
 			for (uint t = 0; t < 4; t++){
-				draw_line( multiply(m_points[m_polys[m_mousecell][t]],t_m)-m_camerapos, multiply(m_points[m_polys[m_mousecell][(t+1)%4]],t_m)-m_camerapos, m_whitelines, m_white, 1.0f );
+				draw_line( multiply(m_points[m_corners[m_mousecell][t]],t_m)-m_camerapos, multiply(m_points[m_corners[m_mousecell][(t+1)%4]],t_m)-m_camerapos, m_whitelines, m_white, 1.0f );
 			}
 
 			DrawText( vector2(0,264) , m_mousecell+"", "Verdana14_shadow.fnt", ARGB(250,255,255,255));
 			DrawText( vector2(0,284) , m_isomousepos.x+":"+m_isomousepos.y, "Verdana14_shadow.fnt", ARGB(250,255,255,255));
-			/*DrawText( vector2(0,304) , m_lines[9][0]+":"+m_lines[9][1], "Verdana14_shadow.fnt", ARGB(250,255,255,255));
-			DrawText( vector2(0,324) , m_lines[10][0]+":"+m_lines[10][1], "Verdana14_shadow.fnt", ARGB(250,255,255,255));
-			*/
-			DrawText( vector2(0,304) , m_polys[0][0]+":"+m_polys[0][1]+":"+m_polys[0][2]+":"+m_polys[0][3], "Verdana14_shadow.fnt", ARGB(250,255,255,255));
-			DrawText( vector2(0,324) , m_polys[1][0]+":"+m_polys[1][1]+":"+m_polys[1][2]+":"+m_polys[1][3], "Verdana14_shadow.fnt", ARGB(250,255,255,255));
-			DrawText( vector2(0,344) , m_polys[2][0]+":"+m_polys[2][1]+":"+m_polys[2][2]+":"+m_polys[2][3], "Verdana14_shadow.fnt", ARGB(250,255,255,255));
-			DrawText( vector2(0,364) , m_polys[9][0]+":"+m_polys[9][1]+":"+m_polys[9][2]+":"+m_polys[9][3], "Verdana14_shadow.fnt", ARGB(250,255,255,255));
+			DrawText( vector2(0,304) , m_graph.centers[0].corners[0].index+":"+m_graph.centers[1].corners[3].index, "Verdana14_shadow.fnt", ARGB(250,255,255,255));
+			DrawText( vector2(0,324) , m_graph.corners[0].index+":"+m_graph.corners[1].index, "Verdana14_shadow.fnt", ARGB(250,255,255,255));
 			/*
+			DrawText( vector2(0,304) , m_corners[0][0]+":"+m_corners[0][1]+":"+m_corners[0][2]+":"+m_corners[0][3], "Verdana14_shadow.fnt", ARGB(250,255,255,255));
+			DrawText( vector2(0,324) , m_corners[1][0]+":"+m_corners[1][1]+":"+m_corners[1][2]+":"+m_corners[1][3], "Verdana14_shadow.fnt", ARGB(250,255,255,255));
+			DrawText( vector2(0,344) , m_corners[2][0]+":"+m_corners[2][1]+":"+m_corners[2][2]+":"+m_corners[2][3], "Verdana14_shadow.fnt", ARGB(250,255,255,255));
+			DrawText( vector2(0,364) , m_corners[9][0]+":"+m_corners[9][1]+":"+m_corners[9][2]+":"+m_corners[9][3], "Verdana14_shadow.fnt", ARGB(250,255,255,255));
+			
 			DrawText( vector2(0,264) , t_m.a11+":"+t_m.a12+":"+t_m.a13+":"+t_m.a14, "Verdana14_shadow.fnt", ARGB(250,255,255,255));
 			DrawText( vector2(0,284) , t_m.a21+":"+t_m.a22+":"+t_m.a23+":"+t_m.a24, "Verdana14_shadow.fnt", ARGB(250,255,255,255));
 			DrawText( vector2(0,304) , t_m.a31+":"+t_m.a32+":"+t_m.a33+":"+t_m.a34, "Verdana14_shadow.fnt", ARGB(250,255,255,255));

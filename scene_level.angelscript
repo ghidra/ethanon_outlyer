@@ -9,7 +9,7 @@
 
 #include "button_dialogue.angelscript"
 
-#include "grid.angelscript"
+#include "grid_map.angelscript"
 
 class scene_level : Scene
 {
@@ -33,7 +33,7 @@ class scene_level : Scene
 	private bool m_button_dialogue_open = false;
 	private button_dialogue@ m_button_dialogue;//hold our dialouge object when we have one open
 
-	private grid@ m_grid;
+	private grid_map@ m_grid;
 
 	scene_level()
 	{
@@ -75,7 +75,7 @@ class scene_level : Scene
 		@m_boss = enemy_boss("boss_0101.ent", vector2(0.0f,-500.0f),m_character);
 		m_boss.set_global_object(m_global);
 
-		@m_grid = grid();
+		@m_grid = grid_map();
 		//m_grid.set_global_object(m_global);
 		SetScaleFactor(0.5);
 	}
