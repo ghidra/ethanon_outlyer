@@ -130,9 +130,10 @@ class grid : obj{
 
 			//draw center points of grids
 			//DEBUGGING
-			for(uint t = 0; t < m_centers.length(); t++){
+			//draw all the centers
+			/*for(uint t = 0; t < m_centers.length(); t++){
 				draw_point(multiply(m_centers[t],multiply(t_m,m_isomatrix))-m_camerapos);
-			}
+			}*/
 
 			//now i can save the mouses position relative to this grids transforms, and iso metric matrix
 			//so i will know what square the mouse is over
@@ -142,15 +143,40 @@ class grid : obj{
 			m_mousecell = ((floor(max(m_isomousepos.x,0.0f)/m_xstep)+1)+( floor(max(m_isomousepos.y,0.0f)/m_ystep)*(m_xdiv-1) ) )-1;
 
 			//now draw line around cell mouse is over
-			if(m_mousecell<=m_corners.length())
-			for (uint t = 0; t < 4; t++){
-				draw_line( multiply(m_points[m_corners[m_mousecell][t]],t_m)-m_camerapos, multiply(m_points[m_corners[m_mousecell][(t+1)%4]],t_m)-m_camerapos, m_whitelines, m_white, 1.0f );
+			if(m_mousecell<=m_corners.length()){
+				//draw the center
+				draw_point(multiply(m_centers[m_mousecell],multiply(t_m,m_isomatrix))-m_camerapos, m_white);
+				//draw the whole sqaure
+				/*for (uint t = 0; t < 4; t++){
+					draw_line( multiply(m_points[m_corners[m_mousecell][t]],t_m)-m_camerapos, multiply(m_points[m_corners[m_mousecell][(t+1)%4]],t_m)-m_camerapos, m_whitelines, m_white, 1.0f );
+				}*/
+
+				//draw the corners
+				draw_point( multiply( m_points[ m_graph.centers[m_mousecell].corner_ids[0] ], t_m)-m_camerapos, m_white, 4);
+				draw_point( multiply( m_points[ m_graph.centers[m_mousecell].corner_ids[1] ], t_m)-m_camerapos, ARGB(255,255,0,0), 4);
+				draw_point( multiply( m_points[ m_graph.centers[m_mousecell].corner_ids[2] ], t_m)-m_camerapos, ARGB(255,0,255,0), 4);
+				draw_point( multiply( m_points[ m_graph.centers[m_mousecell].corner_ids[3] ], t_m)-m_camerapos, ARGB(255,100,100,255), 4);
+				//draw_point( multiply( m_points[m_corners[ m_graph.centers[m_mousecell].corner_ids[0]][0]], t_m)-m_camerapos, ARGB(255,255,0,0), 4);
+				//draw_point( multiply( m_points[m_corners[ m_graph.centers[m_mousecell].corner_ids[0]][1]], t_m)-m_camerapos, ARGB(255,255,0,0), 4);
+				//draw_point( multiply( m_points[m_corners[ m_graph.centers[m_mousecell].corner_ids[0]][2]], t_m)-m_camerapos, ARGB(255,0,255,0), 4);
+				//draw_point( multiply( m_points[m_corners[ m_graph.centers[m_mousecell].corner_ids[0]][3]], t_m)-m_camerapos, ARGB(255,100,100,255), 4);
+
+				//draw neighbors
+				if(m_graph.centers[m_mousecell].neighbor_ids[0]>0)
+					draw_point( multiply( m_centers[ m_graph.centers[m_mousecell].neighbor_ids[0]], multiply(t_m,m_isomatrix))-m_camerapos, m_white, 4);
+				if(m_graph.centers[m_mousecell].neighbor_ids[1]>0)
+					draw_point( multiply( m_centers[ m_graph.centers[m_mousecell].neighbor_ids[1]], multiply(t_m,m_isomatrix))-m_camerapos, ARGB(255,255,0,0), 4);
+				if(m_graph.centers[m_mousecell].neighbor_ids[2]>0)
+					draw_point( multiply( m_centers[ m_graph.centers[m_mousecell].neighbor_ids[2]], multiply(t_m,m_isomatrix))-m_camerapos, ARGB(255,0,255,0), 4);
+				if(m_graph.centers[m_mousecell].neighbor_ids[3]>0)
+					draw_point( multiply( m_centers[ m_graph.centers[m_mousecell].neighbor_ids[3]], multiply(t_m,m_isomatrix))-m_camerapos, ARGB(255,100,100,255), 4);
+
 			}
 
 			DrawText( vector2(0,264) , m_mousecell+"", "Verdana14_shadow.fnt", ARGB(250,255,255,255));
 			DrawText( vector2(0,284) , m_isomousepos.x+":"+m_isomousepos.y, "Verdana14_shadow.fnt", ARGB(250,255,255,255));
-			DrawText( vector2(0,304) , m_graph.centers[0].corners[0].index+":"+m_graph.centers[1].corners[3].index, "Verdana14_shadow.fnt", ARGB(250,255,255,255));
-			DrawText( vector2(0,324) , m_graph.corners[0].index+":"+m_graph.corners[1].index, "Verdana14_shadow.fnt", ARGB(250,255,255,255));
+			//DrawText( vector2(0,304) , m_graph.centers[0].corners[0].index+":"+m_graph.centers[1].corners[3].index, "Verdana14_shadow.fnt", ARGB(250,255,255,255));
+			//DrawText( vector2(0,324) , m_graph.corners[0].index+":"+m_graph.corners[1].index, "Verdana14_shadow.fnt", ARGB(250,255,255,255));
 			/*
 			DrawText( vector2(0,304) , m_corners[0][0]+":"+m_corners[0][1]+":"+m_corners[0][2]+":"+m_corners[0][3], "Verdana14_shadow.fnt", ARGB(250,255,255,255));
 			DrawText( vector2(0,324) , m_corners[1][0]+":"+m_corners[1][1]+":"+m_corners[1][2]+":"+m_corners[1][3], "Verdana14_shadow.fnt", ARGB(250,255,255,255));
@@ -169,5 +195,9 @@ class grid : obj{
 			*/
 		}
 	}
+
+	//void draw_debug(){
+
+	//}
 
 }

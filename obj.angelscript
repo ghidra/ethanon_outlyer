@@ -124,11 +124,11 @@ class obj
 		return m_mousedown;
 	}
 	//---------
-	void draw_point(const vector2 p, const float w = 2.0f){//just to draw a point
+	void draw_point(const vector2 p, const uint c, const float w = 2.0f ){//just to draw a point
 		const float off = w/2.0f;
 		const vector2 xoff = vector2(off,0.0f);
 		const vector2 yoff = vector2(0.0f,off);
-		draw_line( p-xoff-yoff, p+xoff-yoff, m_white, m_white, w );//top
+		draw_line( p-xoff-yoff, p+xoff-yoff, c, c, w );//top
 		//draw_line( p+xoff-yoff, p+xoff+yoff, m_white, m_white, 1.0f );//right
 		//draw_line( p-xoff+yoff, p+xoff+yoff, m_white, m_white, 1.0f );//bottom
 		//draw_line( p-xoff-yoff, p-xoff+yoff, m_white, m_white, 1.0f );//left

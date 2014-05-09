@@ -9,22 +9,33 @@
 
 class graph_center : graph_point_data{
    // string biome; // biome type (see article)
-   	uint index;
+   	int index;
    	vector2 position;
-   	graph_corner@[] corners;
 
+   	int[] corner_ids;//i need to just get the ids first, before connecting it to the objects of these objects
+   	int[] neighbor_ids;
+   	int[] border_ids;
+
+   	graph_corner@[] corners;
     graph_center@[] neighbors;
     graph_edge@[] borders;
 
-    graph_center(const uint id, const vector2 p, const graph_corner@[] c){
+    graph_center(const int id, const vector2 p, const int[] c, const int[] n, const int[] b){
     	index = id;
     	position = p;
-    	corners = c;
+    	
+    	corner_ids = c;
+    	neighbor_ids = n;
+    	border_ids = b;
     }
+
+    //void couple(){
+
+    //}
 }
 
 class graph_corner : graph_point_data{
-	uint index;//this is every point in the grid already
+	int index;//this is every point in the grid already
 
     graph_center@[] touches;
     graph_edge@[] protrudes;
@@ -33,7 +44,7 @@ class graph_corner : graph_point_data{
     //int river; // 0 if no river, or volume of water in river
     //graph_corner@ downslope; // pointer to adjacent corner most downhill
 
-    graph_corner(const uint id){
+    graph_corner(const int id){
     	index = id;
     }
 }
@@ -41,12 +52,25 @@ class graph_corner : graph_point_data{
 class graph_edge{
 	int index;
 
+	int[] voronoi_ids;
+	int[] delaunay_ids;
+
+	graph_corner@ v0; // Voronoi edge
+    graph_corner@ v1;
     graph_center@ d0; // Delaunay edge
     graph_center@ d1;
-    graph_corner@ v0; // Voronoi edge
-    graph_corner@ v1;
     vector2 midpoint; // halfway between v0,v1
+
+    graph_center@[] joins;//polys on either side of the voroni edge
+    graph_edge@[] continues;//edges to either side // allow perpendicular?  // also know as loop
+    //end points are given
     //int river; // volume of water, or 0
+
+    graph_edge(const int id, const int[] v, const int[] d){
+    	index = id;
+    	voronoi_ids = v;
+    	delaunay_ids = d;
+    }
 }
 
 class graph{
@@ -56,42 +80,99 @@ class graph{
     graph_corner@[] corners;
     graph_edge@[] edges;
 
-    graph(const vector2[] p, const uint x, const uint y){//give it all the points, and the x and y values to chop it up with
+    graph(const vector2[] p, const int x, const int y){//give it all the points, and the x and y values to chop it up with
     	grid_points = p;
 
+        int nx = x-1;
+        int ny = y-1;
+
+        float off = 0.0f;
+
     	//each grid point is actually a corner
-    	for( uint t = 0; t < p.length(); t++ ){
-    		corners.insertLast( graph_corner( t ) );//add basic center
+    	for( int t = 0; t < p.length(); t++ ){
+    		//determine which polys it touches
+    		//determine which edges come off this corner
+    		//determine which points are adjacent -- allow diagonals?
+            off = t/nx;
+
+            int[] touches_ids;//the centers that are touching to this corner point
+            int t0 = (t+off%(nx-1)>0) ? t : -1;
+            int t1 = (t-1 > 0) ? t-1 : -1;
+            int t2 = (t-1 > 0) ? t-(nx-1) : -1;
+            int t3 = (1 > 0 ) ? t-nx : -1;
+
+            int[] protrudes_ids;//the edges that protrude from this point
+            //int e0 = ;
+            //int e1 = ;
+            //int e2 = ;
+            //int e3 = ;
+
+            int[] adjacent_ids;//corners that are near // should i include diagonals?
+            //int a0 = t+1;
+            //int a1 = t+nx;
+            //int a2 = t-1;
+            //int a3 = t-nx;
+
+            corners.insertLast( graph_corner( t ) );//add basic center
     	}
 
-		//this is going to loop for each square, so each NODE, not every point of the grid
-		float off = 0.0f;
-		for( uint t = 0 ; t < (x-1)*(y-1) ; t++ ){
-			off = t/(x-1);
-			
-			//0,1,11,10-0
-			//1,2,12,11-1
-			//2,3,13,12-2
-			//8,9,19,18-8
-			//10,11,21,20-9
-			//20,21,31,30-18
 
-			uint p0 = t + off;
-			uint p1 = p0+1;
-			uint p2 = p0+x+1;
-			uint p3 = p0+x;
+    	//centers
+		//this is going to loop for each square, so each NODE, not every point of the grid
+		//off = 0.0f;
+		
+		for( int t = 0 ; t < nx*ny ; t++ ){
+			off = t/nx;
+			
+			//0,1,11,10-0  //1,2,12,11-1  //2,3,13,12-2  //8,9,19,18-8  //10,11,21,20-9  //20,21,31,30-18
+
+			//corner point ids
+			int p0 = t + off;
+			int p1 = p0+1;
+			int p2 = p0+x+1;
+			int p3 = p0+x;
+
+			//neighbor center ids
+			int n0 = ((t+1)%nx > 0) ? t+1 : -1;
+			int n1 = (t+nx < nx*ny) ? t+nx : -1;
+			int n2 = (t%nx > 0) ? t-1 : -1;
+			int n3 = (t-nx > 0) ? t-nx : -1;
+			//allow diagonals?
+			//if so need for more
+			
+			//edges, i need to make 2 edges per center point, top edge and left edge
+			//also need to make 2 more edges based on the corresponding edge that they cross, some wont have any
+			//edge arrays //voronoi edge
+			int[] v0 = {p0,p1};//top edge
+			int[] v1 = {p3,p0};//left edge
+			//now the dulany edge that crosses, which it may or maynot have
+			int[] d0 = {n3,t};
+			int[] d1 = {n2,t};
+
+			int e0 = t*2;
+			int e1 = e0+1;
+			int e2 = ( t%(nx-2) > 0 ) ? e0+3 : -1;
+			int e3 = ( t < (2*(nx-1))*(nx-1) ) ? (t+1)*(2*(nx-1)) : -1;
+
+			int[] corner_ids = {p0,p1,p2,p3};//graph_corner@[] corn = {corners[p0],corners[p1],corners[p2],corners[p3]};//sets the squares corner points
+			int[] neighbor_ids = {n0,n1,n2,n3};//
+			int[] border_ids = {e0,e1,e2,e3};//edge ids
+
 
 			//get my center points for each square
 			vector2 add = grid_points[p0] + grid_points[p1] + grid_points[p2] + grid_points[p3];//center
-			graph_corner@[] corn = {corners[p0],corners[p1],corners[p2],corners[p3]};//sets the squares corner points
-			
 
-			centers.insertLast( graph_center( centers.length(),add/4.0f, corn ) );//add basic center 
+			//centers.insertLast( graph_center( centers.length(),add/4.0f, corn ) );//add basic center 
+			centers.insertLast( graph_center( centers.length(),add/4.0f, corner_ids, neighbor_ids, border_ids ) );//add basic center 
 			
+			//edges
+			//i need to send more data to the edgs, centers and edges next and before
+			edges.insertLast( graph_edge(edges.length(),v0,d0) );
+			edges.insertLast( graph_edge(edges.length(),v1,d1) );
+			//this does not get the edges on the far right
+			//and very bottom
 
-			//edge arrays
-			//uint[] e0 = {p0,p1};//top edge
-			//uint[] e1 = {p3,p0};//left edge
+			
 		}
     }
 
