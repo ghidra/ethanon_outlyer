@@ -143,34 +143,77 @@ class grid : obj{
 			m_mousecell = ((floor(max(m_isomousepos.x,0.0f)/m_xstep)+1)+( floor(max(m_isomousepos.y,0.0f)/m_ystep)*(m_xdiv-1) ) )-1;
 
 			//now draw line around cell mouse is over
-			if(m_mousecell<=m_corners.length()){
+			int debug_center = 0;
+			if(m_mousecell<=m_centers.length() && debug_center > 0){
 				//draw the center
-				draw_point(multiply(m_centers[m_mousecell],multiply(t_m,m_isomatrix))-m_camerapos, m_white);
+				draw_point(multiply(m_centers[m_mousecell],multiply(t_m,m_isomatrix))-m_camerapos, m_white, 8.0f);
 				//draw the whole sqaure
-				/*for (uint t = 0; t < 4; t++){
-					draw_line( multiply(m_points[m_corners[m_mousecell][t]],t_m)-m_camerapos, multiply(m_points[m_corners[m_mousecell][(t+1)%4]],t_m)-m_camerapos, m_whitelines, m_white, 1.0f );
-				}*/
+				//for (uint t = 0; t < 4; t++){
+				//	draw_line( multiply(m_points[m_corners[m_mousecell][t]],t_m)-m_camerapos, multiply(m_points[m_corners[m_mousecell][(t+1)%4]],t_m)-m_camerapos, m_whitelines, m_white, 1.0f );
+				//}
 
 				//draw the corners
 				draw_point( multiply( m_points[ m_graph.centers[m_mousecell].corner_ids[0] ], t_m)-m_camerapos, m_white, 4);
 				draw_point( multiply( m_points[ m_graph.centers[m_mousecell].corner_ids[1] ], t_m)-m_camerapos, ARGB(255,255,0,0), 4);
 				draw_point( multiply( m_points[ m_graph.centers[m_mousecell].corner_ids[2] ], t_m)-m_camerapos, ARGB(255,0,255,0), 4);
 				draw_point( multiply( m_points[ m_graph.centers[m_mousecell].corner_ids[3] ], t_m)-m_camerapos, ARGB(255,100,100,255), 4);
+				//maybe diagonals later
 				//draw_point( multiply( m_points[m_corners[ m_graph.centers[m_mousecell].corner_ids[0]][0]], t_m)-m_camerapos, ARGB(255,255,0,0), 4);
 				//draw_point( multiply( m_points[m_corners[ m_graph.centers[m_mousecell].corner_ids[0]][1]], t_m)-m_camerapos, ARGB(255,255,0,0), 4);
 				//draw_point( multiply( m_points[m_corners[ m_graph.centers[m_mousecell].corner_ids[0]][2]], t_m)-m_camerapos, ARGB(255,0,255,0), 4);
 				//draw_point( multiply( m_points[m_corners[ m_graph.centers[m_mousecell].corner_ids[0]][3]], t_m)-m_camerapos, ARGB(255,100,100,255), 4);
 
 				//draw neighbors
-				if(m_graph.centers[m_mousecell].neighbor_ids[0]>0)
+				if(m_graph.centers[m_mousecell].neighbor_ids[0]>=0)
 					draw_point( multiply( m_centers[ m_graph.centers[m_mousecell].neighbor_ids[0]], multiply(t_m,m_isomatrix))-m_camerapos, m_white, 4);
-				if(m_graph.centers[m_mousecell].neighbor_ids[1]>0)
+				if(m_graph.centers[m_mousecell].neighbor_ids[1]>=0)
 					draw_point( multiply( m_centers[ m_graph.centers[m_mousecell].neighbor_ids[1]], multiply(t_m,m_isomatrix))-m_camerapos, ARGB(255,255,0,0), 4);
-				if(m_graph.centers[m_mousecell].neighbor_ids[2]>0)
+				if(m_graph.centers[m_mousecell].neighbor_ids[2]>=0)
 					draw_point( multiply( m_centers[ m_graph.centers[m_mousecell].neighbor_ids[2]], multiply(t_m,m_isomatrix))-m_camerapos, ARGB(255,0,255,0), 4);
-				if(m_graph.centers[m_mousecell].neighbor_ids[3]>0)
+				if(m_graph.centers[m_mousecell].neighbor_ids[3]>=0)
 					draw_point( multiply( m_centers[ m_graph.centers[m_mousecell].neighbor_ids[3]], multiply(t_m,m_isomatrix))-m_camerapos, ARGB(255,100,100,255), 4);
 
+				//draw borders
+				draw_line( multiply( m_points[ m_graph.edges[m_graph.centers[m_mousecell].border_ids[0]].voronoi_ids[0] ],t_m)-m_camerapos, multiply(m_points[ m_graph.edges[m_graph.centers[m_mousecell].border_ids[0]].voronoi_ids[1] ],t_m)-m_camerapos, m_white, m_white, 1.0f );
+				draw_line( multiply( m_points[ m_graph.edges[m_graph.centers[m_mousecell].border_ids[1]].voronoi_ids[0] ],t_m)-m_camerapos, multiply(m_points[ m_graph.edges[m_graph.centers[m_mousecell].border_ids[1]].voronoi_ids[1] ],t_m)-m_camerapos, ARGB(255,255,0,0), ARGB(255,255,0,0), 1.0f );
+				//if(m_graph.edges[m_graph.centers[m_mousecell].border_ids[2]].voronoi_ids[0]>0)
+				if( m_graph.centers[m_mousecell].border_ids[2] >= 0 )
+					draw_line( multiply( m_points[ m_graph.edges[m_graph.centers[m_mousecell].border_ids[2]].voronoi_ids[0] ],t_m)-m_camerapos, multiply(m_points[ m_graph.edges[m_graph.centers[m_mousecell].border_ids[2]].voronoi_ids[1] ],t_m)-m_camerapos, ARGB(255,0,255,0), ARGB(255,0,255,0), 1.0f );
+				if( m_graph.centers[m_mousecell].border_ids[3] >= 0 )
+					draw_line( multiply( m_points[ m_graph.edges[m_graph.centers[m_mousecell].border_ids[3]].voronoi_ids[0] ],t_m)-m_camerapos, multiply(m_points[ m_graph.edges[m_graph.centers[m_mousecell].border_ids[3]].voronoi_ids[1] ],t_m)-m_camerapos, ARGB(255,100,100,255), ARGB(255,100,100,255), 1.0f );
+
+				//draw dulaney edges
+				if(m_graph.edges[m_graph.centers[m_mousecell].border_ids[0]].delaunay_ids[0]>=0)
+					draw_line( multiply( m_centers[ m_graph.edges[m_graph.centers[m_mousecell].border_ids[0]].delaunay_ids[0] ],multiply(t_m,m_isomatrix))-m_camerapos, multiply(m_centers[ m_graph.edges[m_graph.centers[m_mousecell].border_ids[0]].delaunay_ids[1] ],multiply(t_m,m_isomatrix))-m_camerapos, m_white, m_white, 1.0f );
+				if(m_graph.edges[m_graph.centers[m_mousecell].border_ids[1]].delaunay_ids[0]>=0)
+					draw_line( multiply( m_centers[ m_graph.edges[m_graph.centers[m_mousecell].border_ids[1]].delaunay_ids[0] ],multiply(t_m,m_isomatrix))-m_camerapos, multiply(m_centers[ m_graph.edges[m_graph.centers[m_mousecell].border_ids[1]].delaunay_ids[1] ],multiply(t_m,m_isomatrix))-m_camerapos, ARGB(255,255,0,0), ARGB(255,255,0,0), 1.0f );
+				//edges bottom and right
+				if(m_graph.centers[m_mousecell].border_ids[2] >= 0)
+					draw_line( multiply( m_centers[ m_graph.edges[m_graph.centers[m_mousecell].border_ids[2]].delaunay_ids[0] ],multiply(t_m,m_isomatrix))-m_camerapos, multiply(m_centers[ m_graph.edges[m_graph.centers[m_mousecell].border_ids[2]].delaunay_ids[1] ],multiply(t_m,m_isomatrix))-m_camerapos, ARGB(255,0,255,0), ARGB(255,0,255,0), 1.0f );
+				if(m_graph.centers[m_mousecell].border_ids[3] >= 0)
+					draw_line( multiply( m_centers[ m_graph.edges[m_graph.centers[m_mousecell].border_ids[3]].delaunay_ids[0] ],multiply(t_m,m_isomatrix))-m_camerapos, multiply(m_centers[ m_graph.edges[m_graph.centers[m_mousecell].border_ids[3]].delaunay_ids[1] ],multiply(t_m,m_isomatrix))-m_camerapos, ARGB(255,100,100,255), ARGB(255,100,100,255), 1.0f );
+				
+			}
+
+			int debug_corner = 1;
+			int d_c_i = 0; //0-3 debug corner index
+			if(m_mousecell<=m_centers.length() && debug_corner > 0){
+
+				//touches
+				if( m_graph.centers[m_mousecell].corner_ids[d_c_i] >= 0 ){
+					//the point we are inspecting--used as a center point basically
+					int t_corner = m_graph.centers[m_mousecell].corner_ids[d_c_i];
+					draw_point( multiply(m_points[ m_graph.corners[t_corner].index ],t_m)-m_camerapos, m_white, 4 );
+					if(m_graph.corners[t_corner].touches_ids[0]>=0)
+						draw_point( multiply(m_points[ m_graph.corners[t_corner].touches_ids[0] ],t_m)-m_camerapos, m_white, 4 );
+					if(m_graph.corners[t_corner].touches_ids[1]>=0)
+						draw_point( multiply(m_points[ m_graph.corners[t_corner].touches_ids[1] ],t_m)-m_camerapos, ARGB(255,255,0,0), 4 );
+					if(m_graph.corners[t_corner].touches_ids[2]>=0)
+						draw_point( multiply(m_points[ m_graph.corners[t_corner].touches_ids[2] ],t_m)-m_camerapos, ARGB(255,0,255,0), 4 );
+					if(m_graph.corners[t_corner].touches_ids[3]>=0)
+						draw_point( multiply(m_points[ m_graph.corners[t_corner].touches_ids[3] ],t_m)-m_camerapos, ARGB(255,0,0,255), 4 );
+					//draw_point( multiply(m_points[ m_graph.corners[m_graph.centers[m_mousecell].corner_ids[0]].touches_ids[0] ],t_m)-m_camerapos, m_white, 4 );
+				}
 			}
 
 			DrawText( vector2(0,264) , m_mousecell+"", "Verdana14_shadow.fnt", ARGB(250,255,255,255));

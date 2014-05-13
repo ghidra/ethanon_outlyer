@@ -37,6 +37,10 @@ class graph_center : graph_point_data{
 class graph_corner : graph_point_data{
 	int index;//this is every point in the grid already
 
+    int[] touches_ids;//i need to just get the ids first, before connecting it to the objects of these objects
+    int[] protrudes_ids;
+    int[] adjacent_ids;
+
     graph_center@[] touches;
     graph_edge@[] protrudes;
     graph_corner@[] adjacent;
@@ -44,8 +48,10 @@ class graph_corner : graph_point_data{
     //int river; // 0 if no river, or volume of water in river
     //graph_corner@ downslope; // pointer to adjacent corner most downhill
 
-    graph_corner(const int id){
+    graph_corner(const int id, const int[] t){
     	index = id;
+
+        touches_ids = t;
     }
 }
 
@@ -95,7 +101,7 @@ class graph{
     		//determine which points are adjacent -- allow diagonals?
             off = t/nx;
 
-            int[] touches_ids;//the centers that are touching to this corner point
+            
             int t0 = (t+off%(nx-1)>0) ? t : -1;
             int t1 = (t-1 > 0) ? t-1 : -1;
             int t2 = (t-1 > 0) ? t-(nx-1) : -1;
@@ -113,7 +119,9 @@ class graph{
             //int a2 = t-1;
             //int a3 = t-nx;
 
-            corners.insertLast( graph_corner( t ) );//add basic center
+            int[] touches_ids = {t0,t1,t2,t3};;//the centers that are touching to this corner point
+
+            corners.insertLast( graph_corner( t,touches_ids ) );//add basic center
     	}
 
 
@@ -136,7 +144,8 @@ class graph{
 			int n0 = ((t+1)%nx > 0) ? t+1 : -1;
 			int n1 = (t+nx < nx*ny) ? t+nx : -1;
 			int n2 = (t%nx > 0) ? t-1 : -1;
-			int n3 = (t-nx > 0) ? t-nx : -1;
+			//int n3 = (t-nx > 0) ? t-nx : -1;
+            int n3 = t-nx;
 			//allow diagonals?
 			//if so need for more
 			
@@ -149,10 +158,14 @@ class graph{
 			int[] d0 = {n3,t};
 			int[] d1 = {n2,t};
 
+            //border edges
 			int e0 = t*2;
 			int e1 = e0+1;
-			int e2 = ( t%(nx-2) > 0 ) ? e0+3 : -1;
-			int e3 = ( t < (2*(nx-1))*(nx-1) ) ? (t+1)*(2*(nx-1)) : -1;
+            //these 2 are pulled from 2 different centers, just calculating the edge numbesr they will be based on our system
+            int e2 = (t+nx < nx*ny) ? ((nx)*2)+(t*2) : -1;
+			int e3 = ((t+1)%nx > 0)? e0+3 : -1;//( t%nx > 0 ) ? e0+3 : -1;
+			//int e3 = ( t < (2*(nx-1))*(nx-1) ) ? (t+1)*(2*(nx-1)) : -1;
+            
 
 			int[] corner_ids = {p0,p1,p2,p3};//graph_corner@[] corn = {corners[p0],corners[p1],corners[p2],corners[p3]};//sets the squares corner points
 			int[] neighbor_ids = {n0,n1,n2,n3};//

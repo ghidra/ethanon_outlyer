@@ -8,11 +8,11 @@ Loading game script from source-code: main.angelscript
 
 [WARN ] enemy_boss.angelscript, line 48: Signed/Unsigned mismatch
 
-[INFO ] graph.angelscript, line 83: Compiling graph::graph(const vector2[], const int, const int)
+[INFO ] graph.angelscript, line 89: Compiling graph::graph(const vector2[], const int, const int)
 
-[WARN ] graph.angelscript, line 92: Signed/Unsigned mismatch
+[WARN ] graph.angelscript, line 98: Signed/Unsigned mismatch
 
-Compile time: 64 milliseconds
+Compile time: 74 milliseconds
 (Loaded) pixel_white.png
 (Loaded) main_ship_diffuse_contact.png
 (Loaded) main_ship_normal_contact.png
