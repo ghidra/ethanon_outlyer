@@ -48,10 +48,12 @@ class graph_corner : graph_point_data{
     //int river; // 0 if no river, or volume of water in river
     //graph_corner@ downslope; // pointer to adjacent corner most downhill
 
-    graph_corner(const int id, const int[] t){
+    graph_corner(const int id, const int[] t, const int[] p, const int[] a){
     	index = id;
 
         touches_ids = t;
+        protrudes_ids = p;
+        adjacent_ids = a;
     }
 }
 
@@ -80,19 +82,20 @@ class graph_edge{
 }
 
 class graph{
-	private vector2[] grid_points;  // Only useful during graph construction
+	//private vector2[] grid_points;  // Only useful during graph construction
 
     graph_center@[] centers;
     graph_corner@[] corners;
     graph_edge@[] edges;
 
     graph(const vector2[] p, const int x, const int y){//give it all the points, and the x and y values to chop it up with
-    	grid_points = p;
+    	//grid_points = p;
 
         int nx = x-1;
         int ny = y-1;
 
         float off = 0.0f;
+        float offb = 0.0f;
 
     	//each grid point is actually a corner
     	for( int t = 0; t < p.length(); t++ ){
@@ -100,28 +103,29 @@ class graph{
     		//determine which edges come off this corner
     		//determine which points are adjacent -- allow diagonals?
             off = t/nx;
+            offb = t/x;
 
             
-            int t0 = (t+off%(nx-1)>0) ? t : -1;
-            int t1 = (t-1 > 0) ? t-1 : -1;
-            int t2 = (t-1 > 0) ? t-(nx-1) : -1;
-            int t3 = (1 > 0 ) ? t-nx : -1;
+            int t0 = (t-x+1%x>0)? t-x-offb : -1;;//(t+off%(nx-1)>0) ? t-nx-1 : -1;//this one is creating one when it shouldne at the end of the row
+            int t1 = (t-x-1%x>0)? t-nx-offb : -1;//(t%(nx) > 0) ? t+1 : -1;//this one is broken, all the other ones work fine
+            int t2 = (t+1%x>0)? t-offb : -1;//(t+(nx+1) < x*y) ? t+(nx+1) : -1;
+            int t3 = (t%x>0)? t-offb-1 : -1;//(t+1%(nx) > 0 ) ? t-1 : -1;
 
-            int[] protrudes_ids;//the edges that protrude from this point
             //int e0 = ;
             //int e1 = ;
             //int e2 = ;
             //int e3 = ;
 
-            int[] adjacent_ids;//corners that are near // should i include diagonals?
-            //int a0 = t+1;
-            //int a1 = t+nx;
-            //int a2 = t-1;
-            //int a3 = t-nx;
+            int a0 = (t+off%(nx-1)>0) ? t-nx-1 : -1;
+            int a1 = (t%(nx) > 0) ? t+1 : -1;//this one is broken, all the other ones work fine
+            int a2 = (t+(nx+1) < x*y) ? t+(nx+1) : -1;
+            int a3 = (t+1%(nx) > 0 ) ? t-1 : -1;//this one is a bit wanky too
 
-            int[] touches_ids = {t0,t1,t2,t3};;//the centers that are touching to this corner point
+            int[] touches_ids = {t0,t1,t2,t3};//the centers that are touching to this corner point
+            int[] protrudes_ids = {-1,-1,-1,-1};//the edges that protrude from this point
+            int[] adjacent_ids = {a0,a1,a2,a3};//corners that are near // should i include diagonals?
 
-            corners.insertLast( graph_corner( t,touches_ids ) );//add basic center
+            corners.insertLast( graph_corner( t,touches_ids,protrudes_ids,adjacent_ids ) );//add basic center
     	}
 
 
@@ -173,7 +177,7 @@ class graph{
 
 
 			//get my center points for each square
-			vector2 add = grid_points[p0] + grid_points[p1] + grid_points[p2] + grid_points[p3];//center
+			vector2 add = p[p0] + p[p1] + p[p2] + p[p3];//center
 
 			//centers.insertLast( graph_center( centers.length(),add/4.0f, corn ) );//add basic center 
 			centers.insertLast( graph_center( centers.length(),add/4.0f, corner_ids, neighbor_ids, border_ids ) );//add basic center 

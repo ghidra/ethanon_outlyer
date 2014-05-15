@@ -199,20 +199,32 @@ class grid : obj{
 			int d_c_i = 0; //0-3 debug corner index
 			if(m_mousecell<=m_centers.length() && debug_corner > 0){
 
-				//touches
+				
 				if( m_graph.centers[m_mousecell].corner_ids[d_c_i] >= 0 ){
 					//the point we are inspecting--used as a center point basically
 					int t_corner = m_graph.centers[m_mousecell].corner_ids[d_c_i];
 					draw_point( multiply(m_points[ m_graph.corners[t_corner].index ],t_m)-m_camerapos, m_white, 4 );
+					
+					//touches
 					if(m_graph.corners[t_corner].touches_ids[0]>=0)
-						draw_point( multiply(m_points[ m_graph.corners[t_corner].touches_ids[0] ],t_m)-m_camerapos, m_white, 4 );
+						draw_point( multiply(m_centers[ m_graph.corners[t_corner].touches_ids[0] ],multiply(t_m,m_isomatrix))-m_camerapos, m_white, 4 );
 					if(m_graph.corners[t_corner].touches_ids[1]>=0)
-						draw_point( multiply(m_points[ m_graph.corners[t_corner].touches_ids[1] ],t_m)-m_camerapos, ARGB(255,255,0,0), 4 );
+						draw_point( multiply(m_centers[ m_graph.corners[t_corner].touches_ids[1] ],multiply(t_m,m_isomatrix))-m_camerapos, ARGB(255,255,0,0), 4 );
 					if(m_graph.corners[t_corner].touches_ids[2]>=0)
-						draw_point( multiply(m_points[ m_graph.corners[t_corner].touches_ids[2] ],t_m)-m_camerapos, ARGB(255,0,255,0), 4 );
+						draw_point( multiply(m_centers[ m_graph.corners[t_corner].touches_ids[2] ],multiply(t_m,m_isomatrix))-m_camerapos, ARGB(255,0,255,0), 4 );
 					if(m_graph.corners[t_corner].touches_ids[3]>=0)
-						draw_point( multiply(m_points[ m_graph.corners[t_corner].touches_ids[3] ],t_m)-m_camerapos, ARGB(255,0,0,255), 4 );
-					//draw_point( multiply(m_points[ m_graph.corners[m_graph.centers[m_mousecell].corner_ids[0]].touches_ids[0] ],t_m)-m_camerapos, m_white, 4 );
+						draw_point( multiply(m_centers[ m_graph.corners[t_corner].touches_ids[3] ],multiply(t_m,m_isomatrix))-m_camerapos, ARGB(255,0,0,255), 4 );
+					
+					//adjacent
+					if(m_graph.corners[t_corner].adjacent_ids[0]>=0)
+						draw_point( multiply(m_points[ m_graph.corners[t_corner].adjacent_ids[0] ],t_m)-m_camerapos, m_white, 4 );
+					if(m_graph.corners[t_corner].adjacent_ids[1]>=0)
+						draw_point( multiply(m_points[ m_graph.corners[t_corner].adjacent_ids[1] ],t_m)-m_camerapos, ARGB(255,255,0,0), 4 );
+					if(m_graph.corners[t_corner].adjacent_ids[2]>=0)
+						draw_point( multiply(m_points[ m_graph.corners[t_corner].adjacent_ids[2] ],t_m)-m_camerapos, ARGB(255,0,255,0), 4 );
+					if(m_graph.corners[t_corner].adjacent_ids[3]>=0)
+						draw_point( multiply(m_points[ m_graph.corners[t_corner].adjacent_ids[3] ],t_m)-m_camerapos, ARGB(255,0,0,255), 4 );
+					
 				}
 			}
 
