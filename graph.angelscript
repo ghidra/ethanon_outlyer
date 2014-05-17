@@ -106,23 +106,23 @@ class graph{
             offb = t/x;
 
             
-            int t0 = (t-x+1%x>0)? t-x-offb : -1;;//(t+off%(nx-1)>0) ? t-nx-1 : -1;//this one is creating one when it shouldne at the end of the row
-            int t1 = (t-x-1%x>0)? t-nx-offb : -1;//(t%(nx) > 0) ? t+1 : -1;//this one is broken, all the other ones work fine
-            int t2 = (t+1%x>0)? t-offb : -1;//(t+(nx+1) < x*y) ? t+(nx+1) : -1;
-            int t3 = (t%x>0)? t-offb-1 : -1;//(t+1%(nx) > 0 ) ? t-1 : -1;
+            int t0 = ((t-x)%x>0) ? t-x-offb : -1;//this one is creating one when it shouldne at the end of the row
+            int t1 = ((t+1)%x>0) ?  t-nx-offb : -1;//(t+1%nx>0)? t-nx-offb : -1;
+            int t2 = ((t+1)%x>0) ? t-offb : -1;
+            int t3 = (t%x>0) ? t-offb-1 : -1;
 
-            //int e0 = ;
-            //int e1 = ;
-            //int e2 = ;
-            //int e3 = ;
+            int e0 = ( (t+1)%x > 0) ? (t*2)-(offb*2)-(nx*2)+1:-1;
+            int e1 = ( (t+1)%x > 0) ? (t*2)-(offb*2) : -1;
+            int e2 = ( (t+1)%x > 0) ? e1+1 : -1;
+            int e3 = ( (t+1)%x > 0) ? e1-2 : -1;
 
             int a0 = (t+off%(nx-1)>0) ? t-nx-1 : -1;
-            int a1 = (t%(nx) > 0) ? t+1 : -1;//this one is broken, all the other ones work fine
-            int a2 = (t+(nx+1) < x*y) ? t+(nx+1) : -1;
-            int a3 = (t+1%(nx) > 0 ) ? t-1 : -1;//this one is a bit wanky too
+            int a1 = ((t+1)%x > 0) ? t+1 : -1;
+            int a2 = (t+(x) < x*y) ? t+(nx+1) : -1;
+            int a3 = (t%x > 0 ) ? t-1 : -1;//this one is a bit wanky too
 
             int[] touches_ids = {t0,t1,t2,t3};//the centers that are touching to this corner point
-            int[] protrudes_ids = {-1,-1,-1,-1};//the edges that protrude from this point
+            int[] protrudes_ids = {e0,e1,e2,e3};//the edges that protrude from this point
             int[] adjacent_ids = {a0,a1,a2,a3};//corners that are near // should i include diagonals?
 
             corners.insertLast( graph_corner( t,touches_ids,protrudes_ids,adjacent_ids ) );//add basic center

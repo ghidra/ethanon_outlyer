@@ -54,27 +54,29 @@ class grid : obj{
 		//build out the points
 		//0,1,2,3,4
 		//5,6,7,8,9
-		uint count = 0;
-		for (uint x = 0; x < m_xdiv; x++){
-			for (uint y = 0; y < m_ydiv; y++){
+		//uint count = 0;
+		for (uint count = 0; count < m_xdiv*m_ydiv; count++){
+		//for (uint x = 0; x < m_xdiv; x++){
+		//	for (uint y = 0; y < m_ydiv; y++){
 				//x,y points
 				const float px = (count%((m_xdiv)*1.0f)) * (m_width/(m_xdiv-1.0f));//x = modulo count by xdiv * width / xdiv-1
-				const float py = floor(count/(m_ydiv*1.0f)) * (m_height/(m_ydiv-1.0f));//floor((y*1.0f)/(m_ydiv*1.0f)) * (m_height/(m_ydiv*1.0f));//y = floor(y/ ydiv) * (ydiv/height)
+				const float py = floor(count/(m_xdiv*1.0f)) * (m_height/(m_ydiv-1.0f));//floor((y*1.0f)/(m_ydiv*1.0f)) * (m_height/(m_ydiv*1.0f));//y = floor(y/ ydiv) * (ydiv/height)
 				const vector2 p = vector2(px-m_offset.x,py-m_offset.y);
 				m_points_origin.insertLast( p );
 				m_points.insertLast( multiply(p,m_isomatrix) );//go ahead and multiply into iso style here as well
 
-				count ++;
-			}
+		//		count ++;
+		//	}
 		}
 		//now i need to get the horizontal lines
-		for(uint t = 0; t < m_xdiv; t++){
+		for(uint t = 0; t < m_ydiv; t++){
+			//uint[] lp = {t,((m_xdiv*m_ydiv)*1.0f)-((m_ydiv-t)*1.0f)};
 			uint[] lp = {(t*m_xdiv),((t+1)*m_xdiv)-1};
 			m_lines.insertLast(lp);
 		}
 		//now i need to get the vertical lines to draw
-		for (uint t = 0; t < m_ydiv; t++){
-			uint[] lp = {t,((m_xdiv*m_ydiv)*1.0f)-((m_ydiv-t)*1.0f)};
+		for (uint t = 0; t < m_xdiv; t++){
+			uint[] lp = {t,((m_xdiv*m_ydiv)*1.0f)-((m_xdiv-t)*1.0f)};
 			m_lines.insertLast(lp);
 		}
 
@@ -125,8 +127,12 @@ class grid : obj{
 			//draw line of the grid
 			for (uint t = 0; t < m_lines.length(); t++){
 				//draw_line( m_points[m_lines[t][0]]-m_camerapos, m_points[m_lines[t][1]]-m_camerapos, m_whitelines, m_whitelines, 1.0f );
-				draw_line( multiply(m_points[m_lines[t][0]],t_m)-m_camerapos, multiply(m_points[m_lines[t][1]],t_m)-m_camerapos, m_whitelines, m_whitelines, 1.0f );
+				//if(t<11)
+					draw_line( multiply(m_points[m_lines[t][0]],t_m)-m_camerapos, multiply(m_points[m_lines[t][1]],t_m)-m_camerapos, m_whitelines, m_whitelines, 1.0f );
 			}
+			//draw points
+			//for (uint t = 0; t < m_points.length(); t++)
+			//	draw_point( multiply( m_points[ t ], t_m)-m_camerapos, m_white, 4);
 
 			//draw center points of grids
 			//DEBUGGING
@@ -196,7 +202,7 @@ class grid : obj{
 			}
 
 			int debug_corner = 1;
-			int d_c_i = 0; //0-3 debug corner index
+			int d_c_i = 1; //0-3 debug corner index
 			if(m_mousecell<=m_centers.length() && debug_corner > 0){
 
 				
@@ -215,6 +221,17 @@ class grid : obj{
 					if(m_graph.corners[t_corner].touches_ids[3]>=0)
 						draw_point( multiply(m_centers[ m_graph.corners[t_corner].touches_ids[3] ],multiply(t_m,m_isomatrix))-m_camerapos, ARGB(255,0,0,255), 4 );
 					
+					//protrudes
+					if( m_graph.corners[t_corner].protrudes_ids[0] >= 0 )
+						draw_line( multiply( m_points[ m_graph.edges[m_graph.corners[t_corner].protrudes_ids[0]].voronoi_ids[0]],t_m)-m_camerapos, multiply(m_points[ m_graph.edges[m_graph.corners[t_corner].protrudes_ids[0]].voronoi_ids[1]] ,t_m)-m_camerapos, m_white, m_white, 1.0f );
+					if( m_graph.corners[t_corner].protrudes_ids[1] >= 0 )
+						draw_line( multiply( m_points[ m_graph.edges[m_graph.corners[t_corner].protrudes_ids[1]].voronoi_ids[0]],t_m)-m_camerapos, multiply(m_points[ m_graph.edges[m_graph.corners[t_corner].protrudes_ids[1]].voronoi_ids[1]] ,t_m)-m_camerapos, ARGB(255,255,0,0), ARGB(255,255,0,0), 1.0f );
+					if( m_graph.corners[t_corner].protrudes_ids[2] >= 0 )
+						draw_line( multiply( m_points[ m_graph.edges[m_graph.corners[t_corner].protrudes_ids[2]].voronoi_ids[0]],t_m)-m_camerapos, multiply(m_points[ m_graph.edges[m_graph.corners[t_corner].protrudes_ids[2]].voronoi_ids[1]] ,t_m)-m_camerapos, ARGB(255,0,0255,0), ARGB(255,0,255,0), 1.0f );
+					if( m_graph.corners[t_corner].protrudes_ids[3] >= 0 )
+						draw_line( multiply( m_points[ m_graph.edges[m_graph.corners[t_corner].protrudes_ids[3]].voronoi_ids[0]],t_m)-m_camerapos, multiply(m_points[ m_graph.edges[m_graph.corners[t_corner].protrudes_ids[3]].voronoi_ids[1]] ,t_m)-m_camerapos, ARGB(255,0,0,255), ARGB(255,0,0,255), 1.0f );
+					
+
 					//adjacent
 					if(m_graph.corners[t_corner].adjacent_ids[0]>=0)
 						draw_point( multiply(m_points[ m_graph.corners[t_corner].adjacent_ids[0] ],t_m)-m_camerapos, m_white, 4 );
