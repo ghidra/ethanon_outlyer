@@ -1,8 +1,8 @@
 ﻿class graph_point_data{
+    bool is_border; // at the edge of the map
 	/*bool water; // lake or ocean
     bool ocean; // ocean
     bool coast; // land polygon touching an ocean
-    bool border; // at the edge of the map
     float elevation; // 0.0-1.0
     float moisture; // 0.0-1.0*/
 }
@@ -20,13 +20,15 @@ class graph_center : graph_point_data{
     graph_center@[] neighbors;
     graph_edge@[] borders;
 
-    graph_center(const int id, const vector2 p, const int[] c, const int[] n, const int[] b){
+    graph_center(const int id, const vector2 p, const int[] c, const int[] n, const int[] b, const bool bo = false){
     	index = id;
     	position = p;
     	
     	corner_ids = c;
     	neighbor_ids = n;
     	border_ids = b;
+
+        is_border=bo;
     }
 
     //void couple(){
@@ -48,16 +50,18 @@ class graph_corner : graph_point_data{
     //int river; // 0 if no river, or volume of water in river
     //graph_corner@ downslope; // pointer to adjacent corner most downhill
 
-    graph_corner(const int id, const int[] t, const int[] p, const int[] a){
+    graph_corner(const int id, const int[] t, const int[] p, const int[] a, const bool bo=false){
     	index = id;
 
         touches_ids = t;
         protrudes_ids = p;
         adjacent_ids = a;
+
+        is_border=bo;
     }
 }
 
-class graph_edge{
+class graph_edge : graph_point_data{
 	int index;
 
 	int[] voronoi_ids;
@@ -74,10 +78,12 @@ class graph_edge{
     //end points are given
     //int river; // volume of water, or 0
 
-    graph_edge(const int id, const int[] v, const int[] d){
+    graph_edge(const int id, const int[] v, const int[] d, const bool bo=false){
     	index = id;
     	voronoi_ids = v;
     	delaunay_ids = d;
+
+        is_border=bo;
     }
 }
 
@@ -125,7 +131,9 @@ class graph{
             int[] protrudes_ids = {e0,e1,e2,e3};//the edges that protrude from this point
             int[] adjacent_ids = {a0,a1,a2,a3};//corners that are near // should i include diagonals?
 
-            corners.insertLast( graph_corner( t,touches_ids,protrudes_ids,adjacent_ids ) );//add basic center
+            bool border_test = ( t<x || t%x == x-1 || t%x == 0 || t>(x*y)-x );
+
+            corners.insertLast( graph_corner( t,touches_ids,protrudes_ids,adjacent_ids,border_test ) );//add basic center
     	}
 
 
@@ -179,13 +187,19 @@ class graph{
 			//get my center points for each square
 			vector2 add = p[p0] + p[p1] + p[p2] + p[p3];//center
 
+            //determine if its a border
+            bool border_test = ( t<nx || t%nx == nx-1 || t%nx == 0 || t>(nx*ny)-nx );
+
 			//centers.insertLast( graph_center( centers.length(),add/4.0f, corn ) );//add basic center 
-			centers.insertLast( graph_center( centers.length(),add/4.0f, corner_ids, neighbor_ids, border_ids ) );//add basic center 
+			centers.insertLast( graph_center( centers.length(),add/4.0f, corner_ids, neighbor_ids, border_ids,border_test ) );//add basic center 
 			
 			//edges
+            //test if they are an edge
+            bool vtop_border_test = ( p0<x );
+            bool vleft_border_test = ( p0%x == 0 );
 			//i need to send more data to the edgs, centers and edges next and before
-			edges.insertLast( graph_edge(edges.length(),v0,d0) );
-			edges.insertLast( graph_edge(edges.length(),v1,d1) );
+			edges.insertLast( graph_edge(edges.length(),v0,d0,vtop_border_test) );
+			edges.insertLast( graph_edge(edges.length(),v1,d1,vleft_border_test) );
 			//this does not get the edges on the far right
 			//and very bottom
 

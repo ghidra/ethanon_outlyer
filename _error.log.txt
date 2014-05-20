@@ -1,57 +1,7 @@
 [Z:\home\jimmy\Documents\projects\outlyer\_error.log.txt]
-Exception: Index out of bounds
-  Callstack:
-    void grid::update() (grid.angelscript, 209)
-    void scene_level::onUpdate() (scene_level.angelscript, 85)
-    void SceneManager::runOnSceneUpdateFunction() (SceneManager.angelscript, 21)
-    void onSceneUpdate() (SceneManager.angelscript, 34)
 
+[ERROR] perlin.angelscript, line 4: Expected ')'
 
-Exception: Index out of bounds
-  Callstack:
-    void grid::update() (grid.angelscript, 209)
-    void scene_level::onUpdate() (scene_level.angelscript, 85)
-    void SceneManager::runOnSceneUpdateFunction() (SceneManager.angelscript, 21)
-    void onSceneUpdate() (SceneManager.angelscript, 34)
-
-
-Exception: Index out of bounds
-  Callstack:
-    void grid::update() (grid.angelscript, 209)
-    void scene_level::onUpdate() (scene_level.angelscript, 85)
-    void SceneManager::runOnSceneUpdateFunction() (SceneManager.angelscript, 21)
-    void onSceneUpdate() (SceneManager.angelscript, 34)
-
-
-Exception: Index out of bounds
-  Callstack:
-    void grid::update() (grid.angelscript, 209)
-    void scene_level::onUpdate() (scene_level.angelscript, 85)
-    void SceneManager::runOnSceneUpdateFunction() (SceneManager.angelscript, 21)
-    void onSceneUpdate() (SceneManager.angelscript, 34)
-
-
-Exception: Index out of bounds
-  Callstack:
-    void grid::update() (grid.angelscript, 209)
-    void scene_level::onUpdate() (scene_level.angelscript, 85)
-    void SceneManager::runOnSceneUpdateFunction() (SceneManager.angelscript, 21)
-    void onSceneUpdate() (SceneManager.angelscript, 34)
-
-
-Exception: Index out of bounds
-  Callstack:
-    void grid::update() (grid.angelscript, 209)
-    void scene_level::onUpdate() (scene_level.angelscript, 85)
-    void SceneManager::runOnSceneUpdateFunction() (SceneManager.angelscript, 21)
-    void onSceneUpdate() (SceneManager.angelscript, 34)
-
-
-Exception: Index out of bounds
-  Callstack:
-    void grid::update() (grid.angelscript, 209)
-    void scene_level::onUpdate() (scene_level.angelscript, 85)
-    void SceneManager::runOnSceneUpdateFunction() (SceneManager.angelscript, 21)
-    void onSceneUpdate() (SceneManager.angelscript, 34)
-
-
+[ERROR] perlin.angelscript, line 9: Expected ')'
+ERROR - Failed while building module.
+ERROR - ETHEngine::StartEngine: no scene has been loaded.

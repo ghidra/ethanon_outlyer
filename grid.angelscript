@@ -201,7 +201,7 @@ class grid : obj{
 				
 			}
 
-			int debug_corner = 1;
+			int debug_corner = 0;
 			int d_c_i = 1; //0-3 debug corner index
 			if(m_mousecell<=m_centers.length() && debug_corner > 0){
 
@@ -244,6 +244,40 @@ class grid : obj{
 					
 				}
 			}
+
+
+			int debug_border = 1;
+			if(m_mousecell<=m_centers.length() && debug_border > 0){
+				//center point
+				if(m_graph.centers[m_mousecell].is_border)
+					draw_point( multiply( m_centers[ m_mousecell ], multiply(t_m,m_isomatrix))-m_camerapos, ARGB(255,255,0,0), 4);
+				
+				//corner points
+				int c0 = m_graph.centers[m_mousecell].corner_ids[0];
+				int c1 = m_graph.centers[m_mousecell].corner_ids[1];
+				int c2 = m_graph.centers[m_mousecell].corner_ids[2];
+				int c3 = m_graph.centers[m_mousecell].corner_ids[3];
+
+				if(m_graph.corners[c0].is_border)
+						draw_point( multiply(m_points[ c0 ],t_m)-m_camerapos, m_red, 4 );
+				if(m_graph.corners[c1].is_border)
+						draw_point( multiply(m_points[ c1 ],t_m)-m_camerapos, m_red, 4 );
+				if(m_graph.corners[c2].is_border)
+						draw_point( multiply(m_points[ c2 ],t_m)-m_camerapos, m_red, 4 );
+				if(m_graph.corners[c3].is_border)
+						draw_point( multiply(m_points[ c3 ],t_m)-m_camerapos, m_red, 4 );
+
+				//edges
+				//voronoi
+				int e0 = m_graph.centers[m_mousecell].border_ids[0];
+				int e1 = m_graph.centers[m_mousecell].border_ids[1];
+				if( m_graph.edges[e0].is_border )
+					draw_line( multiply( m_points[ m_graph.edges[e0].voronoi_ids[0] ],t_m)-m_camerapos, multiply(m_points[ m_graph.edges[e0].voronoi_ids[1] ],t_m)-m_camerapos, ARGB(255,255,0,0), ARGB(255,255,0,0), 1.0f );
+				if( m_graph.edges[e1].is_border )
+					draw_line( multiply( m_points[ m_graph.edges[e1].voronoi_ids[0] ],t_m)-m_camerapos, multiply(m_points[ m_graph.edges[e1].voronoi_ids[1] ],t_m)-m_camerapos, ARGB(255,255,0,0), ARGB(255,255,0,0), 1.0f );
+					
+
+			}				
 
 			DrawText( vector2(0,264) , m_mousecell+"", "Verdana14_shadow.fnt", ARGB(250,255,255,255));
 			DrawText( vector2(0,284) , m_isomousepos.x+":"+m_isomousepos.y, "Verdana14_shadow.fnt", ARGB(250,255,255,255));

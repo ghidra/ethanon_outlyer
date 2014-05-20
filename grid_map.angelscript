@@ -1,4 +1,5 @@
 ﻿#include "grid.angelscript"
+#include "perlin.angelscript"
 
 class grid_map : grid{
 
