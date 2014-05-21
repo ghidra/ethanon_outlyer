@@ -5,10 +5,18 @@ class grid_map : grid{
 
 	//private graph@ m_graph;
 	//private bool m_temp = false;
+	private perlin@ m_perlin;
+	private float[] m_pnoise;
 
 	grid_map(const uint xdiv=10, const uint ydiv=10, const float width=1000.0f, const float height=1000.0f ){
 		super(xdiv,ydiv,width,height);
 		//m_graph = new graph(point,edges);
+		/*m_perlin = perlin();
+		m_perlin.init();
+
+		for(uint t=0;t<m_points_origin.length();t++){
+			m_pnoise.insertLast( m_perlin.noise2( m_points_origin[t].x, m_points_origin[t].y ) );
+		}*/
 	}
 
 	/*void init( const uint xdiv=10, const uint ydiv=10, const float width=100.0f, const float height=100.0f ){

@@ -1,7 +1,5 @@
 [Z:\home\jimmy\Documents\projects\outlyer\_error.log.txt]
 
-[ERROR] perlin.angelscript, line 4: Expected ')'
-
-[ERROR] perlin.angelscript, line 9: Expected ')'
+[ERROR] perlin.angelscript, line 120: 'noise' is already declared
 ERROR - Failed while building module.
 ERROR - ETHEngine::StartEngine: no scene has been loaded.

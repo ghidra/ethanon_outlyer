@@ -12,7 +12,7 @@ Loading game script from source-code: main.angelscript
 
 [WARN ] graph.angelscript, line 107: Signed/Unsigned mismatch
 
-Compile time: 82 milliseconds
+Compile time: 83 milliseconds
 (Loaded) pixel_white.png
 (Loaded) main_ship_diffuse_contact.png
 (Loaded) main_ship_normal_contact.png
