@@ -20,7 +20,7 @@ class perlin_base{
 		49,192,214,31,181,199,106,157,184,84,204,176,115,121,50,45,127,4,150,254,
 		138,236,205,93,222,114,67,29,24,72,243,141,128,195,78,66,215,61,156,180};
 
-	uint period = permutation.length();
+	int period = permutation.length();
 	//permutation = permutation * 2
 	float _F2 = 0.5f * (sqrt(3.0f) - 1.0f);
 	float _G2 = (3.0f - sqrt(3.0f)) / 6.0f;
@@ -29,33 +29,45 @@ class perlin_base{
 
 	perlin_base(){}
 
-	void init( const uint _period=0, const array<int> _permutation_table={} ){
+	//void init( const uint _period = 0 , const int[] _permutation_table ){
+	void init( ){
 		//if (_period > 0 && _permutation_table > 0){
 			
-		if (_period >0){
+		/*if (_period >0){
 			randomize(_period);
 		}else if(_permutation_table.length() > 0){
 			permutation = _permutation_table;
 			period = _permutation_table.length();
-		}
+		}*/
 		//}
+		double_permutation();
+		randomize();
 	}
 
-	void randomize(const uint p = 0){
+	void double_permutation(){
+		int iter = permutation.length();
+		for(int t=0; t<iter;t++){
+			permutation.insertLast(permutation[t]);
+		}
+	}
+
+	void randomize(const int p = 0){
 		/*Randomize the permutation table used by the noise functions. This
 		makes them generate a different noise pattern for the same inputs.
 		*/
 		if (p > 0)
 			period = p;
-		int[] perm = array<int>(period);
+		//int[] perm = array<int>(period);
+		int[] perm(period);
 		int perm_right = period - 1;
-		for (uint i=0; i< period;i++){
-			uint j = rand(0, perm_right);
+		for (int i=0; i< period;i++){
+			int j = rand(0, perm_right);
 			perm[j]=perm[i];
 			perm[i]=perm[j];
 			//perm[i], perm[j] = perm[j], perm[i];
 		}
 		permutation = perm;
+		double_permutation();
 	}
 }
 
@@ -64,19 +76,23 @@ class perlin: perlin_base{
 
 	perlin(){}
 
-	float noise2(const float x, const float y){
+	float noise2(const float x, const float y,const float sx=1.0f, const float sy=1.0f, const float ox=0.0f, const float oy=0.0f){
 		/*2D Perlin simplex noise.
 		Return a floating point value from -1 to 1 for the given x, y coordinate.
 		The same value is always returned for a given x, y pair unless the
 		permutation table changes (see randomize above).
 		*/
 		//Skew input space to determine which simplex (triangle) we are in
-		float s = (x + y) * _F2;
-		int i = floor(x + s);
-		int j = floor(y + s);
+		
+		float ax=(x*sx)+ox;//abs(x);
+		float ay=(y*sy)+oy;//abs(y);
+
+		float s = (ax + ay) * _F2;
+		int i = floor(ax + s);
+		int j = floor(ay + s);
 		float t = (i + j) * _G2;
-		float x0 = x - (i - t); // "Unskewed" distances from cell origin
-		float y0 = y - (j - t);
+		float x0 = ax - (i - t); // "Unskewed" distances from cell origin
+		float y0 = ay - (j - t);
 
 		float i1 = 0; 
 		float j1 = 1; // Upper triangle, YX order: (0,0)->(0,1)->(1,1)
@@ -92,8 +108,8 @@ class perlin: perlin_base{
 
 		//# Determine hashed gradient indices of the three simplex corners
 		int[] perm = permutation;
-		int ii = int(i) % period;
-		int jj = int(j) % period;
+		int ii = abs(i) % period;
+		int jj = abs(j) % period;
 		int gi0 = perm[ii + perm[jj]] % 12;
 		int gi1 = perm[ii + i1 + perm[jj + j1]] % 12;
 		int gi2 = perm[ii + 1 + perm[jj + 1]] % 12;
@@ -117,7 +133,8 @@ class perlin: perlin_base{
 			noise += pow(tt,4) * (g.x * x2 + g.y * y2);
 		}
 
-		//float noise = 0.0f;
+		//return (ii)*1.0f;
+		//float noise = 0.01f;
 		return noise * 70.0f; // scale noise to [-1, 1]
 	}
 

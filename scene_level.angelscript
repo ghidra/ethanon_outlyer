@@ -75,7 +75,7 @@ class scene_level : Scene
 		@m_boss = enemy_boss("boss_0101.ent", vector2(0.0f,-500.0f),m_character);
 		m_boss.set_global_object(m_global);
 
-		@m_grid = grid_map(22,17);
+		@m_grid = grid_map(32,32);
 		//m_grid.set_global_object(m_global);
 		SetScaleFactor(0.5);
 	}

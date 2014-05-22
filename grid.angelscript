@@ -246,7 +246,7 @@ class grid : obj{
 			}
 
 
-			int debug_border = 1;
+			int debug_border = 0;
 			if(m_mousecell<=m_centers.length() && debug_border > 0){
 				//center point
 				if(m_graph.centers[m_mousecell].is_border)
