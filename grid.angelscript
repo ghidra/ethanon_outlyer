@@ -302,6 +302,16 @@ class grid : obj{
 		}
 	}
 
+	//methods
+	//this returns the position of given cell
+	vector2 get_cell_position(const uint cell, const bool ss = false){//ss is screen space
+		if(ss){
+				return m_centers[cell];//i need to translate this with the camera and the iso matrix
+			}else{
+				return m_centers[cell];
+			}
+	}
+
 	//void draw_debug(){
 
 	//}

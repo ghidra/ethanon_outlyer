@@ -4,20 +4,20 @@ ____________________________
 
 Loading game script from source-code: main.angelscript
 
-[INFO ] enemy_boss.angelscript, line 45: Compiling void enemy_boss::update()
+[INFO ] actor.angelscript, line 97: Compiling void actor::set_position(const vector2)
 
-[WARN ] enemy_boss.angelscript, line 48: Signed/Unsigned mismatch
+[ERROR] actor.angelscript, line 100: No matching signatures to 'ETHEntity::SetPosition(const vector2&)'
+[INFO ] actor.angelscript, line 100: Candidates are:
+[INFO ] actor.angelscript, line 100: void ETHEntity::SetPosition(const vector3&in)
 
 [INFO ] graph.angelscript, line 97: Compiling graph::graph(const vector2[], const int, const int)
 
 [WARN ] graph.angelscript, line 107: Signed/Unsigned mismatch
 
-Compile time: 94 milliseconds
-(Loaded) pixel_white.png
-(Loaded) main_ship_diffuse_contact.png
-(Loaded) main_ship_normal_contact.png
-(Loaded) random_D.png
-(Loaded) random_NM.png
-(Loaded) boss_ship_0101_diffuse_contact.png
-(Loaded) boss_ship_0101_normal_contact.png
-(Loaded) explosion_01_contact.png
+[INFO ] enemy_boss.angelscript, line 45: Compiling void enemy_boss::update()
+
+[WARN ] enemy_boss.angelscript, line 48: Signed/Unsigned mismatch
+
+Compile time: 111 milliseconds
+ERROR - Failed while building module.
+ERROR - ETHEngine::StartEngine: no scene has been loaded.

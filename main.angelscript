@@ -9,6 +9,16 @@ void main()
 }
 /*
 ------------
+line 100 in actor
+why cant just set the position and have it update the actual positoin?
+
+
+now that my noise and grid generation is mostly complete...
+I need to determine the square to place the main character
+and the square to place the enemy
+then determine a path between them, and begin to place bodies and other object/obstacles.
+then after that, I can start to build the actual game.
+
 when an enemy from a enemy factory is killed, it needs to also remove itself from the enemy array
 when an enemy dies, it also needs to remove it self from code period, it is still around, just the entity is removed
 

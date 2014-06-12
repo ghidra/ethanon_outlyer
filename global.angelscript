@@ -1,9 +1,11 @@
 ﻿#include "minimap.angelscript"
+#include "grid_map.angelscript"
 
 class global
 {
 	private float m_time_multiplier = 1.0f;
 	private minimap@ m_minimap;//this is the main minimap
+	private grid_map@ m_gridmap;//this is the main minimap
 
 	global(){}
 
@@ -13,6 +15,10 @@ class global
 	}
 	void set_time_multiplier(const float &in t){
 		m_time_multiplier = t;
+	}
+	//---------grid
+	void set_gridmap(grid_map @g){
+		@m_gridmap = g; 
 	}
 	//---------minimap
 	void set_minimap(minimap @m){

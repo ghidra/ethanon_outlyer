@@ -8,8 +8,8 @@ class grid_map : grid{
 	private perlin@ m_perlin;
 	private float[] m_pnoise;
 
-	grid_map(const uint xdiv=10, const uint ydiv=10, const float width=1000.0f, const float height=1000.0f ){
-		super(xdiv,ydiv,width,height);
+	grid_map(const uint xdiv=10, const uint ydiv=10, const float size=100.0f ){
+		super(xdiv,ydiv,xdiv*size,ydiv*size);
 		//m_graph = new graph(point,edges);
 		@m_perlin = perlin();
 		m_perlin.init();

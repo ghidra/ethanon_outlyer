@@ -94,6 +94,13 @@ class actor : obj
 		update_destination_distance();
 	}
 	///--------
+	void set_position(const vector2 pos){
+		obj::set_position(pos);
+		if(m_entity !is null){
+			//i need to just place the entity after setting the positoin
+			//m_entity.SetPosition(pos);
+		}
+	}
 	vector2 get_position(){
 		//vector3 pos = m_entity.GetPosition();
 		//m_pos = vector2(pos.x,pos.y);

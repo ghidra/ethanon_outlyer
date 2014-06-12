@@ -46,15 +46,19 @@ class scene_level : Scene
 		Scene::onCreated();
 		
 		@m_global = global();
+
 		@m_exitButton = Button("menu", vector2(0.0f, 0.0f), vector2(0.0f, 0.0f));
 
 		const vector2 screenMiddle(GetScreenSize() * 0.5f);
 
+		@m_grid = grid_map(32,32,50);
+		m_global.set_gridmap(m_grid);
 		@m_minimap = minimap();
 		m_global.set_minimap(m_minimap);
 
 		@m_character = Character("hero.ent", vector2(0.0f,0.0f));
 		m_character.set_global_object(m_global);
+		m_character.set_position(m_grid.get_cell_position(0));
 
 		@m_camera = camera();
 		m_camera.set_target(m_character);
@@ -75,7 +79,6 @@ class scene_level : Scene
 		@m_boss = enemy_boss("boss_0101.ent", vector2(0.0f,-500.0f),m_character);
 		m_boss.set_global_object(m_global);
 
-		@m_grid = grid_map(32,32);
 		//m_grid.set_global_object(m_global);
 		SetScaleFactor(0.5);
 	}

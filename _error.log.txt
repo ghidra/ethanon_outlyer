@@ -1,7 +1,5 @@
 [Z:\home\jimmy\Documents\projects\outlyer\_error.log.txt]
 
-[ERROR] perlin.angelscript, line 87: 'ax' is not declared
-
-[ERROR] perlin.angelscript, line 88: 'ay' is not declared
+[ERROR] actor.angelscript, line 100: No matching signatures to 'ETHEntity::SetPosition(const vector2&)'
 ERROR - Failed while building module.
 ERROR - ETHEngine::StartEngine: no scene has been loaded.
